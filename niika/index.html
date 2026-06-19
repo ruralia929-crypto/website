@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>新鹿 × 大学　この2年の歩み</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<meta name="description" content="新鹿を“外の人”に届けて、声をもらう。学生とつくったCMと、VRで集めた155の宝の山。京都大学×三重大学×新鹿みらいのまちづくり推進委員会の2年間の報告。">
+<style>
+:root{
+  --navy:#0e3a5c; --navy2:#114b75; --sea:#2e8bc0; --sea-l:#7fc1e3;
+  --sand:#f6efe1; --sand2:#efe4cd; --ink:#23323d; --muted:#5f7180;
+  --coral:#e8704a; --gold:#d9a441; --line:#dce4ea; --card:#ffffff;
+  --maxw:1080px;
+  --font: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--sand);line-height:1.8;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict}
+img{max-width:100%;display:block}
+a{color:var(--sea)}
+h1,h2,h3{line-height:1.4;font-weight:800}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* header / nav */
+header.bar{position:sticky;top:0;z-index:50;background:rgba(14,58,92,.96);backdrop-filter:blur(6px);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12)}
+header.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+header.bar .logo{font-weight:800;font-size:15px;letter-spacing:.02em}
+header.bar nav{display:flex;gap:4px;flex-wrap:wrap}
+header.bar nav a{color:#dcebf5;text-decoration:none;font-size:13px;padding:7px 10px;border-radius:8px;white-space:nowrap}
+header.bar nav a:hover{background:rgba(255,255,255,.12);color:#fff}
+.navtoggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:6px 10px;font-size:14px}
+
+/* hero */
+.hero{position:relative;color:#fff;text-align:center;padding:96px 20px 84px;
+  text-shadow:0 1px 12px rgba(0,0,0,.5);
+  background:
+    linear-gradient(180deg, rgba(7,30,50,.74) 0%, rgba(11,46,72,.56) 45%, rgba(14,55,88,.74) 100%),
+    url('hero.jpg') center 42%/cover no-repeat;
+  overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;
+  background:radial-gradient(60px 60px at 10% 0, var(--sand) 50%, transparent 51%) repeat-x;
+  background-size:80px 60px;opacity:.0}
+.hero .eyebrow{letter-spacing:.32em;font-size:12px;color:var(--sea-l);margin:0 0 14px}
+.hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 6px;text-shadow:0 2px 20px rgba(0,0,0,.55)}
+.hero .sub{font-size:clamp(15px,2.4vw,19px);color:#e7f2fa;margin:14px auto 0;max-width:680px;font-weight:600}
+.hero .meta{margin-top:26px;font-size:13px;color:#bcd6e6}
+.hero .scroll{margin-top:34px;font-size:12px;color:#a9cae0;letter-spacing:.2em}
+
+/* sections */
+section{padding:64px 0}
+section:nth-of-type(even){background:#fff}
+.kicker{display:inline-block;background:var(--sea);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.08em;margin-bottom:14px}
+.kicker.alt{background:var(--coral)}
+.kicker.gold{background:var(--gold)}
+h2.sec{font-size:clamp(22px,3.6vw,30px);margin:0 0 10px;color:var(--navy)}
+.lead{font-size:17px;color:var(--ink);max-width:760px;margin:0 0 8px}
+.muted{color:var(--muted)}
+
+/* arc */
+.arc{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:28px}
+.arc .card{background:linear-gradient(180deg,#fff, #f4f9fc);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 20px rgba(16,60,92,.06)}
+.arc .card h3{margin:.2em 0 .4em;color:var(--navy)}
+.arc .yr{font-size:12px;font-weight:800;color:var(--sea);letter-spacing:.1em}
+.arc .mid{display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--sea)}
+.arc .hub{margin-top:22px;text-align:center;background:var(--navy);color:#fff;border-radius:14px;padding:16px 18px}
+.arc .hub b{color:var(--sea-l)}
+@media(max-width:760px){.arc{grid-template-columns:1fr}.arc .mid{transform:rotate(90deg)}}
+
+/* concept (why) */
+.concept{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch;margin-top:28px}
+.concept .cc{background:linear-gradient(180deg,#fff,#f4f9fc);border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;box-shadow:0 6px 20px rgba(16,60,92,.06)}
+.concept .cc .ic{font-size:26px}
+.concept .cc b{display:block;color:var(--navy);margin:.45em 0 .25em;font-size:15px}
+.concept .cc small{color:var(--muted);font-size:12.5px;line-height:1.6;display:block}
+.concept .op{display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--sea);font-weight:800}
+@media(max-width:760px){.concept{grid-template-columns:1fr}.concept .op{transform:rotate(90deg)}}
+
+/* video grid */
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.vgrid .v{background:#000;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.vgrid .lite{position:relative;padding-top:56.25%;cursor:pointer;background:#0a2336 center/cover no-repeat}
+.vgrid .lite .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.vgrid .lite .play span{width:64px;height:46px;background:rgba(0,0,0,.72);border-radius:13px;display:flex;align-items:center;justify-content:center}
+.vgrid .lite .play span::after{content:"";border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;margin-left:4px}
+.vgrid .lite:hover .play{background:rgba(10,35,54,.25)}
+.vgrid .lite:hover .play span{background:var(--coral)}
+.vgrid .lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vgrid .cap{color:#fff;font-size:13px;padding:8px 12px;background:#15425f;font-weight:600}
+.vgrid .cap a{color:#fff;text-decoration:none}
+.vgrid .cap a:hover{text-decoration:underline}
+@media(max-width:860px){.vgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.vgrid{grid-template-columns:1fr}}
+
+/* flow steps */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:26px;counter-reset:s}
+.flow .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 14px;position:relative;text-align:center;box-shadow:0 4px 14px rgba(16,60,92,.05)}
+.flow .st .n{width:30px;height:30px;border-radius:50%;background:var(--sea);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+.flow .st b{display:block;font-size:14px;color:var(--navy)}
+.flow .st small{color:var(--muted);font-size:12px}
+@media(max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.flow{grid-template-columns:1fr}}
+
+/* placeholders (map / vr video) */
+.placeholder{margin-top:24px;border:2px dashed var(--sea-l);border-radius:16px;background:#eef7fc;padding:28px;text-align:center;color:var(--navy)}
+.placeholder b{font-size:16px}
+.placeholder .hint{color:var(--muted);font-size:13px;margin-top:6px}
+.embed-wrap{position:relative;padding-top:60%;margin-top:18px;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.embed-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* VR spot map (Leaflet) */
+#vrmap{height:440px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 6px 18px rgba(16,60,92,.08);margin-top:16px;z-index:0}
+.leaflet-container{font-family:var(--font)}
+.vrpop{text-align:center;min-width:130px}
+.vrpop b{color:var(--navy);font-size:14px}
+.vrpop a{display:inline-block;margin-top:8px;background:var(--coral);color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700}
+.maplegend{font-size:13px;color:var(--muted);margin-top:10px}
+
+/* funnel */
+.funnel{display:flex;flex-direction:column;gap:10px;margin:26px auto 0;max-width:620px}
+.funnel .row{display:flex;align-items:center;gap:14px}
+.funnel .bar{height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:0 4px 12px rgba(16,60,92,.12);white-space:nowrap}
+.funnel .b1{background:#9fc7df;width:100%}
+.funnel .b2{background:#5aa6cf;width:74%}
+.funnel .b3{background:#2e8bc0;width:50%}
+.funnel .b4{background:var(--navy);width:30%}
+.funnel .lab{font-size:12px;color:var(--muted);width:120px;text-align:right;flex:none}
+.funnel .note{text-align:center;margin-top:14px;font-weight:700;color:var(--coral)}
+@media(max-width:560px){.funnel .lab{display:none}}
+
+/* category bars */
+.cats{margin-top:26px;display:grid;gap:8px;max-width:680px}
+.cats .c{display:grid;grid-template-columns:130px 1fr 64px;align-items:center;gap:10px;font-size:13px}
+.cats .c .name{color:var(--navy);font-weight:700}
+.cats .c .track{background:#e7eef3;border-radius:8px;height:18px;overflow:hidden;position:relative}
+.cats .c .fill{height:100%;background:linear-gradient(90deg,var(--sea-l),var(--sea));border-radius:8px}
+.cats .c .fill.sel{background:linear-gradient(90deg,var(--gold),var(--coral))}
+.cats .c .num{color:var(--muted);text-align:right}
+.cats .legend{font-size:12px;color:var(--muted);margin-top:4px}
+@media(max-width:560px){.cats .c{grid-template-columns:96px 1fr 54px}}
+
+/* idea filter + grid */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px}
+.filters button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.filters button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.idea{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:12px;padding:14px 16px;box-shadow:0 4px 12px rgba(16,60,92,.05)}
+.idea .tag{font-size:11px;color:#fff;background:var(--sea);border-radius:999px;padding:2px 9px;display:inline-block;margin-bottom:8px}
+.idea h4{margin:0 0 6px;font-size:15px;color:var(--navy)}
+.idea .q{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:8px}
+.idea .q::before{content:"\201C";color:var(--sea-l);font-weight:800;margin-right:2px}
+@media(max-width:680px){.ideas{grid-template-columns:1fr}}
+
+/* findings cards */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.three .f{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(16,60,92,.05)}
+.three .f .ic{font-size:26px}
+.three .f h3{font-size:16px;color:var(--navy);margin:.4em 0}
+.three .f p{font-size:14px;color:var(--muted);margin:0}
+.three .f .big{font-size:22px;font-weight:800;color:var(--coral)}
+.three .f.key{border:2px solid var(--coral);background:linear-gradient(180deg,#fff,#fff6f1);box-shadow:0 8px 22px rgba(232,112,74,.15)}
+@media(max-width:780px){.three{grid-template-columns:1fr}}
+
+/* proposal / future */
+.props{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.props .p{background:linear-gradient(180deg,#fff,#f3f9fc);border:1px solid var(--line);border-radius:16px;padding:22px}
+.props .p h3{color:var(--navy);margin:.2em 0 .4em;font-size:17px}
+.props .p ul{margin:.4em 0 0;padding-left:1.1em}
+.props .p li{margin:.3em 0;font-size:14px}
+@media(max-width:680px){.props{grid-template-columns:1fr}}
+.future{margin-top:26px;background:linear-gradient(135deg,#13314c,#1d5e87);color:#fff;border-radius:18px;padding:26px}
+.future h3{color:#fff;margin:0 0 10px}
+.future .fcards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.future .fc{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px}
+.future .fc b{color:#ffd9a8}
+.future .fc p{font-size:13px;color:#d8e7f1;margin:.4em 0 0}
+.badge{display:inline-block;font-size:11px;background:var(--gold);color:#3a2a06;border-radius:6px;padding:2px 8px;font-weight:800;margin-left:6px}
+@media(max-width:680px){.future .fcards{grid-template-columns:1fr}}
+
+/* circulation cycle (next) */
+.cycle{position:relative;max-width:540px;margin:32px auto 8px;aspect-ratio:1/1}
+.cycle .ring{position:absolute;inset:0;width:100%;height:100%}
+.cycle .cnode{position:absolute;z-index:1;width:33%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 6px 16px rgba(16,60,92,.10)}
+.cycle .cnode .cn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--sea);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:14px;margin-bottom:5px}
+.cycle .cnode b{display:block;color:var(--navy);font-size:13.5px;line-height:1.4}
+.cycle .cnode small{display:block;color:var(--muted);font-size:11.5px;margin-top:3px;line-height:1.5}
+.cycle .cnode .ai{display:inline-block;background:var(--gold);color:#3a2a06;font-style:normal;font-weight:800;font-size:10px;border-radius:5px;padding:1px 5px;margin-left:4px;vertical-align:1px}
+.cycle .n1{top:0;left:50%;transform:translate(-50%,0)}
+.cycle .n2{top:50%;right:0;transform:translate(0,-50%)}
+.cycle .n3{bottom:0;left:50%;transform:translate(-50%,0)}
+.cycle .n4{top:50%;left:0;transform:translate(0,-50%)}
+.cycle .chub{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);width:30%;text-align:center;color:var(--navy);font-weight:800;font-size:13px;line-height:1.5}
+@media(max-width:600px){
+  .cycle{aspect-ratio:auto;max-width:430px;margin-top:24px}
+  .cycle .ring{display:none}
+  .cycle .cnode,.cycle .chub{position:static;transform:none;width:auto;margin:0 0 10px}
+  .cycle .cnode{display:flex;align-items:center;gap:12px;text-align:left}
+  .cycle .cnode .cn{margin:0;flex:none}
+  .cycle .cnode b{font-size:14.5px}
+  .cycle .chub{order:9;background:var(--navy);color:#fff;border-radius:12px;padding:14px;font-size:14px}
+  .cycle .chub::before{content:"↺ ";color:var(--sea-l)}
+}
+
+/* footer */
+footer{background:linear-gradient(180deg, rgba(10,38,60,.87), rgba(9,32,52,.91)), url('hero.jpg') center 45%/cover no-repeat;color:#dbe8f1;padding:48px 0 60px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+footer h3{color:#fff;font-size:18px;margin:0 0 8px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:18px}
+footer a{color:var(--sea-l)}
+footer .links a{display:inline-block;margin:4px 14px 4px 0;font-size:14px}
+footer .fine{margin-top:28px;font-size:12px;color:#9fb8ca;border-top:1px solid rgba(255,255,255,.15);padding-top:16px}
+@media(max-width:680px){footer .cols{grid-template-columns:1fr}}
+
+/* gentle entrance — pure CSS, always ends visible (no JS dependency) */
+.reveal{animation:revealUp .7s ease both}
+@keyframes revealUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal{animation:none}}
+
+@media(max-width:720px){
+  header.bar nav{position:absolute;top:58px;left:0;right:0;background:var(--navy);flex-direction:column;padding:8px 16px;display:none}
+  header.bar nav.open{display:flex}
+  .navtoggle{display:inline-block}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <span class="logo">新鹿 × 大学　2年の歩み</span>
+    <button class="navtoggle" aria-label="メニュー" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <nav id="nav">
+      <a href="#why">ねらい</a>
+      <a href="#arc">全体像</a>
+      <a href="#cm">第1弾：CM</a>
+      <a href="#vr">第2弾：VR</a>
+      <a href="#ideas">155の宝の山</a>
+      <a href="#learn">わかったこと</a>
+      <a href="#next">これから</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="eyebrow">新鹿みらいのまちづくり　住民報告</p>
+  <h1>新鹿を“外の人”に届けて、<br>声をもらう。</h1>
+  <p class="sub">学生とつくった新鹿のCM。VRで東京に届けた新鹿の景色。<br>この2年でいただいた、たくさんの声の報告です。</p>
+  <p class="meta">京都大学 農村計画学研究室 ／ 三重大学 紀南オープンフィールド ／ 新鹿みらいのまちづくり推進委員会</p>
+  <p class="scroll">▼ SCROLL</p>
+</div>
+
+<!-- ===================== ねらい（考え方） ===================== -->
+<section id="why">
+  <div class="wrap reveal">
+    <span class="kicker">私たちが目指していること</span>
+    <h2 class="sec">地域の力を、外とのつながりで補い合う</h2>
+    <p class="lead">いま多くの農村は、高齢化と人口減少のなかで、「地域の中の力だけ」では動きにくくなっています。かといって、外から出来合いの答えを持ち込めばうまくいく、というものでもない。私たちの研究室が考えてきたのは、その中間の道です。地域がもともと持っている力を、外の人とのつながりで補いながら、一緒に課題へ向き合い、新しいやり方を少しずつ編み出していく——そんな仕組みづくりです。</p>
+    <div class="concept">
+      <div class="cc"><div class="ic">🌱</div><b>地域の力</b><small>新鹿にある人・自然・歴史・暮らしの力</small></div>
+      <div class="op">＋</div>
+      <div class="cc"><div class="ic">🔗</div><b>外とのつながり</b><small>都市の人・学生・専門家とのネットワーク</small></div>
+      <div class="op">→</div>
+      <div class="cc"><div class="ic">🤝</div><b>協働で、新しい方法を</b><small>一緒に課題へ向き合い、やり方を編み出す</small></div>
+    </div>
+    <p class="muted" style="margin-top:18px;font-size:13px">この「地域が主役、でも外の力もうまく借りる」という考え方は、研究の世界では<strong>ネオ内発的発展</strong>や<strong>ソーシャル・イノベーション</strong>とも呼ばれています。新鹿でのこの2年は、その考え方を実地で試し、新しいやり方を探す取り組みでした。</p>
+  </div>
+</section>
+
+<!-- ===================== 全体像 ===================== -->
+<section id="arc">
+  <div class="wrap reveal">
+    <span class="kicker">2年間の全体像</span>
+    <h2 class="sec">新鹿を、遠くの人へ。そして声を、新鹿へ。</h2>
+    <p class="lead">新鹿は東京から5時間。気軽に来てもらえる距離ではありません。それなら、新鹿のほうを外へ届けられないか。この2年、私たちは新鹿のコンテンツを<strong>東京・日本橋のアンテナショップ「三重テラス」</strong>に届け、外の人から声をもらう、という試みを続けてきました。中身は進化しました——学生がつくった<strong>CM</strong>から、<strong>VRの映像</strong>へ。</p>
+    <div class="arc">
+      <div class="card">
+        <span class="yr">2024年度　第1弾</span>
+        <h3>学生とつくった新鹿CM</h3>
+        <p class="muted">三重大生18名が新鹿に来て、6本のPR動画を制作。公民館で上映し、東京の三重テラスでも放映しました。</p>
+      </div>
+      <div class="mid">→</div>
+      <div class="card">
+        <span class="yr">2025年度　第2弾</span>
+        <h3>VRで届けた新鹿の景色</h3>
+        <p class="muted">新鹿の景色を360°映像に。三重テラスで体験してもらい、地域活性化のアイデアをいただきました。</p>
+      </div>
+    </div>
+    <div class="hub">共通の舞台は <b>三重テラス</b>（東京・日本橋）。新鹿と都市をつなぐ“窓”として使いました。</div>
+  </div>
+</section>
+
+<!-- ===================== 第1弾 CM ===================== -->
+<section id="cm">
+  <div class="wrap reveal">
+    <span class="kicker">第1弾 ／ 2024年10月</span>
+    <h2 class="sec">学生とつくった、6本の新鹿CM</h2>
+    <p class="lead">「あたしか×大学生 第1弾」。三重大学の学生18名が新鹿に泊まり込み、6つの班に分かれて、プロの動画ディレクターの指導のもと新鹿をPRするCMを制作しました。町案内も、民宿も、ジビエも、大仙寺でのBBQも——住民の皆さん約20名のご協力で実現した2日間です。完成したCMは公民館の上映会で「景観や人の温かさが伝わる」と評価され、地元紙（くろしお版・吉野熊野新聞）にも掲載されました。</p>
+    <p class="muted">▼ 完成した6本のCM（紀南地域のファンコミュニティ「紀南部」YouTubeチャンネルで公開中）</p>
+    <div class="vgrid">
+      <div class="v"><div class="lite" data-id="0D4VW3BjHGs" style="background-image:url(https://img.youtube.com/vi/0D4VW3BjHGs/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/0D4VW3BjHGs" target="_blank" rel="noopener">グループ1 の新鹿CM ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="e_0Log-26iU" style="background-image:url(https://img.youtube.com/vi/e_0Log-26iU/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/e_0Log-26iU" target="_blank" rel="noopener">グループ2 の新鹿CM ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="PYaGCRmogrM" style="background-image:url(https://img.youtube.com/vi/PYaGCRmogrM/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/PYaGCRmogrM" target="_blank" rel="noopener">グループ3 の新鹿CM ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="mvT3rsaorW8" style="background-image:url(https://img.youtube.com/vi/mvT3rsaorW8/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/mvT3rsaorW8" target="_blank" rel="noopener">グループ4 の新鹿CM ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="D79h3AX2KZI" style="background-image:url(https://img.youtube.com/vi/D79h3AX2KZI/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/D79h3AX2KZI" target="_blank" rel="noopener">グループ5 の新鹿CM ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="h3JAWbi7JQ0" style="background-image:url(https://img.youtube.com/vi/h3JAWbi7JQ0/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/h3JAWbi7JQ0" target="_blank" rel="noopener">グループ6 の新鹿CM ↗</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 第1弾 CM 研究結果 ===================== -->
+<section id="cm-result">
+  <div class="wrap reveal">
+    <span class="kicker">第1弾でわかったこと</span>
+    <h2 class="sec">「楽しかった」だけでは、また来てくれない</h2>
+    <p class="lead">CMづくりには、もう一つのねらいがありました。来てくれた学生に、その後も新鹿と関わり続けてもらえないか——いわゆる<strong>関係人口</strong>の入口になってもらえないか、ということです。そこで、参加した学生のうち13人を1か月後まで追いかけ、「“また来たい”が、どうすれば“また来る”に変わるのか」を調べました。</p>
+    <div class="three">
+      <div class="f"><div class="ic">😊</div><h3>満足度は、ほぼ満点</h3><p class="big">全員が 6〜7 ／ 7点</p><p>参加した学生は全員が「満足」か「非常に満足」。当日の体験そのものは、文句なしでした。</p></div>
+      <div class="f"><div class="ic">🔁</div><h3>でも「また来る」は一部</h3><p class="big">13人中 4人</p><p>1か月後、再訪が現実的だと見立てられたのはこの人数。「また来たい」気持ちと、実際の再訪は、別物でした。</p></div>
+      <div class="f key"><div class="ic">🌱</div><h3>分けたのは「農村への関心」</h3><p>再訪を左右したのは満足度の高さではなく、<strong>もともと農村に関心があるかどうか</strong>。関心の高い人は、遠さのような壁も、自分で越えていく傾向がありました。</p></div>
+    </div>
+    <p class="muted" style="margin-top:20px">もう一つ。1か月のあいだに地域への関わりの意欲は全体に少し下がりましたが、<strong>SNSでの関わりが一番薄れやすく、「また会いに行きたい」という現地・対面の気持ちは、いちばん残りました</strong>。オンラインは便利ですが、軸になるのは“現地で会うこと”。SNSはそれを後押しする役回り、と言えそうです。</p>
+    <p class="lead" style="margin-top:14px">だからこそ、大事なのは<strong>「誰に届けるか」</strong>。来てくれた学生は、そのまま新鹿のファン＝関係人口の入口になりえます。農村に関心のある人に絞って、次に来る“きっかけ”を用意する——この発見は、最後のご提案につながっています。</p>
+  </div>
+</section>
+
+<!-- ===================== 第2弾 VR ===================== -->
+<section id="vr">
+  <div class="wrap reveal">
+    <span class="kicker">第2弾 ／ 2025年10〜11月</span>
+    <h2 class="sec">VRで、新鹿を東京へ持っていく</h2>
+    <p class="lead">新鹿の景色を全天球カメラで360°映像にして、三重テラスの来訪者に体験してもらいました。映像づくりも皆さんのご協力でできています——住民の“いちおしスポット”を募り、推薦した方ご本人のナレーションを、そのまま映像に入れています。</p>
+    <div class="flow">
+      <div class="st"><div class="n">1</div><b>いちおし募集</b><small>住民から17スポット</small></div>
+      <div class="st"><div class="n">2</div><b>6スポット選定</b><small>自然・歴史・暮らし</small></div>
+      <div class="st"><div class="n">3</div><b>住民ナレーション</b><small>「ここが好き」を収録</small></div>
+      <div class="st"><div class="n">4</div><b>全天球撮影</b><small>約5分に編集</small></div>
+      <div class="st"><div class="n">5</div><b>三重テラスで体験</b><small>来訪者46名</small></div>
+    </div>
+
+    <!-- VR撮影スポット地図（Leaflet + OpenStreetMap・自己完結） -->
+    <h3 style="margin-top:32px;color:var(--navy)">🗺 VR撮影スポットマップ</h3>
+    <div id="vrmap"></div>
+    <p class="maplegend">ピンをクリックすると、その場所のVR映像を開けます（地図：OpenStreetMap）。</p>
+
+    <!-- VR360動画（紀南部チャンネル「新鹿町VR（実験用）」） -->
+    <p class="muted" style="margin-top:26px">▼ 三重テラスで体験してもらった、新鹿の<strong>6つの360°VR映像</strong>。住民の皆さんが選んだ“いちおし”の場所です（クリックで再生、スマホやマウスでぐりぐり見回せます）。</p>
+    <div class="vgrid">
+      <div class="v"><div class="lite" data-id="JoHc2EnM7og" style="background-image:url(https://img.youtube.com/vi/JoHc2EnM7og/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/JoHc2EnM7og" target="_blank" rel="noopener">なべら川遊び 360° ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="H9NJDi95Qxs" style="background-image:url(https://img.youtube.com/vi/H9NJDi95Qxs/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/H9NJDi95Qxs" target="_blank" rel="noopener">大仙寺 360° ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="FNEy-hgIlAk" style="background-image:url(https://img.youtube.com/vi/FNEy-hgIlAk/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/FNEy-hgIlAk" target="_blank" rel="noopener">熊野古道 伊勢路 360° ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="OwbT8Pu50b0" style="background-image:url(https://img.youtube.com/vi/OwbT8Pu50b0/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/OwbT8Pu50b0" target="_blank" rel="noopener">弁天滝 360° ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="zgEs79Np1gg" style="background-image:url(https://img.youtube.com/vi/zgEs79Np1gg/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/zgEs79Np1gg" target="_blank" rel="noopener">新鹿公民館 360° ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="IHHVHh2KXCk" style="background-image:url(https://img.youtube.com/vi/IHHVHh2KXCk/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/IHHVHh2KXCk" target="_blank" rel="noopener">新鹿海水浴場 360° ↗</a></div></div>
+    </div>
+    <p class="muted" style="margin-top:12px;font-size:13px">再生リスト全体：<a href="https://www.youtube.com/playlist?list=PLC8gDQgk2BSBF6o1BTYjOjcZGUwWrGPsK" target="_blank" rel="noopener">新鹿町VR（実験用）｜紀南部@三重テラス</a></p>
+  </div>
+</section>
+
+<!-- ===================== 155の宝の山 ===================== -->
+<section id="ideas">
+  <div class="wrap reveal">
+    <span class="kicker alt">三重テラスで集まった声</span>
+    <h2 class="sec">155の“宝の山”と、残った40のアイデア</h2>
+    <p class="lead">三重テラスの来訪者からは、合わせて<strong>155</strong>ものアイデアが集まりました（喜田さんが「宝の山」と呼んでくださったものです）。これを新鹿に持ち帰り、皆さんに3段階で仕分けていただきました。「意外か（地域の中からは出ない発想か）」→「役に立つか」→「実現できそうか」。くぐり抜けたのは<strong>40件、およそ4分の1</strong>です。</p>
+
+    <div class="funnel">
+      <div class="row"><span class="lab">集まった全アイデア</span><div class="bar b1">155</div></div>
+      <div class="row"><span class="lab">① 意外性を通過</span><div class="bar b2">意外な発想</div></div>
+      <div class="row"><span class="lab">② 有益性を通過</span><div class="bar b3">役に立つ</div></div>
+      <div class="row"><span class="lab">③ 実現性を通過</span><div class="bar b4">40 を選抜</div></div>
+      <div class="note">約4分の1のアイデアが「意外で、役に立ち、実現できそう」と選ばれました</div>
+    </div>
+
+    <h3 style="margin-top:40px;color:var(--navy)">どんな分野に集まったか</h3>
+    <p class="muted">数字は「集まった数 → そのうち残った数」。受け入れる環境、外の人とのつながり、景色の見せ方に、関心が集まりました。</p>
+    <div class="cats">
+      <div class="c"><span class="name">受入環境・インフラ</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="num">32→10</span></div>
+      <div class="c"><span class="name">交流・関係人口</span><div class="track"><div class="fill" style="width:81%"></div></div><span class="num">26→8</span></div>
+      <div class="c"><span class="name">観光資源・景観</span><div class="track"><div class="fill" style="width:81%"></div></div><span class="num">26→6</span></div>
+      <div class="c"><span class="name">歴史・文化・物語</span><div class="track"><div class="fill" style="width:56%"></div></div><span class="num">18→5</span></div>
+      <div class="c"><span class="name">体験・アクティビティ</span><div class="track"><div class="fill" style="width:47%"></div></div><span class="num">15→3</span></div>
+      <div class="c"><span class="name">情報発信・PR</span><div class="track"><div class="fill" style="width:38%"></div></div><span class="num">12→3</span></div>
+      <div class="c"><span class="name">食・特産品</span><div class="track"><div class="fill" style="width:31%"></div></div><span class="num">10→2</span></div>
+      <div class="c"><span class="name">資源活用・産業</span><div class="track"><div class="fill" style="width:25%"></div></div><span class="num">8→2</span></div>
+    </div>
+
+    <h3 style="margin-top:44px;color:var(--navy)">残ったアイデア（住民が選んだ40件）</h3>
+    <div class="filters" id="filters">
+      <button class="active" data-f="all">すべて</button>
+      <button data-f="受入環境">受入環境</button>
+      <button data-f="交流">交流・関係人口</button>
+      <button data-f="観光">観光・景観</button>
+      <button data-f="歴史">歴史・文化</button>
+      <button data-f="体験">体験</button>
+      <button data-f="発信">発信・PR</button>
+      <button data-f="食">食・産業</button>
+    </div>
+    <div class="ideas" id="ideas-grid">
+      <!-- 受入環境 -->
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>海と山を繋ぐ「眺望ルート」の整備</h4><div class="q">山側から海岸線を見下ろす視点。実際にその場所を歩く体験を。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>点在するスポットを繋ぐ「モデルコース」</h4><div class="q">お寺・海岸線・滝をうまくルーティング（A・Bルート）する。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>若者滞在の最低条件「Wi-Fi環境」</h4><div class="q">5時間かかる秘境。若者を呼ぶならWi-Fiがないと厳しい。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>定額・ワンコインタクシー</h4><div class="q">交通が不便で流しのタクシーもない。足回りを確保すべき。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>キッチン付き長期滞在シェアハウス</h4><div class="q">ログハウスのような場で若者が長期滞在できる仕組みを。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>教育旅行を受け入れる「体験民泊」</h4><div class="q">大紀町では200軒が登録し、教育旅行を受け入れている。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>飲食・宿泊など「旅の基本情報」の可視化</h4><div class="q">何が食べられて、どこに泊まれるか。衣食住のアピールを。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>浜辺の防災・避難経路の明確化＋安全アピール</h4><div class="q">素敵な浜辺だが、地震・津波ですぐ逃げられるかが気になる。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>滝周辺の滞在施設（茶屋など）</h4><div class="q">滝は東京では見られない貴重な資源。でも周りに何もない。</div></div>
+      <div class="idea" data-cat="受入環境"><span class="tag">受入環境</span><h4>レトロ自販機・無人販売所の立ち寄り拠点</h4><div class="q">道の駅のような拠点がない。立ち寄る理由が欲しい。</div></div>
+      <!-- 交流 -->
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>若者に「第2の故郷」と感じてもらう関係づくり</h4><div class="q">将来、家族と戻ってくるような関係を都会の学生と。</div></div>
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>仕事を持ち込める「中期滞在・コワーキング」拠点</h4><div class="q">完全移住でなく、ここを拠点に仕事をする受け入れ。</div></div>
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>大学生による「滞在実験」</h4><div class="q">まず学生が実験台になって、少しずつ規模を大きくすればいい。</div></div>
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>若手・移住者が参入しやすい「開かれた経済圏」</h4><div class="q">特定企業の独占でなく、外の人が市の仕事に関われるように。</div></div>
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>田舎を知らない世代への「未知の体験」アピール</h4><div class="q">田舎は「懐かしい」でなく「新鮮・未知」。若者に逆に刺さる。</div></div>
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>「あの人に会いたい」と思わせる住民の発信</h4><div class="q">動画の中の「その人に会いたい」と思わせるキャラクター性。</div></div>
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>「第2の故郷」を求める若者へのアプローチ</h4><div class="q">都会の学生は「帰れる田舎」を欲しがっている。壁は仕事。</div></div>
+      <div class="idea" data-cat="交流"><span class="tag">交流・関係人口</span><h4>「世界的ブランド校」誘致による教育移住</h4><div class="q">「オックスフォード熊野分校」のような世界的ブランド校を。</div></div>
+      <!-- 観光 -->
+      <div class="idea" data-cat="観光"><span class="tag">観光・景観</span><h4>「日本一美しい砂浜」としてのブランド化</h4><div class="q">JRから見える海が本当に綺麗。「日本一」を打ち出せる。</div></div>
+      <div class="idea" data-cat="観光"><span class="tag">観光・景観</span><h4>他にはない「海」の美しさの活用</h4><div class="q">あそこは本当に他にはない美しさじゃないかな。</div></div>
+      <div class="idea" data-cat="観光"><span class="tag">観光・景観</span><h4>「癒やしの森」としての森林浴PR</h4><div class="q">木がたくさんある場所。森林浴ができそうで良さそう。</div></div>
+      <div class="idea" data-cat="観光"><span class="tag">観光・景観</span><h4>「どこにでもある風景」との差別化</h4><div class="q">最初は山梨かと思った。差別化の特徴を強調したい。</div></div>
+      <div class="idea" data-cat="観光"><span class="tag">観光・景観</span><h4>観光客増より「のどかさ維持」を優先</h4><div class="q">のどかな感じをそのまま生かして。呼びすぎると良さが消える。</div></div>
+      <div class="idea" data-cat="観光"><span class="tag">観光・景観</span><h4>ドローン撮影に適した「映像映えする自然」の再評価</h4><div class="q">三重の人は自分たちの自然の良さに気づいていない。</div></div>
+      <!-- 歴史 -->
+      <div class="idea" data-cat="歴史"><span class="tag">歴史・文化</span><h4>寺社仏閣の「歴史・由来の解説」</h4><div class="q">映像だけだと“側”しか伝わらない。歴史的背景の補足を。</div></div>
+      <div class="idea" data-cat="歴史"><span class="tag">歴史・文化</span><h4>「昭和レトロ」マップ</h4><div class="q">「昭和のまま時が止まってる」みたいなマップをモデルコースに。</div></div>
+      <div class="idea" data-cat="歴史"><span class="tag">歴史・文化</span><h4>古老の語りの「デジタルアーカイブ」</h4><div class="q">「10年前・30年前の新鹿」やお年寄りの記憶を残す価値。</div></div>
+      <div class="idea" data-cat="歴史"><span class="tag">歴史・文化</span><h4>古地図・旧街道を重ねる「歴史体験コンテンツ」</h4><div class="q">「昔はここが街道だった」という歴史のレイヤーが見えると面白い。</div></div>
+      <div class="idea" data-cat="歴史"><span class="tag">歴史・文化</span><h4>方言の「井戸端会議」のぞき見体験</h4><div class="q">複数人が方言で会話する様子を覗き見したい。雰囲気が楽しい。</div></div>
+      <!-- 体験 -->
+      <div class="idea" data-cat="体験"><span class="tag">体験</span><h4>地形を活かした「トライアスロン・マラソン」誘致</h4><div class="q">四万十川のように、不便さを逆手に取ったロングラン系を。</div></div>
+      <div class="idea" data-cat="体験"><span class="tag">体験</span><h4>かつての「白い砂浜」の再生と川遊び場</h4><div class="q">昔は白浜に草はなかった。川を堰き止めてプールにして遊んだ。</div></div>
+      <div class="idea" data-cat="体験"><span class="tag">体験</span><h4>心身を癒やす「ウェルネス・ツーリズム」</h4><div class="q">太陽を浴びて、いいもの食べて、元気になれる場づくり。</div></div>
+      <!-- 発信 -->
+      <div class="idea" data-cat="発信"><span class="tag">発信・PR</span><h4>「信号機のない町」としてのブランド化</h4><div class="q">信号がないのが故郷のアイデンティティ。ないことが価値。</div></div>
+      <div class="idea" data-cat="発信"><span class="tag">発信・PR</span><h4>「#神様の忘れ物」ハッシュタグPR</h4><div class="q">キーワードを作ってSNSで発信し、拾ってもらう。</div></div>
+      <div class="idea" data-cat="発信"><span class="tag">発信・PR</span><h4>「行けない場所（海底・過去）」のVR化</h4><div class="q">行けば見られる景色ならVRである必要はない。海底や過去の姿を。</div></div>
+      <!-- 食・産業 -->
+      <div class="idea" data-cat="食"><span class="tag">食・産業</span><h4>都会で自慢できる「洗練されたお土産」</h4><div class="q">出身者が都会で配って自慢できるパッケージを作る。</div></div>
+      <div class="idea" data-cat="食"><span class="tag">食・産業</span><h4>「絶景＋立ち寄りスポット（酒・食）」のセット</h4><div class="q">景色だけだと遠いからいい、になる。＋αのお得感が必要。</div></div>
+      <div class="idea" data-cat="食"><span class="tag">食・産業</span><h4>アーティスト・イン・レジデンス</h4><div class="q">場所を提供して制作してもらい、作品を残してもらう。</div></div>
+      <div class="idea" data-cat="食"><span class="tag">食・産業</span><h4>サンドアート（階段から見下ろす）</h4><div class="q">穏やかな砂浜で、階段から見下ろすサンドアートはどうか。</div></div>
+      <div class="idea" data-cat="食"><span class="tag">食・産業</span><h4>高音質な環境音の収録</h4><div class="q">波や山の音から「匂い」や「空気感」を感じさせる。</div></div>
+    </div>
+    <p class="muted" style="margin-top:14px;font-size:13px">※ 全155件・選抜の元データは別途整理しています。ここでは選抜された40件を掲載。</p>
+  </div>
+</section>
+
+<!-- ===================== わかったこと ===================== -->
+<section id="learn">
+  <div class="wrap reveal">
+    <span class="kicker">2年でわかったこと</span>
+    <h2 class="sec">外の「知らないからこそ」×住民の「知っているからこそ」</h2>
+    <div class="three">
+      <div class="f"><div class="ic">🪟</div><h3>三重テラスは“窓”になる</h3><p>新鹿と東京をつなぐ拠点として、外の人に届け、声をもらう往復が成立しました。</p></div>
+      <div class="f"><div class="ic">👀</div><h3>VRで“知らない人”も提案できる</h3><p class="big">VR 19.6% ／ 2D 0%</p><p>新鹿を知らない人でも、VRで場所が分かると、地域に選ばれるアイデアを出せました。鍵は没入感より「場所が分かること」。</p></div>
+      <div class="f"><div class="ic">🤝</div><h3>選ぶのは、住民にしかできない</h3><p>外の視点が“驚き”を持ち込み、それが地域で“使えるか”を判断できるのは住民の皆さんだけ。この組み合わせが効きました。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== これから ===================== -->
+<section id="next">
+  <div class="wrap reveal">
+    <span class="kicker gold">新鹿へのご提案</span>
+    <h2 class="sec">情報と知恵が、内と外をめぐりつづける</h2>
+    <p class="lead">冒頭でお話しした「地域の力を、外とのつながりで補い合う」。これを、一回きりの取り組みで終わらせないことが、ひとつの鍵になります。外から刺激が届き、地域でそれを“題材”に考え、新しいかたちで発信し、また声が返ってくる。この輪が回りつづけるほど、情報と知恵が新鹿の内と外をめぐり、新鹿が進むべき方向と、その方法が、だんだん形になっていきます。</p>
+
+    <div class="cycle">
+      <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><marker id="ah" markerWidth="7" markerHeight="7" refX="3.4" refY="3.5" orient="auto"><path d="M0.5,0.5 L6.5,3.5 L0.5,6.5 Z" fill="#2e8bc0"/></marker></defs>
+        <path d="M157.98 42.02 A82 82 0 0 1 181.55 91.43" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
+        <path d="M157.98 157.98 A82 82 0 0 1 108.57 181.55" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
+        <path d="M42.02 157.98 A82 82 0 0 1 18.45 108.57" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
+        <path d="M42.02 42.02 A82 82 0 0 1 91.43 18.45" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
+        <path d="M108.57 18.45 A82 82 0 0 1 157.98 42.02" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
+        <path d="M181.55 108.57 A82 82 0 0 1 157.98 157.98" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
+        <path d="M91.43 181.55 A82 82 0 0 1 42.02 157.98" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
+        <path d="M18.45 91.43 A82 82 0 0 1 42.02 42.02" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
+      </svg>
+      <div class="cnode n1"><span class="cn">①</span><b>外から、刺激が届く</b><small>三重テラス等から、アイデア・視点・問いが入る</small></div>
+      <div class="cnode n2"><span class="cn">②</span><b>地域で、考える・選ぶ</b><small>住民が“題材”に判断<span class="ai">AI</span></small></div>
+      <div class="cnode n3"><span class="cn">③</span><b>新しく、発信する</b><small>表現そのものを刷新<span class="ai">AI</span></small></div>
+      <div class="cnode n4"><span class="cn">④</span><b>外から、また声が返る</b><small>新たな関心・アイデアが戻る</small></div>
+      <div class="chub">情報と知恵が<br>めぐりつづける</div>
+    </div>
+    <p class="muted" style="text-align:center;max-width:640px;margin:6px auto 0">この輪が回りつづけるほど、新鹿が進むべき方向と、そのための方法が、はっきりしていきます。</p>
+
+    <h3 style="margin-top:40px;color:var(--navy)">輪を回しつづけるために、できること</h3>
+    <div class="props">
+      <div class="p">
+        <h3>続ける“仕組み”をつくる</h3>
+        <ul>
+          <li>三重テラス等での放映＋意見収集を、単発で終わらせず常設・更新</li>
+          <li>タブレットでも十分な効果。手軽に運用できる</li>
+          <li>映像は住民の“推しスポット”で随時アップデート</li>
+          <li>このWebサイト自体を、新鹿の発信ハブに育てる</li>
+        </ul>
+      </div>
+      <div class="p">
+        <h3>集まった声を、次の一手へ</h3>
+        <ul>
+          <li>残った40件から「まず試すもの」を住民で選ぶ</li>
+          <li>農村に関心のある外の人・学生をターゲットに（第1弾の発見）</li>
+          <li>LINEオープンチャット等で“現地・対面”の窓口を保つ</li>
+          <li>来訪の“きっかけ”を用意し、関係人口の入口に</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="future">
+      <h3>AIで、“考える”と“見せる”を後押し <span class="badge">これからの構想</span></h3>
+      <p style="color:#dceaf3;margin:0">この輪のなかで、AIは2か所で力になります。集まった声を整理して住民の“たたき台”をつくる（②考える側）。そして、地域の見せ方そのものを新しくする（③見せる側）。たとえば——</p>
+      <div class="fcards">
+        <div class="fc"><b>AIで“歩ける”3D空間</b><p>360°映像や写真から、新鹿の集落・海岸をAIで3D空間化。スマホやブラウザで自由に歩き回れる体験へ。</p></div>
+        <div class="fc"><b>古い写真から、動く映像へ</b><p>昔の新鹿の写真をAIで動かし、「30年前の新鹿」を映像でよみがえらせる。古老の語りのアーカイブとも相性◎。</p></div>
+      </div>
+      <p style="color:#bcd6e6;font-size:13px;margin:14px 0 0">※ 住民評価でも「過去の姿をVRで」「古老の語りをアーカイブ」という声が出ていました。これらの構想は、その延長線上にあります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== footer ===================== -->
+<footer>
+  <div class="wrap">
+    <h3>ありがとうございました</h3>
+    <p>CMの撮影・出演、VRの撮影とナレーション、そしてアイデアの評価まで。この2年の取り組みは、すべて新鹿の皆さんのご協力があってのものでした。心より感謝申し上げます。</p>
+    <div class="cols">
+      <div>
+        <div class="links">
+          <strong style="color:#fff;display:block;margin-bottom:4px">関連リンク</strong>
+          <a href="https://www.youtube.com/@%E7%B4%80%E5%8D%97%E9%83%A8/playlists" target="_blank" rel="noopener">紀南部 YouTube（CM・動画）</a>
+          <a href="https://kinan-openfield.mie-u.ac.jp/tpoics/33055/" target="_blank" rel="noopener">三重大 紀南オープンフィールド</a>
+          <a href="https://mie-terrace.jp/" target="_blank" rel="noopener">三重テラス（東京・日本橋）</a>
+        </div>
+      </div>
+      <div>
+        <strong style="color:#fff;display:block;margin-bottom:4px">主催・共催</strong>
+        <p style="font-size:13px;margin:0"><strong style="color:#fff">新鹿みらいのまちづくり推進委員会</strong>／<strong style="color:#fff">京都大学</strong> 農村計画学研究室／<strong style="color:#fff">三重大学</strong> 紀南オープンフィールド構想によるみどりのアントレプレナー共創拠点（みえの未来図共創機構）</p>
+        <p style="font-size:13px;margin:10px 0 0">本取り組みは、<strong style="color:#fff">JST 共創の場形成支援プログラム</strong>（COI-NEXT）の支援を受けて実施しました。　課題番号：JPMJPF2305</p>
+      </div>
+    </div>
+    <p class="fine">この資料は、新鹿の皆さんへの報告と、今後の情報発信にお使いいただくことを想定して作成した試作版です。内容・数値は今後調整します。<br>制作協力：京都大学 農村計画学研究室（田内・鬼塚ほか）</p>
+  </div>
+</footer>
+
+<script>
+// (entrance animation is pure CSS — no JS needed)
+// idea filter
+(function(){
+  var fs=document.getElementById('filters'); if(!fs) return;
+  fs.addEventListener('click',function(ev){
+    var b=ev.target.closest('button'); if(!b) return;
+    fs.querySelectorAll('button').forEach(function(x){x.classList.remove('active')});
+    b.classList.add('active');
+    var f=b.dataset.f;
+    document.querySelectorAll('#ideas-grid .idea').forEach(function(c){
+      c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';
+    });
+  });
+})();
+// click-to-load YouTube (works inline when hosted; thumbnail + link fallback locally)
+document.querySelectorAll('.lite').forEach(function(l){
+  l.addEventListener('click',function(){
+    var id=l.dataset.id;
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+    f.title='新鹿CM';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.allowFullscreen=true;
+    l.innerHTML=''; l.appendChild(f); l.style.cursor='default';
+  });
+});
+// close mobile nav on link click
+document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open')})});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+(function(){
+  var el=document.getElementById('vrmap');
+  if(!el || typeof L==='undefined'){ if(el){el.innerHTML='<p style="padding:20px;color:#5f7180">地図の読み込みにはインターネット接続が必要です。</p>';} return; }
+  var spots=[
+    {n:'新鹿海水浴場', la:33.92859, lo:136.14729, id:'IHHVHh2KXCk'},
+    {n:'大仙寺', la:33.93045, lo:136.14257, id:'H9NJDi95Qxs'},
+    {n:'新鹿公民館', la:33.93082, lo:136.14488, id:'zgEs79Np1gg'},
+    {n:'弁天滝', la:33.92892, lo:136.12647, id:'OwbT8Pu50b0'},
+    {n:'熊野古道 伊勢路（大吹峠）', la:33.90499, lo:136.13158, id:'FNEy-hgIlAk'},
+    {n:'なべら（里川）', la:33.935050, lo:136.135359, id:'JoHc2EnM7og'}
+  ];
+  var map=L.map('vrmap',{scrollWheelZoom:false}).setView([33.923,136.138],13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+  var pts=[];
+  spots.forEach(function(s){
+    var m=L.marker([s.la,s.lo]).addTo(map);
+    m.bindPopup('<div class="vrpop"><b>'+s.n+'</b><br><a href="https://youtu.be/'+s.id+'" target="_blank" rel="noopener">▶ VRを見る</a></div>');
+    pts.push([s.la,s.lo]);
+  });
+  map.fitBounds(pts,{padding:[45,45]});
+})();
+</script>
+</body>
+</html>
