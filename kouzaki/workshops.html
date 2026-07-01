@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>村づくりワークショップの記録 ― 神前 × 京都大学</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="神前（こうざき）で毎年ひらかれている、京都大学の学生との村づくりワークショップ。2023年からの記録と、学生たちの提案をまとめます。">
+<style>
+:root{
+  --green:#35633c; --green2:#4a7d4f; --leaf:#7ca86a; --leaf-l:#a7c894;
+  --gold:#c8912f; --gold-l:#e2b45c; --clay:#c0693b;
+  --sand:#f6f0e2; --sand2:#ece1c9; --ink:#2c2a20; --muted:#6d6653;
+  --line:#e2d9c3; --card:#ffffff;
+  --maxw:1000px;
+  --font:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--sand);line-height:1.9;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict;font-size:16.5px}
+img{max-width:100%;display:block}
+a{color:var(--green2)}
+h1,h2,h3{line-height:1.45;font-weight:800}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+header.bar{position:sticky;top:0;z-index:50;background:rgba(53,99,60,.97);backdrop-filter:blur(6px);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12)}
+header.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+header.bar .logo{font-weight:800;font-size:15px;letter-spacing:.02em;color:#fff;text-decoration:none}
+header.bar nav{display:flex;gap:2px;flex-wrap:wrap}
+header.bar nav a{color:#e7f0e2;text-decoration:none;font-size:13.5px;padding:7px 11px;border-radius:8px;white-space:nowrap}
+header.bar nav a:hover{background:rgba(255,255,255,.14);color:#fff}
+header.bar nav a.cta{background:var(--gold);color:#fff;font-weight:700}
+
+/* compact hero */
+.hero{position:relative;color:#fff;text-align:center;padding:70px 20px 62px;text-shadow:0 1px 14px rgba(0,0,0,.5);
+  background:
+    linear-gradient(180deg, rgba(22,42,26,.62) 0%, rgba(28,52,32,.42) 50%, rgba(24,46,28,.72) 100%),
+    url('hero.jpg') center 46%/cover no-repeat,
+    linear-gradient(160deg,#5b8a4f,#2f5636);}
+.hero .eyebrow{letter-spacing:.28em;font-size:12px;color:#dceccf;margin:0 0 12px}
+.hero h1{font-size:clamp(24px,4.6vw,38px);margin:0}
+.hero p.sub{margin:14px auto 0;max-width:640px;color:#eef6e7;font-weight:600;font-size:clamp(14px,2.3vw,17px)}
+
+section{padding:56px 0}
+.kicker{display:inline-block;background:var(--green);color:#fff;font-size:12px;font-weight:800;padding:4px 13px;border-radius:999px;letter-spacing:.08em;margin-bottom:14px}
+.kicker.gold{background:var(--gold)}
+.kicker.clay{background:var(--clay)}
+h2.sec{font-size:clamp(21px,3.4vw,28px);margin:0 0 10px;color:var(--green)}
+.lead{font-size:16.5px;color:var(--ink);max-width:760px;margin:0 0 8px}
+.muted{color:var(--muted)}
+
+.intro{background:linear-gradient(180deg,#fbf7ec,#f6f0e2);text-align:center}
+.intro p{max-width:720px;margin:0 auto;font-size:clamp(15px,2.3vw,18px);line-height:2}
+
+/* year block */
+.year{border-top:3px solid var(--leaf-l);padding-top:8px}
+.year + .year{margin-top:20px}
+.yhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.yhead .y{font-size:clamp(30px,6vw,46px);font-weight:900;color:var(--green);line-height:1}
+.yhead .date{font-size:13px;color:var(--muted);font-weight:700}
+.ytitle{font-size:clamp(17px,2.6vw,21px);color:var(--ink);margin:2px 0 6px}
+.theme{display:inline-block;background:#f3f7ec;border:1px solid var(--leaf-l);color:var(--green);font-weight:700;font-size:13.5px;padding:6px 14px;border-radius:999px;margin:6px 0}
+
+/* photo strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.strip .ph{border:2px dashed var(--leaf);border-radius:12px;background:repeating-linear-gradient(135deg,#eef4e6 0 12px,#e7efdd 12px 24px);color:#5c7a52;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:700;min-height:110px;padding:10px}
+@media(max-width:720px){.strip{grid-template-columns:1fr 1fr}}
+
+/* group proposal cards */
+.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
+.groups .g{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 5px 16px rgba(53,99,60,.06);border-left:5px solid var(--green)}
+.groups .g .tag{font-size:12px;font-weight:800;color:var(--muted)}
+.groups .g h4{margin:4px 0 6px;font-size:16px;color:var(--green)}
+.groups .g p{margin:0;font-size:14px;color:var(--muted);line-height:1.8}
+@media(max-width:680px){.groups{grid-template-columns:1fr}}
+
+.flowline{margin:18px 0 0;font-size:13.5px;color:var(--muted);background:#faf6ec;border:1px solid var(--line);border-radius:12px;padding:14px 18px;line-height:1.9}
+.flowline b{color:var(--green)}
+
+/* CTA to report */
+.rcta{display:block;margin:20px 0 0;background:linear-gradient(160deg,#39663f,#2c5233);border-radius:16px;padding:22px 24px;text-decoration:none;color:#fff;box-shadow:0 8px 24px rgba(44,82,51,.25)}
+.rcta .t{font-size:clamp(16px,2.4vw,20px);font-weight:900}
+.rcta .d{font-size:13.5px;color:#dfeed7;margin-top:4px}
+.rcta .go{display:inline-block;margin-top:12px;background:#fff;color:var(--green);font-weight:800;font-size:14px;padding:9px 20px;border-radius:999px}
+
+footer{background:var(--green);color:#dceccf;text-align:center;padding:26px 20px;font-size:12.5px}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="index.html">神前 こうざき</a>
+    <nav>
+      <a href="index.html">トップ</a>
+      <a href="#y2023">2023</a>
+      <a href="#y2024">2024</a>
+      <a href="#y2025">2025</a>
+      <a class="cta" href="report.html">住民報告</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="eyebrow">神 前 　×　 京 都 大 学</p>
+  <h1>村づくりワークショップの記録</h1>
+  <p class="sub">毎年、学生たちが神前を訪れ、集落を歩き、村の未来を一緒に考えてきました。<br>その一日と、生まれた提案の記録です。</p>
+</div>
+
+<section class="intro">
+  <div class="wrap">
+    <p>京都大学の農学部では、村づくりを学ぶ授業の一環として、毎年ひと組の学生たちが神前を訪ねます。<br>
+    集落を歩いて隠れた魅力と課題を見つけ、一日かけて「こうすれば元気になるのでは」という提案をつくり、住民のみなさんに発表する——。<br>
+    地元の力添えがあってこそ続けてこられた、神前ならではの学びの場です。</p>
+  </div>
+</section>
+
+<!-- 2023 -->
+<section id="y2023">
+  <div class="wrap">
+    <span class="kicker">記録</span>
+    <div class="year">
+      <div class="yhead"><div class="y">2023</div><div class="date">2023年7月16日（日）／ 学部生・留学生 5班</div></div>
+      <div class="ytitle">VRで集落を記録する、新しい挑戦</div>
+      <span class="theme">テーマ：農業の後継者不足 ― 外から若い担い手を呼び込むには？</span>
+      <p class="lead">この年の目玉は<b style="color:var(--clay)">VR（バーチャルリアリティ）</b>。一部の班は集落を歩き、一部の班はVRで村を「探検」して、それぞれ提案づくりに挑みました。昼はチョロギ村レストランで地元の味も。</p>
+      <div class="strip">
+        <div class="ph">写真：集落ウォーキング</div>
+        <div class="ph">写真：VR体験の様子</div>
+        <div class="ph">写真：ワークショップ</div>
+        <div class="ph">写真：成果報告会</div>
+      </div>
+      <div class="groups">
+        <div class="g"><div class="tag">1班（ウォーキング・住民同席）</div><h4>こうざきへ おこしやす！</h4><p>京都・大阪に近い立地を生かし、「兼業」で移住・就農する若者を地域ぐるみで支える。SNSや就活サイトでの発信も提案。</p></div>
+        <div class="g"><div class="tag">2班（ウォーキング・学生のみ）</div><h4>神前に農業学校を</h4><p>若者が継続的に神前に通い、関わり続ける仕組みとして農業学校を提案。資金・生徒集め・定住の3点が鍵と整理。</p></div>
+        <div class="g"><div class="tag">3班（VR・住民同席）</div><h4>神前米インターン</h4><p>集落外の若者が「知る→体験する→移住する」の3段階で就農へ。Instagram発信、空き家を改修したシェアハウス、兼業での神前米づくりを組み合わせる。</p></div>
+        <div class="g"><div class="tag">4班（VR・学生のみ）</div><h4>“チョロギ”です！プログラム</h4><p>チョロギソフトなどの新商品と、農業＋グランピング等の体験施設で、まず神前を知ってもらい来訪者を増やす。企業との連携も視野に。</p></div>
+        <div class="g" style="border-left-color:var(--gold)"><div class="tag">5班（留学生チーム）</div><h4>外からの目で見た神前</h4><p>多国籍の留学生が、住民への聞き取り（子どもの祭り、兼業農家の暮らし、跡継ぎへの思い）をもとに、後継者問題を国際的な視点で議論。</p></div>
+      </div>
+      <div class="flowline">
+        <b>一日の流れ</b>　守る会のみなさんのごあいさつ → 地域からの情報提供（集落の概要と後継者問題）→ 集落ウォーキング／VR → チョロギ村レストランで昼食 → ワークショップ（一部の班に住民が同席）→ 成果報告会（住民のみなさんも参加）
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2024 -->
+<section id="y2024" style="background:#fff">
+  <div class="wrap">
+    <div class="year">
+      <div class="yhead"><div class="y">2024</div><div class="date">学生チーム 4班</div></div>
+      <div class="ytitle">魅力と課題を、あらためて掘り下げる</div>
+      <p class="lead">この年も学生チームが神前を訪れ、集落の資源を見つめ直して、地域を元気にするアイデアを各班が提案しました。</p>
+      <div class="strip">
+        <div class="ph">写真／成果スライド：1班</div>
+        <div class="ph">写真／成果スライド：2班</div>
+        <div class="ph">写真／成果スライド：3班</div>
+        <div class="ph">写真／成果スライド：4班</div>
+      </div>
+      <p class="muted" style="font-size:13.5px">※ 各班の提案内容は成果スライドが残っています。ここに要点を追記できます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2025 -->
+<section id="y2025">
+  <div class="wrap">
+    <div class="year" style="border-top-color:var(--clay)">
+      <div class="yhead"><div class="y">2025</div><div class="date">2025年7月／ 継続的な村づくりへ</div></div>
+      <div class="ytitle">「一過性で終わらせない」へ ― そして全戸アンケートへ</div>
+      <p class="lead">毎年のワークショップを「点」で終わらせず、「線」でつなごう——。この年は、大学が“伴走者”となって継続的に関わる新しい形を提案しました。その具体策が、スマホでも紙でも誰でも答えられる<b>匿名の意見収集</b>です。</p>
+      <p class="lead">秋から冬にかけて、この仕組みで<b>142軒すべての声</b>を集めました。集まった声と、4つのむらづくり案の受け止めは、住民のみなさんへの報告ページにまとめています。</p>
+      <a class="rcta" href="report.html">
+        <div class="t">みなさんの声から、これからの神前を考える</div>
+        <div class="d">2025年、142軒すべてを回って集めた声と、4つのむらづくり案の受け止め。</div>
+        <span class="go">住民報告ページを見る →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  村づくりワークショップの記録　／　<a href="index.html">神前トップへ</a>　·　<a href="report.html">住民報告へ</a><br>
+  ©2026 京都大学大学院地球環境学堂 鬼塚研究室 ・ 神前ふるさとを守る会
+</footer>
+
+</body>
+</html>
