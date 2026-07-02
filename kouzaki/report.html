@@ -1,361 +1,384 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>神前 みなさんの声から ― これからの村づくり報告</title>
+<meta name="description" content="2025年、神前（こうざき）で142軒すべてを回り、これからの村づくりを一緒に考えました。集まったみなさんの声と、4つの案の受け止めをそのままお返しします。">
 <link rel="icon" href="data:,">
-<meta name="description" content="2025年、神前（こうざき）で142軒すべてを回り、これからの村づくりを一緒に考えました。集まったみなさんの声と、4つの案の受け止めを、そのままお返しします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@400;500;700&family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --green:#35633c; --green2:#4a7d4f; --leaf:#7ca86a; --leaf-l:#a7c894;
-  --gold:#c8912f; --gold-l:#e2b45c; --clay:#c0693b;
-  --sand:#f6f0e2; --sand2:#ece1c9; --ink:#2c2a20; --muted:#6d6653;
-  --line:#e2d9c3; --card:#ffffff;
-  --maxw:1000px;
-  --font:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f5ee; }
+html { scroll-behavior: smooth; }
+img { max-width: 100%; }
+@media (max-width: 860px) {
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="columns:3"] { columns: 1 !important; }
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font);color:var(--ink);background:var(--sand);line-height:1.9;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict;font-size:16.5px}
-img{max-width:100%;display:block}
-a{color:var(--green2)}
-h1,h2,h3{line-height:1.45;font-weight:800}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-
-/* top bar */
-header.bar{position:sticky;top:0;z-index:50;background:rgba(53,99,60,.97);backdrop-filter:blur(6px);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12)}
-header.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-header.bar .logo{font-weight:800;font-size:15px;letter-spacing:.02em}
-header.bar nav{display:flex;gap:2px;flex-wrap:wrap}
-header.bar nav a{color:#e7f0e2;text-decoration:none;font-size:13.5px;padding:7px 11px;border-radius:8px;white-space:nowrap}
-header.bar nav a:hover{background:rgba(255,255,255,.14);color:#fff}
-
-/* hero */
-.hero{position:relative;color:#fff;text-align:center;padding:118px 20px 104px;text-shadow:0 1px 14px rgba(0,0,0,.55);
-  background:
-    linear-gradient(180deg, rgba(22,42,26,.58) 0%, rgba(28,52,32,.34) 42%, rgba(24,46,28,.72) 100%),
-    url('hero.jpg') center 46%/cover no-repeat,
-    linear-gradient(160deg,#5b8a4f 0%, #3d6a3f 55%, #2f5636 100%);
-  overflow:hidden}
-.hero>*{position:relative}
-.hero .eyebrow{letter-spacing:.3em;font-size:12px;color:#dceccf;margin:0 0 16px}
-.hero h1{font-size:clamp(27px,5.2vw,44px);margin:0 0 4px;text-shadow:0 2px 20px rgba(0,0,0,.5)}
-.hero .sub{font-size:clamp(15px,2.4vw,18px);color:#eef6e7;margin:16px auto 0;max-width:640px;font-weight:600}
-.hero .meta{margin-top:26px;font-size:13px;color:#cfe3c2}
-.hero .scroll{margin-top:30px;font-size:12px;color:#cfe3c2;letter-spacing:.2em}
-
-/* sections */
-section{padding:60px 0}
-section:nth-of-type(even){background:#fff}
-.kicker{display:inline-block;background:var(--green);color:#fff;font-size:12px;font-weight:800;padding:4px 13px;border-radius:999px;letter-spacing:.08em;margin-bottom:14px}
-.kicker.gold{background:var(--gold)}
-.kicker.clay{background:var(--clay)}
-h2.sec{font-size:clamp(22px,3.8vw,31px);margin:0 0 10px;color:var(--green)}
-.lead{font-size:17px;color:var(--ink);max-width:740px;margin:0 0 8px}
-.muted{color:var(--muted)}
-.center{text-align:center}
-
-/* intro band */
-.intro{background:linear-gradient(180deg,#fbf7ec,#f6f0e2)}
-.intro p{font-size:clamp(16px,2.4vw,19px);max-width:720px;margin:0 auto;text-align:center;line-height:2}
-
-/* flow steps (what we did) */
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px;counter-reset:s}
-.flow .st{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 16px;position:relative;text-align:center;box-shadow:0 5px 16px rgba(53,99,60,.06)}
-.flow .st .n{width:34px;height:34px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:15px}
-.flow .st b{display:block;font-size:14.5px;color:var(--green);margin-bottom:4px}
-.flow .st small{color:var(--muted);font-size:12.5px;line-height:1.7}
-@media(max-width:820px){.flow{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.flow{grid-template-columns:1fr}}
-
-/* big stat row */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.stats .s{background:linear-gradient(180deg,#fff,#f7f2e6);border:1px solid var(--line);border-radius:18px;padding:26px 18px;text-align:center;box-shadow:0 6px 20px rgba(53,99,60,.07)}
-.stats .s .big{font-size:clamp(34px,7vw,52px);font-weight:900;color:var(--green);line-height:1}
-.stats .s .cap{margin-top:10px;font-size:14px;color:var(--ink);font-weight:700}
-.stats .s .sub{font-size:12.5px;color:var(--muted);margin-top:4px}
-@media(max-width:720px){.stats{grid-template-columns:1fr}}
-
-.callout{margin:26px auto 0;max-width:760px;background:#f3f7ec;border:1px solid var(--leaf-l);border-left:6px solid var(--green);border-radius:12px;padding:18px 22px;font-size:15.5px}
-.callout b{color:var(--green)}
-
-/* voice cards */
-.voices{columns:2;column-gap:18px;margin-top:30px}
-.voices .v{break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 18px;box-shadow:0 5px 16px rgba(53,99,60,.06);position:relative}
-.voices .v::before{content:"\201C";position:absolute;top:2px;left:12px;font-size:44px;color:var(--leaf-l);font-family:Georgia,serif;line-height:1}
-.voices .v p{margin:14px 0 0;font-size:15px;line-height:1.85}
-.voices .v .who{margin-top:10px;font-size:12px;color:var(--muted);text-align:right}
-@media(max-width:680px){.voices{columns:1}}
-
-/* theme chips */
-.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
-.themes .t{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 5px 16px rgba(53,99,60,.06)}
-.themes .t .ic{font-size:26px}
-.themes .t b{display:block;color:var(--green);margin:8px 0 6px;font-size:16px}
-.themes .t small{color:var(--muted);font-size:13px;line-height:1.75;display:block}
-@media(max-width:760px){.themes{grid-template-columns:1fr}}
-
-/* 4 plans grid (2x2 with axes) */
-.axeswrap{margin-top:26px}
-.axis-note{text-align:center;font-size:13px;color:var(--muted);margin-bottom:10px}
-.grid4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 6px 20px rgba(53,99,60,.07);border-top:6px solid var(--green)}
-.plan.p1{border-top-color:var(--clay)}
-.plan.p2{border-top-color:var(--gold)}
-.plan.p3{border-top-color:var(--green)}
-.plan.p4{border-top-color:var(--leaf)}
-.plan .tag{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:.04em}
-.plan h3{margin:6px 0 6px;font-size:18px;color:var(--ink)}
-.plan .one{font-size:14px;color:var(--ink);margin:0 0 12px}
-.plan ul{margin:0 0 14px;padding-left:1.1em}
-.plan ul li{font-size:13.5px;color:var(--muted);margin:3px 0}
-.plan .react{border-top:1px dashed var(--line);padding-top:12px;font-size:13px}
-.plan .react .good{color:var(--green);font-weight:700}
-.plan .react .worry{color:var(--clay);font-weight:700}
-.plan .pick{display:inline-block;margin-top:10px;background:#f3f7ec;color:var(--green);font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px}
-@media(max-width:680px){.grid4{grid-template-columns:1fr}}
-
-/* ranking bars */
-.bars{margin:30px auto 0;max-width:640px;display:grid;gap:12px}
-.bars .row{display:grid;grid-template-columns:132px 1fr 40px;align-items:center;gap:12px;font-size:14px}
-.bars .row .name{color:var(--ink);font-weight:700;text-align:right;line-height:1.35}
-.bars .row .track{background:#ece3d0;border-radius:9px;height:26px;overflow:hidden}
-.bars .row .fill{height:100%;border-radius:9px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-weight:800;font-size:12px}
-.bars .row .num{color:var(--muted);font-weight:800;text-align:left}
-.f1{background:linear-gradient(90deg,#d98a5e,var(--clay))}
-.f2{background:linear-gradient(90deg,var(--gold-l),var(--gold))}
-.f3{background:linear-gradient(90deg,var(--leaf),var(--green))}
-.f4{background:linear-gradient(90deg,#bcd3ac,var(--leaf))}
-.barcap{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px}
-
-/* surprise / gap band */
-.gap{background:linear-gradient(160deg,#39663f,#2c5233);color:#fff}
-.gap h2.sec{color:#fff}
-.gap .lead{color:#eaf3e3}
-.gap .big2{font-size:clamp(20px,3.4vw,27px);font-weight:800;max-width:760px;margin:18px auto 0;text-align:center;line-height:1.7}
-.gap .big2 em{color:var(--gold-l);font-style:normal}
-.gap .mini{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:28px auto 0}
-.gap .mini .m{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px 20px;font-size:14px}
-.gap .mini .m b{color:var(--gold-l)}
-@media(max-width:640px){.gap .mini{grid-template-columns:1fr}}
-
-/* closing */
-.closing{background:linear-gradient(180deg,#fbf7ec,#f2ead8);text-align:center}
-.closing .msg{max-width:680px;margin:0 auto;font-size:clamp(16px,2.5vw,19px);line-height:2.05}
-.closing .thanks{margin-top:24px;font-size:clamp(20px,4vw,28px);font-weight:900;color:var(--green)}
-.credit{margin-top:30px;font-size:13px;color:var(--muted);line-height:1.9}
-.credit b{color:var(--ink)}
-
-footer{background:var(--green);color:#dceccf;text-align:center;padding:26px 20px;font-size:12.5px}
-
-/* print (A4 for 回覧) */
-@media print{
-  header.bar,.hero .scroll{display:none}
-  body{background:#fff;font-size:11pt}
-  section{padding:16px 0;break-inside:avoid}
-  .hero{padding:40px 20px;color:#12331a;text-shadow:none;background:#eef4e8}
-  .hero .eyebrow,.hero .sub,.hero .meta{color:#3a5a3c}
-  .hero h1{color:#28502c}
-  .voices{columns:2}
-  .plan,.stats .s,.themes .t,.flow .st{box-shadow:none}
-  .gap{background:#eef4e8;color:#12331a}
-  .gap h2.sec,.gap .lead,.gap .big2{color:#1e3a24}
-  .gap .big2 em{color:var(--clay)}
-  a{color:inherit;text-decoration:none}
+@media (max-width: 720px) {
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:180px 1fr"] { grid-template-columns: 1fr !important; gap: 8px !important; }
+  [style*="grid-template-columns:170px 1fr 64px"] { grid-template-columns: 96px 1fr 48px !important; gap: 10px !important; }
+  h1[style*=" 92px/1 "] { font-size: 58px !important; }
+  h1[style*=" 56px/1.6 "] { font-size: 32px !important; }
+  h2[style*=" 36px/1.4 "] { font-size: 25px !important; }
+  h2[style*=" 42px/1.5 "] { font-size: 29px !important; }
+  h2[style*=" 34px/1.4 "] { font-size: 24px !important; }
+  h2[style*=" 30px/1.5 "] { font-size: 23px !important; }
+  [style*=" 64px/1 "] { font-size: 46px !important; }
+  p[style*=" 21px/2.3 "] { font-size: 17px !important; }
+  p[style*=" 19px/2.4 "] { font-size: 16px !important; }
+  p[style*=" 20px/2.5 "] { font-size: 17px !important; }
+  p[style*=" 30px/2 "] { font-size: 21px !important; }
+  [style*="padding:110px 32px 90px"] { padding: 64px 20px 56px !important; }
+  [style*="padding:100px 32px 100px"] { padding: 56px 20px 40px !important; }
+  [style*="padding:96px 32px"] { padding: 56px 20px !important; }
+  [style*="padding:88px 32px"] { padding: 52px 20px !important; }
+  [style*="padding:120px 32px"] { padding: 64px 20px !important; }
+  [style*="padding:72px 32px"] { padding: 44px 20px !important; }
+  [style*="padding:22px 32px"] { padding: 14px 16px !important; }
+  [style*="min-height:620px"] { min-height: 300px !important; }
+  [style*="min-height:360px"] { min-height: 240px !important; }
+  [style*="min-height:340px"] { min-height: 220px !important; }
+  nav-links, [data-navlinks] { }
+  [style*="gap:32px;font:400 13px/1"] { gap: 12px !important; flex-wrap: wrap !important; justify-content: flex-end !important; row-gap: 8px !important; }
+  [style*="justify-content:flex-end;flex-wrap:wrap"] { justify-content: flex-start !important; }
+  [style*="padding:40px 36px"] { padding: 26px 22px !important; }
+  [style*="padding:36px 40px"] { padding: 24px 22px !important; }
+  [style*="padding:32px 26px"] { padding: 24px 20px !important; }
+  div[style*="padding:36px;"] { padding: 24px 20px !important; }
 }
 </style>
 </head>
 <body>
+<div style="background:#f6f5ee;color:#3a4030;font-family:'Zen Kaku Gothic New',sans-serif;min-height:100vh;">
 
-<header class="bar">
-  <div class="wrap">
-    <a class="logo" href="index.html" style="color:#fff;text-decoration:none">神前 むらづくり報告</a>
-    <nav>
-      <a href="#did">やったこと</a>
-      <a href="#voices">みなさんの声</a>
-      <a href="#plans">4つの案</a>
-      <a href="#gap">見えたこと</a>
-      <a href="index.html">← 神前について</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO : swap the placeholder for a photo later by adding
-     url('hero.jpg') center/cover to .hero background -->
-<div class="hero">
-  <p class="eyebrow">京都大学 　×　 神前（こうざき）</p>
-  <h1>みなさんの声から、<br>これからの神前を考える</h1>
-  <p class="sub">2025年、142軒すべてを回って、いっしょに村の未来を考えました。<br>集まった声を、そのままお返しします。</p>
-  <p class="meta">神前ふるさとを守る会　／　京都大学大学院地球環境学堂　鬼塚研究室</p>
-  <p class="scroll">▽ 下へ</p>
-</div>
-
-<!-- INTRO -->
-<section class="intro">
-  <div class="wrap">
-    <p>「このままでええんやろか」——多くの集落が、口には出しにくいこの問いを抱えています。<br>
-    2025年の秋から冬にかけて、神前でも、これからの村づくりについてみなさんに聞きました。<br>
-    <b>いつもの寄り合いに来る人だけでなく、一軒一軒すべてに声をかけた</b>のが、今回のいちばんの違いです。</p>
-  </div>
-</section>
-
-<!-- WHAT WE DID -->
-<section id="did">
-  <div class="wrap">
-    <span class="kicker">この取り組みでやったこと</span>
-    <h2 class="sec">4つのステップで、声を集めました</h2>
-    <p class="lead">むずかしい話ではありません。案を用意して、全戸に届けて、みなさんの評価をもらい、それを持ち寄って話し合った——その流れです。案づくりには、近ごろ話題のAIにも手伝ってもらいました。</p>
-    <div class="flow">
-      <div class="st"><div class="n">1</div><b>案をつくる</b><small>20年分の地域の記録をAIが整理し、方向性のちがう「4つの案」を用意</small></div>
-      <div class="st"><div class="n">2</div><b>142軒を訪ねる</b><small>世話役8人と手分けして全戸を訪問。案を説明し、スマホの使い方もお手伝い</small></div>
-      <div class="st"><div class="n">3</div><b>匿名で答える</b><small>4つの案を「新しさ・実現しやすさ・役立ち度」で採点＋自由に記入。紙でもスマホでも</small></div>
-      <div class="st"><div class="n">4</div><b>声を持ち寄る</b><small>集まった声をまとめ、世話役で「どう受け止めるか」を話し合った</small></div>
-    </div>
-  </div>
-</section>
-
-<!-- VOICES : the heart -->
-<section id="voices">
-  <div class="wrap">
-    <span class="kicker gold">みなさんの声</span>
-    <h2 class="sec">まず、どれだけの声が集まったか</h2>
-    <p class="lead">いつもの寄り合いに顔を出すのは、だいたい1〜2割の家。今回は——</p>
-    <div class="stats">
-      <div class="s"><div class="big">83<span style="font-size:.45em">軒</span></div><div class="cap">142軒のうち、回答があった家</div><div class="sub">約6割。いつもの寄り合いの3倍以上</div></div>
-      <div class="s"><div class="big">2<span style="font-size:.45em">/3</span></div><div class="cap">スマホで答えた人の、3人に2人が60歳以上</div><div class="sub">「高齢だからスマホは無理」ではなかった</div></div>
-      <div class="s"><div class="big">匿名</div><div class="cap">名前を書かないから、本音が出た</div><div class="sub">紙17軒・スマホ66軒。どちらでもOKに</div></div>
-    </div>
-    <div class="callout">世話役中心の集まりでは、なかなか出てこない声があります。今回いちばん大事にしたのは、<b>その「ふだん言えない本音」を、匿名で安心して出してもらう</b>ことでした。だから、うれしい声も、耳の痛い声も、そのまま載せます。</div>
-
-    <h2 class="sec" style="margin-top:48px">寄せられた、生の声</h2>
-    <p class="lead muted">自由記入欄から。すべて匿名で、どなたの声かは分からない形にしています。</p>
-    <div class="voices">
-      <div class="v"><p>今まで新しい取り組みをしてきたが、事業が重荷になっている現実がある。でも、住民どうしの助け合いは大切だと思う。</p></div>
-      <div class="v"><p>若い人がやりたいようにすればよい。</p></div>
-      <div class="v"><p>これから先の神前を支えていく若い人の意見を、主体的に尊重すべき。ただ、若い人が少ないので……。</p></div>
-      <div class="v"><p>子育て世代として、子どもの居場所や遊び場が少ないと感じる。地域で子どもを守るしくみができれば、若い人も定住しやすいと思う。</p></div>
-      <div class="v"><p>案は良いが、高齢化で難しい。外からの若い人の協力がいる。</p></div>
-      <div class="v"><p>里山の山ぎわの田畑を再生して、獣害の少ない地区をつくれれば、新しい人も興味を持ってくれるかもしれない。</p></div>
-      <div class="v"><p>100人いれば100人、考え方は違う。今回をきっかけに、何回か続けて実施することが大事だと思う。</p></div>
-      <div class="v"><p>いろいろ考えてくださって、ありがとうございます。やはり地域だけでなく、外からの手助けがないと、現状維持もできないと思います。</p></div>
-      <div class="v"><p>今まで、神前のことに無関心すぎました。</p></div>
-    </div>
-    <p style="text-align:center;margin-top:26px"><a href="voices.html" style="display:inline-block;background:var(--gold);color:#fff;font-weight:800;font-size:14.5px;padding:11px 26px;border-radius:999px;text-decoration:none">4つの案に寄せられた声のすべてを見る（全536件） →</a></p>
-
-    <h2 class="sec" style="margin-top:44px">声から見えてきた、3つの本音</h2>
-    <div class="themes">
-      <div class="t"><div class="ic">🌾</div><b>「頑張るのに、少し疲れた」</b><small>これまでの取り組みが重荷になっている、という声が多くありました。それでも「助け合いは大切に」という思いは、みなさんに共通しています。</small></div>
-      <div class="t"><div class="ic">🌱</div><b>やってみたい、でも続くか不安</b><small>新しい挑戦への期待と、「自分たちについていけるか」という不安が、同じ人の中に同居しています。だからこそ、無理のない形が大事。</small></div>
-      <div class="t"><div class="ic">🧒</div><b>子どもと、若い世代の居場所</b><small>若い世代からは、子どもの遊び場や居場所が少ないという声が。定住のカギは、農業だけの話ではないのかもしれません。</small></div>
-    </div>
-  </div>
-</section>
-
-<!-- 4 PLANS + reactions -->
-<section id="plans">
-  <div class="wrap">
-    <span class="kicker">結果 ①</span>
-    <h2 class="sec">4つの案と、その受け止め</h2>
-    <p class="lead">案は「攻め／守り」×「外の力を借りる／今のメンバーで」の掛け合わせで4つ。それぞれに、いいねの声と、心配の声が集まりました。</p>
-    <div class="axeswrap">
-      <p class="axis-note">↑ 攻め（新しく動く）　　｜　　↓ 守り（今あるものを大切に）　　／　　← 今のメンバーで　　外の力を借りる →</p>
-      <div class="grid4">
-        <div class="plan p1">
-          <div class="tag">攻め × 外の力</div>
-          <h3>案1　若者と挑戦！ビジネスで稼ぐむらづくり</h3>
-          <p class="one">若い世代や新しいアイデアを迎え、神前米などを活かした加工・販売・観光で稼ぐ。</p>
-          <ul><li>お米を使ったお菓子や地酒の共同開発</li><li>古民家を改修してカフェ・直売所</li><li>ネット通販で全国にファンを</li></ul>
-          <div class="react">
-            <span class="good">いいね</span>　新しさは4案でいちばん。「方向がはっきりして力強い」<br>
-            <span class="worry">心配</span>　「引っ張るリーダーがいない」「本当に商売にできるのか」
-          </div>
-          <span class="pick">一番に選んだ人：20人</span>
-        </div>
-        <div class="plan p2">
-          <div class="tag">守り × 外の力</div>
-          <h3>案2　外からの応援で守る！支えあうむらづくり</h3>
-          <p class="one">静かな暮らしや景観は守りつつ、週末だけ手伝う「関係人口」の力を借りる。</p>
-          <ul><li>週末の農作業ボランティア募集</li><li>田植え・稲刈りの体験受け入れ</li><li>空き家を短期滞在に貸し出す</li></ul>
-          <div class="react">
-            <span class="good">いいね</span>　「やさしい雰囲気で安心感がある」「手伝ってもらえるのは助かる」<br>
-            <span class="worry">心配</span>　「週末だけの人に頼りきれるか」「受け入れる側の負担も」
-          </div>
-          <span class="pick">一番に選んだ人：7人</span>
-        </div>
-        <div class="plan p3">
-          <div class="tag">攻め × 今のメンバーで</div>
-          <h3>案3　今の力で効率化！賢く楽するむらづくり</h3>
-          <p class="one">ドローンやアプリ、共同化で作業を軽くし、今の顔ぶれのまま無理なく続ける。</p>
-          <ul><li>ドローンで農薬散布・ラジコン草刈り</li><li>予約制でトラクターを共同利用</li><li>水路・農道の管理を地図アプリで見える化</li></ul>
-          <div class="react">
-            <span class="good">いいね</span>　「具体的で想像しやすい」「今のメンバーでできるのが安心」<br>
-            <span class="worry">心配</span>　「機械が高い」「ちゃんと使いこなせるか」
-          </div>
-          <span class="pick">一番に選んだ人：20人 ・ 総合で最多支持</span>
-        </div>
-        <div class="plan p4">
-          <div class="tag">守り × 今のメンバーで</div>
-          <h3>案4　地域の宝を未来へ！大切に受け継ぐむらづくり</h3>
-          <p class="one">全部は抱えず、守るべき場所（棚田・神社など）を絞って、確実に次の世代へ。</p>
-          <ul><li>景観の美しい場所を優先して草刈り</li><li>お祭り・伝統行事を若い世代に伝える</li><li>買い物・見守りなど、ちょっとした助け合い</li></ul>
-          <div class="react">
-            <span class="good">いいね</span>　「いちばん現実的」「世代交代がスムーズ」<br>
-            <span class="worry">心配</span>　「守りに寄りすぎ」「これだけでは先細り」
-          </div>
-          <span class="pick">一番に選んだ人：12人</span>
-        </div>
+  <!-- ================= nav ================= -->
+  <div style="position:sticky;top:0;z-index:20;background:rgba(246,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px 32px;">
+      <a href="#top" style="display:flex;align-items:baseline;gap:14px;text-decoration:none;">
+        <span style="font:700 22px/1 'Zen Old Mincho',serif;color:#31402a;letter-spacing:.14em;">神前</span>
+        <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;">むらづくり報告</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:32px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
+        <a href="#did" style="color:#5b6152;text-decoration:none;">やったこと</a>
+        <a href="#voices" style="color:#5b6152;text-decoration:none;">みなさんの声</a>
+        <a href="#plans" style="color:#5b6152;text-decoration:none;">4つの案</a>
+        <a href="#gap" style="color:#5b6152;text-decoration:none;">見えたこと</a>
+        <a href="index.html" style="color:#31402a;text-decoration:none;border-bottom:2px solid #31402a;padding-bottom:4px;">← 神前について</a>
       </div>
     </div>
-
-    <h2 class="sec" style="margin-top:46px">一番に選ばれた案は？</h2>
-    <div class="bars">
-      <div class="row"><div class="name">案3　賢く楽する</div><div class="track"><div class="fill f3" style="width:100%">20人</div></div><div class="num">1位</div></div>
-      <div class="row"><div class="name">案1　ビジネス</div><div class="track"><div class="fill f1" style="width:100%">20人</div></div><div class="num">同</div></div>
-      <div class="row"><div class="name">案4　受け継ぐ</div><div class="track"><div class="fill f4" style="width:60%">12人</div></div><div class="num">3位</div></div>
-      <div class="row"><div class="name">案2　応援で守る</div><div class="track"><div class="fill f2" style="width:35%">7人</div></div><div class="num">4位</div></div>
-    </div>
-    <p class="barcap">住民のみなさん59人が「一番」に選んだ数。<b>「今のメンバーで賢く続ける案3」</b>と<b>「思いきって挑戦する案1」</b>が、ならんで一番人気でした。<br>案1は“新しさ”は堂々の1位、ただ“実現しやすさ”では不安の声も。案4は“いちばん現実的”だけど票は少なめ——正直な結果です。</p>
   </div>
-</section>
 
-<!-- THE SURPRISE : residents vs leaders -->
-<section id="gap" class="gap">
-  <div class="wrap center">
-    <span class="kicker clay">結果 ②　いちばん大事な発見</span>
-    <h2 class="sec">住民のみなさんは、思っていたより前向きでした</h2>
-    <p class="lead" style="max-width:760px;margin-left:auto;margin-right:auto">世話役のみなさんの多くは、「住民はもう新しいことを望んでいないだろう」と感じていました。ところが、匿名で聞いてみると——</p>
-    <p class="big2">住民は、世話役が思うよりずっと <em>「新しい挑戦（案1・案3）」に前向き</em> だった。</p>
-    <div class="mini">
-      <div class="m"><b>世話役 7人は</b><br>4人が案4「受け継ぐ」を一番に。慎重で、守りの姿勢が中心でした。</div>
-      <div class="m"><b>住民のみなさんは</b><br>案1・案3を、世話役よりはっきり高く評価。「やってみたい」という気持ちが、数字に出ました。</div>
-    </div>
-    <p class="lead" style="max-width:760px;margin:26px auto 0">面と向かっては言いにくいこの気持ちが、匿名だからこそ見えてきました。「実現できるか」の見立ては両者ほぼ同じ。ちがったのは、<b style="color:var(--gold-l)">新しさにどれだけ価値を感じるか</b>だけ。ここが、これから話し合う出発点になります。</p>
-  </div>
-</section>
-
-<!-- CLOSING -->
-<section class="closing">
-  <div class="wrap">
-    <span class="kicker">おわりに</span>
-    <div class="msg">
-      答えが一つに決まったわけではありません。<br>
-      でも、みなさんが<b>何を大切にしていて、何に困っているか</b>が、<br>
-      数字とことばで、はっきり見えてきました。<br>
-      うれしい声も、耳の痛い声も、これからの神前を考える大切な土台です。
-    </div>
-    <div class="thanks">声を寄せてくださって、<br>ありがとうございました。</div>
-    <div class="credit">
-      <b>神前ふるさとを守る会</b>　×　<b>京都大学大学院地球環境学堂　鬼塚研究室</b><br>
-      調査期間：2025年9〜12月　／　神前（こうざき）＝京都府亀岡市宮前町　上段川地区
+  <!-- ================= hero ================= -->
+  <div id="top" style="border-bottom:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:110px 32px 90px;text-align:center;">
+      <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:#94997f;margin-bottom:36px;">京都大学 × 神前（こうざき）</div>
+      <h1 style="margin:0 auto;max-width:820px;font:600 56px/1.6 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.08em;text-wrap:balance;">みなさんの声から、<br>これからの神前を考える</h1>
+      <div style="width:56px;height:1px;background:#a7ac90;margin:44px auto;"></div>
+      <p style="margin:0 auto;max-width:560px;font:400 17px/2.2 'Shippori Mincho B1',serif;color:#454b3d;">2025年、142軒すべてを回って、いっしょに村の未来を考えました。集まった声を、そのままお返しします。</p>
+      <div style="margin-top:44px;font:400 13px/1.8 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">神前ふるさとを守る会 ／ 京都大学大学院地球環境学堂 鬼塚研究室</div>
     </div>
   </div>
-</section>
 
-<footer>
-  この報告は、神前の住民のみなさんへ向けてまとめたものです。　©2026 京都大学 鬼塚研究室
-</footer>
+  <!-- ================= lead ================= -->
+  <div style="border-bottom:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:72px 32px;">
+      <p style="margin:0 auto;max-width:760px;text-align:center;font:400 19px/2.4 'Shippori Mincho B1',serif;color:#3a4030;text-wrap:pretty;">「このままでええんやろか」——多くの集落が、口には出しにくいこの問いを抱えています。2025年の秋から冬にかけて、神前でも、これからの村づくりについてみなさんに聞きました。<strong style="font-weight:700;color:#2b3624;">いつもの寄り合いに来る人だけでなく、一軒一軒すべてに声をかけた</strong>のが、今回のいちばんの違いです。</p>
+    </div>
+  </div>
 
+  <!-- ================= やったこと ================= -->
+  <div id="did" style="max-width:1200px;margin:0 auto;padding:96px 32px;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+      <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">4つのステップで、声を集めました</h2>
+      <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">01 — STEPS</span>
+    </div>
+    <p style="margin:0 0 56px;max-width:720px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">むずかしい話ではありません。案を用意して、全戸に届けて、みなさんの評価をもらい、それを持ち寄って話し合った——その流れです。案づくりには、近ごろ話題のAIにも手伝ってもらいました。</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+      <div style="border-top:1px solid #a7ac90;padding-top:24px;">
+        <div style="font:600 40px/1 'Zen Old Mincho',serif;color:#a7ac90;margin-bottom:18px;">一</div>
+        <h3 style="margin:0 0 10px;font:600 19px/1.5 'Zen Old Mincho',serif;color:#31402a;">案をつくる</h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">20年分の地域の記録をAIが整理し、方向性のちがう「4つの案」を用意。</p>
+      </div>
+      <div style="border-top:1px solid #a7ac90;padding-top:24px;">
+        <div style="font:600 40px/1 'Zen Old Mincho',serif;color:#a7ac90;margin-bottom:18px;">二</div>
+        <h3 style="margin:0 0 10px;font:600 19px/1.5 'Zen Old Mincho',serif;color:#31402a;">142軒を訪ねる</h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">世話役8人と手分けして全戸を訪問。案を説明し、スマホの使い方もお手伝い。</p>
+      </div>
+      <div style="border-top:1px solid #a7ac90;padding-top:24px;">
+        <div style="font:600 40px/1 'Zen Old Mincho',serif;color:#a7ac90;margin-bottom:18px;">三</div>
+        <h3 style="margin:0 0 10px;font:600 19px/1.5 'Zen Old Mincho',serif;color:#31402a;">匿名で答える</h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">4つの案を「新しさ・実現しやすさ・役立ち度」で採点＋自由に記入。紙でもスマホでも。</p>
+      </div>
+      <div style="border-top:1px solid #a7ac90;padding-top:24px;">
+        <div style="font:600 40px/1 'Zen Old Mincho',serif;color:#a7ac90;margin-bottom:18px;">四</div>
+        <h3 style="margin:0 0 10px;font:600 19px/1.5 'Zen Old Mincho',serif;color:#31402a;">声を持ち寄る</h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">集まった声をまとめ、世話役で「どう受け止めるか」を話し合った。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= みなさんの声：数字 ================= -->
+  <div id="voices" style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">まず、どれだけの声が集まったか</h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">02 — VOICES</span>
+      </div>
+      <p style="margin:0 0 56px;max-width:640px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">いつもの寄り合いに顔を出すのは、だいたい1〜2割の家。今回は——</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0d4;border:1px solid #e0e0d4;">
+        <div style="background:#f6f5ee;padding:40px 36px;">
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">83<span style="font-size:28px;letter-spacing:.06em;">軒</span></div>
+          <div style="margin-top:16px;font:500 15px/1.7 'Zen Kaku Gothic New',sans-serif;color:#31402a;">142軒のうち、回答があった家</div>
+          <div style="margin-top:8px;font:400 13px/1.8 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">約6割。いつもの寄り合いの3倍以上</div>
+        </div>
+        <div style="background:#f6f5ee;padding:40px 36px;">
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2/3</div>
+          <div style="margin-top:16px;font:500 15px/1.7 'Zen Kaku Gothic New',sans-serif;color:#31402a;">スマホで答えた人の、3人に2人が60歳以上</div>
+          <div style="margin-top:8px;font:400 13px/1.8 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">「高齢だからスマホは無理」ではなかった</div>
+        </div>
+        <div style="background:#f6f5ee;padding:40px 36px;">
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">匿名</div>
+          <div style="margin-top:16px;font:500 15px/1.7 'Zen Kaku Gothic New',sans-serif;color:#31402a;">名前を書かないから、本音が出た</div>
+          <div style="margin-top:8px;font:400 13px/1.8 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">紙17軒・スマホ66軒。どちらでもOKに</div>
+        </div>
+      </div>
+
+      <p style="margin:48px auto 0;max-width:720px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#3a4030;">世話役中心の集まりでは、なかなか出てこない声があります。今回いちばん大事にしたのは、その<strong style="font-weight:700;color:#2b3624;">「ふだん言えない本音」を、匿名で安心して出してもらう</strong>ことでした。だから、うれしい声も、耳の痛い声も、そのまま載せます。</p>
+    </div>
+  </div>
+
+  <!-- ================= 生の声（深緑バンド） ================= -->
+  <div style="background:#2b3624;color:#eceadd;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <h2 style="margin:0 0 12px;font:600 34px/1.4 'Zen Old Mincho',serif;letter-spacing:.06em;">寄せられた、生の声</h2>
+      <p style="margin:0 0 48px;font:400 14px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">自由記入欄から。すべて匿名で、どなたの声かは分からない形にしています。</p>
+      <div style="columns:3;column-gap:28px;">
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">今まで新しい取り組みをしてきたが、事業が重荷になっている現実がある。でも、住民どうしの助け合いは大切だと思う。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">若い人がやりたいようにすればよい。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">これから先の神前を支えていく若い人の意見を、主体的に尊重すべき。ただ、若い人が少ないので……。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">子育て世代として、子どもの居場所や遊び場が少ないと感じる。地域で子どもを守るしくみができれば、若い人も定住しやすいと思う。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">案は良いが、高齢化で難しい。外からの若い人の協力がいる。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">里山の山ぎわの田畑を再生して、獣害の少ない地区をつくれれば、新しい人も興味を持ってくれるかもしれない。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">100人いれば100人、考え方は違う。今回をきっかけに、何回か続けて実施することが大事だと思う。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">いろいろ考えてくださって、ありがとうございます。やはり地域だけでなく、外からの手助けがないと、現状維持もできないと思います。</p>
+        </div>
+        <div style="break-inside:avoid;border:1px solid rgba(255,255,255,.16);padding:26px 26px 22px;margin-bottom:28px;">
+          <p style="margin:0;font:400 15px/2.1 'Shippori Mincho B1',serif;color:#dfe3ce;">今まで、神前のことに無関心すぎました。</p>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="voices.html" style="font:500 14px/1 'Zen Kaku Gothic New',sans-serif;color:#eceadd;text-decoration:none;border-bottom:1px solid #8a9575;padding-bottom:6px;letter-spacing:.06em;">4つの案に寄せられた声のすべてを見る（全536件） →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 3つの本音 ================= -->
+  <div style="max-width:1200px;margin:0 auto;padding:96px 32px;">
+    <h2 style="margin:0 0 56px;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">声から見えてきた、3つの本音</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;">
+      <div style="border-top:1px solid #a7ac90;padding-top:24px;">
+        <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:14px;">本音 一</div>
+        <h3 style="margin:0 0 12px;font:600 21px/1.6 'Zen Old Mincho',serif;color:#31402a;">「頑張るのに、少し疲れた」</h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">これまでの取り組みが重荷になっている、という声が多くありました。それでも「助け合いは大切に」という思いは、みなさんに共通しています。</p>
+      </div>
+      <div style="border-top:1px solid #a7ac90;padding-top:24px;">
+        <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:14px;">本音 二</div>
+        <h3 style="margin:0 0 12px;font:600 21px/1.6 'Zen Old Mincho',serif;color:#31402a;">やってみたい、でも続くか不安</h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">新しい挑戦への期待と、「自分たちについていけるか」という不安が、同じ人の中に同居しています。だからこそ、無理のない形が大事。</p>
+      </div>
+      <div style="border-top:1px solid #a7ac90;padding-top:24px;">
+        <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:14px;">本音 三</div>
+        <h3 style="margin:0 0 12px;font:600 21px/1.6 'Zen Old Mincho',serif;color:#31402a;">子どもと、若い世代の居場所</h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">若い世代からは、子どもの遊び場や居場所が少ないという声が。定住のカギは、農業だけの話ではないのかもしれません。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 4つの案 ================= -->
+  <div id="plans" style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">4つの案と、その受け止め</h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">03 — PLANS</span>
+      </div>
+      <p style="margin:0 0 20px;max-width:720px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">案は「攻め／守り」×「外の力を借りる／今のメンバーで」の掛け合わせで4つ。それぞれに、いいねの声と、心配の声が集まりました。</p>
+      <p style="margin:0 0 48px;font:400 12px/1.8 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;">↑ 攻め（新しく動く）｜ ↓ 守り（今あるものを大切に）　／　← 今のメンバーで　外の力を借りる →</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+        <div style="border:1px solid #d5d7c6;background:#fbfaf4;padding:36px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
+            <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.16em;color:#94997f;">攻め × 外の力</span>
+            <span style="font:600 13px/1 'Zen Old Mincho',serif;color:#a7ac90;">案一</span>
+          </div>
+          <h3 style="margin:0 0 12px;font:600 23px/1.6 'Zen Old Mincho',serif;color:#2b3624;">若者と挑戦！ビジネスで稼ぐむらづくり</h3>
+          <p style="margin:0 0 18px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">若い世代や新しいアイデアを迎え、神前米などを活かした加工・販売・観光で稼ぐ。</p>
+          <div style="display:flex;flex-direction:column;gap:6px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#5b6152;margin-bottom:20px;">
+            <span>・お米を使ったお菓子や地酒の共同開発</span>
+            <span>・古民家を改修してカフェ・直売所</span>
+            <span>・ネット通販で全国にファンを</span>
+          </div>
+          <div style="border-top:1px solid #e0e0d4;padding-top:16px;display:flex;flex-direction:column;gap:8px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;">
+            <div><strong style="color:#31402a;font-weight:700;">いいね</strong>　<span style="color:#5b6152;">新しさは4案でいちばん。「方向がはっきりして力強い」</span></div>
+            <div><strong style="color:#8a6b3f;font-weight:700;">心配</strong>　<span style="color:#5b6152;">「引っ張るリーダーがいない」「本当に商売にできるのか」</span></div>
+          </div>
+          <div style="margin-top:20px;font:500 13px/1 'Zen Kaku Gothic New',sans-serif;color:#31402a;letter-spacing:.06em;">一番に選んだ人：20人</div>
+        </div>
+
+        <div style="border:1px solid #d5d7c6;background:#fbfaf4;padding:36px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
+            <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.16em;color:#94997f;">守り × 外の力</span>
+            <span style="font:600 13px/1 'Zen Old Mincho',serif;color:#a7ac90;">案二</span>
+          </div>
+          <h3 style="margin:0 0 12px;font:600 23px/1.6 'Zen Old Mincho',serif;color:#2b3624;">外からの応援で守る！支えあうむらづくり</h3>
+          <p style="margin:0 0 18px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">静かな暮らしや景観は守りつつ、週末だけ手伝う「関係人口」の力を借りる。</p>
+          <div style="display:flex;flex-direction:column;gap:6px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#5b6152;margin-bottom:20px;">
+            <span>・週末の農作業ボランティア募集</span>
+            <span>・田植え・稲刈りの体験受け入れ</span>
+            <span>・空き家を短期滞在に貸し出す</span>
+          </div>
+          <div style="border-top:1px solid #e0e0d4;padding-top:16px;display:flex;flex-direction:column;gap:8px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;">
+            <div><strong style="color:#31402a;font-weight:700;">いいね</strong>　<span style="color:#5b6152;">「やさしい雰囲気で安心感がある」「手伝ってもらえるのは助かる」</span></div>
+            <div><strong style="color:#8a6b3f;font-weight:700;">心配</strong>　<span style="color:#5b6152;">「週末だけの人に頼りきれるか」「受け入れる側の負担も」</span></div>
+          </div>
+          <div style="margin-top:20px;font:500 13px/1 'Zen Kaku Gothic New',sans-serif;color:#31402a;letter-spacing:.06em;">一番に選んだ人：7人</div>
+        </div>
+
+        <div style="border:1px solid #d5d7c6;background:#fbfaf4;padding:36px;position:relative;">
+          <div style="position:absolute;top:-12px;left:36px;background:#31402a;color:#eceadd;font:500 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.14em;padding:7px 14px;">総合で最多支持</div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
+            <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.16em;color:#94997f;">攻め × 今のメンバーで</span>
+            <span style="font:600 13px/1 'Zen Old Mincho',serif;color:#a7ac90;">案三</span>
+          </div>
+          <h3 style="margin:0 0 12px;font:600 23px/1.6 'Zen Old Mincho',serif;color:#2b3624;">今の力で効率化！賢く楽するむらづくり</h3>
+          <p style="margin:0 0 18px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">ドローンやアプリ、共同化で作業を軽くし、今の顔ぶれのまま無理なく続ける。</p>
+          <div style="display:flex;flex-direction:column;gap:6px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#5b6152;margin-bottom:20px;">
+            <span>・ドローンで農薬散布・ラジコン草刈り</span>
+            <span>・予約制でトラクターを共同利用</span>
+            <span>・水路・農道の管理を地図アプリで見える化</span>
+          </div>
+          <div style="border-top:1px solid #e0e0d4;padding-top:16px;display:flex;flex-direction:column;gap:8px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;">
+            <div><strong style="color:#31402a;font-weight:700;">いいね</strong>　<span style="color:#5b6152;">「具体的で想像しやすい」「今のメンバーでできるのが安心」</span></div>
+            <div><strong style="color:#8a6b3f;font-weight:700;">心配</strong>　<span style="color:#5b6152;">「機械が高い」「ちゃんと使いこなせるか」</span></div>
+          </div>
+          <div style="margin-top:20px;font:500 13px/1 'Zen Kaku Gothic New',sans-serif;color:#31402a;letter-spacing:.06em;">一番に選んだ人：20人</div>
+        </div>
+
+        <div style="border:1px solid #d5d7c6;background:#fbfaf4;padding:36px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
+            <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.16em;color:#94997f;">守り × 今のメンバーで</span>
+            <span style="font:600 13px/1 'Zen Old Mincho',serif;color:#a7ac90;">案四</span>
+          </div>
+          <h3 style="margin:0 0 12px;font:600 23px/1.6 'Zen Old Mincho',serif;color:#2b3624;">地域の宝を未来へ！大切に受け継ぐむらづくり</h3>
+          <p style="margin:0 0 18px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">全部は抱えず、守るべき場所（棚田・神社など）を絞って、確実に次の世代へ。</p>
+          <div style="display:flex;flex-direction:column;gap:6px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#5b6152;margin-bottom:20px;">
+            <span>・景観の美しい場所を優先して草刈り</span>
+            <span>・お祭り・伝統行事を若い世代に伝える</span>
+            <span>・買い物・見守りなど、ちょっとした助け合い</span>
+          </div>
+          <div style="border-top:1px solid #e0e0d4;padding-top:16px;display:flex;flex-direction:column;gap:8px;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;">
+            <div><strong style="color:#31402a;font-weight:700;">いいね</strong>　<span style="color:#5b6152;">「いちばん現実的」「世代交代がスムーズ」</span></div>
+            <div><strong style="color:#8a6b3f;font-weight:700;">心配</strong>　<span style="color:#5b6152;">「守りに寄りすぎ」「これだけでは先細り」</span></div>
+          </div>
+          <div style="margin-top:20px;font:500 13px/1 'Zen Kaku Gothic New',sans-serif;color:#31402a;letter-spacing:.06em;">一番に選んだ人：12人</div>
+        </div>
+      </div>
+
+      <!-- ranking -->
+      <div style="margin-top:72px;">
+        <h3 style="margin:0 0 36px;font:600 26px/1.5 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">一番に選ばれた案は？</h3>
+        <div style="display:flex;flex-direction:column;gap:18px;max-width:820px;">
+          <div style="display:grid;grid-template-columns:170px 1fr 64px;gap:20px;align-items:center;">
+            <div style="font:500 14px/1.5 'Zen Kaku Gothic New',sans-serif;color:#31402a;text-align:right;">案三 賢く楽する</div>
+            <div style="height:30px;background:#e6e7da;"><div style="width:100%;height:100%;background:#31402a;"></div></div>
+            <div style="font:600 17px/1 'Zen Old Mincho',serif;color:#2b3624;">20人</div>
+          </div>
+          <div style="display:grid;grid-template-columns:170px 1fr 64px;gap:20px;align-items:center;">
+            <div style="font:500 14px/1.5 'Zen Kaku Gothic New',sans-serif;color:#31402a;text-align:right;">案一 ビジネス</div>
+            <div style="height:30px;background:#e6e7da;"><div style="width:100%;height:100%;background:#5a7048;"></div></div>
+            <div style="font:600 17px/1 'Zen Old Mincho',serif;color:#2b3624;">20人</div>
+          </div>
+          <div style="display:grid;grid-template-columns:170px 1fr 64px;gap:20px;align-items:center;">
+            <div style="font:500 14px/1.5 'Zen Kaku Gothic New',sans-serif;color:#5b6152;text-align:right;">案四 受け継ぐ</div>
+            <div style="height:30px;background:#e6e7da;"><div style="width:60%;height:100%;background:#93a37e;"></div></div>
+            <div style="font:600 17px/1 'Zen Old Mincho',serif;color:#5b6152;">12人</div>
+          </div>
+          <div style="display:grid;grid-template-columns:170px 1fr 64px;gap:20px;align-items:center;">
+            <div style="font:500 14px/1.5 'Zen Kaku Gothic New',sans-serif;color:#5b6152;text-align:right;">案二 応援で守る</div>
+            <div style="height:30px;background:#e6e7da;"><div style="width:35%;height:100%;background:#bcc6a8;"></div></div>
+            <div style="font:600 17px/1 'Zen Old Mincho',serif;color:#5b6152;">7人</div>
+          </div>
+        </div>
+        <p style="margin:40px 0 0;max-width:760px;font:400 15px/2.2 'Shippori Mincho B1',serif;color:#3a4030;">住民のみなさん59人が「一番」に選んだ数。<strong style="font-weight:700;color:#2b3624;">「今のメンバーで賢く続ける案三」</strong>と<strong style="font-weight:700;color:#2b3624;">「思いきって挑戦する案一」</strong>が、ならんで一番人気でした。案一は“新しさ”は堂々の1位、ただ“実現しやすさ”では不安の声も。案四は“いちばん現実的”だけど票は少なめ——正直な結果です。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 見えたこと（深緑バンド） ================= -->
+  <div id="gap" style="background:#2b3624;color:#eceadd;">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;letter-spacing:.06em;">住民のみなさんは、思っていたより前向きでした</h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#8a9575;">04 — 発見</span>
+      </div>
+      <p style="margin:0 0 56px;max-width:680px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">世話役のみなさんの多くは、「住民はもう新しいことを望んでいないだろう」と感じていました。ところが、匿名で聞いてみると——</p>
+
+      <p style="margin:0 auto 64px;max-width:760px;text-align:center;font:600 30px/2 'Zen Old Mincho',serif;color:#dfe3ce;text-wrap:balance;">住民は、世話役が思うよりずっと<br>「新しい挑戦」に前向きだった。</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);max-width:900px;margin:0 auto;">
+        <div style="background:#2b3624;padding:36px 40px;">
+          <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:16px;">世話役 7人は</div>
+          <p style="margin:0;font:400 15px/2.1 'Zen Kaku Gothic New',sans-serif;color:#dfe3ce;">4人が案四「受け継ぐ」を一番に。慎重で、守りの姿勢が中心でした。</p>
+        </div>
+        <div style="background:#2b3624;padding:36px 40px;">
+          <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:16px;">住民のみなさんは</div>
+          <p style="margin:0;font:400 15px/2.1 'Zen Kaku Gothic New',sans-serif;color:#dfe3ce;">案一・案三を、世話役よりはっきり高く評価。「やってみたい」という気持ちが、数字に出ました。</p>
+        </div>
+      </div>
+
+      <p style="margin:56px auto 0;max-width:720px;font:400 15px/2.2 'Shippori Mincho B1',serif;color:#c3caae;">面と向かっては言いにくいこの気持ちが、匿名だからこそ見えてきました。「実現できるか」の見立ては両者ほぼ同じ。ちがったのは、<strong style="font-weight:700;color:#eceadd;">新しさにどれだけ価値を感じるか</strong>だけ。ここが、これから話し合う出発点になります。</p>
+    </div>
+  </div>
+
+  <!-- ================= おわりに ================= -->
+  <div style="max-width:1200px;margin:0 auto;padding:120px 32px;text-align:center;">
+    <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:#94997f;margin-bottom:44px;">おわりに</div>
+    <p style="margin:0 auto;max-width:640px;font:400 20px/2.5 'Shippori Mincho B1',serif;color:#3a4030;">答えが一つに決まったわけではありません。でも、みなさんが<strong style="font-weight:700;color:#2b3624;">何を大切にしていて、何に困っているか</strong>が、数字とことばで、はっきり見えてきました。うれしい声も、耳の痛い声も、これからの神前を考える大切な土台です。</p>
+    <div style="width:56px;height:1px;background:#a7ac90;margin:52px auto;"></div>
+    <p style="margin:0;font:600 24px/2 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.1em;">声を寄せてくださって、<br>ありがとうございました。</p>
+  </div>
+
+  <!-- ================= footer ================= -->
+  <div style="background:#2b3624;color:#c3caae;">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;font:400 13px/1.8 'Zen Kaku Gothic New',sans-serif;flex-wrap:wrap;">
+      <div><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;">神前ふるさとを守る会</strong> × 京都大学大学院地球環境学堂 鬼塚研究室<br><span style="opacity:.7;">調査期間：2025年9〜12月 ／ 神前（こうざき）＝京都府亀岡市宮前町 上段川地区</span></div>
+      <div style="opacity:.6;">この報告は、神前の住民のみなさんへ向けてまとめたものです。©2026 京都大学 鬼塚研究室</div>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
