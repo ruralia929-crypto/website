@@ -1,190 +1,394 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>村づくりワークショップの記録 ― 神前 × 京都大学</title>
+<meta name="description" content="神前（こうざき）で毎年ひらかれている、京都大学の学生との村づくりワークショップ。2013年から続くあゆみと、学生たちの提案の記録です。">
 <link rel="icon" href="data:,">
-<meta name="description" content="神前（こうざき）で毎年ひらかれている、京都大学の学生との村づくりワークショップ。2023年からの記録と、学生たちの提案をまとめます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@400;500;700&family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --green:#35633c; --green2:#4a7d4f; --leaf:#7ca86a; --leaf-l:#a7c894;
-  --gold:#c8912f; --gold-l:#e2b45c; --clay:#c0693b;
-  --sand:#f6f0e2; --sand2:#ece1c9; --ink:#2c2a20; --muted:#6d6653;
-  --line:#e2d9c3; --card:#ffffff;
-  --maxw:1000px;
-  --font:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f5ee; }
+html { scroll-behavior: smooth; }
+img { max-width: 100%; }
+@media (max-width: 860px) {
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font);color:var(--ink);background:var(--sand);line-height:1.9;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict;font-size:16.5px}
-img{max-width:100%;display:block}
-a{color:var(--green2)}
-h1,h2,h3{line-height:1.45;font-weight:800}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-
-header.bar{position:sticky;top:0;z-index:50;background:rgba(53,99,60,.97);backdrop-filter:blur(6px);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12)}
-header.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-header.bar .logo{font-weight:800;font-size:15px;letter-spacing:.02em;color:#fff;text-decoration:none}
-header.bar nav{display:flex;gap:2px;flex-wrap:wrap}
-header.bar nav a{color:#e7f0e2;text-decoration:none;font-size:13.5px;padding:7px 11px;border-radius:8px;white-space:nowrap}
-header.bar nav a:hover{background:rgba(255,255,255,.14);color:#fff}
-header.bar nav a.cta{background:var(--gold);color:#fff;font-weight:700}
-
-/* compact hero */
-.hero{position:relative;color:#fff;text-align:center;padding:70px 20px 62px;text-shadow:0 1px 14px rgba(0,0,0,.5);
-  background:
-    linear-gradient(180deg, rgba(22,42,26,.62) 0%, rgba(28,52,32,.42) 50%, rgba(24,46,28,.72) 100%),
-    url('hero.jpg') center 46%/cover no-repeat,
-    linear-gradient(160deg,#5b8a4f,#2f5636);}
-.hero .eyebrow{letter-spacing:.28em;font-size:12px;color:#dceccf;margin:0 0 12px}
-.hero h1{font-size:clamp(24px,4.6vw,38px);margin:0}
-.hero p.sub{margin:14px auto 0;max-width:640px;color:#eef6e7;font-weight:600;font-size:clamp(14px,2.3vw,17px)}
-
-section{padding:56px 0}
-.kicker{display:inline-block;background:var(--green);color:#fff;font-size:12px;font-weight:800;padding:4px 13px;border-radius:999px;letter-spacing:.08em;margin-bottom:14px}
-.kicker.gold{background:var(--gold)}
-.kicker.clay{background:var(--clay)}
-h2.sec{font-size:clamp(21px,3.4vw,28px);margin:0 0 10px;color:var(--green)}
-.lead{font-size:16.5px;color:var(--ink);max-width:760px;margin:0 0 8px}
-.muted{color:var(--muted)}
-
-.intro{background:linear-gradient(180deg,#fbf7ec,#f6f0e2);text-align:center}
-.intro p{max-width:720px;margin:0 auto;font-size:clamp(15px,2.3vw,18px);line-height:2}
-
-/* year block */
-.year{border-top:3px solid var(--leaf-l);padding-top:8px}
-.year + .year{margin-top:20px}
-.yhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
-.yhead .y{font-size:clamp(30px,6vw,46px);font-weight:900;color:var(--green);line-height:1}
-.yhead .date{font-size:13px;color:var(--muted);font-weight:700}
-.ytitle{font-size:clamp(17px,2.6vw,21px);color:var(--ink);margin:2px 0 6px}
-.theme{display:inline-block;background:#f3f7ec;border:1px solid var(--leaf-l);color:var(--green);font-weight:700;font-size:13.5px;padding:6px 14px;border-radius:999px;margin:6px 0}
-
-/* photo strip */
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
-.strip .ph{border:2px dashed var(--leaf);border-radius:12px;background:repeating-linear-gradient(135deg,#eef4e6 0 12px,#e7efdd 12px 24px);color:#5c7a52;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:700;min-height:110px;padding:10px}
-@media(max-width:720px){.strip{grid-template-columns:1fr 1fr}}
-
-/* group proposal cards */
-.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
-.groups .g{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:0 5px 16px rgba(53,99,60,.06);border-left:5px solid var(--green)}
-.groups .g .tag{font-size:12px;font-weight:800;color:var(--muted)}
-.groups .g h4{margin:4px 0 6px;font-size:16px;color:var(--green)}
-.groups .g p{margin:0;font-size:14px;color:var(--muted);line-height:1.8}
-@media(max-width:680px){.groups{grid-template-columns:1fr}}
-
-.flowline{margin:18px 0 0;font-size:13.5px;color:var(--muted);background:#faf6ec;border:1px solid var(--line);border-radius:12px;padding:14px 18px;line-height:1.9}
-.flowline b{color:var(--green)}
-
-/* CTA to report */
-.rcta{display:block;margin:20px 0 0;background:linear-gradient(160deg,#39663f,#2c5233);border-radius:16px;padding:22px 24px;text-decoration:none;color:#fff;box-shadow:0 8px 24px rgba(44,82,51,.25)}
-.rcta .t{font-size:clamp(16px,2.4vw,20px);font-weight:900}
-.rcta .d{font-size:13.5px;color:#dfeed7;margin-top:4px}
-.rcta .go{display:inline-block;margin-top:12px;background:#fff;color:var(--green);font-weight:800;font-size:14px;padding:9px 20px;border-radius:999px}
-
-footer{background:var(--green);color:#dceccf;text-align:center;padding:26px 20px;font-size:12.5px}
-footer a{color:#fff}
+@media (max-width: 720px) {
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:180px 1fr"] { grid-template-columns: 1fr !important; gap: 8px !important; }
+  h1[style*=" 56px/1.6 "] { font-size: 32px !important; }
+  h2[style*=" 36px/1.4 "] { font-size: 25px !important; }
+  [style*=" 64px/1 "] { font-size: 46px !important; }
+  p[style*=" 19px/2.4 "] { font-size: 16px !important; }
+  [style*="padding:110px 32px 90px"] { padding: 64px 20px 56px !important; }
+  [style*="padding:96px 32px"] { padding: 56px 20px !important; }
+  [style*="padding:88px 32px"] { padding: 52px 20px !important; }
+  [style*="padding:72px 32px"] { padding: 44px 20px !important; }
+  [style*="padding:22px 32px"] { padding: 14px 16px !important; }
+  [style*="gap:32px;font:400 13px/1"] { gap: 12px !important; flex-wrap: wrap !important; justify-content: flex-end !important; row-gap: 8px !important; }
+  [style*="padding:40px 36px"] { padding: 26px 22px !important; }
+  [style*="padding:26px 28px"] { padding: 20px 18px !important; }
+}
 </style>
 </head>
 <body>
+<div style="background:#f6f5ee;color:#3a4030;font-family:'Zen Kaku Gothic New',sans-serif;min-height:100vh;">
 
-<header class="bar">
-  <div class="wrap">
-    <a class="logo" href="index.html">神前 こうざき</a>
-    <nav>
-      <a href="index.html">トップ</a>
-      <a href="#y2023">2023</a>
-      <a href="#y2024">2024</a>
-      <a href="#y2025">2025</a>
-      <a class="cta" href="report.html">住民報告</a>
-    </nav>
-  </div>
-</header>
-
-<div class="hero">
-  <p class="eyebrow">神 前 　×　 京 都 大 学</p>
-  <h1>村づくりワークショップの記録</h1>
-  <p class="sub">毎年、学生たちが神前を訪れ、集落を歩き、村の未来を一緒に考えてきました。<br>その一日と、生まれた提案の記録です。</p>
-</div>
-
-<section class="intro">
-  <div class="wrap">
-    <p>京都大学の農学部では、村づくりを学ぶ授業の一環として、毎年ひと組の学生たちが神前を訪ねます。<br>
-    集落を歩いて隠れた魅力と課題を見つけ、一日かけて「こうすれば元気になるのでは」という提案をつくり、住民のみなさんに発表する——。<br>
-    地元の力添えがあってこそ続けてこられた、神前ならではの学びの場です。</p>
-  </div>
-</section>
-
-<!-- 2023 -->
-<section id="y2023">
-  <div class="wrap">
-    <span class="kicker">記録</span>
-    <div class="year">
-      <div class="yhead"><div class="y">2023</div><div class="date">2023年7月16日（日）／ 学部生・留学生 5班</div></div>
-      <div class="ytitle">VRで集落を記録する、新しい挑戦</div>
-      <span class="theme">テーマ：農業の後継者不足 ― 外から若い担い手を呼び込むには？</span>
-      <p class="lead">この年の目玉は<b style="color:var(--clay)">VR（バーチャルリアリティ）</b>。一部の班は集落を歩き、一部の班はVRで村を「探検」して、それぞれ提案づくりに挑みました。昼はチョロギ村レストランで地元の味も。</p>
-      <div class="strip">
-        <div class="ph">写真：集落ウォーキング</div>
-        <div class="ph">写真：VR体験の様子</div>
-        <div class="ph">写真：ワークショップ</div>
-        <div class="ph">写真：成果報告会</div>
-      </div>
-      <div class="groups">
-        <div class="g"><div class="tag">1班（ウォーキング・住民同席）</div><h4>こうざきへ おこしやす！</h4><p>京都・大阪に近い立地を生かし、「兼業」で移住・就農する若者を地域ぐるみで支える。SNSや就活サイトでの発信も提案。</p></div>
-        <div class="g"><div class="tag">2班（ウォーキング・学生のみ）</div><h4>神前に農業学校を</h4><p>若者が継続的に神前に通い、関わり続ける仕組みとして農業学校を提案。資金・生徒集め・定住の3点が鍵と整理。</p></div>
-        <div class="g"><div class="tag">3班（VR・住民同席）</div><h4>神前米インターン</h4><p>集落外の若者が「知る→体験する→移住する」の3段階で就農へ。Instagram発信、空き家を改修したシェアハウス、兼業での神前米づくりを組み合わせる。</p></div>
-        <div class="g"><div class="tag">4班（VR・学生のみ）</div><h4>“チョロギ”です！プログラム</h4><p>チョロギソフトなどの新商品と、農業＋グランピング等の体験施設で、まず神前を知ってもらい来訪者を増やす。企業との連携も視野に。</p></div>
-        <div class="g" style="border-left-color:var(--gold)"><div class="tag">5班（留学生チーム）</div><h4>外からの目で見た神前</h4><p>多国籍の留学生が、住民への聞き取り（子どもの祭り、兼業農家の暮らし、跡継ぎへの思い）をもとに、後継者問題を国際的な視点で議論。</p></div>
-      </div>
-      <div class="flowline">
-        <b>一日の流れ</b>　守る会のみなさんのごあいさつ → 地域からの情報提供（集落の概要と後継者問題）→ 集落ウォーキング／VR → チョロギ村レストランで昼食 → ワークショップ（一部の班に住民が同席）→ 成果報告会（住民のみなさんも参加）
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 2024 -->
-<section id="y2024" style="background:#fff">
-  <div class="wrap">
-    <div class="year">
-      <div class="yhead"><div class="y">2024</div><div class="date">学生チーム 4班</div></div>
-      <div class="ytitle">魅力と課題を、あらためて掘り下げる</div>
-      <p class="lead">この年も学生チームが神前を訪れ、集落の資源を見つめ直して、地域を元気にするアイデアを各班が提案しました。</p>
-      <div class="strip">
-        <div class="ph">写真／成果スライド：1班</div>
-        <div class="ph">写真／成果スライド：2班</div>
-        <div class="ph">写真／成果スライド：3班</div>
-        <div class="ph">写真／成果スライド：4班</div>
-      </div>
-      <p class="muted" style="font-size:13.5px">※ 各班の提案内容は成果スライドが残っています。ここに要点を追記できます。</p>
-    </div>
-  </div>
-</section>
-
-<!-- 2025 -->
-<section id="y2025">
-  <div class="wrap">
-    <div class="year" style="border-top-color:var(--clay)">
-      <div class="yhead"><div class="y">2025</div><div class="date">2025年7月／ 継続的な村づくりへ</div></div>
-      <div class="ytitle">「一過性で終わらせない」へ ― そして全戸アンケートへ</div>
-      <p class="lead">毎年のワークショップを「点」で終わらせず、「線」でつなごう——。この年は、大学が“伴走者”となって継続的に関わる新しい形を提案しました。その具体策が、スマホでも紙でも誰でも答えられる<b>匿名の意見収集</b>です。</p>
-      <p class="lead">秋から冬にかけて、この仕組みで<b>142軒すべての声</b>を集めました。集まった声と、4つのむらづくり案の受け止めは、住民のみなさんへの報告ページにまとめています。</p>
-      <a class="rcta" href="report.html">
-        <div class="t">みなさんの声から、これからの神前を考える</div>
-        <div class="d">2025年、142軒すべてを回って集めた声と、4つのむらづくり案の受け止め。</div>
-        <span class="go">住民報告ページを見る →</span>
+  <!-- ================= nav ================= -->
+  <div style="position:sticky;top:0;z-index:20;background:rgba(246,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px 32px;">
+      <a href="index.html" style="display:flex;align-items:baseline;gap:14px;text-decoration:none;">
+        <span style="font:700 22px/1 'Zen Old Mincho',serif;color:#31402a;letter-spacing:.14em;">神前</span>
+        <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;">ワークショップの記録</span>
       </a>
+      <div style="display:flex;align-items:center;gap:32px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
+        <a href="ws2026.html" style="color:#5b6152;text-decoration:none;">2026年の予定</a>
+        <a href="#rekidai" style="color:#5b6152;text-decoration:none;">あゆみ</a>
+        <a href="#y2022" style="color:#5b6152;text-decoration:none;">2022</a>
+        <a href="#y2023" style="color:#5b6152;text-decoration:none;">2023</a>
+        <a href="#y2024" style="color:#5b6152;text-decoration:none;">2024</a>
+        <a href="#y2025" style="color:#5b6152;text-decoration:none;">2025</a>
+        <span style="width:1px;height:14px;background:#cfcfc0;"></span>
+        <a href="index.html" style="color:#31402a;text-decoration:none;font-weight:500;">神前について</a>
+        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;border-bottom:2px solid #31402a;padding-bottom:4px;">住民報告</a>
+      </div>
     </div>
   </div>
-</section>
 
-<footer>
-  村づくりワークショップの記録　／　<a href="index.html">神前トップへ</a>　·　<a href="report.html">住民報告へ</a><br>
-  ©2026 京都大学大学院地球環境学堂 鬼塚研究室 ・ 神前ふるさとを守る会
-</footer>
+  <!-- ================= hero ================= -->
+  <div style="max-width:1200px;margin:0 auto;padding:110px 32px 90px;">
+    <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:#94997f;margin-bottom:32px;">神 前 × 京 都 大 学 ― き ろ く</div>
+    <h1 style="margin:0;font:700 56px/1.6 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">村づくりワークショップの記録</h1>
+    <div style="width:56px;height:1px;background:#a7ac90;margin:36px 0;"></div>
+    <p style="margin:0;max-width:560px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#454b3d;">毎年、学生たちが神前を訪れ、集落を歩き、村の未来を一緒に考えてきました。その一日と、生まれた提案の記録です。</p>
+  </div>
 
+  <!-- ================= intro band ================= -->
+  <div style="border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:72px 32px;">
+      <p style="margin:0 auto;max-width:780px;text-align:center;font:400 19px/2.4 'Shippori Mincho B1',serif;color:#3a4030;text-wrap:pretty;">京都大学の農学部では、村づくりを学ぶ授業の一環として、毎年ひと組の学生たちが神前を訪ねます。集落を歩いて隠れた魅力と課題を見つけ、一日かけて「こうすれば元気になるのでは」という提案をつくり、住民のみなさんに発表する——。地元の力添えがあってこそ続けてこられた、神前ならではの学びの場です。</p>
+      <p style="margin:32px auto 0;max-width:780px;text-align:center;font:400 14px/1.8 'Zen Kaku Gothic New',sans-serif;"><a href="ws2026.html" style="display:inline-block;border:1px solid #31402a;color:#31402a;padding:14px 28px;letter-spacing:.06em;text-decoration:none;">今年のワークショップ ― 2026年7月12日（日）の予定を見る →</a></p>
+    </div>
+  </div>
+
+  <!-- ================= 歴代のあゆみ 2013-2021 ================= -->
+  <div id="rekidai">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">2013年から続く、学びの往来</h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">AYUMI 2013–2021</span>
+      </div>
+      <p style="margin:0 0 40px;max-width:780px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">はじまりは2010年。神前ふるさとを守る会の活動を、京都大学が視察に訪れたことでした。翌2011年からは総務省の研究プロジェクト（SCOPE）の一環として、iPadやFacebookを使った情報発信の講習会など9回の行事を地域と大学で重ね、2013年6月、村づくりワークショップの第1回が開かれます。テーマの多くは、地域の側から提案されてきました。</p>
+
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第1回<br>2013年6月</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">特産品の開発と、その販売戦略</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">学生31名が初めて神前を訪れました。FacebookやWeb中継も取り入れた実験的な回で、集落を歩き、「田舎こうざき」などの将来ビジョンを提案しました。</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第2回<br>2014年7月</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前地域の活性化方策</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">留学生も加わった回。「NOWSON de LAWSON ― 農村にもコンビニを!!」など、若者らしい提案が並びました。</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第3回<br>2015年6月</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">チョロギを使った村づくり</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">動き出したばかりの「チョロギ村」構想がテーマに。立ち上げ資金の調達方法として、クラウドファンディングを提案する班もありました。</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第4回<br>2016年6月</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前に人が訪れてもらうためには</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加31名。守る会が提示したこのテーマを、全班が正面から考えました。</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第5回<br>2017年6月</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">地域の特性・資産を活用した村づくり</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加35名。会場に古民家カフェが加わり、獣害対策にドローンやAIをあてる「けものはのけもん わかもんはカモン!!」など、ユニークな提案が生まれました。ドローン空撮のデモンストレーションも行われた年です。</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第6回<br>2018年7月</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">住みたくなる村づくり</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加24名。昼食はチョロギ村レストランの薬膳御膳。集落ウォーキングでは薪窯ピザ庵の店主や宝林寺のご住職のお話も加わりました。</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第7回<br>2019年7月</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">あなたは明日から、神前の住民になります</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加39名。「わくわく就農プラン・らくらく移住プラン」「薬膳村として、令和の健康村」など。この年の成果報告書は、のちに集落の農業計画の資料編にも収められました。</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">2020–2021</div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">コロナ禍による中断</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">2年間の中止。その間もオンライン会議などで、地域と大学の交流は続きました。再開後の2022年からの記録は、下に詳しくまとめています。</p></div>
+      </div>
+
+      <div style="margin:40px 0 0;">
+        <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#94997f;margin-bottom:14px;">2018年のワークショップ風景</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+          <img src="photos/ws2018_lecture.jpg" alt="神前集落の村づくりの紹介（2018年）" title="神前集落の村づくりの紹介（2018年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+          <img src="photos/ws2018_chorogi.jpg" alt="チョロギの村づくりの紹介（2018年）" title="チョロギの村づくりの紹介（2018年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+          <img src="photos/ws2018_work.jpg" alt="ワークショップの様子（2018年）" title="ワークショップの様子（2018年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+          <img src="photos/ws2018_presentation.jpg" alt="成果報告会の様子（2018年）" title="成果報告会の様子（2018年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+        </div>
+      </div>
+
+      <div style="margin-top:40px;border:1px solid #e0e0d4;padding:24px 28px;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;">ワークショップは、集落の計画にも活きています</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">2021年に承認された神前地区の「京力農場プラン」（地域農業の将来計画）には、京都大学とのワークショップが取組のひとつとして明記され、2019年の成果報告書が資料編に収録されました。プランづくりのための全農家アンケート（回収率100%）の集計も、大学が担いました。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2022 ================= -->
+  <div id="y2022" style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
+        <div>
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2022</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月16日（土）<br>学部生・院生・留学生 6班</div>
+        </div>
+        <div>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">3年ぶりの再開 ― コロナ禍を越えて</h2>
+          <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px;">
+            <span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマA：あなたが住みたくなる村づくり</span>
+            <span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマB：Society 5.0時代のチョロギ村づくり</span>
+          </div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">コロナ禍で2年間の中止を経て、3年ぶりに再開した年。宝林寺や北ノ奥作業場をめぐる集落ウォーキングで村を取材し、チョロギ村レストランで昼食のあと、守る会顧問から「これまでのWSと神前の村づくり」の報告を受けて、住民のみなさんと一緒に提案づくりに取り組みました。</p>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
+            <img src="photos/ws2022_dialog.jpg" alt="住民のみなさんへの聞き取り（2022年）" title="住民のみなさんへの聞き取り（2022年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/ws2022_work.jpg" alt="ワークショップの様子（2022年）" title="ワークショップの様子（2022年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/poster2022_g2.jpg" alt="2班の成果ポスター「長老喜の村で末永く！」" title="2班の成果ポスター「長老喜の村で末永く！」" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/poster2022_g5.jpg" alt="5班の成果ポスター「どろ〜ん！神前参上！」" title="5班の成果ポスター「どろ〜ん！神前参上！」" style="width:100%;height:170px;object-fit:cover;display:block;">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班 ― テーマA</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">とかいなか</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">「とかい」の便利さと「いなか」の良さを両立する村へ。アクセス改善や遊休農地の遊び場化、農泊・農地オーナー制度、全世代で地域の魅力を学び直す「郷土学」を提案。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班 ― テーマA</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">“長老喜（チョロギ）”の村で末永く！</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">車を持ち、農業以外の職に就く都市部の若い移住者がターゲット。チョロギや薬膳、景観、祭りをSNSで発信し、兼業しやすい暮らしの支援や神前米のブランド化で受け皿を整える。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班 ― テーマA</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">薬膳郷 神前</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">健康志向の高まりを追い風に、薬膳を神前の看板に。「自分たちで育てた農産物で薬膳定食を作って食べる」複合型の農業体験で、まず「来たくなる」集落を目指す。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班 ― テーマB</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">子育て世代を、チョロギ村へ</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">SNSや動画での魅力発信、リモート学習による教育の補完、交流会館のワーケーション活用、夏休みの空き家「お試し移住」を組み合わせ、子育て世代の来訪と移住を後押しする。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">5班 ― テーマB</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">どろ〜ん！神前参上！</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">村にあるドローンで集落や薬草畑のPR動画を撮り、訪れた子どもたちがドローンで記念写真を撮れる体験に。まず若い訪問者を増やし、将来の定住のきっかけをつくる。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">6班 ― テーマB・留学生チーム</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">帰属意識を育てる村づくり</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">多国籍の留学生チーム。「帰属意識（Sense of Belonging）」の醸成を軸に、AR・VRも視野に入れた発信、神前米の袋に棚田の写真とQRコードを付けてバーチャルツアーへ誘導する案などを提案。</p>
+            </div>
+          </div>
+
+          <div style="margin-top:40px;border:1px solid #e0e0d4;padding:24px 28px;">
+            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;">一日の流れ</div>
+            <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">守る会代表のごあいさつ（集落の概要）→ 集落ウォーキング（ふれあいセンター → 宝林寺 → 北ノ奥作業場 → 交流会館）→ チョロギ村レストランで昼食 → 地元からの報告「これまでのWSと神前の村づくり」（守る会顧問）→ ワークショップ（各班に住民のみなさんが同席）→ 成果報告会 → お礼の言葉とお土産の贈呈</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2023 ================= -->
+  <div id="y2023" style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
+        <div>
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2023</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月16日（日）<br>学部生・留学生 5班</div>
+        </div>
+        <div>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">VRで集落を記録する、新しい挑戦</h2>
+          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;">テーマ：農業の後継者不足 ― 外から若い担い手を呼び込むには？</span></div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">この年の目玉はVR（バーチャルリアリティ）。一部の班は集落を歩き、一部の班はVRで村を「探検」して、それぞれ提案づくりに挑みました。昼はチョロギ村レストランで地元の味も。</p>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
+            <img src="photos/ws2023_vr.jpg" alt="VR体験の様子（2023年）" title="VR体験の様子（2023年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/ws2023_yakuzen.jpg" alt="チョロギ村レストランの薬膳料理（2023年）" title="チョロギ村レストランの薬膳料理（2023年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/ws2023_groupwork.jpg" alt="ワークショップの様子（2023年）" title="ワークショップの様子（2023年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/poster2023_g1.jpg" alt="1班の成果ポスター「こうざきへ おこしやす！」（2023年）" title="1班の成果ポスター「こうざきへ おこしやす！」（2023年）" style="width:100%;height:170px;object-fit:cover;display:block;">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班 ― ウォーキング・住民同席</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">こうざきへ おこしやす！</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">京都・大阪に近い立地を生かし、「兼業」で移住・就農する若者を地域ぐるみで支える。SNSや就活サイトでの発信も提案。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班 ― ウォーキング・学生のみ</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前に農業学校を</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">若者が継続的に神前に通い、関わり続ける仕組みとして農業学校を提案。資金・生徒集め・定住の3点が鍵と整理。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班 ― VR・住民同席</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前米インターン</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">集落外の若者が「知る→体験する→移住する」の3段階で就農へ。Instagram発信、空き家を改修したシェアハウス、兼業での神前米づくりを組み合わせる。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班 ― VR・学生のみ</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">“チョロギ”です！プログラム</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">チョロギソフトなどの新商品と、農業＋グランピング等の体験施設で、まず神前を知ってもらい来訪者を増やす。企業との連携も視野に。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">5班 ― 留学生チーム</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">外からの目で見た神前</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">多国籍の留学生が、住民への聞き取り（子どもの祭り、兼業農家の暮らし、跡継ぎへの思い）をもとに、後継者問題を国際的な視点で議論。</p>
+            </div>
+          </div>
+
+          <div style="margin-top:40px;border:1px solid #e0e0d4;padding:24px 28px;">
+            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;">一日の流れ</div>
+            <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">守る会のみなさんのごあいさつ → 地域からの情報提供（集落の概要と後継者問題）→ 集落ウォーキング／VR → チョロギ村レストランで昼食 → ワークショップ（一部の班に住民が同席）→ 成果報告会（住民のみなさんも参加）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2024 ================= -->
+  <div id="y2024" style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
+        <div>
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2024</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月14日（日）<br>学部生・院生・留学生 4班</div>
+        </div>
+        <div>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">「隠れた魅力さがし」、はじまる</h2>
+          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマ：集落に隠れた魅力を外部者の視点から発見し、その活用・アピール方法を提案する</span></div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">この年からテーマは「隠れた魅力の発見」に。日本語2班・英語2班の4班が3つのエリアに分かれて集落を歩き、航空写真の上に見つけた「タネ」を貼り込みながら、提案をまとめました。</p>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
+            <img src="photos/poster2024_g1.jpg" alt="2024年 1班の成果ポスター「求ム弟子!! 上善水如プログラム」" title="1班「求ム弟子!! 上善水如プログラム」" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/poster2024_g2.jpg" alt="2024年 2班の成果ポスター「自然派保育でつなぐ神前の未来」" title="2班「自然派保育でつなぐ神前の未来」" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/poster2024_g3.jpg" alt="2024年 3班の成果ポスター「Midway Trial Experience」" title="3班「Midway Trial Experience」" style="width:100%;height:170px;object-fit:cover;display:block;">
+            <img src="photos/poster2024_g4.jpg" alt="2024年 4班の成果ポスター「Marketing Strategies」" title="4班「Marketing Strategies」" style="width:100%;height:170px;object-fit:cover;display:block;">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">求ム弟子!! 上善水如プログラム</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">都会にはない「水と時の流れ」——歴史・季節・一日の流れを、苗づくりから収穫まで丸ごと体感してもらう。SNSで農業の“弟子”を見つけ、廃校舎での宿泊も交えて、一緒に農業をする移住者=人の流れをつくる。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">自然派保育でつなぐ、神前の未来</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">人気の高まる「自然派保育」に着目し、保育園を中心にした地域づくりを提案。農業体験、祭り、卒業後の交流、空き家でのあずかり保育——子育て世代の目を神前に向ける。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班 ― 英語班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">お試し体験から、移住の可能性へ</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">農家民泊、田んぼ体験、放棄田を花畑に変えたフォトスポット、バードウォッチングと山歩き。地元の花の色を使った配色まで考え、「中くらいのお試し体験」で将来の移住につなげる構想。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班 ― 英語班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">関係人口を増やす、売り込みの戦略</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">「魅力はあるのに知られていない」という課題に、予約サイトや紹介動画などのデジタル発信、動画配信者との連携、農業ボランティア、農家民泊を組み合わせたマーケティング戦略で挑む。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2025 ================= -->
+  <div id="y2025" style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
+        <div>
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2025</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月13日（日）<br>学部生・院生・留学生 7班</div>
+        </div>
+        <div>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">隠れた魅力を、外の目で見つける</h2>
+          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマ：集落に隠れた魅力を外部者の視点から発見し、その活用・アピール方法を提案する</span></div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">この年は7つの班（日本語6班・英語1班）が、3つのエリアに分かれて集落を歩きました。田んぼの真ん中から砥石の山まで、外から来た目にしか見えない「タネ」を拾い集めた一日です。</p>
+
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
+            <img src="photos/slide2025_g2.jpg" alt="2班の発表スライド「子どもが住み続けられるまちづくりを」" title="2班の発表スライド" style="width:100%;height:170px;object-fit:cover;display:block;border:1px solid #e0e0d4;">
+            <img src="photos/slide2025_g4.jpg" alt="4班の発表スライド「神前集落の持続に向けて」" title="4班の発表スライド" style="width:100%;height:170px;object-fit:cover;display:block;border:1px solid #e0e0d4;">
+            <img src="photos/slide2025_g5.jpg" alt="5班の発表スライド「暮らしを選べる町、神前町」" title="5班の発表スライド" style="width:100%;height:170px;object-fit:cover;display:block;border:1px solid #e0e0d4;">
+            <img src="photos/slide2025_g7.jpg" alt="7班（英語班）の発表スライド「近隣集落とのネットワークのハブとしての神前集落」" title="7班（英語班）の発表スライド" style="width:100%;height:170px;object-fit:cover;display:block;border:1px solid #e0e0d4;">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前米の農業体験ツアー</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">食味ランキング特Aの神前米とアクセスの良さを武器に、京都・大阪の若者や親子向けの週末農業体験ツアーを。関係人口を増やし、ゆくゆくは移住の選択肢に。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前地区を、遊びスポットへ</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">「子どもが住み続けられるまちづくり」を掲げ、廃校跡地や砥石の跡地を活用した子ども食堂と森のアスレチックを提案。子育て世帯の移住を見据える。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">意外と近い神前 ― 関係人口を増やす</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">京都市から高速で1時間弱という近さに着目。砥石の包丁研ぎ体験や薬草・神前米・黒毛和牛を掛け合わせた「食」、かやぶき屋根を宿に再生する「住」、交流センターでの環境教育——観光資源を仕事づくりにつなげ、村に関わる人を増やす。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">「訪れる」から「受け継ぐ」へ</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">砥石館の包丁研ぎ体験、お寺の座禅、映画のオープンセット——豊富な観光資源を入口に、単なる来訪者ではなく「地域の営みに加わってくれる人」を増やす流れを構想。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">5班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">暮らしを選べる町、神前町</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">都会に疲れた30代や、定年後の田舎暮らしを望む60代がターゲット。いきなりの移住は不安——だから、農業体験つきのお試し移住・短期滞在の仕組みから始める。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">6班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">棚田とロケ地を活かした観光振興</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">棚田景観、映画ロケ地、寺社仏閣という文化的な魅力に注目。観光で認知度を高め、ファミリー層の移住と農業の担い手確保につなげる。</p>
+            </div>
+            <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">7班 ― 英語班</div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">近隣集落のネットワークの、ハブに</h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">留学生を含む多国籍チーム。住民の熱意と、10年以上続く京都大学との連携・SNS発信の実績こそ神前ならではの強みと見立て、近隣集落をつなぐハブになる構想を描いた。</p>
+            </div>
+          </div>
+
+          <div style="width:100%;height:1px;background:#e0e0d4;margin:48px 0;"></div>
+          <h3 style="margin:0 0 16px;font:600 24px/1.5 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">もうひとつの挑戦 ―「一過性で終わらせない」へ</h3>
+          <p style="margin:0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">毎年のワークショップを「点」で終わらせず、「線」でつなごう——。この年は、大学が“伴走者”となって継続的に関わる新しい形を提案しました。その具体策が、スマホでも紙でも誰でも答えられる匿名の意見収集です。</p>
+          <p style="margin:20px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">秋から冬にかけて、この仕組みで142軒すべてに声をかけ、83人から回答が寄せられました。集まった声と、4つのむらづくり案の受け止めは、住民のみなさんへの報告ページにまとめています。</p>
+
+          <div style="margin-top:40px;background:#2b3624;padding:40px 36px;">
+            <h3 style="margin:0 0 12px;font:600 24px/1.6 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.04em;">みなさんの声から、これからの神前を考える</h3>
+            <p style="margin:0 0 24px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">2025年、142軒すべてを回って集めた声と、4つのむらづくり案の受け止め。</p>
+            <a href="report.html" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;">住民報告ページを見る →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= footer ================= -->
+  <div style="background:#2b3624;color:#c3caae;">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 32px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font:400 13px/1.7 'Zen Kaku Gothic New',sans-serif;">
+        <div><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;">村づくりワークショップの記録</strong>　<a href="index.html" style="color:#eceadd;">神前トップへ</a> ・ <a href="report.html" style="color:#eceadd;">住民報告へ</a></div>
+        <div style="opacity:.6;">©2026 京都大学大学院地球環境学堂 持続的農村開発論研究室（鬼塚） ・ 神前ふるさとを守る会</div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
