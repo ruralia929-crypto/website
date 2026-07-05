@@ -6,234 +6,272 @@
 <meta name="robots" content="noindex">
 <title>新鹿 × 大学　この2年の歩み</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <meta name="description" content="新鹿を“外の人”に届けて、声をもらう。学生とつくったCMと、VRで集めた154の宝の山。京都大学×三重大学×新鹿みらいのまちづくり推進委員会の2年間の報告。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <style>
 :root{
-  --navy:#0e3a5c; --navy2:#114b75; --sea:#2e8bc0; --sea-l:#7fc1e3;
-  --sand:#f6efe1; --sand2:#efe4cd; --ink:#23323d; --muted:#5f7180;
-  --coral:#e8704a; --gold:#d9a441; --line:#dce4ea; --card:#ffffff;
+  --cream:#f9f6ef; --sand:#f1ece0; --sand2:#efe8d7;
+  --ink-h:#273c48; --ink:#3a444b; --ink-sub:#51626d;
+  --muted:#77878f; --muted-l:#9aa5ab;
+  --blue:#55707e; --gold:#b4863f; --num:#c9b891; --num2:#b4a37c;
+  --line-dark:#3a444b; --line:#e2d9c5; --line2:#e6ddc9;
+  --serif:'Shippori Mincho',serif;
+  --sans:'Zen Kaku Gothic New',"Hiragino Sans",sans-serif;
   --maxw:1080px;
-  --font: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font);color:var(--ink);background:var(--sand);line-height:1.8;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:2;-webkit-font-smoothing:antialiased;word-break:auto-phrase;line-break:strict}
 img{max-width:100%;display:block}
-a{color:var(--sea)}
-h1,h2,h3{line-height:1.4;font-weight:800}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-
-/* header / nav */
-header.bar{position:sticky;top:0;z-index:50;background:rgba(14,58,92,.96);backdrop-filter:blur(6px);color:#fff;box-shadow:0 2px 14px rgba(0,0,0,.12)}
-header.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
-header.bar .logo{font-weight:800;font-size:15px;letter-spacing:.02em}
-header.bar nav{display:flex;gap:4px;flex-wrap:wrap}
-header.bar nav a{color:#dcebf5;text-decoration:none;font-size:13px;padding:7px 10px;border-radius:8px;white-space:nowrap}
-header.bar nav a:hover{background:rgba(255,255,255,.12);color:#fff}
-.navtoggle{display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:8px;padding:6px 10px;font-size:14px}
+a{color:var(--blue)}
+.inner{max-width:var(--maxw);margin:0 auto}
 
 /* hero */
-.hero{position:relative;color:#fff;text-align:center;padding:96px 20px 84px;
-  text-shadow:0 1px 12px rgba(0,0,0,.5);
-  background:
-    linear-gradient(180deg, rgba(7,30,50,.74) 0%, rgba(11,46,72,.56) 45%, rgba(14,55,88,.74) 100%),
-    url('hero.jpg') center 42%/cover no-repeat;
-  overflow:hidden}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;
-  background:radial-gradient(60px 60px at 10% 0, var(--sand) 50%, transparent 51%) repeat-x;
-  background-size:80px 60px;opacity:.0}
-.hero .eyebrow{letter-spacing:.32em;font-size:12px;color:var(--sea-l);margin:0 0 14px}
-.hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 6px;text-shadow:0 2px 20px rgba(0,0,0,.55)}
-.hero .sub{font-size:clamp(15px,2.4vw,19px);color:#e7f2fa;margin:14px auto 0;max-width:680px;font-weight:600}
-.hero .meta{margin-top:26px;font-size:13px;color:#bcd6e6}
-.hero .scroll{margin-top:34px;font-size:12px;color:#a9cae0;letter-spacing:.2em}
+.hero{position:relative;height:92vh;min-height:620px;overflow:hidden}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,35,45,.18) 0%,rgba(20,35,45,.04) 38%,rgba(249,246,239,.72) 66%,#f9f6ef 92%)}
+.hero .topbar{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:22px 40px;z-index:2}
+.hero .logo{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.1em;color:#fff;text-shadow:0 1px 10px rgba(10,25,35,.4)}
+.hero nav{display:flex;gap:22px}
+.hero nav a{color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.08em;text-shadow:0 1px 8px rgba(10,25,35,.4)}
+.hero nav a:hover{opacity:.75}
+.navtoggle{display:none;background:rgba(25,40,50,.3);border:1px solid rgba(255,255,255,.6);color:#fff;border-radius:4px;padding:6px 12px;font-size:14px;backdrop-filter:blur(3px)}
+.hero .foot{position:absolute;left:0;right:0;bottom:0;padding:0 40px 56px;max-width:1160px;margin:0 auto;z-index:1}
+.hero .eyebrow{margin:0 0 16px;letter-spacing:.32em;font-size:12px;color:#4c6b7c;font-weight:700}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(36px,5vw,60px);line-height:1.5;margin:0;color:var(--ink-h)}
+.hero .subrow{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:22px}
+.hero .sub{font-size:clamp(14px,1.8vw,17px);color:var(--ink-sub);margin:0;max-width:560px}
+.hero .meta{margin:0;font-size:12px;color:#7d8b94;text-align:right;line-height:1.9}
 
 /* sections */
-section{padding:64px 0}
-section:nth-of-type(even){background:#fff}
-.kicker{display:inline-block;background:var(--sea);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.08em;margin-bottom:14px}
-.kicker.alt{background:var(--coral)}
-.kicker.gold{background:var(--gold)}
-h2.sec{font-size:clamp(22px,3.6vw,30px);margin:0 0 10px;color:var(--navy)}
-.lead{font-size:17px;color:var(--ink);max-width:760px;margin:0 0 8px}
-.muted{color:var(--muted)}
+section{padding:100px 40px}
+#why{padding:110px 40px 100px}
+#arc,#cm,#next{padding:0 40px 100px}
+#cm-result{background:var(--sand)}
+#ideas{background:#fff;border-top:1px solid #eee5d3;border-bottom:1px solid #eee5d3}
+section strong{color:var(--blue)}
 
-/* arc */
-.arc{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:stretch;margin-top:28px}
-.arc .card{background:linear-gradient(180deg,#fff, #f4f9fc);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 6px 20px rgba(16,60,92,.06)}
-.arc .card h3{margin:.2em 0 .4em;color:var(--navy)}
-.arc .yr{font-size:12px;font-weight:800;color:var(--sea);letter-spacing:.1em}
-.arc .mid{display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--sea)}
-.arc .hub{margin-top:22px;text-align:center;background:var(--navy);color:#fff;border-radius:14px;padding:16px 18px}
-.arc .hub b{color:var(--sea-l)}
-@media(max-width:760px){.arc{grid-template-columns:1fr}.arc .mid{transform:rotate(90deg)}}
+/* section head (chapter block) */
+.sechead{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:start;border-top:1px solid var(--line-dark);padding-top:28px}
+.chnum{font-family:var(--serif);font-size:44px;color:var(--num);line-height:1}
+.chnum.sand2{color:var(--num2)}
+.chnum.gold{color:var(--gold)}
+.chlabel{margin:10px 0 0;font-size:12px;letter-spacing:.22em;color:var(--muted);font-weight:700}
+h2.sec{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,38px);line-height:1.55;margin:0 0 22px;color:var(--ink-h)}
+.lead{font-size:15.5px;max-width:680px;margin:0}
+.note{color:var(--muted);font-size:13px}
+h3.mtitle{font-family:var(--serif);font-weight:600;color:var(--ink-h);font-size:21px;margin:60px 0 0}
 
-/* concept (why) */
-.concept{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch;margin-top:28px}
-.concept .cc{background:linear-gradient(180deg,#fff,#f4f9fc);border:1px solid var(--line);border-radius:16px;padding:20px 16px;text-align:center;box-shadow:0 6px 20px rgba(16,60,92,.06)}
-.concept .cc .ic{font-size:26px}
-.concept .cc b{display:block;color:var(--navy);margin:.45em 0 .25em;font-size:15px}
-.concept .cc small{color:var(--muted);font-size:12.5px;line-height:1.6;display:block}
-.concept .op{display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--sea);font-weight:800}
-@media(max-width:760px){.concept{grid-template-columns:1fr}.concept .op{transform:rotate(90deg)}}
+/* 01 concept diagram */
+.concept{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin-top:44px}
+.concept .cc{border-top:2px solid var(--blue);padding:18px 18px 0 0}
+.concept .cc.last{border-top-color:var(--gold);padding-right:0}
+.concept .cc b{display:block;font-family:var(--serif);color:var(--ink-h);font-size:17px;font-weight:600}
+.concept .cc small{color:var(--muted);font-size:13px;line-height:1.9;display:block;margin-top:6px}
+.concept .op{display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--num2);padding:0 18px;font-family:var(--serif)}
+
+/* 02 arc cards */
+.arc{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;margin-top:40px}
+.arc .card{background:#fff;border:1px solid var(--line2);padding:28px;border-radius:10px}
+.arc .yr{font-size:11.5px;font-weight:700;color:var(--gold);letter-spacing:.18em}
+.arc .card h3{margin:12px 0 8px;font-family:var(--serif);font-weight:600;color:var(--ink-h);font-size:21px;line-height:1.5}
+.arc .card p{color:var(--muted);font-size:14px;margin:0}
+.arc .mid{display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--num2);padding:0 20px;font-family:var(--serif)}
+.quotebox{margin:26px 0 0;padding:18px 24px;border-left:2px solid var(--blue);background:var(--sand);font-size:14.5px;color:#4a5860}
+.quotebox b{color:var(--ink-h)}
 
 /* video grid */
-.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
-.vgrid .v{background:#000;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.vgrid .lite{position:relative;padding-top:56.25%;cursor:pointer;background:#0a2336 center/cover no-repeat}
-.vgrid .lite .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:background .2s}
-.vgrid .lite .play span{width:64px;height:46px;background:rgba(0,0,0,.72);border-radius:13px;display:flex;align-items:center;justify-content:center}
-.vgrid .lite .play span::after{content:"";border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;margin-left:4px}
-.vgrid .lite:hover .play{background:rgba(10,35,54,.25)}
-.vgrid .lite:hover .play span{background:var(--coral)}
+.vhint{color:var(--muted);font-size:13px;margin:40px 0 0}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 22px;margin-top:18px}
+.vgrid .lite{position:relative;padding-top:56.25%;cursor:pointer;background:#22333d center/cover no-repeat;border-radius:10px;overflow:hidden;box-shadow:0 14px 34px rgba(45,65,78,.16)}
+.vgrid .lite .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(30,45,55,.14);transition:background .2s}
+.vgrid .lite:hover .play{background:rgba(30,45,55,.3)}
+.vgrid .lite .play span{width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.85);background:rgba(25,40,50,.35);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center}
+.vgrid .lite .play span::after{content:"";border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent #fff;margin-left:4px}
 .vgrid .lite iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vgrid .cap{color:#fff;font-size:13px;padding:8px 12px;background:#15425f;font-weight:600}
-.vgrid .cap a{color:#fff;text-decoration:none}
-.vgrid .cap a:hover{text-decoration:underline}
-@media(max-width:860px){.vgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.vgrid{grid-template-columns:1fr}}
+.vgrid .cap{font-size:13px;padding:10px 2px;font-weight:600;border-bottom:1px solid var(--line)}
+.vgrid .cap a{color:var(--ink);text-decoration:none}
+.vgrid .cap a:hover{opacity:.75}
+.vgrid .cap .ext{color:var(--gold)}
 
-/* flow steps */
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:26px;counter-reset:s}
-.flow .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 14px;position:relative;text-align:center;box-shadow:0 4px 14px rgba(16,60,92,.05)}
-.flow .st .n{width:30px;height:30px;border-radius:50%;background:var(--sea);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
-.flow .st b{display:block;font-size:14px;color:var(--navy)}
-.flow .st small{color:var(--muted);font-size:12px}
-@media(max-width:860px){.flow{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.flow{grid-template-columns:1fr}}
+/* 04 findings cards */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.three .f{background:#fff;border-radius:10px;padding:30px 26px;border-top:2px solid var(--blue)}
+.three .f .big{font-size:26px;font-weight:600;color:var(--ink-h);margin:0 0 6px;font-family:var(--serif)}
+.three .f .big small{font-size:15px;color:var(--muted-l);font-weight:600}
+.three .f h3{font-size:15px;color:var(--blue);margin:0 0 10px;font-weight:700}
+.three .f p{font-size:13.5px;color:var(--muted);margin:0}
+.three .f.dark{background:var(--ink-h);border-top-color:var(--gold)}
+.three .f.dark h3{color:#e5cf9e;font-family:var(--serif);font-weight:700}
+.three .f.dark p{color:#cfdae0}
+.three .f.dark strong{color:#e5cf9e}
 
-/* placeholders (map / vr video) */
-.placeholder{margin-top:24px;border:2px dashed var(--sea-l);border-radius:16px;background:#eef7fc;padding:28px;text-align:center;color:var(--navy)}
-.placeholder b{font-size:16px}
-.placeholder .hint{color:var(--muted);font-size:13px;margin-top:6px}
-.embed-wrap{position:relative;padding-top:60%;margin-top:18px;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.12)}
-.embed-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* 05 steps strip */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.steps .st{padding:18px 14px 0;border-right:1px solid var(--line)}
+.steps .st:first-child{padding-left:0}
+.steps .st:last-child{border-right:none;padding-right:0;padding-left:14px}
+.steps .kn{font-family:var(--serif);font-size:13px;color:var(--gold)}
+.steps .st b{display:block;font-size:13.5px;color:var(--ink-h);margin-top:4px}
+.steps .st small{color:var(--muted);font-size:11.5px;line-height:1.7;display:block}
 
-/* VR spot map (Leaflet) */
-#vrmap{height:440px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 6px 18px rgba(16,60,92,.08);margin-top:16px;z-index:0}
-.leaflet-container{font-family:var(--font)}
-.vrpop{text-align:center;min-width:130px}
-.vrpop b{color:var(--navy);font-size:14px}
-.vrpop a{display:inline-block;margin-top:8px;background:var(--coral);color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700}
-.maplegend{font-size:13px;color:var(--muted);margin-top:10px}
+/* VR map */
+#vrmap{height:460px;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:0 14px 34px rgba(45,65,78,.10);margin-top:16px;z-index:0}
+.leaflet-container{font-family:var(--sans)}
+.maplegend{font-size:13px;color:var(--muted);margin:10px 0 0}
 
-/* funnel */
-.funnel{display:flex;flex-direction:column;gap:10px;margin:26px auto 0;max-width:620px}
+/* 06 photo / funnel / cats */
+figure.photo{margin:44px 0 0}
+figure.photo img{width:100%;max-height:520px;object-fit:cover;border-radius:10px;box-shadow:0 20px 48px rgba(45,65,78,.14)}
+figure.photo figcaption{margin-top:10px;font-size:13px;color:var(--muted)}
+.funnel{display:flex;flex-direction:column;gap:10px;margin:52px auto 0;max-width:640px}
 .funnel .row{display:flex;align-items:center;gap:14px}
-.funnel .bar{height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:0 4px 12px rgba(16,60,92,.12);white-space:nowrap}
-.funnel .b1{background:#9fc7df;width:100%}
-.funnel .b2{background:#5aa6cf;width:74%}
-.funnel .b3{background:#2e8bc0;width:50%}
-.funnel .b4{background:var(--navy);width:30%}
 .funnel .lab{font-size:12px;color:var(--muted);width:120px;text-align:right;flex:none}
-.funnel .note{text-align:center;margin-top:14px;font-weight:700;color:var(--coral)}
-@media(max-width:560px){.funnel .lab{display:none}}
-
-/* category bars */
-.cats{margin-top:26px;display:grid;gap:8px;max-width:680px}
-.cats .c{display:grid;grid-template-columns:130px 1fr 64px;align-items:center;gap:10px;font-size:13px}
-.cats .c .name{color:var(--navy);font-weight:700}
-.cats .c .track{background:#e7eef3;border-radius:8px;height:18px;overflow:hidden;position:relative}
-.cats .c .fill{height:100%;background:linear-gradient(90deg,var(--sea-l),var(--sea));border-radius:8px}
-.cats .c .fill.sel{background:linear-gradient(90deg,var(--gold),var(--coral))}
+.funnel .bar{height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.funnel .b1{background:#dce4da;width:100%;color:#41544a}
+.funnel .b2{background:#9db3a6;width:74%}
+.funnel .b3{background:#6d8a94;width:50%}
+.funnel .b4{background:var(--ink-h);width:30%}
+.funnel .fnote{text-align:center;margin:14px 0 0;font-weight:700;color:var(--gold);font-size:14px}
+.cats{margin-top:22px;display:grid;gap:12px;max-width:680px}
+.cats .c{display:grid;grid-template-columns:150px 1fr 70px;align-items:center;gap:12px;font-size:13px}
+.cats .c .name{color:var(--ink-h);font-weight:700}
+.cats .c .track{background:#efe9db;height:12px;overflow:hidden;border-radius:2px}
+.cats .c .fill{height:100%;background:#6d8a94}
 .cats .c .num{color:var(--muted);text-align:right}
-.cats .legend{font-size:12px;color:var(--muted);margin-top:4px}
-@media(max-width:560px){.cats .c{grid-template-columns:96px 1fr 54px}}
 
-/* idea filter + grid */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px}
-.filters button{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:7px 14px;font-size:13px;cursor:pointer;font-weight:600}
-.filters button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.idea{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:12px;padding:14px 16px;box-shadow:0 4px 12px rgba(16,60,92,.05)}
-.idea .tag{font-size:11px;color:#fff;background:var(--sea);border-radius:999px;padding:2px 9px;display:inline-block;margin-bottom:8px}
-.idea h4{margin:0 0 6px;font-size:15px;color:var(--navy)}
-.idea .q{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:8px}
-.idea .q::before{content:"\201C";color:var(--sea-l);font-weight:800;margin-right:2px}
-@media(max-width:680px){.ideas{grid-template-columns:1fr}}
+/* 06 filters + idea rows */
+.ideahead{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:64px}
+.ideahead h3{margin:0;font-family:var(--serif);font-weight:600;color:var(--ink-h);font-size:21px}
+.btn-outline{border:1px solid var(--ink-h);color:var(--ink-h);padding:10px 22px;border-radius:2px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;letter-spacing:.06em;transition:background .2s,color .2s}
+.btn-outline:hover{background:var(--ink-h);color:#fff}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px}
+.filters button{font-family:inherit;border:1px solid #cdc4ae;background:transparent;color:var(--ink-sub);border-radius:2px;padding:8px 16px;font-size:13px;cursor:pointer;font-weight:600;letter-spacing:.04em}
+.filters button.active{background:var(--ink-h);color:#fff;border-color:var(--ink-h)}
+.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.idea{border-top:1px solid var(--line);padding:18px 0 20px}
+.idea .tag{font-size:11px;color:var(--gold);letter-spacing:.14em;font-weight:700}
+.idea h4{margin:6px 0;font-size:15.5px;color:var(--ink-h);line-height:1.6;font-family:var(--serif);font-weight:600}
+.idea .q{font-size:13px;color:var(--muted)}
+.idea .q::before{content:"“ "}
 
-/* findings cards */
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-.three .f{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 6px 18px rgba(16,60,92,.05)}
-.three .f .ic{font-size:26px}
-.three .f h3{font-size:16px;color:var(--navy);margin:.4em 0}
-.three .f p{font-size:14px;color:var(--muted);margin:0}
-.three .f .big{font-size:22px;font-weight:800;color:var(--coral)}
-.three .f.key{border:2px solid var(--coral);background:linear-gradient(180deg,#fff,#fff6f1);box-shadow:0 8px 22px rgba(232,112,74,.15)}
-@media(max-width:780px){.three{grid-template-columns:1fr}}
+/* 07 learn */
+.learn3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:36px}
+.learn3 .l{border-top:2px solid var(--blue);padding-top:16px}
+.learn3 .l h3{font-family:var(--serif);font-weight:600;font-size:16.5px;color:var(--ink-h);margin:0 0 8px}
+.learn3 .l .lnum{font-size:20px;font-weight:600;color:var(--blue);margin:0 0 6px;font-family:var(--serif)}
+.learn3 .l p{font-size:13.5px;color:var(--muted);margin:0}
 
-/* feature photo */
-figure.photo{margin:26px auto 0;max-width:780px}
-figure.photo img{width:100%;border-radius:14px;box-shadow:0 8px 22px rgba(16,60,92,.14);display:block}
-figure.photo figcaption{margin-top:8px;font-size:13px;color:var(--muted);text-align:center}
-
-/* proposal / future */
-.props{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
-.props .p{background:linear-gradient(180deg,#fff,#f3f9fc);border:1px solid var(--line);border-radius:16px;padding:22px}
-.props .p h3{color:var(--navy);margin:.2em 0 .4em;font-size:17px}
-.props .p ul{margin:.4em 0 0;padding-left:1.1em}
-.props .p li{margin:.3em 0;font-size:14px}
-@media(max-width:680px){.props{grid-template-columns:1fr}}
-.future{margin-top:26px;background:linear-gradient(135deg,#13314c,#1d5e87);color:#fff;border-radius:18px;padding:26px}
-.future h3{color:#fff;margin:0 0 10px}
-.future .fcards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.future .fc{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px}
-.future .fc b{color:#ffd9a8}
-.future .fc p{font-size:13px;color:#d8e7f1;margin:.4em 0 0}
-.badge{display:inline-block;font-size:11px;background:var(--gold);color:#3a2a06;border-radius:6px;padding:2px 8px;font-weight:800;margin-left:6px}
-@media(max-width:680px){.future .fcards{grid-template-columns:1fr}}
-
-/* circulation cycle (next) */
-.cycle{position:relative;max-width:540px;margin:32px auto 8px;aspect-ratio:1/1}
+/* 08 cycle */
+.cycle{position:relative;max-width:560px;margin:52px auto 8px;aspect-ratio:1/1}
 .cycle .ring{position:absolute;inset:0;width:100%;height:100%}
-.cycle .cnode{position:absolute;z-index:1;width:33%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:0 6px 16px rgba(16,60,92,.10)}
-.cycle .cnode .cn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--sea);color:#fff;font-weight:800;align-items:center;justify-content:center;font-size:14px;margin-bottom:5px}
-.cycle .cnode b{display:block;color:var(--navy);font-size:13.5px;line-height:1.4}
-.cycle .cnode small{display:block;color:var(--muted);font-size:11.5px;margin-top:3px;line-height:1.5}
-.cycle .cnode .ai{display:inline-block;background:var(--gold);color:#3a2a06;font-style:normal;font-weight:800;font-size:10px;border-radius:5px;padding:1px 5px;margin-left:4px;vertical-align:1px}
+.cycle .cnode{position:absolute;z-index:1;width:33%;background:#fff;border:1px solid var(--line2);border-radius:10px;padding:14px 12px;text-align:center;box-shadow:0 10px 26px rgba(45,65,78,.08)}
+.cycle .cnode .kn{font-family:var(--serif);color:var(--gold);font-size:13px}
+.cycle .cnode b{display:block;color:var(--ink-h);font-size:13.5px;line-height:1.4;margin-top:3px}
+.cycle .cnode small{display:block;color:var(--muted);font-size:11.5px;margin-top:4px;line-height:1.6}
+.cycle .ai{display:inline-block;background:#ecdfc0;color:#7a5d1e;font-weight:700;font-size:10px;border-radius:3px;padding:1px 5px;margin-left:4px;vertical-align:1px}
 .cycle .n1{top:0;left:50%;transform:translate(-50%,0)}
 .cycle .n2{top:50%;right:0;transform:translate(0,-50%)}
 .cycle .n3{bottom:0;left:50%;transform:translate(-50%,0)}
 .cycle .n4{top:50%;left:0;transform:translate(0,-50%)}
-.cycle .chub{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);width:30%;text-align:center;color:var(--navy);font-weight:800;font-size:13px;line-height:1.5}
+.cycle .chub{position:absolute;z-index:1;top:50%;left:50%;transform:translate(-50%,-50%);width:30%;text-align:center;color:var(--ink-h);font-weight:600;font-size:14.5px;line-height:1.7;font-family:var(--serif)}
+.cyclenote{color:var(--muted);text-align:center;max-width:640px;margin:10px auto 0;font-size:14px}
+
+/* 08 proposals + AI box */
+.props{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px}
+.props .p{border-top:2px solid var(--blue);padding-top:18px}
+.props .p h3{color:var(--ink-h);margin:0 0 10px;font-size:16.5px;font-family:var(--serif);font-weight:600}
+.props .p ul{margin:0;padding-left:1.2em;color:var(--ink-sub)}
+.props .p li{margin:.45em 0;font-size:14px}
+.aibox{margin-top:48px;background:var(--sand2);border-radius:10px;padding:36px 34px}
+.aibox h3{color:var(--ink-h);margin:0 0 12px;font-family:var(--serif);font-weight:600;font-size:19px}
+.aibox .badge{display:inline-block;font-size:11px;background:var(--ink-h);color:var(--sand2);border-radius:2px;padding:2px 10px;font-weight:700;margin-left:8px;vertical-align:2px;font-family:var(--sans);letter-spacing:.08em}
+.aibox .intro{color:var(--ink-sub);margin:0;font-size:14px}
+.aibox .fcards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.aibox .fc{background:#fff;border-radius:8px;padding:22px}
+.aibox .fc b{color:var(--ink-h);font-family:var(--serif)}
+.aibox .fc p{font-size:13px;color:var(--muted);margin:.5em 0 0}
+.aibox .fine{color:#8a8672;font-size:13px;margin:16px 0 0}
+
+/* footer */
+footer{border-top:1px solid var(--line-dark);padding:64px 40px 80px}
+footer h3{color:var(--ink-h);font-size:22px;margin:0 0 12px;font-family:var(--serif);font-weight:600}
+footer .thanks{font-size:14px;max-width:720px;margin:0;color:var(--ink-sub)}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;margin-top:32px}
+footer .coltitle{color:var(--ink-h);display:block;margin-bottom:8px;font-size:13px;letter-spacing:.14em;font-weight:700}
+footer .links{display:flex;flex-wrap:wrap;gap:6px 22px}
+footer .links a{color:var(--blue);font-size:14px}
+footer .org{font-size:13px;margin:0;color:var(--muted)}
+footer .org strong{color:var(--ink)}
+footer .org+.org{margin-top:12px}
+footer .fine{margin-top:36px;font-size:12px;color:var(--muted-l);border-top:1px solid var(--line);padding-top:18px}
+
+/* scroll reveal (JS toggles opacity/transform; no-JS stays visible) */
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important}}
+
+/* responsive */
+@media(max-width:860px){
+  .sechead{grid-template-columns:1fr;gap:14px}
+  .chlabel br{display:none}
+  h2.sec br{display:none}
+  .steps{grid-template-columns:1fr;border-top:none}
+  .steps .st{border-right:none;border-top:1px solid var(--line);padding:14px 0 6px}
+  .steps .st:last-child{padding-left:0}
+  .vgrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:780px){.three{grid-template-columns:1fr}.learn3{grid-template-columns:1fr}}
+@media(max-width:760px){
+  .hero nav{display:none;position:absolute;top:64px;right:22px;left:22px;background:rgba(39,60,72,.97);border-radius:10px;padding:12px 18px;flex-direction:column;gap:2px}
+  .hero nav.open{display:flex}
+  .hero nav a{font-size:14px;padding:9px 2px;text-shadow:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .hero nav a:last-child{border-bottom:none}
+  .navtoggle{display:inline-block}
+  .concept{grid-template-columns:1fr}
+  .concept .cc{padding-right:0}
+  .concept .op{padding:12px 0;justify-content:flex-start}
+  .arc{grid-template-columns:1fr}
+  .arc .mid{padding:14px 0;justify-content:flex-start;transform:rotate(90deg);width:22px}
+}
+@media(max-width:680px){
+  section,#why,#arc,#cm,#next{padding-left:22px;padding-right:22px}
+  footer{padding-left:22px;padding-right:22px}
+  .hero .topbar{padding:18px 22px}
+  .hero .foot{padding:0 22px 44px}
+  .hero .meta{text-align:left}
+  .ideas{grid-template-columns:1fr}
+  .props{grid-template-columns:1fr;gap:28px}
+  .aibox{padding:26px 22px}
+  .aibox .fcards{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+}
 @media(max-width:600px){
-  .cycle{aspect-ratio:auto;max-width:430px;margin-top:24px}
+  .cycle{aspect-ratio:auto;max-width:430px;margin-top:32px}
   .cycle .ring{display:none}
   .cycle .cnode,.cycle .chub{position:static;transform:none;width:auto;margin:0 0 10px}
   .cycle .cnode{display:flex;align-items:center;gap:12px;text-align:left}
-  .cycle .cnode .cn{margin:0;flex:none}
-  .cycle .cnode b{font-size:14.5px}
-  .cycle .chub{order:9;background:var(--navy);color:#fff;border-radius:12px;padding:14px;font-size:14px}
-  .cycle .chub::before{content:"↺ ";color:var(--sea-l)}
+  .cycle .cnode .kn{flex:none}
+  .cycle .cnode b{font-size:14.5px;margin-top:0}
+  .cycle .chub{order:9;background:var(--ink-h);color:#fff;border-radius:10px;padding:14px;font-size:14px}
+  .cycle{display:flex;flex-direction:column}
 }
-
-/* footer */
-footer{background:linear-gradient(180deg, rgba(10,38,60,.87), rgba(9,32,52,.91)), url('hero.jpg') center 45%/cover no-repeat;color:#dbe8f1;padding:48px 0 60px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
-footer h3{color:#fff;font-size:18px;margin:0 0 8px}
-footer .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:18px}
-footer a{color:var(--sea-l)}
-footer .links a{display:inline-block;margin:4px 14px 4px 0;font-size:14px}
-footer .fine{margin-top:28px;font-size:12px;color:#9fb8ca;border-top:1px solid rgba(255,255,255,.15);padding-top:16px}
-@media(max-width:680px){footer .cols{grid-template-columns:1fr}}
-
-/* gentle entrance — pure CSS, always ends visible (no JS dependency) */
-.reveal{animation:revealUp .7s ease both}
-@keyframes revealUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.reveal{animation:none}}
-
-@media(max-width:720px){
-  header.bar nav{position:absolute;top:58px;left:0;right:0;background:var(--navy);flex-direction:column;padding:8px 16px;display:none}
-  header.bar nav.open{display:flex}
-  .navtoggle{display:inline-block}
+@media(max-width:560px){
+  .funnel .lab{display:none}
+  .cats .c{grid-template-columns:96px 1fr 54px}
+  .vgrid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<header class="bar">
-  <div class="wrap">
-    <span class="logo">新鹿 × 大学　2年の歩み</span>
+<!-- ===================== hero ===================== -->
+<div class="hero">
+  <img class="bg" src="hero.jpg" alt="新鹿の海岸">
+  <div class="shade"></div>
+  <div class="topbar">
+    <span class="logo">新鹿 × 大学</span>
     <button class="navtoggle" aria-label="メニュー" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
     <nav id="nav">
       <a href="#why">ねらい</a>
@@ -245,144 +283,184 @@ footer .fine{margin-top:28px;font-size:12px;color:#9fb8ca;border-top:1px solid r
       <a href="#next">これから</a>
     </nav>
   </div>
-</header>
-
-<div class="hero">
-  <p class="eyebrow">新鹿みらいのまちづくり　住民報告</p>
-  <h1>新鹿を“外の人”に届けて、<br>声をもらう。</h1>
-  <p class="sub">学生とつくった新鹿のCM。VRで東京に届けた新鹿の景色。<br>この2年でいただいた、たくさんの声の報告です。</p>
-  <p class="meta">京都大学 農村計画学研究室 ／ 三重大学 紀南オープンフィールド ／ 新鹿みらいのまちづくり推進委員会</p>
-  <p class="scroll">▼ SCROLL</p>
+  <div class="foot">
+    <p class="eyebrow">新鹿みらいのまちづくり　住民報告</p>
+    <h1>新鹿を“外の人”に届けて、<br>声をもらう。</h1>
+    <div class="subrow">
+      <p class="sub">学生とつくった新鹿のCM。VRで東京に届けた新鹿の景色。<br>この2年でいただいた、たくさんの声の報告です。</p>
+      <p class="meta">京都大学 農村計画学研究室<br>三重大学 紀南オープンフィールド<br>新鹿みらいのまちづくり推進委員会</p>
+    </div>
+  </div>
 </div>
 
-<!-- ===================== ねらい（考え方） ===================== -->
+<!-- ===================== 01 ねらい ===================== -->
 <section id="why">
-  <div class="wrap reveal">
-    <span class="kicker">私たちが目指していること</span>
-    <h2 class="sec">地域の力を、外とのつながりで補い合う</h2>
-    <p class="lead">いま多くの農村は、高齢化と人口減少のなかで、「地域の中の力だけ」では動きにくくなっています。かといって、外から出来合いの答えを持ち込めばうまくいく、というものでもない。私たちの研究室が考えてきたのは、その中間の道です。地域がもともと持っている力を、外の人とのつながりで補いながら、一緒に課題へ向き合い、新しいやり方を少しずつ編み出していく——そんな仕組みづくりです。</p>
-    <div class="concept">
-      <div class="cc"><div class="ic">🌱</div><b>地域の力</b><small>新鹿にある人・自然・歴史・暮らしの力</small></div>
-      <div class="op">＋</div>
-      <div class="cc"><div class="ic">🔗</div><b>外とのつながり</b><small>都市の人・学生・専門家とのネットワーク</small></div>
-      <div class="op">→</div>
-      <div class="cc"><div class="ic">🤝</div><b>協働で、新しい方法を</b><small>一緒に課題へ向き合い、やり方を編み出す</small></div>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum">01</span>
+        <p class="chlabel">私たちが目指して<br>いること</p>
+      </div>
+      <div>
+        <h2 class="sec">地域の力を、<br>外とのつながりで補い合う</h2>
+        <p class="lead">いま多くの農村は、高齢化と人口減少のなかで、「地域の中の力だけ」では動きにくくなっています。かといって、外から出来合いの答えを持ち込めばうまくいく、というものでもない。私たちの研究室が考えてきたのは、その中間の道です。地域がもともと持っている力を、外の人とのつながりで補いながら、一緒に課題へ向き合い、新しいやり方を少しずつ編み出していく——そんな仕組みづくりです。</p>
+        <div class="concept">
+          <div class="cc"><b>地域の力</b><small>新鹿にある人・自然・歴史・暮らしの力</small></div>
+          <div class="op">＋</div>
+          <div class="cc"><b>外とのつながり</b><small>都市の人・学生・専門家とのネットワーク</small></div>
+          <div class="op">→</div>
+          <div class="cc last"><b>協働で、新しい方法を</b><small>一緒に課題へ向き合い、やり方を編み出す</small></div>
+        </div>
+        <p class="note" style="margin:32px 0 0;max-width:680px">この「地域が主役、でも外の力もうまく借りる」という考え方は、研究の世界では<strong>ネオ内発的発展</strong>や<strong>ソーシャル・イノベーション</strong>とも呼ばれています。新鹿でのこの2年は、その考え方を実地で試し、新しいやり方を探す取り組みでした。</p>
+      </div>
     </div>
-    <p class="muted" style="margin-top:18px;font-size:13px">この「地域が主役、でも外の力もうまく借りる」という考え方は、研究の世界では<strong>ネオ内発的発展</strong>や<strong>ソーシャル・イノベーション</strong>とも呼ばれています。新鹿でのこの2年は、その考え方を実地で試し、新しいやり方を探す取り組みでした。</p>
   </div>
 </section>
 
-<!-- ===================== 全体像 ===================== -->
+<!-- ===================== 02 全体像 ===================== -->
 <section id="arc">
-  <div class="wrap reveal">
-    <span class="kicker">2年間の全体像</span>
-    <h2 class="sec">新鹿を、遠くの人へ。そして声を、新鹿へ。</h2>
-    <p class="lead">新鹿は東京から5時間。気軽に来てもらえる距離ではありません。それなら、新鹿のほうを外へ届けられないか。この2年、私たちは新鹿のコンテンツを<strong>東京・日本橋のアンテナショップ「三重テラス」</strong>に届け、外の人から声をもらう、という試みを続けてきました。中身は進化しました——学生がつくった<strong>CM</strong>から、<strong>VRの映像</strong>へ。</p>
-    <div class="arc">
-      <div class="card">
-        <span class="yr">2024年度　第1弾</span>
-        <h3>学生とつくった新鹿CM</h3>
-        <p class="muted">三重大生18名が新鹿に来て、6本のPR動画を制作。公民館で上映し、東京の三重テラスでも放映しました。</p>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum">02</span>
+        <p class="chlabel">2年間の全体像</p>
       </div>
-      <div class="mid">→</div>
-      <div class="card">
-        <span class="yr">2025年度　第2弾</span>
-        <h3>VRで届けた新鹿の景色</h3>
-        <p class="muted">新鹿の景色を360°映像に。三重テラスで体験してもらい、地域活性化のアイデアをいただきました。</p>
+      <div>
+        <h2 class="sec">新鹿を、遠くの人へ。<br>そして声を、新鹿へ。</h2>
+        <p class="lead">新鹿は東京から5時間。気軽に来てもらえる距離ではありません。それなら、新鹿のほうを外へ届けられないか。この2年、私たちは新鹿のコンテンツを<strong>東京・日本橋のアンテナショップ「三重テラス」</strong>に届け、外の人から声をもらう、という試みを続けてきました。中身は進化しました——学生がつくった<strong>CM</strong>から、<strong>VRの映像</strong>へ。</p>
+        <div class="arc">
+          <div class="card">
+            <span class="yr">2024年度　第1弾</span>
+            <h3>学生とつくった新鹿CM</h3>
+            <p>三重大生18名が新鹿に来て、6本のPR動画を制作。公民館で上映し、東京の三重テラスでも放映しました。</p>
+          </div>
+          <div class="mid">→</div>
+          <div class="card">
+            <span class="yr">2025年度　第2弾</span>
+            <h3>VRで届けた新鹿の景色</h3>
+            <p>新鹿の景色を360°映像に。三重テラスで体験してもらい、地域活性化のアイデアをいただきました。</p>
+          </div>
+        </div>
+        <p class="quotebox">共通の舞台は <b>三重テラス</b>（東京・日本橋）。新鹿と都市をつなぐ“窓”として使いました。</p>
       </div>
     </div>
-    <div class="hub">共通の舞台は <b>三重テラス</b>（東京・日本橋）。新鹿と都市をつなぐ“窓”として使いました。</div>
   </div>
 </section>
 
-<!-- ===================== 第1弾 CM ===================== -->
+<!-- ===================== 03 第1弾 CM ===================== -->
 <section id="cm">
-  <div class="wrap reveal">
-    <span class="kicker">第1弾 ／ 2024年10月</span>
-    <h2 class="sec">学生とつくった、6本の新鹿CM</h2>
-    <p class="lead">「あたしか×大学生 第1弾」。三重大学の学生18名が新鹿に泊まり込み、6つの班に分かれて、プロの動画ディレクターの指導のもと新鹿をPRするCMを制作しました。町案内も、民宿も、ジビエも、大仙寺でのBBQも——住民の皆さん約20名のご協力で実現した2日間です。完成したCMは公民館の上映会で「景観や人の温かさが伝わる」と評価され、地元紙（くろしお版・吉野熊野新聞）にも掲載されました。</p>
-    <p class="muted">▼ 完成した6本のCM（紀南地域のファンコミュニティ「紀南部」YouTubeチャンネルで公開中）</p>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum">03</span>
+        <p class="chlabel">第1弾<br>2024年10月</p>
+      </div>
+      <div>
+        <h2 class="sec">学生とつくった、<br>6本の新鹿CM</h2>
+        <p class="lead">「あたしか×大学生 第1弾」。三重大学の学生18名が新鹿に泊まり込み、6つの班に分かれて、プロの動画ディレクターの指導のもと新鹿をPRするCMを制作しました。町案内も、民宿も、ジビエも、大仙寺でのBBQも——住民の皆さん約20名のご協力で実現した2日間です。完成したCMは公民館の上映会で「景観や人の温かさが伝わる」と評価され、地元紙（くろしお版・吉野熊野新聞）にも掲載されました。</p>
+      </div>
+    </div>
+    <p class="vhint">▼ 完成した6本のCM（紀南地域のファンコミュニティ「紀南部」YouTubeチャンネルで公開中）</p>
     <div class="vgrid">
-      <div class="v"><div class="lite" data-id="0D4VW3BjHGs" style="background-image:url(https://img.youtube.com/vi/0D4VW3BjHGs/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/0D4VW3BjHGs" target="_blank" rel="noopener">グループ1 の新鹿CM ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="e_0Log-26iU" style="background-image:url(https://img.youtube.com/vi/e_0Log-26iU/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/e_0Log-26iU" target="_blank" rel="noopener">グループ2 の新鹿CM ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="PYaGCRmogrM" style="background-image:url(https://img.youtube.com/vi/PYaGCRmogrM/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/PYaGCRmogrM" target="_blank" rel="noopener">グループ3 の新鹿CM ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="mvT3rsaorW8" style="background-image:url(https://img.youtube.com/vi/mvT3rsaorW8/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/mvT3rsaorW8" target="_blank" rel="noopener">グループ4 の新鹿CM ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="D79h3AX2KZI" style="background-image:url(https://img.youtube.com/vi/D79h3AX2KZI/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/D79h3AX2KZI" target="_blank" rel="noopener">グループ5 の新鹿CM ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="h3JAWbi7JQ0" style="background-image:url(https://img.youtube.com/vi/h3JAWbi7JQ0/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/h3JAWbi7JQ0" target="_blank" rel="noopener">グループ6 の新鹿CM ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="0D4VW3BjHGs" style="background-image:url(https://img.youtube.com/vi/0D4VW3BjHGs/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/0D4VW3BjHGs" target="_blank" rel="noopener">グループ1 の新鹿CM <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="e_0Log-26iU" style="background-image:url(https://img.youtube.com/vi/e_0Log-26iU/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/e_0Log-26iU" target="_blank" rel="noopener">グループ2 の新鹿CM <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="PYaGCRmogrM" style="background-image:url(https://img.youtube.com/vi/PYaGCRmogrM/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/PYaGCRmogrM" target="_blank" rel="noopener">グループ3 の新鹿CM <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="mvT3rsaorW8" style="background-image:url(https://img.youtube.com/vi/mvT3rsaorW8/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/mvT3rsaorW8" target="_blank" rel="noopener">グループ4 の新鹿CM <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="D79h3AX2KZI" style="background-image:url(https://img.youtube.com/vi/D79h3AX2KZI/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/D79h3AX2KZI" target="_blank" rel="noopener">グループ5 の新鹿CM <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="h3JAWbi7JQ0" style="background-image:url(https://img.youtube.com/vi/h3JAWbi7JQ0/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/h3JAWbi7JQ0" target="_blank" rel="noopener">グループ6 の新鹿CM <span class="ext">↗</span></a></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 第1弾 CM 研究結果 ===================== -->
+<!-- ===================== 04 第1弾でわかったこと ===================== -->
 <section id="cm-result">
-  <div class="wrap reveal">
-    <span class="kicker">第1弾でわかったこと</span>
-    <h2 class="sec">「楽しかった」だけでは、また来てくれない</h2>
-    <p class="lead">CMづくりには、もう一つのねらいがありました。来てくれた学生に、その後も新鹿と関わり続けてもらえないか——いわゆる<strong>関係人口</strong>の入口になってもらえないか、ということです。そこで、参加した学生のうち13人を1か月後まで追いかけ、「“また来たい”が、どうすれば“また来る”に変わるのか」を調べました。</p>
-    <div class="three">
-      <div class="f"><div class="ic">😊</div><h3>満足度は、ほぼ満点</h3><p class="big">全員が 6〜7 ／ 7点</p><p>参加した学生は全員が「満足」か「非常に満足」。当日の体験そのものは、文句なしでした。</p></div>
-      <div class="f"><div class="ic">🔁</div><h3>でも「また来る」は一部</h3><p class="big">13人中 4人</p><p>1か月後、再訪が現実的だと見立てられたのはこの人数。「また来たい」気持ちと、実際の再訪は、別物でした。</p></div>
-      <div class="f key"><div class="ic">🌱</div><h3>分けたのは「農村への関心」</h3><p>再訪を左右したのは満足度の高さではなく、<strong>もともと農村に関心があるかどうか</strong>。関心の高い人は、遠さのような壁も、自分で越えていく傾向がありました。</p></div>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum sand2">04</span>
+        <p class="chlabel">第1弾で<br>わかったこと</p>
+      </div>
+      <div>
+        <h2 class="sec">「楽しかった」だけでは、<br>また来てくれない</h2>
+        <p class="lead">CMづくりには、もう一つのねらいがありました。来てくれた学生に、その後も新鹿と関わり続けてもらえないか——いわゆる<strong>関係人口</strong>の入口になってもらえないか、ということです。そこで、参加した学生のうち13人を1か月後まで追いかけ、「“また来たい”が、どうすれば“また来る”に変わるのか」を調べました。</p>
+      </div>
     </div>
-    <p class="muted" style="margin-top:20px">もう一つ。1か月のあいだに地域への関わりの意欲は全体に少し下がりましたが、<strong>SNSでの関わりが一番薄れやすく、「また会いに行きたい」という現地・対面の気持ちは、いちばん残りました</strong>。オンラインは便利ですが、軸になるのは“現地で会うこと”。SNSはそれを後押しする役回り、と言えそうです。</p>
-    <p class="lead" style="margin-top:14px">だからこそ、大事なのは<strong>「誰に届けるか」</strong>。来てくれた学生は、そのまま新鹿のファン＝関係人口の入口になりえます。農村に関心のある人に絞って、次に来る“きっかけ”を用意する——この発見は、最後のご提案につながっています。</p>
+    <div class="three">
+      <div class="f"><p class="big">全員が 6〜7 <small>／ 7点</small></p><h3>満足度は、ほぼ満点</h3><p>参加した学生は全員が「満足」か「非常に満足」。当日の体験そのものは、文句なしでした。</p></div>
+      <div class="f"><p class="big">13人中 4人</p><h3>でも「また来る」は一部</h3><p>1か月後、再訪が現実的だと見立てられたのはこの人数。「また来たい」気持ちと、実際の再訪は、別物でした。</p></div>
+      <div class="f dark"><h3>分けたのは「農村への関心」</h3><p>再訪を左右したのは満足度の高さではなく、<strong>もともと農村に関心があるかどうか</strong>。関心の高い人は、遠さのような壁も、自分で越えていく傾向がありました。</p></div>
+    </div>
+    <p style="color:var(--muted);font-size:14px;margin:34px 0 0;max-width:720px">もう一つ。1か月のあいだに地域への関わりの意欲は全体に少し下がりましたが、<strong>SNSでの関わりが一番薄れやすく、「また会いに行きたい」という現地・対面の気持ちは、いちばん残りました</strong>。オンラインは便利ですが、軸になるのは“現地で会うこと”。SNSはそれを後押しする役回り、と言えそうです。</p>
+    <p style="font-size:15.5px;margin:18px 0 0;max-width:720px">だからこそ、大事なのは<strong>「誰に届けるか」</strong>。来てくれた学生は、そのまま新鹿のファン＝関係人口の入口になりえます。農村に関心のある人に絞って、次に来る“きっかけ”を用意する——この発見は、最後のご提案につながっています。</p>
   </div>
 </section>
 
-<!-- ===================== 第2弾 VR ===================== -->
+<!-- ===================== 05 第2弾 VR ===================== -->
 <section id="vr">
-  <div class="wrap reveal">
-    <span class="kicker">第2弾 ／ 2025年10〜11月</span>
-    <h2 class="sec">VRで、新鹿を東京へ持っていく</h2>
-    <p class="lead">新鹿の景色を全天球カメラで360°映像にして、三重テラスの来訪者に体験してもらいました。映像づくりも皆さんのご協力でできています——住民の“いちおしスポット”を募り、推薦した方ご本人のナレーションを、そのまま映像に入れています。</p>
-    <div class="flow">
-      <div class="st"><div class="n">1</div><b>いちおし募集</b><small>住民から17スポット</small></div>
-      <div class="st"><div class="n">2</div><b>6スポット選定</b><small>自然・歴史・暮らし</small></div>
-      <div class="st"><div class="n">3</div><b>住民ナレーション</b><small>「ここが好き」を収録</small></div>
-      <div class="st"><div class="n">4</div><b>全天球撮影</b><small>約5分に編集</small></div>
-      <div class="st"><div class="n">5</div><b>三重テラスで体験</b><small>来訪者46名</small></div>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum">05</span>
+        <p class="chlabel">第2弾<br>2025年10〜11月</p>
+      </div>
+      <div>
+        <h2 class="sec">VRで、新鹿を<br>東京へ持っていく</h2>
+        <p class="lead">新鹿の景色を全天球カメラで360°映像にして、三重テラスの来訪者に体験してもらいました。映像づくりも皆さんのご協力でできています——住民の“いちおしスポット”を募り、推薦した方ご本人のナレーションを、そのまま映像に入れています。</p>
+        <div class="steps">
+          <div class="st"><span class="kn">一</span><b>いちおし募集</b><small>住民から17スポット</small></div>
+          <div class="st"><span class="kn">二</span><b>6スポット選定</b><small>自然・歴史・暮らし</small></div>
+          <div class="st"><span class="kn">三</span><b>住民ナレーション</b><small>「ここが好き」を収録</small></div>
+          <div class="st"><span class="kn">四</span><b>全天球撮影</b><small>約5分に編集</small></div>
+          <div class="st"><span class="kn">五</span><b>三重テラスで体験</b><small>来訪者46名</small></div>
+        </div>
+      </div>
     </div>
 
-    <!-- VR撮影スポット地図（Leaflet + OpenStreetMap・自己完結） -->
-    <h3 style="margin-top:32px;color:var(--navy)">🗺 VR撮影スポットマップ</h3>
+    <h3 class="mtitle">VR撮影スポットマップ</h3>
     <div id="vrmap"></div>
     <p class="maplegend">ピンをクリックすると、その場所のVR映像を開けます（地図：OpenStreetMap）。</p>
 
-    <!-- VR360動画（紀南部チャンネル「新鹿町VR（実験用）」） -->
-    <p class="muted" style="margin-top:26px">▼ 三重テラスで体験してもらった、新鹿の<strong>6つの360°VR映像</strong>。住民の皆さんが選んだ“いちおし”の場所です（クリックで再生、スマホやマウスでぐりぐり見回せます）。</p>
+    <p class="vhint">▼ 三重テラスで体験してもらった、新鹿の<strong>6つの360°VR映像</strong>。住民の皆さんが選んだ“いちおし”の場所です（クリックで再生、スマホやマウスでぐりぐり見回せます）。</p>
     <div class="vgrid">
-      <div class="v"><div class="lite" data-id="JoHc2EnM7og" style="background-image:url(https://img.youtube.com/vi/JoHc2EnM7og/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/JoHc2EnM7og" target="_blank" rel="noopener">なべら川遊び 360° ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="H9NJDi95Qxs" style="background-image:url(https://img.youtube.com/vi/H9NJDi95Qxs/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/H9NJDi95Qxs" target="_blank" rel="noopener">大仙寺 360° ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="FNEy-hgIlAk" style="background-image:url(https://img.youtube.com/vi/FNEy-hgIlAk/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/FNEy-hgIlAk" target="_blank" rel="noopener">熊野古道 伊勢路 360° ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="OwbT8Pu50b0" style="background-image:url(https://img.youtube.com/vi/OwbT8Pu50b0/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/OwbT8Pu50b0" target="_blank" rel="noopener">弁天滝 360° ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="zgEs79Np1gg" style="background-image:url(https://img.youtube.com/vi/zgEs79Np1gg/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/zgEs79Np1gg" target="_blank" rel="noopener">新鹿公民館 360° ↗</a></div></div>
-      <div class="v"><div class="lite" data-id="IHHVHh2KXCk" style="background-image:url(https://img.youtube.com/vi/IHHVHh2KXCk/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/IHHVHh2KXCk" target="_blank" rel="noopener">新鹿海水浴場 360° ↗</a></div></div>
+      <div class="v"><div class="lite" data-id="JoHc2EnM7og" style="background-image:url(https://img.youtube.com/vi/JoHc2EnM7og/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/JoHc2EnM7og" target="_blank" rel="noopener">なべら川遊び 360° <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="H9NJDi95Qxs" style="background-image:url(https://img.youtube.com/vi/H9NJDi95Qxs/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/H9NJDi95Qxs" target="_blank" rel="noopener">大仙寺 360° <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="FNEy-hgIlAk" style="background-image:url(https://img.youtube.com/vi/FNEy-hgIlAk/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/FNEy-hgIlAk" target="_blank" rel="noopener">熊野古道 伊勢路 360° <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="OwbT8Pu50b0" style="background-image:url(https://img.youtube.com/vi/OwbT8Pu50b0/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/OwbT8Pu50b0" target="_blank" rel="noopener">弁天滝 360° <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="zgEs79Np1gg" style="background-image:url(https://img.youtube.com/vi/zgEs79Np1gg/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/zgEs79Np1gg" target="_blank" rel="noopener">新鹿公民館 360° <span class="ext">↗</span></a></div></div>
+      <div class="v"><div class="lite" data-id="IHHVHh2KXCk" style="background-image:url(https://img.youtube.com/vi/IHHVHh2KXCk/hqdefault.jpg)"><div class="play"><span></span></div></div><div class="cap"><a href="https://youtu.be/IHHVHh2KXCk" target="_blank" rel="noopener">新鹿海水浴場 360° <span class="ext">↗</span></a></div></div>
     </div>
-    <p class="muted" style="margin-top:12px;font-size:13px">再生リスト全体：<a href="https://www.youtube.com/playlist?list=PLC8gDQgk2BSBF6o1BTYjOjcZGUwWrGPsK" target="_blank" rel="noopener">新鹿町VR（実験用）｜紀南部@三重テラス</a></p>
+    <p class="note" style="margin:14px 0 0">再生リスト全体：<a href="https://www.youtube.com/playlist?list=PLC8gDQgk2BSBF6o1BTYjOjcZGUwWrGPsK" target="_blank" rel="noopener">新鹿町VR（実験用）｜紀南部@三重テラス</a></p>
   </div>
 </section>
 
-<!-- ===================== 154の宝の山 ===================== -->
+<!-- ===================== 06 154の宝の山 ===================== -->
 <section id="ideas">
-  <div class="wrap reveal">
-    <span class="kicker alt">三重テラスで集まった声</span>
-    <h2 class="sec">154の“宝の山”と、残った40のアイデア</h2>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum">06</span>
+        <p class="chlabel">三重テラスで<br>集まった声</p>
+      </div>
+      <div>
+        <h2 class="sec">154の“宝の山”と、<br>残った40のアイデア</h2>
+        <p class="lead">三重テラスの来訪者からは、合わせて<strong>154</strong>ものアイデアが集まりました（喜田さんが「宝の山」と呼んでくださったものです）。これを新鹿に持ち帰り、皆さんに3段階で仕分けていただきました。「意外か（地域の中からは出ない発想か）」→「役に立つか」→「実現できそうか」。くぐり抜けたのは<strong>40件、およそ4分の1</strong>です。</p>
+      </div>
+    </div>
     <figure class="photo">
       <img src="photos/IMG_4952.jpg" alt="三重テラスでVR映像を体験する来訪者の皆さん" loading="lazy">
       <figcaption>三重テラスでVR映像を体験する来訪者の皆さん（東京・日本橋／2025年秋）</figcaption>
     </figure>
-    <p class="lead">三重テラスの来訪者からは、合わせて<strong>154</strong>ものアイデアが集まりました（喜田さんが「宝の山」と呼んでくださったものです）。これを新鹿に持ち帰り、皆さんに3段階で仕分けていただきました。「意外か（地域の中からは出ない発想か）」→「役に立つか」→「実現できそうか」。くぐり抜けたのは<strong>40件、およそ4分の1</strong>です。</p>
 
     <div class="funnel">
       <div class="row"><span class="lab">集まった全アイデア</span><div class="bar b1">154</div></div>
       <div class="row"><span class="lab">① 意外性を通過</span><div class="bar b2">意外な発想</div></div>
       <div class="row"><span class="lab">② 有益性を通過</span><div class="bar b3">役に立つ</div></div>
       <div class="row"><span class="lab">③ 実現性を通過</span><div class="bar b4">40 を選抜</div></div>
-      <div class="note">約4分の1のアイデアが「意外で、役に立ち、実現できそう」と選ばれました</div>
+      <p class="fnote">約4分の1のアイデアが「意外で、役に立ち、実現できそう」と選ばれました</p>
     </div>
 
-    <h3 style="margin-top:40px;color:var(--navy)">どんな分野に集まったか</h3>
-    <p class="muted">数字は「集まった数 → そのうち残った数」。受け入れる環境、外の人とのつながり、景色の見せ方に、関心が集まりました。</p>
+    <h3 class="mtitle">どんな分野に集まったか</h3>
+    <p class="note" style="margin:8px 0 0">数字は「集まった数 → そのうち残った数」。受け入れる環境、外の人とのつながり、景色の見せ方に、関心が集まりました。</p>
     <div class="cats">
       <div class="c"><span class="name">受入環境・インフラ</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="num">32→10</span></div>
       <div class="c"><span class="name">交流・関係人口</span><div class="track"><div class="fill" style="width:81%"></div></div><span class="num">26→8</span></div>
@@ -394,9 +472,9 @@ footer .fine{margin-top:28px;font-size:12px;color:#9fb8ca;border-top:1px solid r
       <div class="c"><span class="name">資源活用・産業</span><div class="track"><div class="fill" style="width:25%"></div></div><span class="num">8→2</span></div>
     </div>
 
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:44px">
-      <h3 style="margin:0;color:var(--navy)">残ったアイデア（住民が選んだ40件）</h3>
-      <a href="ideas.html" style="background:var(--sea);color:#fff;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 4px 12px rgba(46,139,192,.25)">集まった全154件を見る →</a>
+    <div class="ideahead">
+      <h3>残ったアイデア（住民が選んだ40件）</h3>
+      <a class="btn-outline" href="ideas.html">集まった全154件を見る →</a>
     </div>
     <div class="filters" id="filters">
       <button class="active" data-f="all">すべて</button>
@@ -457,51 +535,75 @@ footer .fine{margin-top:28px;font-size:12px;color:#9fb8ca;border-top:1px solid r
       <div class="idea" data-cat="食"><span class="tag">食・産業</span><h4>サンドアート（階段から見下ろす）</h4><div class="q">穏やかな砂浜で、階段から見下ろすサンドアートはどうか。</div></div>
       <div class="idea" data-cat="食"><span class="tag">食・産業</span><h4>高音質な環境音の収録</h4><div class="q">波や山の音から「匂い」や「空気感」を感じさせる。</div></div>
     </div>
-    <p class="muted" style="margin-top:14px;font-size:13px">※ ここでは住民が選んだ40件を掲載しています。元の声をふくむ全154件は、上の「集まった全154件を見る」からご覧いただけます。</p>
+    <p class="note" style="margin:16px 0 0">※ ここでは住民が選んだ40件を掲載しています。元の声をふくむ全154件は、上の「集まった全154件を見る」からご覧いただけます。</p>
   </div>
 </section>
 
-<!-- ===================== わかったこと ===================== -->
+<!-- ===================== 07 わかったこと ===================== -->
 <section id="learn">
-  <div class="wrap reveal">
-    <span class="kicker">2年でわかったこと</span>
-    <h2 class="sec">外の「知らないからこそ」×住民の「知っているからこそ」</h2>
-    <div class="three">
-      <div class="f"><div class="ic">🪟</div><h3>三重テラスは“窓”になる</h3><p>新鹿と東京をつなぐ拠点として、外の人に届け、声をもらう往復が成立しました。</p></div>
-      <div class="f"><div class="ic">👀</div><h3>VRで“知らない人”も提案できる</h3><p class="big">VR 19.6% ／ 2D 0%</p><p>新鹿を知らない人でも、VRで場所が分かると、地域に選ばれるアイデアを出せました。鍵は没入感より「場所が分かること」。</p></div>
-      <div class="f"><div class="ic">🤝</div><h3>選ぶのは、住民にしかできない</h3><p>外の視点が“驚き”を持ち込み、それが地域で“使えるか”を判断できるのは住民の皆さんだけ。この組み合わせが効きました。</p></div>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum">07</span>
+        <p class="chlabel">2年で<br>わかったこと</p>
+      </div>
+      <div>
+        <h2 class="sec">外の「知らないからこそ」×<br>住民の「知っているからこそ」</h2>
+        <div class="learn3">
+          <div class="l">
+            <h3>三重テラスは“窓”になる</h3>
+            <p>新鹿と東京をつなぐ拠点として、外の人に届け、声をもらう往復が成立しました。</p>
+          </div>
+          <div class="l">
+            <h3>VRで“知らない人”も提案できる</h3>
+            <p class="lnum">VR 19.6% ／ 2D 0%</p>
+            <p>新鹿を知らない人でも、VRで場所が分かると、地域に選ばれるアイデアを出せました。鍵は没入感より「場所が分かること」。</p>
+          </div>
+          <div class="l">
+            <h3>選ぶのは、住民にしかできない</h3>
+            <p>外の視点が“驚き”を持ち込み、それが地域で“使えるか”を判断できるのは住民の皆さんだけ。この組み合わせが効きました。</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== これから ===================== -->
+<!-- ===================== 08 これから ===================== -->
 <section id="next">
-  <div class="wrap reveal">
-    <span class="kicker gold">新鹿へのご提案</span>
-    <h2 class="sec">情報と知恵が、内と外をめぐりつづける</h2>
-    <p class="lead">冒頭でお話しした「地域の力を、外とのつながりで補い合う」。これを、一回きりの取り組みで終わらせないことが、ひとつの鍵になります。外から刺激が届き、地域でそれを“題材”に考え、新しいかたちで発信し、また声が返ってくる。この輪が回りつづけるほど、情報と知恵が新鹿の内と外をめぐり、新鹿が進むべき方向と、その方法が、だんだん形になっていきます。</p>
+  <div class="inner" data-reveal>
+    <div class="sechead">
+      <div>
+        <span class="chnum gold">08</span>
+        <p class="chlabel">新鹿への<br>ご提案</p>
+      </div>
+      <div>
+        <h2 class="sec">情報と知恵が、<br>内と外をめぐりつづける</h2>
+        <p class="lead">冒頭でお話しした「地域の力を、外とのつながりで補い合う」。これを、一回きりの取り組みで終わらせないことが、ひとつの鍵になります。外から刺激が届き、地域でそれを“題材”に考え、新しいかたちで発信し、また声が返ってくる。この輪が回りつづけるほど、情報と知恵が新鹿の内と外をめぐり、新鹿が進むべき方向と、その方法が、だんだん形になっていきます。</p>
+      </div>
+    </div>
 
     <div class="cycle">
       <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
-        <defs><marker id="ah" markerWidth="7" markerHeight="7" refX="3.4" refY="3.5" orient="auto"><path d="M0.5,0.5 L6.5,3.5 L0.5,6.5 Z" fill="#2e8bc0"/></marker></defs>
-        <path d="M157.98 42.02 A82 82 0 0 1 181.55 91.43" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
-        <path d="M157.98 157.98 A82 82 0 0 1 108.57 181.55" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
-        <path d="M42.02 157.98 A82 82 0 0 1 18.45 108.57" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
-        <path d="M42.02 42.02 A82 82 0 0 1 91.43 18.45" fill="none" stroke="#7fc1e3" stroke-width="2.4"/>
-        <path d="M108.57 18.45 A82 82 0 0 1 157.98 42.02" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
-        <path d="M181.55 108.57 A82 82 0 0 1 157.98 157.98" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
-        <path d="M91.43 181.55 A82 82 0 0 1 42.02 157.98" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
-        <path d="M18.45 91.43 A82 82 0 0 1 42.02 42.02" fill="none" stroke="#7fc1e3" stroke-width="2.4" marker-end="url(#ah)"/>
+        <defs><marker id="ah" markerWidth="7" markerHeight="7" refX="3.4" refY="3.5" orient="auto"><path d="M0.5,0.5 L6.5,3.5 L0.5,6.5 Z" fill="#8fa3ac"/></marker></defs>
+        <path d="M157.98 42.02 A82 82 0 0 1 181.55 91.43" fill="none" stroke="#d4ccb8" stroke-width="2"/>
+        <path d="M157.98 157.98 A82 82 0 0 1 108.57 181.55" fill="none" stroke="#d4ccb8" stroke-width="2"/>
+        <path d="M42.02 157.98 A82 82 0 0 1 18.45 108.57" fill="none" stroke="#d4ccb8" stroke-width="2"/>
+        <path d="M42.02 42.02 A82 82 0 0 1 91.43 18.45" fill="none" stroke="#d4ccb8" stroke-width="2"/>
+        <path d="M108.57 18.45 A82 82 0 0 1 157.98 42.02" fill="none" stroke="#d4ccb8" stroke-width="2" marker-end="url(#ah)"/>
+        <path d="M181.55 108.57 A82 82 0 0 1 157.98 157.98" fill="none" stroke="#d4ccb8" stroke-width="2" marker-end="url(#ah)"/>
+        <path d="M91.43 181.55 A82 82 0 0 1 42.02 157.98" fill="none" stroke="#d4ccb8" stroke-width="2" marker-end="url(#ah)"/>
+        <path d="M18.45 91.43 A82 82 0 0 1 42.02 42.02" fill="none" stroke="#d4ccb8" stroke-width="2" marker-end="url(#ah)"/>
       </svg>
-      <div class="cnode n1"><span class="cn">①</span><b>外から、刺激が届く</b><small>三重テラス等から、アイデア・視点・問いが入る</small></div>
-      <div class="cnode n2"><span class="cn">②</span><b>地域で、考える・選ぶ</b><small>住民が“題材”に判断<span class="ai">AI</span></small></div>
-      <div class="cnode n3"><span class="cn">③</span><b>新しく、発信する</b><small>表現そのものを刷新<span class="ai">AI</span></small></div>
-      <div class="cnode n4"><span class="cn">④</span><b>外から、また声が返る</b><small>新たな関心・アイデアが戻る</small></div>
+      <div class="cnode n1"><span class="kn">一</span><b>外から、刺激が届く</b><small>三重テラス等から、アイデア・視点・問いが入る</small></div>
+      <div class="cnode n2"><span class="kn">二</span><b>地域で、考える・選ぶ</b><small>住民が“題材”に判断<span class="ai">AI</span></small></div>
+      <div class="cnode n3"><span class="kn">三</span><b>新しく、発信する</b><small>表現そのものを刷新<span class="ai">AI</span></small></div>
+      <div class="cnode n4"><span class="kn">四</span><b>外から、また声が返る</b><small>新たな関心・アイデアが戻る</small></div>
       <div class="chub">情報と知恵が<br>めぐりつづける</div>
     </div>
-    <p class="muted" style="text-align:center;max-width:640px;margin:6px auto 0">この輪が回りつづけるほど、新鹿が進むべき方向と、そのための方法が、はっきりしていきます。</p>
+    <p class="cyclenote">この輪が回りつづけるほど、新鹿が進むべき方向と、そのための方法が、はっきりしていきます。</p>
 
-    <h3 style="margin-top:40px;color:var(--navy)">輪を回しつづけるために、できること</h3>
+    <h3 class="mtitle">輪を回しつづけるために、できること</h3>
     <div class="props">
       <div class="p">
         <h3>続ける“仕組み”をつくる</h3>
@@ -523,36 +625,36 @@ footer .fine{margin-top:28px;font-size:12px;color:#9fb8ca;border-top:1px solid r
       </div>
     </div>
 
-    <div class="future">
+    <div class="aibox">
       <h3>AIで、“考える”と“見せる”を後押し <span class="badge">これからの構想</span></h3>
-      <p style="color:#dceaf3;margin:0">この輪のなかで、AIは2か所で力になります。集まった声を整理して住民の“たたき台”をつくる（②考える側）。そして、地域の見せ方そのものを新しくする（③見せる側）。たとえば——</p>
+      <p class="intro">この輪のなかで、AIは2か所で力になります。集まった声を整理して住民の“たたき台”をつくる（②考える側）。そして、地域の見せ方そのものを新しくする（③見せる側）。たとえば——</p>
       <div class="fcards">
         <div class="fc"><b>AIで“歩ける”3D空間</b><p>360°映像や写真から、新鹿の集落・海岸をAIで3D空間化。スマホやブラウザで自由に歩き回れる体験へ。</p></div>
         <div class="fc"><b>古い写真から、動く映像へ</b><p>昔の新鹿の写真をAIで動かし、「30年前の新鹿」を映像でよみがえらせる。古老の語りのアーカイブとも相性◎。</p></div>
       </div>
-      <p style="color:#bcd6e6;font-size:13px;margin:14px 0 0">※ 住民評価でも「過去の姿をVRで」「古老の語りをアーカイブ」という声が出ていました。これらの構想は、その延長線上にあります。</p>
+      <p class="fine">※ 住民評価でも「過去の姿をVRで」「古老の語りをアーカイブ」という声が出ていました。これらの構想は、その延長線上にあります。</p>
     </div>
   </div>
 </section>
 
 <!-- ===================== footer ===================== -->
 <footer>
-  <div class="wrap">
+  <div class="inner">
     <h3>ありがとうございました</h3>
-    <p>CMの撮影・出演、VRの撮影とナレーション、そしてアイデアの評価まで。この2年の取り組みは、すべて新鹿の皆さんのご協力があってのものでした。心より感謝申し上げます。</p>
+    <p class="thanks">CMの撮影・出演、VRの撮影とナレーション、そしてアイデアの評価まで。この2年の取り組みは、すべて新鹿の皆さんのご協力があってのものでした。心より感謝申し上げます。</p>
     <div class="cols">
       <div>
+        <strong class="coltitle">関連リンク</strong>
         <div class="links">
-          <strong style="color:#fff;display:block;margin-bottom:4px">関連リンク</strong>
           <a href="https://www.youtube.com/@%E7%B4%80%E5%8D%97%E9%83%A8/playlists" target="_blank" rel="noopener">紀南部 YouTube（CM・動画）</a>
           <a href="https://kinan-openfield.mie-u.ac.jp/tpoics/33055/" target="_blank" rel="noopener">三重大 紀南オープンフィールド</a>
           <a href="https://mie-terrace.jp/" target="_blank" rel="noopener">三重テラス（東京・日本橋）</a>
         </div>
       </div>
       <div>
-        <strong style="color:#fff;display:block;margin-bottom:4px">主催・共催</strong>
-        <p style="font-size:13px;margin:0"><strong style="color:#fff">新鹿みらいのまちづくり推進委員会</strong>／<strong style="color:#fff">京都大学</strong> 農村計画学研究室／<strong style="color:#fff">三重大学</strong> 紀南オープンフィールド構想によるみどりのアントレプレナー共創拠点（みえの未来図共創機構）</p>
-        <p style="font-size:13px;margin:10px 0 0">本取り組みは、<strong style="color:#fff">JST 共創の場形成支援プログラム</strong>（COI-NEXT）の支援を受けて実施しました。　課題番号：JPMJPF2305</p>
+        <strong class="coltitle">主催・共催</strong>
+        <p class="org"><strong>新鹿みらいのまちづくり推進委員会</strong>／<strong>京都大学</strong> 農村計画学研究室／<strong>三重大学</strong> 紀南オープンフィールド構想によるみどりのアントレプレナー共創拠点（みえの未来図共創機構）</p>
+        <p class="org">本取り組みは、<strong>JST 共創の場形成支援プログラム</strong>（COI-NEXT）の支援を受けて実施しました。　課題番号：JPMJPF2305</p>
       </div>
     </div>
     <p class="fine">この資料は、新鹿の皆さんへの報告と、今後の情報発信にお使いいただくことを想定して作成した試作版です。内容・数値は今後調整します。<br>制作協力：京都大学 農村計画学研究室（田内・鬼塚ほか）</p>
@@ -560,7 +662,29 @@ footer .fine{margin-top:28px;font-size:12px;color:#9fb8ca;border-top:1px solid r
 </footer>
 
 <script>
-// (entrance animation is pure CSS — no JS needed)
+// scroll reveal (skips elements already in view; disabled for reduced motion)
+(function(){
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(!('IntersectionObserver' in window)) return;
+  var els=[].slice.call(document.querySelectorAll('[data-reveal]'));
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.style.opacity='1';
+        e.target.style.transform='none';
+        io.unobserve(e.target);
+      }
+    });
+  },{rootMargin:'0px 0px -10% 0px',threshold:0});
+  els.forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top<window.innerHeight*0.9) return;
+    el.style.opacity='0';
+    el.style.transform='translateY(28px)';
+    el.style.transition='opacity 1s cubic-bezier(.22,.61,.36,1), transform 1s cubic-bezier(.22,.61,.36,1)';
+    io.observe(el);
+  });
+})();
 // idea filter
 (function(){
   var fs=document.getElementById('filters'); if(!fs) return;
@@ -593,7 +717,7 @@ document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('clic
 <script>
 (function(){
   var el=document.getElementById('vrmap');
-  if(!el || typeof L==='undefined'){ if(el){el.innerHTML='<p style="padding:20px;color:#5f7180">地図の読み込みにはインターネット接続が必要です。</p>';} return; }
+  if(!el || typeof L==='undefined'){ if(el){el.innerHTML='<p style="padding:20px;color:#77878f">地図の読み込みにはインターネット接続が必要です。</p>';} return; }
   var spots=[
     {n:'新鹿海水浴場', la:33.92859, lo:136.14729, id:'IHHVHh2KXCk'},
     {n:'大仙寺', la:33.93045, lo:136.14257, id:'H9NJDi95Qxs'},
@@ -607,7 +731,7 @@ document.querySelectorAll('#nav a').forEach(function(a){a.addEventListener('clic
   var pts=[];
   spots.forEach(function(s){
     var m=L.marker([s.la,s.lo]).addTo(map);
-    m.bindPopup('<div class="vrpop"><b>'+s.n+'</b><br><a href="https://youtu.be/'+s.id+'" target="_blank" rel="noopener">▶ VRを見る</a></div>');
+    m.bindPopup('<div style="text-align:center;min-width:140px"><b style="color:#273c48">'+s.n+'</b><br><a href="https://youtu.be/'+s.id+'" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;background:#273c48;color:#fff;padding:6px 14px;border-radius:2px;text-decoration:none;font-size:13px;font-weight:700">▶ VRを見る</a></div>');
     pts.push([s.la,s.lo]);
   });
   map.fitBounds(pts,{padding:[45,45]});
