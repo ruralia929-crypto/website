@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>村づくりワークショップの記録 ― 神前 × 京都大学</title>
+<script>try{document.documentElement.lang=localStorage.getItem('kouzaki_lang')||'ja';}catch(e){}</script>
 <meta name="description" content="神前（こうざき）で毎年ひらかれている、京都大学の学生との村づくりワークショップ。2013年から続くあゆみと、学生たちの提案の記録です。">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +37,11 @@ img { max-width: 100%; }
   [style*="padding:40px 36px"] { padding: 26px 22px !important; }
   [style*="padding:26px 28px"] { padding: 20px 18px !important; }
 }
+html[lang="en"] .lang-ja { display: none; }
+html[lang="ja"] .lang-en { display: none; }
+.langtoggle { display:inline-flex; align-items:stretch; border:1px solid #cfcfc0; border-radius:3px; overflow:hidden; }
+.langtoggle button { appearance:none; background:none; border:none; cursor:pointer; padding:6px 11px; font:500 11px/1 'Zen Kaku Gothic New',sans-serif; letter-spacing:.08em; color:#8a9072; transition:background .15s,color .15s; }
+.langtoggle button.on { background:#31402a; color:#f6f5ee; }
 </style>
 </head>
 <body>
@@ -46,35 +52,37 @@ img { max-width: 100%; }
     <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px 32px;">
       <a href="index.html" style="display:flex;align-items:baseline;gap:14px;text-decoration:none;">
         <span style="font:700 22px/1 'Zen Old Mincho',serif;color:#31402a;letter-spacing:.14em;">神前</span>
-        <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;">ワークショップの記録</span>
+        <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;"><span class="lang-ja">ワークショップの記録</span><span class="lang-en">Workshop Archive</span></span>
       </a>
       <div style="display:flex;align-items:center;gap:32px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
-        <a href="ws2026.html" style="color:#5b6152;text-decoration:none;">2026年の予定</a>
-        <a href="#rekidai" style="color:#5b6152;text-decoration:none;">あゆみ</a>
+        <a href="ws2026.html" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">2026年の予定</span><span class="lang-en">2026 Plan</span></a>
+        <a href="#rekidai" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">あゆみ</span><span class="lang-en">History</span></a>
         <a href="#y2022" style="color:#5b6152;text-decoration:none;">2022</a>
         <a href="#y2023" style="color:#5b6152;text-decoration:none;">2023</a>
         <a href="#y2024" style="color:#5b6152;text-decoration:none;">2024</a>
         <a href="#y2025" style="color:#5b6152;text-decoration:none;">2025</a>
         <span style="width:1px;height:14px;background:#cfcfc0;"></span>
-        <a href="index.html" style="color:#31402a;text-decoration:none;font-weight:500;">神前について</a>
-        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;border-bottom:2px solid #31402a;padding-bottom:4px;">住民報告</a>
+        <a href="index.html" style="color:#31402a;text-decoration:none;font-weight:500;"><span class="lang-ja">神前について</span><span class="lang-en">About Kouzaki</span></a>
+        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;border-bottom:2px solid #31402a;padding-bottom:4px;"><span class="lang-ja">住民報告</span><span class="lang-en">Residents' Report</span></a>
+        <span class="langtoggle" role="group" aria-label="language"><button type="button" data-lang="ja" onclick="setLang('ja')">日本語</button><button type="button" data-lang="en" onclick="setLang('en')">EN</button></span>
+        <a href="ws2026.html" style="background:#31402a;color:#f6f5ee;text-decoration:none;font-weight:600;padding:8px 15px;border-radius:3px;letter-spacing:.04em;white-space:nowrap;"><span class="lang-ja">2026ワークショップ →</span><span class="lang-en">2026 Workshop →</span></a>
       </div>
     </div>
   </div>
 
   <!-- ================= hero ================= -->
   <div style="max-width:1200px;margin:0 auto;padding:110px 32px 90px;">
-    <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:#94997f;margin-bottom:32px;">神 前 × 京 都 大 学 ― き ろ く</div>
-    <h1 style="margin:0;font:700 56px/1.6 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">村づくりワークショップの記録</h1>
+    <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:#94997f;margin-bottom:32px;"><span class="lang-ja">神 前 × 京 都 大 学 ― き ろ く</span><span class="lang-en">KOUZAKI × KYOTO UNIVERSITY — A RECORD</span></div>
+    <h1 style="margin:0;font:700 56px/1.6 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;"><span class="lang-ja">村づくりワークショップの記録</span><span class="lang-en">A Record of the Village-Making Workshops</span></h1>
     <div style="width:56px;height:1px;background:#a7ac90;margin:36px 0;"></div>
-    <p style="margin:0;max-width:560px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#454b3d;">毎年、学生たちが神前を訪れ、集落を歩き、村の未来を一緒に考えてきました。その一日と、生まれた提案の記録です。</p>
+    <p style="margin:0;max-width:560px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">毎年、学生たちが神前を訪れ、集落を歩き、村の未来を一緒に考えてきました。その一日と、生まれた提案の記録です。</span><span class="lang-en">Every year, students come to Kouzaki, walk the hamlet, and think through the village's future together with the people who live here. This is a record of those days, and of the ideas they gave rise to.</span></p>
   </div>
 
   <!-- ================= intro band ================= -->
   <div style="border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
     <div style="max-width:1200px;margin:0 auto;padding:72px 32px;">
-      <p style="margin:0 auto;max-width:780px;text-align:center;font:400 19px/2.4 'Shippori Mincho B1',serif;color:#3a4030;text-wrap:pretty;">京都大学の農学部では、村づくりを学ぶ授業の一環として、毎年ひと組の学生たちが神前を訪ねます。集落を歩いて隠れた魅力と課題を見つけ、一日かけて「こうすれば元気になるのでは」という提案をつくり、住民のみなさんに発表する——。地元の力添えがあってこそ続けてこられた、神前ならではの学びの場です。</p>
-      <p style="margin:32px auto 0;max-width:780px;text-align:center;font:400 14px/1.8 'Zen Kaku Gothic New',sans-serif;"><a href="ws2026.html" style="display:inline-block;border:1px solid #31402a;color:#31402a;padding:14px 28px;letter-spacing:.06em;text-decoration:none;">今年のワークショップ ― 2026年7月12日（日）の予定を見る →</a></p>
+      <p style="margin:0 auto;max-width:780px;text-align:center;font:400 19px/2.4 'Shippori Mincho B1',serif;color:#3a4030;text-wrap:pretty;"><span class="lang-ja">京都大学の農学部では、村づくりを学ぶ授業の一環として、毎年ひと組の学生たちが神前を訪ねます。集落を歩いて隠れた魅力と課題を見つけ、一日かけて「こうすれば元気になるのでは」という提案をつくり、住民のみなさんに発表する——。地元の力添えがあってこそ続けてこられた、神前ならではの学びの場です。</span><span class="lang-en">In Kyoto University's Faculty of Agriculture, one group of students visits Kouzaki each year as part of a course on village-making. They walk the hamlet to find its hidden charms and the challenges it faces, spend a day shaping proposals for how the place might come alive again, and present them to the residents. It is a learning ground found nowhere else — one that has carried on only thanks to the help of the local community.</span></p>
+      <p style="margin:32px auto 0;max-width:780px;text-align:center;font:400 14px/1.8 'Zen Kaku Gothic New',sans-serif;"><a href="ws2026.html" style="display:inline-block;border:1px solid #31402a;color:#31402a;padding:14px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">今年のワークショップ ― 2026年7月12日（日）の予定を見る →</span><span class="lang-en">This year's workshop — see the plan for Sunday, 12 July 2026 →</span></a></p>
     </div>
   </div>
 
@@ -82,46 +90,46 @@ img { max-width: 100%; }
   <div id="rekidai">
     <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">2013年から続く、学びの往来</h2>
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">2013年から続く、学びの往来</span><span class="lang-en">A Coming and Going of Learning, Since 2013</span></h2>
         <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">AYUMI 2013–2021</span>
       </div>
-      <p style="margin:0 0 40px;max-width:780px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">はじまりは2010年。神前ふるさとを守る会の活動を、京都大学が視察に訪れたことでした。翌2011年からは総務省の研究プロジェクト（SCOPE）の一環として、iPadやFacebookを使った情報発信の講習会など9回の行事を地域と大学で重ね、2013年6月、村づくりワークショップの第1回が開かれます。テーマの多くは、地域の側から提案されてきました。</p>
+      <p style="margin:0 0 40px;max-width:780px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">はじまりは2010年。神前ふるさとを守る会の活動を、京都大学が視察に訪れたことでした。翌2011年からは総務省の研究プロジェクト（SCOPE）の一環として、iPadやFacebookを使った情報発信の講習会など9回の行事を地域と大学で重ね、2013年6月、村づくりワークショップの第1回が開かれます。テーマの多くは、地域の側から提案されてきました。</span><span class="lang-en">It began in 2010, when Kyoto University came to observe the work of the Kouzaki Hometown Preservation Society. From 2011, as part of a research project under the Ministry of Internal Affairs and Communications (SCOPE), the village and the university held nine events together — among them workshops on sharing local news with iPads and Facebook — and in June 2013 the first village-making workshop opened. Many of the themes, over the years, have come from the community's own side.</span></p>
 
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第1回<br>2013年6月</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">特産品の開発と、その販売戦略</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">学生31名が初めて神前を訪れました。FacebookやWeb中継も取り入れた実験的な回で、集落を歩き、「田舎こうざき」などの将来ビジョンを提案しました。</p></div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">第1回<br>2013年6月</span><span class="lang-en">1st<br>June 2013</span></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">特産品の開発と、その販売戦略</span><span class="lang-en">Developing Local Products, and How to Sell Them</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">学生31名が初めて神前を訪れました。FacebookやWeb中継も取り入れた実験的な回で、集落を歩き、「田舎こうざき」などの将来ビジョンを提案しました。</span><span class="lang-en">Thirty-one students came to Kouzaki for the very first time. It was an experimental round that folded in Facebook and live web streaming; they walked the hamlet and offered visions of its future, among them "Inaka Kouzaki" (Kouzaki, the countryside).</span></p></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第2回<br>2014年7月</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前地域の活性化方策</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">留学生も加わった回。「NOWSON de LAWSON ― 農村にもコンビニを!!」など、若者らしい提案が並びました。</p></div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">第2回<br>2014年7月</span><span class="lang-en">2nd<br>July 2014</span></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前地域の活性化方策</span><span class="lang-en">Ways to Revitalize the Kouzaki Area</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">留学生も加わった回。「NOWSON de LAWSON ― 農村にもコンビニを!!」など、若者らしい提案が並びました。</span><span class="lang-en">International students joined this round. Youthful ideas lined up one after another — like "NOWSON de LAWSON — a convenience store for the countryside too!!"</span></p></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第3回<br>2015年6月</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">チョロギを使った村づくり</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">動き出したばかりの「チョロギ村」構想がテーマに。立ち上げ資金の調達方法として、クラウドファンディングを提案する班もありました。</p></div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">第3回<br>2015年6月</span><span class="lang-en">3rd<br>June 2015</span></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">チョロギを使った村づくり</span><span class="lang-en">Village-Making with Chorogi</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">動き出したばかりの「チョロギ村」構想がテーマに。立ち上げ資金の調達方法として、クラウドファンディングを提案する班もありました。</span><span class="lang-en">The theme was the just-launched "Chorogi Village" concept. One group even proposed crowdfunding as a way to raise the money to get it off the ground.</span></p></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第4回<br>2016年6月</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前に人が訪れてもらうためには</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加31名。守る会が提示したこのテーマを、全班が正面から考えました。</p></div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">第4回<br>2016年6月</span><span class="lang-en">4th<br>June 2016</span></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前に人が訪れてもらうためには</span><span class="lang-en">How to Get People to Come to Kouzaki</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">参加31名。守る会が提示したこのテーマを、全班が正面から考えました。</span><span class="lang-en">Thirty-one took part. Every group met this theme, set by the Preservation Society, head-on.</span></p></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第5回<br>2017年6月</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">地域の特性・資産を活用した村づくり</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加35名。会場に古民家カフェが加わり、獣害対策にドローンやAIをあてる「けものはのけもん わかもんはカモン!!」など、ユニークな提案が生まれました。ドローン空撮のデモンストレーションも行われた年です。</p></div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">第5回<br>2017年6月</span><span class="lang-en">5th<br>June 2017</span></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">地域の特性・資産を活用した村づくり</span><span class="lang-en">Village-Making that Draws on Local Character and Assets</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">参加35名。会場に古民家カフェが加わり、獣害対策にドローンやAIをあてる「けものはのけもん わかもんはカモン!!」など、ユニークな提案が生まれました。ドローン空撮のデモンストレーションも行われた年です。</span><span class="lang-en">Thirty-five took part. An old-farmhouse café was added to the venue, and one-of-a-kind ideas emerged — such as "Kemono wa Nokemon, Wakamon wa Kamon!!," turning drones and AI on the problem of wildlife damage. It was also the year of a drone aerial-photography demonstration.</span></p></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第6回<br>2018年7月</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">住みたくなる村づくり</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加24名。昼食はチョロギ村レストランの薬膳御膳。集落ウォーキングでは薪窯ピザ庵の店主や宝林寺のご住職のお話も加わりました。</p></div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">第6回<br>2018年7月</span><span class="lang-en">6th<br>July 2018</span></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">住みたくなる村づくり</span><span class="lang-en">Village-Making that Makes You Want to Live There</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">参加24名。昼食はチョロギ村レストランの薬膳御膳。集落ウォーキングでは薪窯ピザ庵の店主や宝林寺のご住職のお話も加わりました。</span><span class="lang-en">Twenty-four took part. Lunch was the medicinal-cuisine set at the Chorogi Village Restaurant. On the hamlet walk, the owner of the wood-fired pizza hut and the head priest of Hōrin-ji temple joined in with their stories.</span></p></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">第7回<br>2019年7月</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">あなたは明日から、神前の住民になります</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">参加39名。「わくわく就農プラン・らくらく移住プラン」「薬膳村として、令和の健康村」など。この年の成果報告書は、のちに集落の農業計画の資料編にも収められました。</p></div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">第7回<br>2019年7月</span><span class="lang-en">7th<br>July 2019</span></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">あなたは明日から、神前の住民になります</span><span class="lang-en">From Tomorrow, You Are a Resident of Kouzaki</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">参加39名。「わくわく就農プラン・らくらく移住プラン」「薬膳村として、令和の健康村」など。この年の成果報告書は、のちに集落の農業計画の資料編にも収められました。</span><span class="lang-en">Thirty-nine took part, with ideas like "The Exciting Farming Plan / The Easy Move-In Plan" and "A Medicinal-Cuisine Village — a health village for the Reiwa era." The report from this year was later gathered into the appendix of the hamlet's own farming plan.</span></p></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">2020–2021</div>
-        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;">コロナ禍による中断</h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">2年間の中止。その間もオンライン会議などで、地域と大学の交流は続きました。再開後の2022年からの記録は、下に詳しくまとめています。</p></div>
+        <div><h3 style="margin:0 0 8px;font:600 18px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">コロナ禍による中断</span><span class="lang-en">A Pause, Through the Pandemic</span></h3><p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">2年間の中止。その間もオンライン会議などで、地域と大学の交流は続きました。再開後の2022年からの記録は、下に詳しくまとめています。</span><span class="lang-en">Two years off. Even so, the village and the university kept in touch through online meetings and the like. The record from 2022 onward, after the workshops resumed, is set out in detail below.</span></p></div>
       </div>
 
       <div style="margin:40px 0 0;">
-        <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#94997f;margin-bottom:14px;">2018年のワークショップ風景</div>
+        <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#94997f;margin-bottom:14px;"><span class="lang-ja">2018年のワークショップ風景</span><span class="lang-en">Scenes from the 2018 workshop</span></div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
           <img src="photos/ws2018_lecture.jpg" alt="神前集落の村づくりの紹介（2018年）" title="神前集落の村づくりの紹介（2018年）" style="width:100%;height:170px;object-fit:cover;display:block;">
           <img src="photos/ws2018_chorogi.jpg" alt="チョロギの村づくりの紹介（2018年）" title="チョロギの村づくりの紹介（2018年）" style="width:100%;height:170px;object-fit:cover;display:block;">
@@ -131,8 +139,8 @@ img { max-width: 100%; }
       </div>
 
       <div style="margin-top:40px;border:1px solid #e0e0d4;padding:24px 28px;">
-        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;">ワークショップは、集落の計画にも活きています</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">2021年に承認された神前地区の「京力農場プラン」（地域農業の将来計画）には、京都大学とのワークショップが取組のひとつとして明記され、2019年の成果報告書が資料編に収録されました。プランづくりのための全農家アンケート（回収率100%）の集計も、大学が担いました。</div>
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;"><span class="lang-ja">ワークショップは、集落の計画にも活きています</span><span class="lang-en">The Workshops Feed Into the Hamlet's Own Plans</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">2021年に承認された神前地区の「京力農場プラン」（地域農業の将来計画）には、京都大学とのワークショップが取組のひとつとして明記され、2019年の成果報告書が資料編に収録されました。プランづくりのための全農家アンケート（回収率100%）の集計も、大学が担いました。</span><span class="lang-en">In the Kouzaki district's "Kyōryoku Farm Plan" (a long-term plan for local farming), approved in 2021, the workshops with Kyoto University are set down as one of the initiatives undertaken, and the 2019 report was included in its appendix. The university also handled the tallying of the survey of every farming household — a 100% response rate — that fed into drawing up the plan.</span></div>
       </div>
     </div>
   </div>
@@ -143,15 +151,15 @@ img { max-width: 100%; }
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
         <div>
           <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2022</div>
-          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月16日（土）<br>学部生・院生・留学生 6班</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;"><span class="lang-ja">7月16日（土）<br>学部生・院生・留学生 6班</span><span class="lang-en">Sat, 16 July<br>Undergraduate, graduate & international students · 6 groups</span></div>
         </div>
         <div>
-          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">3年ぶりの再開 ― コロナ禍を越えて</h2>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">3年ぶりの再開 ― コロナ禍を越えて</span><span class="lang-en">Back After Three Years — Beyond the Pandemic</span></h2>
           <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px;">
-            <span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマA：あなたが住みたくなる村づくり</span>
-            <span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマB：Society 5.0時代のチョロギ村づくり</span>
+            <span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;"><span class="lang-ja">テーマA：あなたが住みたくなる村づくり</span><span class="lang-en">Theme A: Village-Making That Makes You Want to Live Here</span></span>
+            <span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;"><span class="lang-ja">テーマB：Society 5.0時代のチョロギ村づくり</span><span class="lang-en">Theme B: Chorogi Village-Making for the Society 5.0 Era</span></span>
           </div>
-          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">コロナ禍で2年間の中止を経て、3年ぶりに再開した年。宝林寺や北ノ奥作業場をめぐる集落ウォーキングで村を取材し、チョロギ村レストランで昼食のあと、守る会顧問から「これまでのWSと神前の村づくり」の報告を受けて、住民のみなさんと一緒に提案づくりに取り組みました。</p>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">コロナ禍で2年間の中止を経て、3年ぶりに再開した年。宝林寺や北ノ奥作業場をめぐる集落ウォーキングで村を取材し、チョロギ村レストランで昼食のあと、守る会顧問から「これまでのWSと神前の村づくり」の報告を受けて、住民のみなさんと一緒に提案づくりに取り組みました。</span><span class="lang-en">The year the workshop came back after two years lost to the pandemic. Students got to know the village on a hamlet walk that took in Hōrin-ji temple and the Kita-no-oku workshop; then, after lunch at the Chorogi Village Restaurant and a talk by an adviser to the Preservation Society on "The workshops so far, and village-making in Kouzaki," they set about building proposals together with the residents.</span></p>
 
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
             <img src="photos/ws2022_dialog.jpg" alt="住民のみなさんへの聞き取り（2022年）" title="住民のみなさんへの聞き取り（2022年）" style="width:100%;height:170px;object-fit:cover;display:block;">
@@ -162,40 +170,40 @@ img { max-width: 100%; }
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班 ― テーマA</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">とかいなか</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">「とかい」の便利さと「いなか」の良さを両立する村へ。アクセス改善や遊休農地の遊び場化、農泊・農地オーナー制度、全世代で地域の魅力を学び直す「郷土学」を提案。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">1班 ― テーマA</span><span class="lang-en">Group 1 — Theme A</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">とかいなか</span><span class="lang-en">Tokainaka — City-Meets-Country</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">「とかい」の便利さと「いなか」の良さを両立する村へ。アクセス改善や遊休農地の遊び場化、農泊・農地オーナー制度、全世代で地域の魅力を学び直す「郷土学」を提案。</span><span class="lang-en">A village that holds onto both the convenience of the city (tokai) and the good of the country (inaka). Their ideas: better access, turning idle farmland into places to play, farm-stays and a farmland-owner scheme, and a "local studies" course in which every generation relearns what makes the place special.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班 ― テーマA</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">“長老喜（チョロギ）”の村で末永く！</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">車を持ち、農業以外の職に就く都市部の若い移住者がターゲット。チョロギや薬膳、景観、祭りをSNSで発信し、兼業しやすい暮らしの支援や神前米のブランド化で受け皿を整える。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">2班 ― テーマA</span><span class="lang-en">Group 2 — Theme A</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">“長老喜（チョロギ）”の村で末永く！</span><span class="lang-en">A Long, Happy Life in "Chōrōki" (Chorogi) Village!</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">車を持ち、農業以外の職に就く都市部の若い移住者がターゲット。チョロギや薬膳、景観、祭りをSNSで発信し、兼業しやすい暮らしの支援や神前米のブランド化で受け皿を整える。</span><span class="lang-en">The target: young city-dwellers who own a car and work outside farming. Put chorogi, medicinal cuisine, the scenery and the festivals out on social media, then ready the landing pad — support for a life that blends farming with other work, and branding for Kouzaki rice.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班 ― テーマA</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">薬膳郷 神前</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">健康志向の高まりを追い風に、薬膳を神前の看板に。「自分たちで育てた農産物で薬膳定食を作って食べる」複合型の農業体験で、まず「来たくなる」集落を目指す。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">3班 ― テーマA</span><span class="lang-en">Group 3 — Theme A</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">薬膳郷 神前</span><span class="lang-en">Kouzaki, Home of Medicinal Cuisine</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">健康志向の高まりを追い風に、薬膳を神前の看板に。「自分たちで育てた農産物で薬膳定食を作って食べる」複合型の農業体験で、まず「来たくなる」集落を目指す。</span><span class="lang-en">With growing interest in health as a tailwind, make medicinal cuisine Kouzaki's calling card. Through a layered farm experience — "grow the produce yourself, then cook and share a medicinal-cuisine set meal" — first become a hamlet people want to come to.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班 ― テーマB</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">子育て世代を、チョロギ村へ</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">SNSや動画での魅力発信、リモート学習による教育の補完、交流会館のワーケーション活用、夏休みの空き家「お試し移住」を組み合わせ、子育て世代の来訪と移住を後押しする。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">4班 ― テーマB</span><span class="lang-en">Group 4 — Theme B</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">子育て世代を、チョロギ村へ</span><span class="lang-en">Bringing Young Families to Chorogi Village</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">SNSや動画での魅力発信、リモート学習による教育の補完、交流会館のワーケーション活用、夏休みの空き家「お試し移住」を組み合わせ、子育て世代の来訪と移住を後押しする。</span><span class="lang-en">Bring together social media and video to show the village off, remote learning to fill out education, the community hall for workations, and a summer "trial move-in" at vacant houses — all to encourage families with children to visit, and to settle.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">5班 ― テーマB</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">どろ〜ん！神前参上！</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">村にあるドローンで集落や薬草畑のPR動画を撮り、訪れた子どもたちがドローンで記念写真を撮れる体験に。まず若い訪問者を増やし、将来の定住のきっかけをつくる。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">5班 ― テーマB</span><span class="lang-en">Group 5 — Theme B</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">どろ〜ん！神前参上！</span><span class="lang-en">Dro-o-one! Kouzaki Arrives!</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">村にあるドローンで集落や薬草畑のPR動画を撮り、訪れた子どもたちがドローンで記念写真を撮れる体験に。まず若い訪問者を増やし、将来の定住のきっかけをつくる。</span><span class="lang-en">Use the village's own drone to film promo clips of the hamlet and the herb fields, and let visiting children take keepsake photos from the air. Draw in more young visitors first, and plant the seed for settling down later.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">6班 ― テーマB・留学生チーム</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">帰属意識を育てる村づくり</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">多国籍の留学生チーム。「帰属意識（Sense of Belonging）」の醸成を軸に、AR・VRも視野に入れた発信、神前米の袋に棚田の写真とQRコードを付けてバーチャルツアーへ誘導する案などを提案。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">6班 ― テーマB・留学生チーム</span><span class="lang-en">Group 6 — Theme B · International Team</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">帰属意識を育てる村づくり</span><span class="lang-en">Village-Making that Grows a Sense of Belonging</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">多国籍の留学生チーム。「帰属意識（Sense of Belonging）」の醸成を軸に、AR・VRも視野に入れた発信、神前米の袋に棚田の写真とQRコードを付けてバーチャルツアーへ誘導する案などを提案。</span><span class="lang-en">A team of international students from several countries. Building on the idea of nurturing a "sense of belonging," they reached toward AR and VR — among other things, putting a photo of the terraced rice fields and a QR code on bags of Kouzaki rice to lead people into a virtual tour.</span></p>
             </div>
           </div>
 
           <div style="margin-top:40px;border:1px solid #e0e0d4;padding:24px 28px;">
-            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;">一日の流れ</div>
-            <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">守る会代表のごあいさつ（集落の概要）→ 集落ウォーキング（ふれあいセンター → 宝林寺 → 北ノ奥作業場 → 交流会館）→ チョロギ村レストランで昼食 → 地元からの報告「これまでのWSと神前の村づくり」（守る会顧問）→ ワークショップ（各班に住民のみなさんが同席）→ 成果報告会 → お礼の言葉とお土産の贈呈</div>
+            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;"><span class="lang-ja">一日の流れ</span><span class="lang-en">How the Day Went</span></div>
+            <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">守る会代表のごあいさつ（集落の概要）→ 集落ウォーキング（ふれあいセンター → 宝林寺 → 北ノ奥作業場 → 交流会館）→ チョロギ村レストランで昼食 → 地元からの報告「これまでのWSと神前の村づくり」（守る会顧問）→ ワークショップ（各班に住民のみなさんが同席）→ 成果報告会 → お礼の言葉とお土産の贈呈</span><span class="lang-en">A welcome from the head of the Preservation Society (an overview of the hamlet) → a hamlet walk (Fureai Center → Hōrin-ji temple → Kita-no-oku workshop → community hall) → lunch at the Chorogi Village Restaurant → a local report, "The workshops so far, and village-making in Kouzaki" (an adviser to the Preservation Society) → the workshop (residents sitting in with each group) → the results presentation → words of thanks and a parting gift of local produce</span></div>
           </div>
         </div>
       </div>
@@ -208,12 +216,12 @@ img { max-width: 100%; }
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
         <div>
           <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2023</div>
-          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月16日（日）<br>学部生・留学生 5班</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;"><span class="lang-ja">7月16日（日）<br>学部生・留学生 5班</span><span class="lang-en">Sun, 16 July<br>Undergraduate & international students · 5 groups</span></div>
         </div>
         <div>
-          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">VRで集落を記録する、新しい挑戦</h2>
-          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;">テーマ：農業の後継者不足 ― 外から若い担い手を呼び込むには？</span></div>
-          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">この年の目玉はVR（バーチャルリアリティ）。一部の班は集落を歩き、一部の班はVRで村を「探検」して、それぞれ提案づくりに挑みました。昼はチョロギ村レストランで地元の味も。</p>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">VRで集落を記録する、新しい挑戦</span><span class="lang-en">A New Experiment — Recording the Hamlet in VR</span></h2>
+          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;"><span class="lang-ja">テーマ：農業の後継者不足 ― 外から若い担い手を呼び込むには？</span><span class="lang-en">Theme: Too few farming successors — how do you draw young hands in from outside?</span></span></div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">この年の目玉はVR（バーチャルリアリティ）。一部の班は集落を歩き、一部の班はVRで村を「探検」して、それぞれ提案づくりに挑みました。昼はチョロギ村レストランで地元の味も。</span><span class="lang-en">The centerpiece this year was VR (virtual reality). Some groups walked the hamlet; others "explored" the village in VR — and each set about shaping its own proposals. Lunch, once more, brought the local flavors of the Chorogi Village Restaurant.</span></p>
 
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
             <img src="photos/ws2023_vr.jpg" alt="VR体験の様子（2023年）" title="VR体験の様子（2023年）" style="width:100%;height:170px;object-fit:cover;display:block;">
@@ -224,35 +232,35 @@ img { max-width: 100%; }
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班 ― ウォーキング・住民同席</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">こうざきへ おこしやす！</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">京都・大阪に近い立地を生かし、「兼業」で移住・就農する若者を地域ぐるみで支える。SNSや就活サイトでの発信も提案。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">1班 ― ウォーキング・住民同席</span><span class="lang-en">Group 1 — Walk · With Residents</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">こうざきへ おこしやす！</span><span class="lang-en">Okoshi-yasu! Come On Over to Kouzaki!</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">京都・大阪に近い立地を生かし、「兼業」で移住・就農する若者を地域ぐるみで支える。SNSや就活サイトでの発信も提案。</span><span class="lang-en">Make the most of being close to Kyoto and Osaka, and rally the whole community behind young people who move in and take up farming as a sideline. They also proposed spreading the word on social media and job-hunting sites.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班 ― ウォーキング・学生のみ</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前に農業学校を</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">若者が継続的に神前に通い、関わり続ける仕組みとして農業学校を提案。資金・生徒集め・定住の3点が鍵と整理。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">2班 ― ウォーキング・学生のみ</span><span class="lang-en">Group 2 — Walk · Students Only</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前に農業学校を</span><span class="lang-en">A Farming School for Kouzaki</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">若者が継続的に神前に通い、関わり続ける仕組みとして農業学校を提案。資金・生徒集め・定住の3点が鍵と整理。</span><span class="lang-en">They proposed a farming school as a way for young people to keep coming back to Kouzaki and stay involved. Funding, drawing in students, and settling down, they figured, were the three keys.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班 ― VR・住民同席</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前米インターン</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">集落外の若者が「知る→体験する→移住する」の3段階で就農へ。Instagram発信、空き家を改修したシェアハウス、兼業での神前米づくりを組み合わせる。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">3班 ― VR・住民同席</span><span class="lang-en">Group 3 — VR · With Residents</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前米インターン</span><span class="lang-en">The Kouzaki Rice Internship</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">集落外の若者が「知る→体験する→移住する」の3段階で就農へ。Instagram発信、空き家を改修したシェアハウス、兼業での神前米づくりを組み合わせる。</span><span class="lang-en">Young people from outside the hamlet reach farming in three stages — "learn → try → move in." Pair it with outreach on Instagram, a share house made from a renovated vacant home, and growing Kouzaki rice as a sideline.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班 ― VR・学生のみ</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">“チョロギ”です！プログラム</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">チョロギソフトなどの新商品と、農業＋グランピング等の体験施設で、まず神前を知ってもらい来訪者を増やす。企業との連携も視野に。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">4班 ― VR・学生のみ</span><span class="lang-en">Group 4 — VR · Students Only</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">“チョロギ”です！プログラム</span><span class="lang-en">It's "Chorogi"! The Program</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">チョロギソフトなどの新商品と、農業＋グランピング等の体験施設で、まず神前を知ってもらい来訪者を増やす。企業との連携も視野に。</span><span class="lang-en">New products like chorogi soft-serve, paired with experience facilities that mix farming and glamping, to get Kouzaki known first and bring more visitors in. Tie-ups with companies were in view as well.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">5班 ― 留学生チーム</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">外からの目で見た神前</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">多国籍の留学生が、住民への聞き取り（子どもの祭り、兼業農家の暮らし、跡継ぎへの思い）をもとに、後継者問題を国際的な視点で議論。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">5班 ― 留学生チーム</span><span class="lang-en">Group 5 — International Team</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">外からの目で見た神前</span><span class="lang-en">Kouzaki Through Outside Eyes</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">多国籍の留学生が、住民への聞き取り（子どもの祭り、兼業農家の暮らし、跡継ぎへの思い）をもとに、後継者問題を国際的な視点で議論。</span><span class="lang-en">International students from several countries, drawing on interviews with residents — the children's festival, the lives of part-time farmers, feelings about who will carry things on — discussed the succession question from an international point of view.</span></p>
             </div>
           </div>
 
           <div style="margin-top:40px;border:1px solid #e0e0d4;padding:24px 28px;">
-            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;">一日の流れ</div>
-            <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">守る会のみなさんのごあいさつ → 地域からの情報提供（集落の概要と後継者問題）→ 集落ウォーキング／VR → チョロギ村レストランで昼食 → ワークショップ（一部の班に住民が同席）→ 成果報告会（住民のみなさんも参加）</div>
+            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;margin-bottom:8px;"><span class="lang-ja">一日の流れ</span><span class="lang-en">How the Day Went</span></div>
+            <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">守る会のみなさんのごあいさつ → 地域からの情報提供（集落の概要と後継者問題）→ 集落ウォーキング／VR → チョロギ村レストランで昼食 → ワークショップ（一部の班に住民が同席）→ 成果報告会（住民のみなさんも参加）</span><span class="lang-en">A welcome from the members of the Preservation Society → a local briefing (an overview of the hamlet and the successor problem) → a hamlet walk / VR → lunch at the Chorogi Village Restaurant → the workshop (residents sitting in with some groups) → the results presentation (residents joining in too)</span></div>
           </div>
         </div>
       </div>
@@ -265,12 +273,12 @@ img { max-width: 100%; }
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
         <div>
           <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2024</div>
-          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月14日（日）<br>学部生・院生・留学生 4班</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;"><span class="lang-ja">7月14日（日）<br>学部生・院生・留学生 4班</span><span class="lang-en">Sun, 14 July<br>Undergraduate, graduate & international students · 4 groups</span></div>
         </div>
         <div>
-          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">「隠れた魅力さがし」、はじまる</h2>
-          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマ：集落に隠れた魅力を外部者の視点から発見し、その活用・アピール方法を提案する</span></div>
-          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">この年からテーマは「隠れた魅力の発見」に。日本語2班・英語2班の4班が3つのエリアに分かれて集落を歩き、航空写真の上に見つけた「タネ」を貼り込みながら、提案をまとめました。</p>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">「隠れた魅力さがし」、はじまる</span><span class="lang-en">The Hunt for Hidden Charms Begins</span></h2>
+          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;"><span class="lang-ja">テーマ：集落に隠れた魅力を外部者の視点から発見し、その活用・アピール方法を提案する</span><span class="lang-en">Theme: Find the hamlet's hidden charms through an outsider's eyes, and propose how to use and show them off</span></span></div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">この年からテーマは「隠れた魅力の発見」に。日本語2班・英語2班の4班が3つのエリアに分かれて集落を歩き、航空写真の上に見つけた「タネ」を貼り込みながら、提案をまとめました。</span><span class="lang-en">From this year the theme became "finding hidden charms." Four groups — two working in Japanese, two in English — split across three areas and walked the hamlet, pinning the "seeds" they found onto an aerial photograph as they drew their proposals together.</span></p>
 
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
             <img src="photos/poster2024_g1.jpg" alt="2024年 1班の成果ポスター「求ム弟子!! 上善水如プログラム」" title="1班「求ム弟子!! 上善水如プログラム」" style="width:100%;height:170px;object-fit:cover;display:block;">
@@ -281,24 +289,24 @@ img { max-width: 100%; }
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">求ム弟子!! 上善水如プログラム</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">都会にはない「水と時の流れ」——歴史・季節・一日の流れを、苗づくりから収穫まで丸ごと体感してもらう。SNSで農業の“弟子”を見つけ、廃校舎での宿泊も交えて、一緒に農業をする移住者=人の流れをつくる。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">1班</span><span class="lang-en">Group 1</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">求ム弟子!! 上善水如プログラム</span><span class="lang-en">Apprentices Wanted!! The "Be Like Water" Program</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">都会にはない「水と時の流れ」——歴史・季節・一日の流れを、苗づくりから収穫まで丸ごと体感してもらう。SNSで農業の“弟子”を見つけ、廃校舎での宿泊も交えて、一緒に農業をする移住者=人の流れをつくる。</span><span class="lang-en">The flow of water and time you won't find in the city — let people feel it whole, from raising seedlings to harvest: the flow of history, of the seasons, of a single day. Find farming "apprentices" on social media, throw in stays at the old schoolhouse, and create a flow of people — new residents who farm alongside you.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">自然派保育でつなぐ、神前の未来</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">人気の高まる「自然派保育」に着目し、保育園を中心にした地域づくりを提案。農業体験、祭り、卒業後の交流、空き家でのあずかり保育——子育て世代の目を神前に向ける。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">2班</span><span class="lang-en">Group 2</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">自然派保育でつなぐ、神前の未来</span><span class="lang-en">Nature-Based Childcare, Carrying Kouzaki's Future Forward</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">人気の高まる「自然派保育」に着目し、保育園を中心にした地域づくりを提案。農業体験、祭り、卒業後の交流、空き家でのあずかり保育——子育て世代の目を神前に向ける。</span><span class="lang-en">Taken with the growing appeal of "nature-based childcare," they proposed building the community around a nursery. Farm experiences, festivals, keeping in touch after children move on, drop-in childcare in vacant houses — all to turn young families' eyes toward Kouzaki.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班 ― 英語班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">お試し体験から、移住の可能性へ</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">農家民泊、田んぼ体験、放棄田を花畑に変えたフォトスポット、バードウォッチングと山歩き。地元の花の色を使った配色まで考え、「中くらいのお試し体験」で将来の移住につなげる構想。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">3班 ― 英語班</span><span class="lang-en">Group 3 — English Team</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">お試し体験から、移住の可能性へ</span><span class="lang-en">From a Trial Visit to the Possibility of Moving In</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">農家民泊、田んぼ体験、放棄田を花畑に変えたフォトスポット、バードウォッチングと山歩き。地元の花の色を使った配色まで考え、「中くらいのお試し体験」で将来の移住につなげる構想。</span><span class="lang-en">Farm-stays, rice-paddy experiences, a photo spot where an abandoned field becomes a flower meadow, birdwatching and mountain walks. They thought it through right down to a color palette drawn from the local flowers — a "medium-sized trial visit" meant to lead, in time, to moving in.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班 ― 英語班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">関係人口を増やす、売り込みの戦略</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">「魅力はあるのに知られていない」という課題に、予約サイトや紹介動画などのデジタル発信、動画配信者との連携、農業ボランティア、農家民泊を組み合わせたマーケティング戦略で挑む。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">4班 ― 英語班</span><span class="lang-en">Group 4 — English Team</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">関係人口を増やす、売り込みの戦略</span><span class="lang-en">A Marketing Strategy to Grow the "Connected Population"</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">「魅力はあるのに知られていない」という課題に、予約サイトや紹介動画などのデジタル発信、動画配信者との連携、農業ボランティア、農家民泊を組み合わせたマーケティング戦略で挑む。</span><span class="lang-en">Against the problem of "charm that no one knows about," they took on a marketing strategy woven from several threads — booking sites and short introductory videos and other digital outreach, tie-ups with video creators, farm volunteering, and farm-stays.</span></p>
             </div>
           </div>
         </div>
@@ -312,12 +320,12 @@ img { max-width: 100%; }
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
         <div>
           <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2025</div>
-          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;">7月13日（日）<br>学部生・院生・留学生 7班</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;"><span class="lang-ja">7月13日（日）<br>学部生・院生・留学生 7班</span><span class="lang-en">Sun, 13 July<br>Undergraduate, graduate & international students · 7 groups</span></div>
         </div>
         <div>
-          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">隠れた魅力を、外の目で見つける</h2>
-          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;">テーマ：集落に隠れた魅力を外部者の視点から発見し、その活用・アピール方法を提案する</span></div>
-          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">この年は7つの班（日本語6班・英語1班）が、3つのエリアに分かれて集落を歩きました。田んぼの真ん中から砥石の山まで、外から来た目にしか見えない「タネ」を拾い集めた一日です。</p>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">隠れた魅力を、外の目で見つける</span><span class="lang-en">Finding Hidden Charms with Outside Eyes</span></h2>
+          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;"><span class="lang-ja">テーマ：集落に隠れた魅力を外部者の視点から発見し、その活用・アピール方法を提案する</span><span class="lang-en">Theme: Find the hamlet's hidden charms through an outsider's eyes, and propose how to use and show them off</span></span></div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">この年は7つの班（日本語6班・英語1班）が、3つのエリアに分かれて集落を歩きました。田んぼの真ん中から砥石の山まで、外から来た目にしか見えない「タネ」を拾い集めた一日です。</span><span class="lang-en">This year seven groups (six working in Japanese, one in English) split across three areas and walked the hamlet. From the middle of the paddies to the whetstone hills, it was a day of gathering up the "seeds" that only an outsider's eye can catch.</span></p>
 
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:40px 0 0;">
             <img src="photos/slide2025_g2.jpg" alt="2班の発表スライド「子どもが住み続けられるまちづくりを」" title="2班の発表スライド" style="width:100%;height:170px;object-fit:cover;display:block;border:1px solid #e0e0d4;">
@@ -328,51 +336,51 @@ img { max-width: 100%; }
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">1班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前米の農業体験ツアー</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">食味ランキング特Aの神前米とアクセスの良さを武器に、京都・大阪の若者や親子向けの週末農業体験ツアーを。関係人口を増やし、ゆくゆくは移住の選択肢に。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">1班</span><span class="lang-en">Group 1</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前米の農業体験ツアー</span><span class="lang-en">A Kouzaki Rice Farm-Experience Tour</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">食味ランキング特Aの神前米とアクセスの良さを武器に、京都・大阪の若者や親子向けの週末農業体験ツアーを。関係人口を増やし、ゆくゆくは移住の選択肢に。</span><span class="lang-en">With top-rated "Special A" Kouzaki rice and easy access as their strengths, a weekend farm-experience tour for young people and families from Kyoto and Osaka. Grow the connected population, and, further down the road, make moving in one of the choices.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">2班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">神前地区を、遊びスポットへ</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">「子どもが住み続けられるまちづくり」を掲げ、廃校跡地や砥石の跡地を活用した子ども食堂と森のアスレチックを提案。子育て世帯の移住を見据える。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">2班</span><span class="lang-en">Group 2</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前地区を、遊びスポットへ</span><span class="lang-en">Turning the Kouzaki District into a Place to Play</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">「子どもが住み続けられるまちづくり」を掲げ、廃校跡地や砥石の跡地を活用した子ども食堂と森のアスレチックを提案。子育て世帯の移住を見据える。</span><span class="lang-en">Under the banner of "building a town where children can keep on living," they proposed a children's cafeteria and a forest adventure playground on the sites of the closed school and the old whetstone works — with families with children moving in firmly in view.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">3班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">意外と近い神前 ― 関係人口を増やす</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">京都市から高速で1時間弱という近さに着目。砥石の包丁研ぎ体験や薬草・神前米・黒毛和牛を掛け合わせた「食」、かやぶき屋根を宿に再生する「住」、交流センターでの環境教育——観光資源を仕事づくりにつなげ、村に関わる人を増やす。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">3班</span><span class="lang-en">Group 3</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">意外と近い神前 ― 関係人口を増やす</span><span class="lang-en">Kouzaki, Closer Than You'd Think — Growing the Connected Population</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">京都市から高速で1時間弱という近さに着目。砥石の包丁研ぎ体験や薬草・神前米・黒毛和牛を掛け合わせた「食」、かやぶき屋根を宿に再生する「住」、交流センターでの環境教育——観光資源を仕事づくりにつなげ、村に関わる人を増やす。</span><span class="lang-en">They seized on how close it is — under an hour from Kyoto City by expressway. A knife-sharpening experience on the local whetstone; "food" that layers herbs, Kouzaki rice and Japanese Black beef; "lodging" that brings a thatched roof back to life as an inn; environmental education at the community center — turning tourism assets into work, and drawing more people into the life of the village.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">4班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">「訪れる」から「受け継ぐ」へ</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">砥石館の包丁研ぎ体験、お寺の座禅、映画のオープンセット——豊富な観光資源を入口に、単なる来訪者ではなく「地域の営みに加わってくれる人」を増やす流れを構想。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">4班</span><span class="lang-en">Group 4</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">「訪れる」から「受け継ぐ」へ</span><span class="lang-en">From "Visiting" to "Carrying On"</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">砥石館の包丁研ぎ体験、お寺の座禅、映画のオープンセット——豊富な観光資源を入口に、単なる来訪者ではなく「地域の営みに加わってくれる人」を増やす流れを構想。</span><span class="lang-en">A knife-sharpening experience at the whetstone museum, zazen meditation at the temple, an open-air film set — using this wealth of tourism assets as the way in, they imagined a flow that brings not just visitors but "people who join in the work of the community."</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">5班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">暮らしを選べる町、神前町</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">都会に疲れた30代や、定年後の田舎暮らしを望む60代がターゲット。いきなりの移住は不安——だから、農業体験つきのお試し移住・短期滞在の仕組みから始める。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">5班</span><span class="lang-en">Group 5</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">暮らしを選べる町、神前町</span><span class="lang-en">Kouzaki, a Town Where You Choose How to Live</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">都会に疲れた30代や、定年後の田舎暮らしを望む60代がターゲット。いきなりの移住は不安——だから、農業体験つきのお試し移住・短期滞在の仕組みから始める。</span><span class="lang-en">Their target: people in their thirties worn down by the city, and people in their sixties who long for country living after retirement. Moving in all at once feels daunting — so begin with a scheme of trial move-ins and short stays that come with a taste of farming.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">6班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">棚田とロケ地を活かした観光振興</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">棚田景観、映画ロケ地、寺社仏閣という文化的な魅力に注目。観光で認知度を高め、ファミリー層の移住と農業の担い手確保につなげる。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">6班</span><span class="lang-en">Group 6</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">棚田とロケ地を活かした観光振興</span><span class="lang-en">Tourism Built on the Terraced Fields and Film Locations</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">棚田景観、映画ロケ地、寺社仏閣という文化的な魅力に注目。観光で認知度を高め、ファミリー層の移住と農業の担い手確保につなげる。</span><span class="lang-en">They turned to the cultural draws — the terraced-field scenery, the film locations, the temples and shrines. Raise the village's profile through tourism, then channel it into families moving in and into securing the next generation of farmers.</span></p>
             </div>
             <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
-              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;">7班 ― 英語班</div>
-              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;">近隣集落のネットワークの、ハブに</h3>
-              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">留学生を含む多国籍チーム。住民の熱意と、10年以上続く京都大学との連携・SNS発信の実績こそ神前ならではの強みと見立て、近隣集落をつなぐハブになる構想を描いた。</p>
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">7班 ― 英語班</span><span class="lang-en">Group 7 — English Team</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">近隣集落のネットワークの、ハブに</span><span class="lang-en">A Hub for a Network of Neighboring Hamlets</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">留学生を含む多国籍チーム。住民の熱意と、10年以上続く京都大学との連携・SNS発信の実績こそ神前ならではの強みと見立て、近隣集落をつなぐハブになる構想を描いた。</span><span class="lang-en">A team of several nationalities, international students among them. They read the residents' enthusiasm — along with more than ten years of partnership with Kyoto University and a track record of social-media outreach — as the strengths that belong to Kouzaki alone, and sketched a vision of the village as a hub that ties the neighboring hamlets together.</span></p>
             </div>
           </div>
 
           <div style="width:100%;height:1px;background:#e0e0d4;margin:48px 0;"></div>
-          <h3 style="margin:0 0 16px;font:600 24px/1.5 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">もうひとつの挑戦 ―「一過性で終わらせない」へ</h3>
-          <p style="margin:0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">毎年のワークショップを「点」で終わらせず、「線」でつなごう——。この年は、大学が“伴走者”となって継続的に関わる新しい形を提案しました。その具体策が、スマホでも紙でも誰でも答えられる匿名の意見収集です。</p>
-          <p style="margin:20px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">秋から冬にかけて、この仕組みで142軒すべてに声をかけ、83人から回答が寄せられました。集まった声と、4つのむらづくり案の受け止めは、住民のみなさんへの報告ページにまとめています。</p>
+          <h3 style="margin:0 0 16px;font:600 24px/1.5 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">もうひとつの挑戦 ―「一過性で終わらせない」へ</span><span class="lang-en">Another Attempt — Toward "Not Letting It End as a One-Off"</span></h3>
+          <p style="margin:0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">毎年のワークショップを「点」で終わらせず、「線」でつなごう——。この年は、大学が“伴走者”となって継続的に関わる新しい形を提案しました。その具体策が、スマホでも紙でも誰でも答えられる匿名の意見収集です。</span><span class="lang-en">Rather than let each year's workshop end as a single "dot," why not join them into a "line"? This year the university put forward a new way to stay involved over time — as a companion walking alongside the village. The concrete step: an anonymous way of gathering opinions that anyone could answer, by phone or on paper.</span></p>
+          <p style="margin:20px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">秋から冬にかけて、この仕組みで142軒すべてに声をかけ、83人から回答が寄せられました。集まった声と、4つのむらづくり案の受け止めは、住民のみなさんへの報告ページにまとめています。</span><span class="lang-en">From autumn into winter, this approach reached all 142 households, and 83 people wrote back. The voices gathered, and how the four village-making ideas were received, are brought together on the report page for the residents.</span></p>
 
           <div style="margin-top:40px;background:#2b3624;padding:40px 36px;">
-            <h3 style="margin:0 0 12px;font:600 24px/1.6 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.04em;">みなさんの声から、これからの神前を考える</h3>
-            <p style="margin:0 0 24px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">2025年、142軒すべてを回って集めた声と、4つのむらづくり案の受け止め。</p>
-            <a href="report.html" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;">住民報告ページを見る →</a>
+            <h3 style="margin:0 0 12px;font:600 24px/1.6 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.04em;"><span class="lang-ja">みなさんの声から、これからの神前を考える</span><span class="lang-en">Thinking About Kouzaki's Future, from the Voices of Its People</span></h3>
+            <p style="margin:0 0 24px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">2025年、142軒すべてを回って集めた声と、4つのむらづくり案の受け止め。</span><span class="lang-en">In 2025, the voices gathered by calling on all 142 households, and how the four village-making ideas were received.</span></p>
+            <a href="report.html" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">住民報告ページを見る →</span><span class="lang-en">See the residents' report page →</span></a>
           </div>
         </div>
       </div>
@@ -383,12 +391,16 @@ img { max-width: 100%; }
   <div style="background:#2b3624;color:#c3caae;">
     <div style="max-width:1200px;margin:0 auto;padding:40px 32px;">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font:400 13px/1.7 'Zen Kaku Gothic New',sans-serif;">
-        <div><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;">村づくりワークショップの記録</strong>　<a href="index.html" style="color:#eceadd;">神前トップへ</a> ・ <a href="report.html" style="color:#eceadd;">住民報告へ</a></div>
+        <div><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;"><span class="lang-ja">村づくりワークショップの記録</span><span class="lang-en">A Record of the Village-Making Workshops</span></strong>　<a href="index.html" style="color:#eceadd;"><span class="lang-ja">神前トップへ</span><span class="lang-en">To the Kouzaki home page</span></a> ・ <a href="report.html" style="color:#eceadd;"><span class="lang-ja">住民報告へ</span><span class="lang-en">To the residents' report</span></a></div>
         <div style="opacity:.6;">©2026 京都大学大学院地球環境学堂 持続的農村開発論研究室（鬼塚） ・ 神前ふるさとを守る会</div>
       </div>
     </div>
   </div>
 
 </div>
+<script>
+function setLang(l){ document.documentElement.lang=l; try{localStorage.setItem('kouzaki_lang',l);}catch(e){} var b=document.querySelectorAll('.langtoggle button'); for(var i=0;i<b.length;i++){ b[i].classList.toggle('on', b[i].getAttribute('data-lang')===l);} }
+setLang(document.documentElement.lang==='en'?'en':'ja');
+</script>
 </body>
 </html>

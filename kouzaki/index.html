@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>神前（こうざき）― 森の京都、棚田と里山の里</title>
+<script>try{document.documentElement.lang=localStorage.getItem('kouzaki_lang')||'ja';}catch(e){}</script>
 <meta name="description" content="京都・亀岡の山あいにある集落、神前（こうざき）。棚田と里山、特産のチョロギと神前米、四季の実り。地域の暮らしと、これからの村づくりを紹介します。">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +55,11 @@ img { max-width: 100%; }
   [style*="padding:32px 26px"] { padding: 24px 20px !important; }
   div[style*="padding:36px;"] { padding: 24px 20px !important; }
 }
+html[lang="en"] .lang-ja { display: none; }
+html[lang="ja"] .lang-en { display: none; }
+.langtoggle { display:inline-flex; align-items:stretch; border:1px solid #cfcfc0; border-radius:3px; overflow:hidden; }
+.langtoggle button { appearance:none; background:none; border:none; cursor:pointer; padding:6px 11px; font:500 11px/1 'Zen Kaku Gothic New',sans-serif; letter-spacing:.08em; color:#8a9072; transition:background .15s,color .15s; }
+.langtoggle button.on { background:#31402a; color:#f6f5ee; }
 </style>
 </head>
 <body>
@@ -67,14 +73,16 @@ img { max-width: 100%; }
         <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.34em;">KOUZAKI</span>
       </a>
       <div style="display:flex;align-items:center;gap:32px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
-        <a href="#midokoro" style="color:#5b6152;text-decoration:none;">見どころ</a>
-        <a href="#monogatari" style="color:#5b6152;text-decoration:none;">ものがたり</a>
-        <a href="#specialty" style="color:#5b6152;text-decoration:none;">特産</a>
-        <a href="#ayumi" style="color:#5b6152;text-decoration:none;">あゆみ</a>
-        <a href="#access" style="color:#5b6152;text-decoration:none;">アクセス</a>
+        <a href="#midokoro" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">見どころ</span><span class="lang-en">Highlights</span></a>
+        <a href="#monogatari" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">ものがたり</span><span class="lang-en">Stories</span></a>
+        <a href="#specialty" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">特産</span><span class="lang-en">Specialties</span></a>
+        <a href="#ayumi" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">あゆみ</span><span class="lang-en">History</span></a>
+        <a href="#access" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">アクセス</span><span class="lang-en">Access</span></a>
         <span style="width:1px;height:14px;background:#cfcfc0;"></span>
-        <a href="workshops.html" style="color:#31402a;text-decoration:none;font-weight:500;">WSの記録</a>
-        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;border-bottom:2px solid #31402a;padding-bottom:4px;">住民報告</a>
+        <a href="workshops.html" style="color:#31402a;text-decoration:none;font-weight:500;"><span class="lang-ja">WSの記録</span><span class="lang-en">WS archive</span></a>
+        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;border-bottom:2px solid #31402a;padding-bottom:4px;"><span class="lang-ja">住民報告</span><span class="lang-en">Residents' report</span></a>
+        <span class="langtoggle" role="group" aria-label="language"><button type="button" data-lang="ja" onclick="setLang('ja')">日本語</button><button type="button" data-lang="en" onclick="setLang('en')">EN</button></span>
+        <a href="ws2026.html" style="background:#31402a;color:#f6f5ee;text-decoration:none;font-weight:600;padding:8px 15px;border-radius:3px;letter-spacing:.04em;white-space:nowrap;"><span class="lang-ja">2026ワークショップ →</span><span class="lang-en">2026 Workshop →</span></a>
       </div>
     </div>
   </div>
@@ -83,11 +91,11 @@ img { max-width: 100%; }
   <div id="top" style="position:relative;min-height:620px;background:url('hero.jpg') center 62%/cover no-repeat,#cdd9b6;">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,54,36,.22) 0%,rgba(43,54,36,.06) 45%,rgba(31,41,26,.66) 100%);"></div>
     <div style="position:relative;max-width:1200px;margin:0 auto;min-height:620px;padding:110px 32px 90px;display:flex;flex-direction:column;justify-content:flex-end;">
-      <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:rgba(246,245,238,.85);margin-bottom:32px;text-shadow:0 1px 16px rgba(31,41,26,.5);">森の京都・京都府亀岡市宮前町</div>
+      <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:rgba(246,245,238,.85);margin-bottom:32px;text-shadow:0 1px 16px rgba(31,41,26,.5);"><span class="lang-ja">森の京都・京都府亀岡市宮前町</span><span class="lang-en">Forest of Kyoto — Miyamae, Kameoka City, Kyoto</span></div>
       <h1 style="margin:0;font:700 92px/1 'Zen Old Mincho',serif;color:#f6f5ee;letter-spacing:.1em;text-shadow:0 2px 32px rgba(31,41,26,.55);">神前</h1>
-      <div style="font:400 16px/1 'Zen Kaku Gothic New',sans-serif;color:rgba(246,245,238,.9);letter-spacing:.4em;margin:20px 0 0;text-shadow:0 1px 16px rgba(31,41,26,.5);">こ う ざ き</div>
+      <div style="font:400 16px/1 'Zen Kaku Gothic New',sans-serif;color:rgba(246,245,238,.9);letter-spacing:.4em;margin:20px 0 0;text-shadow:0 1px 16px rgba(31,41,26,.5);"><span class="lang-ja">こ う ざ き</span><span class="lang-en">K O U Z A K I</span></div>
       <div style="width:56px;height:1px;background:rgba(246,245,238,.55);margin:36px 0;"></div>
-      <p style="margin:0;max-width:440px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#f0efe5;text-shadow:0 1px 20px rgba(31,41,26,.6);">棚田と里山にいだかれた、約142軒の集落。<br>四季の実りと、人の手が守ってきた風景があります。</p>
+      <p style="margin:0;max-width:440px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#f0efe5;text-shadow:0 1px 20px rgba(31,41,26,.6);"><span class="lang-ja">棚田と里山にいだかれた、約142軒の集落。<br>四季の実りと、人の手が守ってきた風景があります。</span><span class="lang-en">A hamlet of about 142 households, cradled by terraced rice fields and satoyama woodland.<br>Here the seasons bring their harvests, and the landscape has been kept alive by human hands.</span></p>
       <div style="margin-top:48px;font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.24em;color:rgba(246,245,238,.75);">SCROLL ↓</div>
     </div>
   </div>
@@ -95,71 +103,71 @@ img { max-width: 100%; }
   <!-- ================= intro band ================= -->
   <div style="border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
     <div style="max-width:1200px;margin:0 auto;padding:72px 32px;">
-      <p style="margin:0 auto;max-width:780px;text-align:center;font:400 21px/2.3 'Shippori Mincho B1',serif;color:#3a4030;text-wrap:pretty;">京都の市街地から車で小一時間。亀岡の山あいに、神前（こうざき）という集落があります。142戸・約380人の里。水を張れば空を映す棚田、ホタルの舞う千々川の源流、季節ごとに実る畑。ここには、暮らしと風景を守り続けてきた人たちがいます。</p>
+      <p style="margin:0 auto;max-width:780px;text-align:center;font:400 21px/2.3 'Shippori Mincho B1',serif;color:#3a4030;text-wrap:pretty;"><span class="lang-ja">京都の市街地から車で小一時間。亀岡の山あいに、神前（こうざき）という集落があります。142戸・約380人の里。水を張れば空を映す棚田、ホタルの舞う千々川の源流、季節ごとに実る畑。ここには、暮らしと風景を守り続けてきた人たちがいます。</span><span class="lang-en">A little under an hour by car from central Kyoto, tucked into the hills of Kameoka, lies a hamlet called Kouzaki. A place of 142 households and around 380 people. Terraced rice fields that mirror the sky once they are flooded, the headwaters of the Chiji River where fireflies dance, fields that ripen with each passing season. And here, the people who have gone on tending both the land and the life upon it.</span></p>
     </div>
   </div>
 
   <!-- ================= 見どころ ================= -->
   <div id="midokoro" style="max-width:1200px;margin:0 auto;padding:96px 32px 80px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-      <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">棚田と里山、水と杜のある風景</h2>
+      <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;"><span class="lang-ja">棚田と里山、水と杜のある風景</span><span class="lang-en">Terraced fields, satoyama, water and grove</span></h2>
       <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">01 — MIDOKORO</span>
     </div>
-    <p style="margin:0 0 48px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">派手な観光地ではありません。けれど、日本の農村の原風景がそのまま残っています。</p>
+    <p style="margin:0 0 48px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">派手な観光地ではありません。けれど、日本の農村の原風景がそのまま残っています。</span><span class="lang-en">This is no showy tourist spot. What it holds instead is the original face of the Japanese countryside, still very much intact.</span></p>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;">
       <div>
         <div style="height:240px;background:url('photos/tanada.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
         <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">TANADA</div>
-        <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">山の神地区の棚田</h3>
-        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">山の斜面に沿って重なる棚田。とくに東神前・山の神地区の眺めは格別で、ここで育つ「神前米」は高く評価されています。</p>
+        <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">山の神地区の棚田</span><span class="lang-en">Terraced fields of Yamanokami</span></h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">山の斜面に沿って重なる棚田。とくに東神前・山の神地区の眺めは格別で、ここで育つ「神前米」は高く評価されています。</span><span class="lang-en">Terraces stacked one above the next along the mountainside. The view around Higashi-Kouzaki and Yamanokami is something special, and the Kouzaki rice grown here is held in high regard.</span></p>
       </div>
       <div>
         <div style="height:240px;background:url('photos/seiryu.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
         <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">HOTARU</div>
-        <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">ホタルの舞う清流</h3>
-        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">千々川の源流にあたり、水がきれい。初夏の夜にはホタルが舞い、6月初旬には「ホタルウォーク」も開かれます。</p>
+        <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">ホタルの舞う清流</span><span class="lang-en">A clear stream where fireflies dance</span></h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">千々川の源流にあたり、水がきれい。初夏の夜にはホタルが舞い、6月初旬には「ホタルウォーク」も開かれます。</span><span class="lang-en">Sitting at the source of the Chiji River, the water here runs clean. On early-summer nights the fireflies come out, and in early June the village holds a "Firefly Walk."</span></p>
       </div>
       <div>
         <div style="height:240px;background:url('photos/mori.jpg') center 65%/cover no-repeat;margin-bottom:20px;"></div>
         <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">MORI</div>
-        <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">里山と鎮守の杜</h3>
-        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">集落を包む里山と、こんもりとした社の杜。人が手を入れることで守られてきた、生きた自然です。</p>
+        <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">里山と鎮守の杜</span><span class="lang-en">Satoyama and the shrine grove</span></h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">集落を包む里山と、こんもりとした社の杜。人が手を入れることで守られてきた、生きた自然です。</span><span class="lang-en">The satoyama (community woodland) that wraps around the hamlet, and the dense grove of the shrine. This is living nature, kept as it is precisely because people keep tending to it.</span></p>
       </div>
     </div>
 
     <!-- タネ -->
     <div style="margin-top:64px;border-top:1px solid #e0e0d4;padding-top:40px;">
       <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:24px;">
-        <h3 style="margin:0;font:600 20px/1.5 'Zen Old Mincho',serif;color:#31402a;">むらの中に眠る、こんな「タネ」も</h3>
-        <span style="font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">地域のみなさん自身が数え上げた、神前の資源です。</span>
+        <h3 style="margin:0;font:600 20px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">むらの中に眠る、こんな「タネ」も</span><span class="lang-en">Other "seeds" waiting quietly in the village</span></h3>
+        <span style="font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">地域のみなさん自身が数え上げた、神前の資源です。</span><span class="lang-en">Assets of Kouzaki, counted up by the residents themselves.</span></span>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;">おいしい農産物とお米</span>
-        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;">豊かな森林と山 ― 砥石も採れる</span>
-        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;">宝林寺と文化財</span>
-        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;">音楽家のいる村</span>
-        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;">国際交流会館</span>
+        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;"><span class="lang-ja">おいしい農産物とお米</span><span class="lang-en">Fine produce and rice</span></span>
+        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;"><span class="lang-ja">豊かな森林と山 ― 砥石も採れる</span><span class="lang-en">Rich forests and hills — even whetstones</span></span>
+        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;"><span class="lang-ja">宝林寺と文化財</span><span class="lang-en">Hourin-ji temple and cultural treasures</span></span>
+        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;"><span class="lang-ja">音楽家のいる村</span><span class="lang-en">A village with resident musicians</span></span>
+        <span style="border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;padding:11px 18px;border-radius:999px;"><span class="lang-ja">国際交流会館</span><span class="lang-en">An international exchange hall</span></span>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:48px;">
         <div>
           <div style="height:240px;background:url('photos/toishikan.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
           <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">TOISHI</div>
-          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">砥石の採れる山</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">神前の山からは、刃物を研ぐ天然砥石が採れます。集落の一角、亀岡市交流会館の「天然砥石館」で、その奥深い世界に触れられます。</p>
+          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">砥石の採れる山</span><span class="lang-en">Hills that yield whetstones</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">神前の山からは、刃物を研ぐ天然砥石が採れます。集落の一角、亀岡市交流会館の「天然砥石館」で、その奥深い世界に触れられます。</span><span class="lang-en">The hills of Kouzaki yield natural whetstones for sharpening blades. In one corner of the hamlet, the Natural Whetstone Museum at the Kameoka Exchange Hall opens up this surprisingly deep world.</span></p>
         </div>
         <div>
           <div style="height:240px;background:url('photos/ongakukai.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
           <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">ONGAKUKAI</div>
-          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">森のなかの音楽会</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">木立にハンモックを吊るして、演奏に耳をかたむける。「音楽家のいる村」ならではの、森の音楽会が開かれることもあります。</p>
+          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">森のなかの音楽会</span><span class="lang-en">A concert in the woods</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">木立にハンモックを吊るして、演奏に耳をかたむける。「音楽家のいる村」ならではの、森の音楽会が開かれることもあります。</span><span class="lang-en">Hammocks strung between the trees, ears turned to the music. Now and then the village hosts a forest concert — something only "a village with resident musicians" could offer.</span></p>
         </div>
         <div>
           <div style="height:240px;background:url('photos/zazen.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
           <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">ZAZEN</div>
-          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">座禅体験と国際交流</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">お寺での座禅体験には、海外からの参加者の姿も。文化財や寺社が、暮らしのすぐそばにあります。</p>
+          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">座禅体験と国際交流</span><span class="lang-en">Zen sitting and visitors from abroad</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">お寺での座禅体験には、海外からの参加者の姿も。文化財や寺社が、暮らしのすぐそばにあります。</span><span class="lang-en">Guests from overseas sometimes join the zazen sessions at the temple. Cultural treasures, temples, and shrines all sit right alongside daily life here.</span></p>
         </div>
       </div>
     </div>
@@ -169,59 +177,59 @@ img { max-width: 100%; }
   <div id="monogatari" style="border-top:1px solid #e0e0d4;">
     <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">神前のものがたり</h2>
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;"><span class="lang-ja">神前のものがたり</span><span class="lang-en">The stories of Kouzaki</span></h2>
         <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">02 — MONOGATARI</span>
       </div>
-      <p style="margin:0 0 48px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">地域の情報誌や記録をひもとくと、この小さな集落の奥行きが見えてきます。</p>
+      <p style="margin:0 0 48px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">地域の情報誌や記録をひもとくと、この小さな集落の奥行きが見えてきます。</span><span class="lang-en">Leaf through the local newsletters and old records, and the depth of this small hamlet begins to show.</span></p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
         <div>
           <div style="height:240px;background:url('photos/monogatari_asahi.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
           <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">NA NO YURAI</div>
-          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">「神を先に見る里」という名</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">幕末の郷土誌『新編桑下漫録』は、大井神社の祭神が保津の急流を鯉に乗ってさかのぼった伝えとともに、「神を先達て見奉るとの心にて神前村と号す」と記しています。神様をいちばん先にお迎えする里。読みは「こうざき」です。</p>
+          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">「神を先に見る里」という名</span><span class="lang-en">A name meaning "the village that greets the gods first"</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">幕末の郷土誌『新編桑下漫録』は、大井神社の祭神が保津の急流を鯉に乗ってさかのぼった伝えとともに、「神を先達て見奉るとの心にて神前村と号す」と記しています。神様をいちばん先にお迎えする里。読みは「こうざき」です。</span><span class="lang-en">A local chronicle from the close of the Edo period tells how the deity of Oi Shrine rode a carp up the rapids of Hozu, and records that the village was named Kouzaki "in the spirit of being the first to look upon and receive the god." A village that welcomes the deity before anyone else. It is read "Kouzaki."</span></p>
         </div>
         <div>
           <div style="height:240px;background:url('photos/monogatari_kenjomai.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
           <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">KENJOMAI</div>
-          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">三代にわたる、献上米の里</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">大正8年の新嘗祭、そして昭和3年の即位大礼。神前の米は二度、宮中に献上され、その賞状がいまも残っています。平成28年の全国育樹祭でも「京都・神前米」が献上され、大正・昭和・平成と三代にわたる「献上米の里」になりました。</p>
+          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">三代にわたる、献上米の里</span><span class="lang-en">Village of rice offered to the court, across three eras</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">大正8年の新嘗祭、そして昭和3年の即位大礼。神前の米は二度、宮中に献上され、その賞状がいまも残っています。平成28年の全国育樹祭でも「京都・神前米」が献上され、大正・昭和・平成と三代にわたる「献上米の里」になりました。</span><span class="lang-en">At the harvest festival of 1919, and again at the enthronement ceremony of 1928, Kouzaki rice was presented to the Imperial Court — the certificates survive to this day. In 2016, "Kyoto Kouzaki rice" was offered once more at the National Tree-Planting Festival, making this a village of tribute rice spanning the Taisho, Showa, and Heisei eras.</span></p>
         </div>
         <div>
           <div style="height:240px;background:url('photos/monogatari_aoto.jpg') center/cover no-repeat;margin-bottom:20px;"></div>
           <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">AOTO</div>
-          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">日本一といわれた砥石「青砥」</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">岡花で採れた天然砥石「青砥」は室町時代から知られ、最盛期には500人が働いたと伝わります。採掘は昭和35年に途絶えましたが、2009年、住民の手で「青砥復活プロジェクト」が実現。研ぎあげた砥石は朝市で売り切れ、全国から問い合わせが届きました。</p>
+          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">日本一といわれた砥石「青砥」</span><span class="lang-en">"Aoto," once called Japan's finest whetstone</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">岡花で採れた天然砥石「青砥」は室町時代から知られ、最盛期には500人が働いたと伝わります。採掘は昭和35年に途絶えましたが、2009年、住民の手で「青砥復活プロジェクト」が実現。研ぎあげた砥石は朝市で売り切れ、全国から問い合わせが届きました。</span><span class="lang-en">The natural whetstone "Aoto," quarried at Okabana, has been known since the Muromachi period; at its height some 500 people are said to have worked the mines. Quarrying ceased in 1960, but in 2009 the residents brought it back to life with an "Aoto Revival Project." The finished stones sold out at the morning market, and inquiries arrived from across the country.</span></p>
         </div>
         <div>
           <div style="height:240px;background:url('photos/monogatari_sekitou.jpg') center 70%/cover no-repeat;margin-bottom:20px;"></div>
           <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;">HOURINJI</div>
-          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">宝林寺の九重石塔</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">曹渓山宝林寺の九重石塔は、鎌倉時代の作と伝わる国指定重要文化財。薬師・釈迦・阿弥陀の三如来も伝わり、毎年9月8日の「お薬師さん」で拝観できます。秋には門前の大イチョウが黄金色に染まります。</p>
+          <h3 style="margin:0 0 12px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">宝林寺の九重石塔</span><span class="lang-en">The nine-tiered stone pagoda of Hourin-ji</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">曹渓山宝林寺の九重石塔は、鎌倉時代の作と伝わる国指定重要文化財。薬師・釈迦・阿弥陀の三如来も伝わり、毎年9月8日の「お薬師さん」で拝観できます。秋には門前の大イチョウが黄金色に染まります。</span><span class="lang-en">The nine-tiered stone pagoda at Sokeizan Hourin-ji, thought to date to the Kamakura period, is a nationally designated Important Cultural Property. The temple also keeps three Buddhas — Yakushi, Shaka, and Amida — which can be viewed each year on September 8 at the "Oyakushi-san" festival. In autumn the great ginkgo before the gate turns a deep gold.</span></p>
         </div>
       </div>
 
       <div style="margin-top:64px;">
-        <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#94997f;margin-bottom:14px;">神前の四季</div>
+        <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#94997f;margin-bottom:14px;"><span class="lang-ja">神前の四季</span><span class="lang-en">The four seasons of Kouzaki</span></div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
           <div>
             <img src="photos/shiki_taue.jpg" alt="五月晴れの田植え" style="width:100%;height:170px;object-fit:cover;display:block;">
-            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">春 ― 水鏡の田植え</div>
+            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">春 ― 水鏡の田植え</span><span class="lang-en">Spring — rice planting on water-mirror fields</span></div>
           </div>
           <div>
             <img src="photos/shiki_himawari.jpg" alt="谷奥のひまわり畑" style="width:100%;height:170px;object-fit:cover;display:block;">
-            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">夏 ― 谷奥のひまわり</div>
+            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">夏 ― 谷奥のひまわり</span><span class="lang-en">Summer — sunflowers deep in the valley</span></div>
           </div>
           <div>
             <img src="photos/shiki_kiri.jpg" alt="丹波霧とコスモス畑" style="width:100%;height:170px;object-fit:cover;display:block;">
-            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">秋 ― 丹波霧とコスモス</div>
+            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">秋 ― 丹波霧とコスモス</span><span class="lang-en">Autumn — Tamba mist and cosmos flowers</span></div>
           </div>
           <div>
             <img src="photos/shiki_yuki.jpg" alt="雪の朝" style="width:100%;height:170px;object-fit:cover;display:block;">
-            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">冬 ― 雪の朝</div>
+            <div style="margin-top:8px;font:400 12px/1.6 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">冬 ― 雪の朝</span><span class="lang-en">Winter — a snowy morning</span></div>
           </div>
         </div>
-        <p style="margin:20px 0 0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;">写真は、2006年の創刊から100号を超えて毎月発行されてきた地域の情報誌「ロハスなたより」から。村の日々を、住民自身が記録し続けています。</p>
+        <p style="margin:20px 0 0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;"><span class="lang-ja">写真は、2006年の創刊から100号を超えて毎月発行されてきた地域の情報誌「ロハスなたより」から。村の日々を、住民自身が記録し続けています。</span><span class="lang-en">These photographs come from "Lohas na Tayori," the local newsletter that has appeared every month since it launched in 2006, now past its hundredth issue. The residents themselves keep on recording the village's daily life.</span></p>
       </div>
     </div>
   </div>
@@ -230,47 +238,47 @@ img { max-width: 100%; }
   <div id="specialty" style="background:#2b3624;color:#eceadd;">
     <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;letter-spacing:.06em;">土と季節が育てる、特産と味覚</h2>
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;letter-spacing:.06em;"><span class="lang-ja">土と季節が育てる、特産と味覚</span><span class="lang-en">Specialties and flavors, raised by soil and season</span></h2>
         <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#8a9575;">03 — SPECIALTY</span>
       </div>
-      <p style="margin:0 0 48px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">米づくりを軸に、この土地ならではの作物が育ちます。</p>
+      <p style="margin:0 0 48px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">米づくりを軸に、この土地ならではの作物が育ちます。</span><span class="lang-en">With rice growing at its heart, this land raises crops all its own.</span></p>
 
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);">
         <div style="background:#2b3624;padding:32px 26px;">
-          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;">名物・縁起物</div>
-          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;">チョロギ</h3>
-          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">神前を代表する特産。縁起物としても親しまれる、この地の名物です。</p>
+          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;"><span class="lang-ja">名物・縁起物</span><span class="lang-en">Local emblem / good-luck food</span></div>
+          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;"><span class="lang-ja">チョロギ</span><span class="lang-en">Chorogi</span></h3>
+          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">神前を代表する特産。縁起物としても親しまれる、この地の名物です。</span><span class="lang-en">Chorogi (Chinese artichoke), the signature specialty of Kouzaki — a local emblem, cherished too as a token of good fortune.</span></p>
         </div>
         <div style="background:#2b3624;padding:32px 26px;">
-          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;">棚田の恵み</div>
-          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;">神前米</h3>
-          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">棚田で育つお米。集落の暮らしと風景を、長く支えてきました。</p>
+          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;"><span class="lang-ja">棚田の恵み</span><span class="lang-en">Gift of the terraces</span></div>
+          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;"><span class="lang-ja">神前米</span><span class="lang-en">Kouzaki rice</span></h3>
+          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">棚田で育つお米。集落の暮らしと風景を、長く支えてきました。</span><span class="lang-en">Rice grown on the terraced fields, long the mainstay of the hamlet's life and its landscape.</span></p>
         </div>
         <div style="background:#2b3624;padding:32px 26px;">
-          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;">夏の味覚</div>
-          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;">ホワイトコーン</h3>
-          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">とうもろこし狩りなどの収穫体験も行われてきました。</p>
+          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;"><span class="lang-ja">夏の味覚</span><span class="lang-en">Taste of summer</span></div>
+          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;"><span class="lang-ja">ホワイトコーン</span><span class="lang-en">White corn</span></h3>
+          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">とうもろこし狩りなどの収穫体験も行われてきました。</span><span class="lang-en">Hands-on harvests, corn-picking among them, have long been part of the season here.</span></p>
         </div>
         <div style="background:#2b3624;padding:32px 26px;">
-          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;">京の伝統野菜</div>
-          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;">万願寺甘とう</h3>
-          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">京都を代表する野菜のひとつ。収穫体験でも人気です。</p>
+          <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;"><span class="lang-ja">京の伝統野菜</span><span class="lang-en">Traditional Kyoto vegetable</span></div>
+          <h3 style="margin:0 0 12px;font:600 22px/1.4 'Zen Old Mincho',serif;color:#dfe3ce;"><span class="lang-ja">万願寺甘とう</span><span class="lang-en">Manganji sweet pepper</span></h3>
+          <p style="margin:0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">京都を代表する野菜のひとつ。収穫体験でも人気です。</span><span class="lang-en">One of Kyoto's signature vegetables, and a favorite of the harvest-day visitors.</span></p>
         </div>
       </div>
 
       <div style="margin-top:40px;border:1px solid rgba(255,255,255,.14);padding:32px;">
         <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#8a9575;margin-bottom:14px;">MURA NO MONOGATARI</div>
-        <div style="font:600 20px/1.5 'Zen Old Mincho',serif;color:#dfe3ce;margin-bottom:14px;">チョロギのこと</div>
-        <p style="margin:0 0 14px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:860px;">チョロギは、おせち料理にも使われる小さな縁起物。「長老喜」「千代呂木」などの字を当てて、長寿を願う食べものとして親しまれてきました。神前での栽培は2010年、薬草の勉強会をきっかけに始まり、お菓子など17種類もの加工品が生まれています。</p>
-        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:860px;">その名は、集落の看板にもなってきました。2016年には、その名を冠したNPO法人「チョロギ村」が生まれ、「高齢者が生き生きと健康に過ごせる村づくり」を掲げて、交流館での直売やレストランが村のにぎわいの場になりました。京都大学とのワークショップでも、2022年のテーマは「Society 5.0時代のチョロギ村づくり」。法人としての活動は、いまはひと区切りを迎えていますが、住民の意見交換では「チョロギを活かした新商品開発」がいまも話題に挙がります。</p>
+        <div style="font:600 20px/1.5 'Zen Old Mincho',serif;color:#dfe3ce;margin-bottom:14px;"><span class="lang-ja">チョロギのこと</span><span class="lang-en">About chorogi</span></div>
+        <p style="margin:0 0 14px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:860px;"><span class="lang-ja">チョロギは、おせち料理にも使われる小さな縁起物。「長老喜」「千代呂木」などの字を当てて、長寿を願う食べものとして親しまれてきました。神前での栽培は2010年、薬草の勉強会をきっかけに始まり、お菓子など17種類もの加工品が生まれています。</span><span class="lang-en">Chorogi (Chinese artichoke) is a small good-luck food that appears in New Year's dishes. Written with characters that read as "elder's joy" or "a thousand generations," it has long been eaten as a wish for long life. Cultivation in Kouzaki began in 2010, sparked by a medicinal-herb study group, and has since given rise to seventeen kinds of processed goods, sweets among them.</span></p>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:860px;"><span class="lang-ja">その名は、集落の看板にもなってきました。2016年には、その名を冠したNPO法人「チョロギ村」が生まれ、「高齢者が生き生きと健康に過ごせる村づくり」を掲げて、交流館での直売やレストランが村のにぎわいの場になりました。京都大学とのワークショップでも、2022年のテーマは「Society 5.0時代のチョロギ村づくり」。法人としての活動は、いまはひと区切りを迎えていますが、住民の意見交換では「チョロギを活かした新商品開発」がいまも話題に挙がります。</span><span class="lang-en">The name has become something of a banner for the hamlet. In 2016 a nonprofit called "Chorogi Village" was founded under that name, built around the idea of village-making where older people can live active, healthy lives; its direct-sales stand and restaurant at the exchange hall became a gathering place. In the Kyoto University workshops too, the 2022 theme was "Chorogi village-making in the age of Society 5.0." The nonprofit's work has reached a pause for now, yet in the residents' discussions, "new products made from chorogi" still comes up.</span></p>
       </div>
 
       <div style="margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:32px;border:1px solid rgba(255,255,255,.14);padding:28px 32px;">
         <div>
-          <div style="font:600 20px/1.5 'Zen Old Mincho',serif;color:#dfe3ce;margin-bottom:6px;">神前ふれあい朝市</div>
-          <div style="font:400 14px/1.8 'Zen Kaku Gothic New',sans-serif;color:#a9b096;">毎週日曜 朝8時〜11時、神前ふれあいセンター前。地元の新鮮な野菜・山菜・加工品がならぶ、地域のにぎわいの場です。</div>
+          <div style="font:600 20px/1.5 'Zen Old Mincho',serif;color:#dfe3ce;margin-bottom:6px;"><span class="lang-ja">神前ふれあい朝市</span><span class="lang-en">Kouzaki Fureai Morning Market</span></div>
+          <div style="font:400 14px/1.8 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">毎週日曜 朝8時〜11時、神前ふれあいセンター前。地元の新鮮な野菜・山菜・加工品がならぶ、地域のにぎわいの場です。</span><span class="lang-en">Every Sunday, 8 to 11 in the morning, in front of the Kouzaki Fureai Center. Fresh local vegetables, wild greens, and homemade goods fill the stalls — a lively meeting place for the whole area.</span></div>
         </div>
-        <div style="flex:0 0 auto;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;color:#dfe3ce;letter-spacing:.1em;border-bottom:1px solid #8a9575;padding-bottom:6px;white-space:nowrap;">毎週日曜 開催</div>
+        <div style="flex:0 0 auto;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;color:#dfe3ce;letter-spacing:.1em;border-bottom:1px solid #8a9575;padding-bottom:6px;white-space:nowrap;"><span class="lang-ja">毎週日曜 開催</span><span class="lang-en">Every Sunday</span></div>
       </div>
     </div>
   </div>
@@ -278,92 +286,92 @@ img { max-width: 100%; }
   <!-- ================= あゆみ ================= -->
   <div id="ayumi" style="max-width:1200px;margin:0 auto;padding:96px 32px;">
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-      <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">守り、つないできた活動</h2>
+      <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;"><span class="lang-ja">守り、つないできた活動</span><span class="lang-en">The work of keeping and passing it on</span></h2>
       <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">04 — AYUMI</span>
     </div>
-    <p style="margin:0 0 56px;max-width:640px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">神前の風景は、ひとりでに残ってきたわけではありません。地域の人たちの手と、外との出会いが、少しずつ積み重なってきました。</p>
+    <p style="margin:0 0 56px;max-width:640px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">神前の風景は、ひとりでに残ってきたわけではありません。地域の人たちの手と、外との出会いが、少しずつ積み重なってきました。</span><span class="lang-en">The landscape of Kouzaki did not survive on its own. It has been built up little by little — through the hands of local people, and through encounters with the world beyond.</span></p>
 
     <div style="display:flex;flex-direction:column;">
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">受け継ぐ日々</div>
+        <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">受け継ぐ日々</span><span class="lang-en">Everyday, handed down</span></div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">神前ふるさとを守る会の活動</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">棚田・里山・行事・景観を守る、地域の有志の会。毎週日曜の「ふれあい朝市」や、初夏のホタルウォークなど、暮らしの中の営みを続けてきました。</p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前ふるさとを守る会の活動</span><span class="lang-en">The work of the Kouzaki Furusato Preservation Society</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">棚田・里山・行事・景観を守る、地域の有志の会。毎週日曜の「ふれあい朝市」や、初夏のホタルウォークなど、暮らしの中の営みを続けてきました。</span><span class="lang-en">A volunteer group that looks after the terraces, the satoyama, the local events, and the scenery. From the Sunday morning market to the early-summer Firefly Walk, they have kept these small rituals of daily life going.</span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2007</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">神前ふるさとを守る会、発足</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">国の農地・水・環境保全向上対策を機に発足。同じ年、村田製作所との森づくり「モデルフォレスト」が府内第一号として神前で始まり、翌年には農業農村整備優良地区コンクールで全国水土里ネット会長賞を受賞しました。</p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">神前ふるさとを守る会、発足</span><span class="lang-en">The Preservation Society is founded</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">国の農地・水・環境保全向上対策を機に発足。同じ年、村田製作所との森づくり「モデルフォレスト」が府内第一号として神前で始まり、翌年には農業農村整備優良地区コンクールで全国水土里ネット会長賞を受賞しました。</span><span class="lang-en">Founded on the back of a national program for conserving farmland, water, and the environment. That same year, a forest-building partnership with Murata Manufacturing, the "Model Forest," began in Kouzaki as the first of its kind in the prefecture; the following year the village won the national Mizu-Tochi-Net Chairman's Award in the competition for outstanding rural improvement districts.</span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2010</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">京都大学との出会い</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">守る会の活動を京都大学の研究グループが視察に訪れたのが、縁の始まり。翌2011年からは共同研究として、iPadとFacebookを使った村からの情報発信が始まりました。</p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">京都大学との出会い</span><span class="lang-en">Meeting Kyoto University</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">守る会の活動を京都大学の研究グループが視察に訪れたのが、縁の始まり。翌2011年からは共同研究として、iPadとFacebookを使った村からの情報発信が始まりました。</span><span class="lang-en">The tie began when a research group from Kyoto University came to observe the society's work. From 2011, as a joint project, the village started sharing news of its own using iPads and Facebook.</span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2013</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">村づくりワークショップ、始まる</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">京大生31名が初めて神前を訪れ、集落を歩いて将来ビジョンを提案しました。以来、コロナ禍の中断をはさみながら毎年続いています。<a href="workshops.html#rekidai" style="color:#31402a;">これまでのあゆみ →</a></p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">村づくりワークショップ、始まる</span><span class="lang-en">The village-making workshops begin</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">京大生31名が初めて神前を訪れ、集落を歩いて将来ビジョンを提案しました。以来、コロナ禍の中断をはさみながら毎年続いています。<a href="workshops.html#rekidai" style="color:#31402a;">これまでのあゆみ →</a></span><span class="lang-en">Thirty-one Kyoto University students visited Kouzaki for the first time, walking the hamlet and proposing a vision for its future. It has continued every year since, with only a pause during the pandemic. <a href="workshops.html#rekidai" style="color:#31402a;">The story so far →</a></span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2014–2016</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">「チョロギ村」構想、動き出す</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">2014年の区総会で確認された「神前チョロギ村」構想は、20回を超えるリーダー会議を経て、NPO法人チョロギ村として実を結びました。ゆるキャラ「チョロばあ」が生まれたのもこの頃です。</p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">「チョロギ村」構想、動き出す</span><span class="lang-en">The "Chorogi Village" idea takes shape</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">2014年の区総会で確認された「神前チョロギ村」構想は、20回を超えるリーダー会議を経て、NPO法人チョロギ村として実を結びました。ゆるキャラ「チョロばあ」が生まれたのもこの頃です。</span><span class="lang-en">Endorsed at the 2014 district assembly, the "Kouzaki Chorogi Village" concept passed through more than twenty leaders' meetings before bearing fruit as the nonprofit Chorogi Village. The mascot "Choro-baa" was born around this time too.</span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2021</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">「京力農場プラン」承認</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">集落の農業の将来計画が承認されました。土台になったのは、全農家アンケート（回収率100%）。京都大学とのワークショップも、取組のひとつとして明記されています。</p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">「京力農場プラン」承認</span><span class="lang-en">The "Kyoryoku Farm Plan" is approved</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">集落の農業の将来計画が承認されました。土台になったのは、全農家アンケート（回収率100%）。京都大学とのワークショップも、取組のひとつとして明記されています。</span><span class="lang-en">The hamlet's long-term farming plan was approved, built on a survey of every farm household (a 100% response rate). The workshops with Kyoto University are named in it as one of the ongoing efforts.</span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2022</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">村づくりワークショップ、再開</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">コロナ禍を経て、学生が集落を歩き、隠れた魅力と課題を見つけるワークショップを再開しました。この年のテーマのひとつは「Society 5.0時代のチョロギ村づくり」でした。<a href="workshops.html#y2022" style="color:#31402a;">この年の記録 →</a></p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">村づくりワークショップ、再開</span><span class="lang-en">The workshops resume</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">コロナ禍を経て、学生が集落を歩き、隠れた魅力と課題を見つけるワークショップを再開しました。この年のテーマのひとつは「Society 5.0時代のチョロギ村づくり」でした。<a href="workshops.html#y2022" style="color:#31402a;">この年の記録 →</a></span><span class="lang-en">After the pandemic, the students returned — walking the hamlet, seeking out its hidden charms and its problems. One of that year's themes was "Chorogi village-making in the age of Society 5.0." <a href="workshops.html#y2022" style="color:#31402a;">That year's record →</a></span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2023</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">VRで集落を記録する挑戦</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">学生がバーチャルリアリティ（VR）を使い、神前の風景を新しい形で記録。チョロギ村での交流もありました。<a href="workshops.html#y2023" style="color:#31402a;">この年の記録 →</a></p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">VRで集落を記録する挑戦</span><span class="lang-en">Recording the hamlet in VR</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">学生がバーチャルリアリティ（VR）を使い、神前の風景を新しい形で記録。チョロギ村での交流もありました。<a href="workshops.html#y2023" style="color:#31402a;">この年の記録 →</a></span><span class="lang-en">The students used virtual reality to capture the landscape of Kouzaki in a new way, along with some time spent together at Chorogi Village. <a href="workshops.html#y2023" style="color:#31402a;">That year's record →</a></span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2024</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">魅力と課題を、掘り下げる</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">学生チームが神前の資源をあらためて見つめ直し、地域を元気にするアイデアを提案しました。<a href="workshops.html#y2024" style="color:#31402a;">この年の記録 →</a></p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">魅力と課題を、掘り下げる</span><span class="lang-en">Digging into the charms and the challenges</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">学生チームが神前の資源をあらためて見つめ直し、地域を元気にするアイデアを提案しました。<a href="workshops.html#y2024" style="color:#31402a;">この年の記録 →</a></span><span class="lang-en">The student teams took a fresh look at Kouzaki's assets and put forward ideas to bring new energy to the community. <a href="workshops.html#y2024" style="color:#31402a;">That year's record →</a></span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">2025</div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">「一過性で終わらせない」継続的な村づくりへ</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">AIと全戸アンケートを使い、142軒すべてに声をかけました。<a href="report.html" style="color:#31402a;">住民のみなさんへの報告 →</a>　<a href="voices.html" style="color:#31402a;">寄せられた声・全536件 →</a></p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">「一過性で終わらせない」継続的な村づくりへ</span><span class="lang-en">Toward village-making that lasts, not a one-off</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">AIと全戸アンケートを使い、142軒すべてに声をかけました。<a href="report.html" style="color:#31402a;">住民のみなさんへの報告 →</a></span><span class="lang-en">Using AI and a survey of every household, we reached out to all 142 homes. <a href="report.html" style="color:#31402a;">Report to the residents →</a></span></p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:32px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
-        <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;">これから</div>
+        <div style="font:600 15px/1.6 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">これから</span><span class="lang-en">Ahead</span></div>
         <div>
-          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;">声を土台に、次の一歩へ</h3>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;">集まった声をもとに、無理のない村づくりを、これからも一緒に考えていきます。今年のワークショップは2026年7月12日（日）です。<a href="ws2026.html" style="color:#31402a;">ご案内 →</a></p>
+          <h3 style="margin:0 0 10px;font:600 21px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">声を土台に、次の一歩へ</span><span class="lang-en">Building the next step on those voices</span></h3>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:720px;"><span class="lang-ja">集まった声をもとに、無理のない村づくりを、これからも一緒に考えていきます。今年のワークショップは2026年7月12日（日）です。<a href="ws2026.html" style="color:#31402a;">ご案内 →</a></span><span class="lang-en">Drawing on the voices we gathered, we will go on thinking together about a kind of village-making that doesn't overstretch anyone. This year's workshop is on Sunday, July 12, 2026. <a href="ws2026.html" style="color:#31402a;">Details →</a></span></p>
         </div>
       </div>
     </div>
     <div style="margin-top:36px;">
-      <a href="workshops.html" style="font:500 14px/1 'Zen Kaku Gothic New',sans-serif;color:#31402a;text-decoration:none;border-bottom:1px solid #31402a;padding-bottom:5px;letter-spacing:.06em;">村づくりワークショップの記録を見る →</a>
+      <a href="workshops.html" style="font:500 14px/1 'Zen Kaku Gothic New',sans-serif;color:#31402a;text-decoration:none;border-bottom:1px solid #31402a;padding-bottom:5px;letter-spacing:.06em;"><span class="lang-ja">村づくりワークショップの記録を見る →</span><span class="lang-en">See the record of the village-making workshops →</span></a>
     </div>
   </div>
 
@@ -371,16 +379,15 @@ img { max-width: 100%; }
   <div style="border-top:1px solid #e0e0d4;">
     <div style="max-width:1200px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
       <div>
-        <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;margin-bottom:22px;">住民のみなさんへ ― 2025</div>
-        <h2 style="margin:0 0 20px;font:600 42px/1.5 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">142軒すべてに、<br>声をかけました</h2>
-        <p style="margin:0 0 32px;max-width:440px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">高齢化や担い手不足に向き合いながらも、地域の人たちは手を止めていません。全戸を回って集めた声と、4つのむらづくり案の受け止めをまとめました。</p>
+        <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;margin-bottom:22px;"><span class="lang-ja">住民のみなさんへ ― 2025</span><span class="lang-en">To the residents — 2025</span></div>
+        <h2 style="margin:0 0 20px;font:600 42px/1.5 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">142軒すべてに、<br>声をかけました</span><span class="lang-en">We reached out to<br>all 142 households</span></h2>
+        <p style="margin:0 0 32px;max-width:440px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">高齢化や担い手不足に向き合いながらも、地域の人たちは手を止めていません。全戸を回って集めた声と、4つのむらづくり案の受け止めをまとめました。</span><span class="lang-en">Facing an aging population and a shortage of hands, the people here have not stopped working. We have gathered the voices collected door to door, along with how residents responded to four village-making proposals.</span></p>
         <div style="display:flex;gap:16px;flex-wrap:wrap;">
-          <a href="report.html" style="display:inline-block;background:#31402a;color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 30px;letter-spacing:.06em;text-decoration:none;">報告ページを見る →</a>
-          <a href="voices.html" style="display:inline-block;border:1px solid #31402a;color:#31402a;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 30px;letter-spacing:.06em;text-decoration:none;">声・全536件を読む</a>
+          <a href="report.html" style="display:inline-block;background:#31402a;color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 30px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">報告ページを見る →</span><span class="lang-en">Read the report →</span></a>
         </div>
       </div>
       <div style="position:relative;background:url('photos/ws2018_lecture.jpg') center/cover no-repeat,repeating-linear-gradient(135deg,#dfe7d0 0 14px,#d4ddc2 14px 28px);min-height:340px;">
-        <div style="position:absolute;bottom:20px;left:20px;font:500 11px/1.4 ui-monospace,monospace;color:#5c6a44;background:rgba(246,245,238,.78);padding:6px 10px;">むらづくりワークショップ・集落での集まり（2018年）</div>
+        <div style="position:absolute;bottom:20px;left:20px;font:500 11px/1.4 ui-monospace,monospace;color:#5c6a44;background:rgba(246,245,238,.78);padding:6px 10px;"><span class="lang-ja">むらづくりワークショップ・集落での集まり（2018年）</span><span class="lang-en">Village-making workshop — a gathering in the hamlet (2018)</span></div>
       </div>
     </div>
   </div>
@@ -390,24 +397,24 @@ img { max-width: 100%; }
     <div style="max-width:1200px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1fr 1fr;gap:56px;">
       <div>
         <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:40px;">
-          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">神前へのおでかけ</h2>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;"><span class="lang-ja">神前へのおでかけ</span><span class="lang-en">Getting to Kouzaki</span></h2>
           <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">05 — ACCESS</span>
         </div>
         <div style="display:flex;flex-direction:column;">
           <div style="display:grid;grid-template-columns:96px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">電車</div>
-            <div style="font:400 14px/1.9 'Zen Kaku Gothic New',sans-serif;color:#454b3d;">JR嵯峨野線「千代川駅」下車（京都駅から約30分）</div>
+            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">電車</span><span class="lang-en">By train</span></div>
+            <div style="font:400 14px/1.9 'Zen Kaku Gothic New',sans-serif;color:#454b3d;"><span class="lang-ja">JR嵯峨野線「千代川駅」下車（京都駅から約30分）</span><span class="lang-en">Get off at Chiyokawa Station on the JR Sagano Line (about 30 minutes from Kyoto Station)</span></div>
           </div>
           <div style="display:grid;grid-template-columns:96px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;">
-            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">バス</div>
-            <div style="font:400 14px/1.9 'Zen Kaku Gothic New',sans-serif;color:#454b3d;">千代川駅から亀岡市ふるさとバスで約4.5km（便数は少なめ）</div>
+            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">バス</span><span class="lang-en">By bus</span></div>
+            <div style="font:400 14px/1.9 'Zen Kaku Gothic New',sans-serif;color:#454b3d;"><span class="lang-ja">千代川駅から亀岡市ふるさとバスで約4.5km（便数は少なめ）</span><span class="lang-en">About 4.5 km from Chiyokawa Station on the Kameoka Furusato Bus (service is infrequent)</span></div>
           </div>
           <div style="display:grid;grid-template-columns:96px 1fr;gap:24px;padding:22px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
-            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">お車</div>
-            <div style="font:400 14px/1.9 'Zen Kaku Gothic New',sans-serif;color:#454b3d;">京都縦貫自動車道「千代川IC」から約3km</div>
+            <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;"><span class="lang-ja">お車</span><span class="lang-en">By car</span></div>
+            <div style="font:400 14px/1.9 'Zen Kaku Gothic New',sans-serif;color:#454b3d;"><span class="lang-ja">京都縦貫自動車道「千代川IC」から約3km</span><span class="lang-en">About 3 km from the Chiyokawa IC on the Kyoto Longitudinal Expressway</span></div>
           </div>
         </div>
-        <p style="margin:24px 0 0;font:400 13px/1.8 'Zen Kaku Gothic New',sans-serif;color:#94997f;">※ おでかけの際は、バスの時刻を事前にご確認ください。</p>
+        <p style="margin:24px 0 0;font:400 13px/1.8 'Zen Kaku Gothic New',sans-serif;color:#94997f;"><span class="lang-ja">※ おでかけの際は、バスの時刻を事前にご確認ください。</span><span class="lang-en">Please check the bus timetable before you set out.</span></p>
       </div>
       <div style="position:relative;min-height:360px;">
         <iframe src="https://www.google.com/maps?q=%E7%A5%9E%E5%89%8D%E3%81%B5%E3%82%8C%E3%81%82%E3%81%84%E3%82%B5%E3%83%AD%E3%83%B3&ll=35.0518929,135.5097093&z=14&output=embed" style="position:absolute;inset:0;width:100%;height:100%;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="神前（こうざき）の地図"></iframe>
@@ -417,10 +424,10 @@ img { max-width: 100%; }
     <div style="max-width:1200px;margin:0 auto;padding:0 32px 96px;">
       <div style="border:1px solid #e0e0d4;padding:32px;">
         <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:8px;flex-wrap:wrap;">
-          <h3 style="margin:0;font:600 22px/1.5 'Zen Old Mincho',serif;color:#31402a;">住民手づくりの、神前マップ</h3>
+          <h3 style="margin:0;font:600 22px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">住民手づくりの、神前マップ</span><span class="lang-en">A Kouzaki map, drawn by the residents</span></h3>
           <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#94997f;">TEZUKURI MAP</span>
         </div>
-        <p style="margin:0 0 24px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:760px;">地域のみなさんの手で描き起こされた、あたたかいイラストの神前マップ。タキカ花、杭座原、堂ヶ峠——昔からの字名がひとつずつ描き込まれ、ふれあいセンター＆サロンも、お寺も神社も、ちゃんとこの中にあります。画像を押すと大きく表示されます。</p>
+        <p style="margin:0 0 24px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;max-width:760px;"><span class="lang-ja">地域のみなさんの手で描き起こされた、あたたかいイラストの神前マップ。タキカ花、杭座原、堂ヶ峠——昔からの字名がひとつずつ描き込まれ、ふれあいセンター＆サロンも、お寺も神社も、ちゃんとこの中にあります。画像を押すと大きく表示されます。</span><span class="lang-en">A warm, hand-drawn illustrated map of Kouzaki, put together by the people who live here. Takikabana, Kuizahara, Dougatouge — the old place-names are written in one by one, and the Fureai Center and salon, the temple, and the shrine are all there in it. Tap the image to see it larger.</span></p>
         <a href="photos/illustmap.jpg" target="_blank" style="display:block;">
           <img src="photos/illustmap.jpg" alt="住民手づくりの神前イラストマップ" style="width:100%;display:block;border:1px solid #e0e0d4;">
         </a>
@@ -433,21 +440,25 @@ img { max-width: 100%; }
     <div style="max-width:1200px;margin:0 auto;padding:72px 32px 0;">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding-bottom:64px;border-bottom:1px solid rgba(255,255,255,.14);">
         <div>
-          <h2 style="margin:0 0 16px;font:600 30px/1.5 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.06em;">神前の、今の様子を</h2>
-          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:420px;">季節の風景や地域の出来事は、Facebookページでも発信されています。</p>
+          <h2 style="margin:0 0 16px;font:600 30px/1.5 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.06em;"><span class="lang-ja">神前の、今の様子を</span><span class="lang-en">Kouzaki, as it is right now</span></h2>
+          <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:420px;"><span class="lang-ja">季節の風景や地域の出来事は、Facebookページでも発信されています。</span><span class="lang-en">Seasonal scenes and goings-on around the village are also shared on the Facebook page.</span></p>
         </div>
         <div style="display:flex;gap:16px;justify-content:flex-end;flex-wrap:wrap;">
-          <a href="https://www.facebook.com/kyo.kouzaki/" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;">Facebook「亀岡市宮前町神前地区」</a>
-          <a href="report.html" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;">住民向け報告を見る</a>
+          <a href="https://www.facebook.com/kyo.kouzaki/" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">Facebook「亀岡市宮前町神前地区」</span><span class="lang-en">Facebook: Kouzaki district, Miyamae, Kameoka</span></a>
+          <a href="report.html" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">住民向け報告を見る</span><span class="lang-en">See the residents' report</span></a>
         </div>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:32px 0 36px;font:400 13px/1.7 'Zen Kaku Gothic New',sans-serif;">
-        <div><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;">神前ふるさとを守る会</strong>　京都府亀岡市宮前町 神前（こうざき）／ 上段川地区</div>
+        <div><span class="lang-ja"><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;">神前ふるさとを守る会</strong>　京都府亀岡市宮前町 神前（こうざき）／ 上段川地区</span><span class="lang-en"><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;">Kouzaki Furusato Preservation Society</strong>　Kouzaki, Miyamae, Kameoka City, Kyoto / Jodangawa area</span></div>
         <div style="opacity:.6;">神前（こうざき）紹介ページ ©2026　制作協力：京都大学大学院地球環境学堂 持続的農村開発論研究室（鬼塚）</div>
       </div>
     </div>
   </div>
 
 </div>
+<script>
+function setLang(l){ document.documentElement.lang=l; try{localStorage.setItem('kouzaki_lang',l);}catch(e){} var b=document.querySelectorAll('.langtoggle button'); for(var i=0;i<b.length;i++){ b[i].classList.toggle('on', b[i].getAttribute('data-lang')===l);} }
+setLang(document.documentElement.lang==='en'?'en':'ja');
+</script>
 </body>
 </html>

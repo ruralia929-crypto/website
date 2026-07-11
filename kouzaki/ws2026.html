@@ -5,16 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>むらづくりワークショップ2026 ― 神前 × 京都大学</title>
-<meta name="description" content="2026年7月12日（日）、京都大学の学生たちが神前（こうざき）を訪れ、村づくりワークショップを行います。当日の流れと、今年のかたちのご案内です。">
+<meta name="description" content="2026年7月12日（日）、京都大学の学生たちが神前（こうざき）を訪れ、村づくりワークショップを行います。持ち物・当日の流れ・ファシリテーターの要点のご案内です。">
+<script>try{document.documentElement.lang=localStorage.getItem('kouzaki_lang')||'ja';}catch(e){}</script>
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@400;500;700&family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
 <style>
 * { box-sizing: border-box; }
 body { margin: 0; background: #f6f5ee; }
 html { scroll-behavior: smooth; }
 img { max-width: 100%; }
+
+/* ---- language toggle ---- */
+html[lang="en"] .lang-ja { display: none; }
+html[lang="ja"] .lang-en { display: none; }
+.langtoggle { display: inline-flex; align-items: stretch; border: 1px solid #cfcfc0; border-radius: 3px; overflow: hidden; }
+.langtoggle button { appearance: none; background: none; border: none; cursor: pointer; padding: 6px 11px; font: 500 11px/1 'Zen Kaku Gothic New', sans-serif; letter-spacing: .08em; color: #8a9072; transition: background .15s, color .15s; }
+.langtoggle button.on { background: #31402a; color: #f6f5ee; }
+
+/* ---- section tabs ---- */
+.tabbar { position: sticky; top: 66px; z-index: 15; background: rgba(246,245,238,.95); backdrop-filter: blur(8px); border-top: 1px solid #e0e0d4; border-bottom: 1px solid #e0e0d4; }
+.tabbar-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 2px; padding: 0 24px; overflow-x: auto; }
+.tab { appearance: none; background: none; border: none; cursor: pointer; padding: 18px 22px; font: 500 15px/1 'Zen Old Mincho', serif; color: #8a9072; letter-spacing: .04em; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s, border-color .15s; }
+.tab:hover { color: #4a5340; }
+.tab.active { color: #2b3624; border-bottom-color: #2b3624; }
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ---- hero / site QR ---- */
+.workshop-hero { position: relative; overflow: hidden; background: #e7e6dc; }
+.workshop-hero::before { content: ''; position: absolute; z-index: 0; inset: -24px; background: url('photos/kokusai_koryu_kaikan_summer.jpg') center/cover no-repeat; filter: blur(20px) saturate(.72); opacity: .42; transform: scale(1.04); }
+.workshop-hero::after { content: ''; position: absolute; z-index: 0; inset: 0; background: linear-gradient(90deg,rgba(246,245,238,.90) 0%,rgba(246,245,238,.72) 48%,rgba(246,245,238,.28) 76%,rgba(246,245,238,.16) 100%), url('photos/kokusai_koryu_kaikan_summer.jpg') center/auto 100% no-repeat; }
+.workshop-hero-content { position: relative; z-index: 1; max-width: 1200px; min-height: 680px; margin: 0 auto; padding: 88px 32px 72px; display: flex; align-items: center; }
+.hero-inner { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 64px; align-items: center; }
+.hero-kicker { color: #737a67 !important; }
+.hero-title { color: #2b3624 !important; text-shadow: 0 1px 18px rgba(246,245,238,.7); }
+.hero-rule { background: #929a7d !important; }
+.hero-lead { color: #454b3d !important; }
+.hero-lead strong { color: #2b3624 !important; }
+.site-qr-card { border: 1px solid rgba(255,255,255,.72); background: rgba(250,249,243,.88); padding: 24px; text-align: center; box-shadow: 0 10px 32px rgba(49,64,42,.12); backdrop-filter: blur(5px); }
+.site-qr-link { display: block; color: inherit; text-decoration: none; }
+.site-qr { width: 194px; height: 194px; margin: 0 auto 18px; padding: 10px; background: #fff; }
+.site-qr img, .site-qr canvas { display: block; width: 174px !important; height: 174px !important; }
+.site-qr-fallback { display: flex; align-items: center; justify-content: center; height: 174px; border: 1px solid #e0e0d4; font: 500 13px/1.7 'Zen Kaku Gothic New', sans-serif; color: #31402a; }
+.site-qr-kicker { margin-bottom: 8px; font: 500 10px/1 'Zen Kaku Gothic New', sans-serif; letter-spacing: .2em; color: #94997f; }
+.site-qr-title { font: 600 16px/1.5 'Zen Old Mincho', serif; color: #2b3624; }
+.site-qr-note { margin-top: 5px; font: 400 11px/1.6 'Zen Kaku Gothic New', sans-serif; color: #7a8064; }
+
 @media (max-width: 720px) {
   [style*="grid-template-columns:180px 1fr"] { grid-template-columns: 1fr !important; gap: 8px !important; }
   [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
@@ -22,10 +61,21 @@ img { max-width: 100%; }
   h2[style*=" 36px/1.4 "] { font-size: 25px !important; }
   [style*="padding:110px 32px 90px"] { padding: 64px 20px 56px !important; }
   [style*="padding:88px 32px"] { padding: 52px 20px !important; }
-  [style*="padding:72px 32px"] { padding: 44px 20px !important; }
+  [style*="padding:40px 32px"] { padding: 28px 20px !important; }
   [style*="padding:22px 32px"] { padding: 14px 16px !important; }
-  [style*="gap:32px;font:400 13px/1"] { gap: 12px !important; flex-wrap: wrap !important; justify-content: flex-end !important; row-gap: 8px !important; }
+  [style*="gap:20px;font:400 13px/1"] { gap: 12px !important; flex-wrap: wrap !important; justify-content: flex-end !important; row-gap: 10px !important; }
   [style*="padding:40px 36px"] { padding: 26px 22px !important; }
+  .tabbar { top: 50px; }
+  .tab { padding: 14px 15px; font-size: 13px; }
+  .tabbar-inner { padding: 0 12px; }
+  .workshop-hero::after { background: linear-gradient(180deg,rgba(246,245,238,.06) 0%,rgba(246,245,238,.18) 28%,rgba(246,245,238,.88) 48%,rgba(246,245,238,.98) 70%), url('photos/kokusai_koryu_kaikan_summer.jpg') center top/100% auto no-repeat; }
+  .workshop-hero-content { min-height: 0; padding: clamp(250px,75vw,520px) 20px 56px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .site-qr-card { padding: 16px; }
+  .site-qr-link { display: flex; align-items: center; gap: 18px; text-align: left; }
+  .site-qr { flex: 0 0 132px; width: 132px; height: 132px; margin: 0; padding: 8px; }
+  .site-qr img, .site-qr canvas { width: 116px !important; height: 116px !important; }
+  .site-qr-fallback { height: 116px; font-size: 11px; text-align: center; }
 }
 </style>
 </head>
@@ -39,88 +89,247 @@ img { max-width: 100%; }
         <span style="font:700 22px/1 'Zen Old Mincho',serif;color:#31402a;letter-spacing:.14em;">神前</span>
         <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;">ワークショップ2026</span>
       </a>
-      <div style="display:flex;align-items:center;gap:32px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
-        <a href="#schedule" style="color:#5b6152;text-decoration:none;">当日の流れ</a>
-        <a href="workshops.html" style="color:#5b6152;text-decoration:none;">これまでの記録</a>
+      <div style="display:flex;align-items:center;gap:20px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
+        <a href="workshops.html" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">これまでの記録</span><span class="lang-en">Archive</span></a>
         <span style="width:1px;height:14px;background:#cfcfc0;"></span>
-        <a href="index.html" style="color:#31402a;text-decoration:none;font-weight:500;">神前について</a>
-        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;border-bottom:2px solid #31402a;padding-bottom:4px;">住民報告</a>
+        <a href="index.html" style="color:#31402a;text-decoration:none;font-weight:500;"><span class="lang-ja">神前について</span><span class="lang-en">About</span></a>
+        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;"><span class="lang-ja">住民報告</span><span class="lang-en">Report</span></a>
+        <span class="langtoggle" role="group" aria-label="language">
+          <button type="button" data-lang="ja" onclick="setLang('ja')">日本語</button>
+          <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+        </span>
       </div>
     </div>
   </div>
 
   <!-- ================= hero ================= -->
-  <div style="max-width:1200px;margin:0 auto;padding:110px 32px 90px;">
-    <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:#94997f;margin-bottom:32px;">神 前 × 京 都 大 学 ― 2 0 2 6</div>
-    <h1 style="margin:0;font:700 56px/1.6 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;">むらづくりワークショップ 2026</h1>
-    <div style="width:56px;height:1px;background:#a7ac90;margin:36px 0;"></div>
-    <p style="margin:0;max-width:560px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#454b3d;">今年も、京都大学の学生たちが神前にやってきます。<br><strong style="font-weight:700;color:#2b3624;">2026年7月12日（日）</strong>、雨天決行です。</p>
+  <div class="workshop-hero">
+    <div class="workshop-hero-content">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker" style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.32em;color:#94997f;margin-bottom:32px;"><span class="lang-ja">神 前 × 京 都 大 学 ― 2 0 2 6</span><span class="lang-en">K O U Z A K I × K Y O T O   U N I V. ― 2 0 2 6</span></div>
+          <h1 class="hero-title" style="margin:0;font:700 56px/1.6 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.06em;"><span class="lang-ja">むらづくりワークショップ 2026</span><span class="lang-en">Village-Making Workshop 2026</span></h1>
+          <div class="hero-rule" style="width:56px;height:1px;background:#a7ac90;margin:36px 0;"></div>
+          <p class="hero-lead" style="margin:0;max-width:600px;font:400 16px/2.2 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">今年も、京都大学の学生たちが神前にやってきます。<br><strong style="font-weight:700;color:#2b3624;">2026年7月12日（日）</strong>、雨天決行です。</span><span class="lang-en">This year, students from Kyoto University are coming to Kouzaki once again.<br><strong style="font-weight:700;color:#2b3624;">Sunday, July 12, 2026</strong> — held rain or shine.</span></p>
+        </div>
+        <aside class="site-qr-card" aria-label="神前紹介ページへのQRコード">
+          <a class="site-qr-link" href="index.html">
+            <div id="site-qrcode" class="site-qr"><span class="site-qr-fallback"><span class="lang-ja">神前紹介ページを開く</span><span class="lang-en">Open Kouzaki page</span></span></div>
+            <div>
+              <div class="site-qr-kicker">ABOUT KOUZAKI</div>
+              <div class="site-qr-title"><span class="lang-ja">神前を知る</span><span class="lang-en">Discover Kouzaki</span></div>
+              <div class="site-qr-note"><span class="lang-ja">スマートフォンで読み取ってください</span><span class="lang-en">Scan with your phone</span></div>
+            </div>
+          </a>
+        </aside>
+      </div>
+    </div>
   </div>
 
   <!-- ================= お知らせ ================= -->
-  <div style="border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
-    <div style="max-width:1200px;margin:0 auto;padding:72px 32px;">
-      <div style="border:1px solid #c9cdb6;padding:28px 32px;max-width:780px;margin:0 auto;">
-        <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:12px;">お知らせ</div>
-        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">今年のワークショップのテーマは、現在、地域と大学で調整しています。決まりましたら、当日の詳しい資料とあわせて、このページでお知らせします。</p>
+  <div style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:40px 32px;">
+      <div style="border:1px solid #c9cdb6;padding:30px 34px;max-width:880px;">
+        <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:10px;"><span class="lang-ja">今年のテーマ</span><span class="lang-en">THIS YEAR'S THEME</span></div>
+        <div style="font:600 21px/1.5 'Zen Old Mincho',serif;color:#2b3624;margin-bottom:14px;"><span class="lang-ja">神前のこれからを、みんなの力で<span style="font-weight:400;font-size:15px;color:#7a8064;"> ― 誰が、どう関わり、どんな役割を担うか</span></span><span class="lang-en">Kouzaki's Next Chapter, Made by Everyone<span style="font-weight:400;font-size:15px;color:#7a8064;"> — who takes part, how, and in what role</span></span></div>
+        <p style="margin:0 0 16px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">神前ではいま、「この地域をこれからどうしていくか」を考える話し合いが始まっています。たとえば、こんなアイデアが出ています（まだラフな段階で、決まったものではありません）。</span><span class="lang-en">In Kouzaki, conversations about "where do we go from here" have begun. A few rough ideas have come up — still early, and nothing is decided:</span></p>
+        <div style="margin:0 0 20px;">
+          <div style="padding:10px 0;border-top:1px solid #e0e0d4;font:400 14px/1.7 'Zen Kaku Gothic New',sans-serif;color:#31402a;"><span class="lang-ja">いのちや自然の歴史にふれられる、学びの場</span><span class="lang-en">A place to encounter life and the long history of nature</span></div>
+          <div style="padding:10px 0;border-top:1px solid #e0e0d4;font:400 14px/1.7 'Zen Kaku Gothic New',sans-serif;color:#31402a;"><span class="lang-ja">学校になじみにくい子や、学び直したい若者が、住みながら学べる場</span><span class="lang-en">A place where children who don't fit the usual school, and young people who want to learn again, can live and learn</span></div>
+          <div style="padding:10px 0;border-top:1px solid #e0e0d4;font:400 14px/1.7 'Zen Kaku Gothic New',sans-serif;color:#31402a;"><span class="lang-ja">働く大人が、自然のなかで自分を見つめ直せる場</span><span class="lang-en">A place where working adults can step back and rethink themselves in nature</span></div>
+          <div style="padding:10px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;font:400 14px/1.7 'Zen Kaku Gothic New',sans-serif;color:#31402a;"><span class="lang-ja">森で牛を育て、牛乳やチーズをつくる、森の牧場</span><span class="lang-en">A woodland dairy — raising cattle in the forest and making milk and cheese</span></div>
+        </div>
+        <p style="margin:0 0 12px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">こうしたアイデアを実現するには、たくさんの人の力が要ります。ワークショップでは、学生に次の2つを考えてもらいます。</span><span class="lang-en">Making these real takes many people. In the workshop, the students think about two things:</span></p>
+        <div style="margin:0 0 16px;">
+          <div style="margin-bottom:6px;font:600 14px/1.8 'Zen Kaku Gothic New',sans-serif;color:#2b3624;"><span class="lang-ja">① どんな人が、どういう形で関われるか</span><span class="lang-en">① Who could take part, and in what way?</span></div>
+          <div style="font:600 14px/1.8 'Zen Kaku Gothic New',sans-serif;color:#2b3624;"><span class="lang-ja">② みんなで取り組めるように、どんな人が、どんな役割を分担すればいいか</span><span class="lang-en">② So that everyone can join in, who should take on which role?</span></div>
+        </div>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">誰にも出番があって、みんながお互いの脇役にもなれる——そんな神前の姿を、班ごとに提案します。当日の成果は、夕方の報告会で発表します。</span><span class="lang-en">A design in which everyone has a turn — and everyone can also be someone else's supporting player. Each group shares its ideas at the report session in the late afternoon.</span></p>
       </div>
     </div>
   </div>
 
-  <!-- ================= 今年のかたち ================= -->
-  <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-      <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">今年は、みんなで交流会館のあたりへ</h2>
-      <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">KOTOSHI</span>
+  <!-- ================= tab bar ================= -->
+  <div class="tabbar">
+    <div class="tabbar-inner">
+      <button class="tab active" id="tab-prep" onclick="showTab('prep',this)"><span class="lang-ja">持ち物・準備</span><span class="lang-en">What to Bring</span></button>
+      <button class="tab" id="tab-schedule" onclick="showTab('schedule',this)"><span class="lang-ja">当日の流れ</span><span class="lang-en">Schedule</span></button>
+      <button class="tab" id="tab-groups" onclick="showTab('groups',this)"><span class="lang-ja">班分け</span><span class="lang-en">Groups</span></button>
+      <button class="tab" id="tab-facil" onclick="showTab('facil',this)"><span class="lang-ja">ファシリの要点</span><span class="lang-en">Facilitation</span></button>
+      <button class="tab" id="tab-residents" onclick="showTab('residents',this)"><span class="lang-ja">住民のみなさんへ</span><span class="lang-en">For Residents</span></button>
     </div>
-    <p style="margin:0;max-width:780px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;">これまでの2年は、班ごとに3つのエリアへ分かれて集落を歩いてきました。今年はかたちを変えて、<strong style="font-weight:700;color:#2b3624;">全員で国際交流会館（森のステーションかめおか）のあたりを訪ねる</strong>予定です。天然砥石館のある一角を、テーマに沿ってじっくり見て歩きます。詳しい歩き方は、テーマとあわせてお知らせします。</p>
   </div>
 
-  <!-- ================= 当日の流れ ================= -->
-  <div id="schedule" style="border-top:1px solid #e0e0d4;">
+  <!-- ================= panel: 持ち物・準備 ================= -->
+  <div class="panel active" id="panel-prep">
     <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
       <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;">当日の流れ（予定）</h2>
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">参加するみなさんへ ― 持ち物と準備</span><span class="lang-en">For Participants — What to Bring &amp; Prepare</span></h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">PREP</span>
+      </div>
+      <p style="margin:0 0 40px;max-width:760px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">当日の詳しい資料（しおり）は前日にお渡しします。まずは下の準備をお願いします。雨天決行です。</span><span class="lang-en">The detailed guide (shiori) will be handed out the day before. For now, please prepare the items below. Held rain or shine.</span></p>
+
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">集合</span><span class="lang-en">Meeting</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">8:15集合・8:30出発。今出川通り・北部構内の入口付近に集まってください。バスで移動するため、<strong style="font-weight:700;color:#2b3624;">8:30以降は待てません</strong>。時間に余裕をもって来てください。</span><span class="lang-en">Gather at 8:15, depart at 8:30. Meet near the entrance of the North Campus, along Imadegawa Street. We travel by bus and <strong style="font-weight:700;color:#2b3624;">cannot wait past 8:30</strong>, so please arrive with time to spare.</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">参加費</span><span class="lang-en">Fee</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">1,200円（当日、現金で集めます。おつりのないように）。昼食代を含みます。欠席の場合も昼食代（1,000円）はいただきます。</span><span class="lang-en">¥1,200 (collected in cash on the day — please bring exact change). This includes lunch. If you cancel, the lunch cost (¥1,000) will still be collected.</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">持ち物</span><span class="lang-en">Bring</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">雨具、日除け（帽子など）、飲み物、筆記用具、スマートフォン（写真を撮るのでフル充電）、PC（できれば）</span><span class="lang-en">Rain gear, sun protection (a hat, etc.), a drink, pen and notebook, a smartphone (fully charged — you'll be taking photos), and a PC (if possible).</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">服装</span><span class="lang-en">Clothing</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">集落を歩きます。歩きやすい靴・動きやすい服装で。</span><span class="lang-en">We'll be walking around the village, so please wear comfortable shoes and clothes.</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">昼食</span><span class="lang-en">Lunch</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">神前ふれあいセンターでお弁当が出ます。</span><span class="lang-en">A boxed lunch (bento) will be provided at Kouzaki Fureai Center.</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
+        <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">保険</span><span class="lang-en">Insurance</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">学生教育研究災害傷害保険への加入が、参加の条件です。未加入の人は早めに教務係で手続きをしてください。</span><span class="lang-en">Enrollment in the student accident insurance (Gakkensai) is required to take part. If you're not enrolled, please complete the procedure at the academic affairs office early.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= panel: 当日の流れ ================= -->
+  <div class="panel" id="panel-schedule">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">今年は、みんなで交流会館のあたりへ</span><span class="lang-en">This Year: All Together, Near the Exchange Hall</span></h2>
         <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">SCHEDULE</span>
       </div>
-      <p style="margin:0 0 40px;max-width:720px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;">時間は変わることがあります。参加する学生には、あらためて詳しい資料を配布します。</p>
+      <p style="margin:0 0 48px;max-width:800px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">これまでの2年は、班ごとに3つのエリアへ分かれて集落を歩いてきました。今年はかたちを変えて、<strong style="font-weight:700;color:#2b3624;">全員で国際交流会館（森のステーションかめおか）のあたりを訪ねる</strong>予定です。天然砥石館のある一角を歩きながら、この場所と、そこに暮らす人たちの様子を感じます。</span><span class="lang-en">For the past two years, groups split into three areas to walk the village. This year we're changing the format: <strong style="font-weight:700;color:#2b3624;">everyone will visit the area around the International Exchange House (Mori-no-Station Kameoka) together</strong>. As we walk around the corner where the Natural Whetstone Museum stands, we'll get a feel for this place and the people who live here.</span></p>
+
+      <p style="margin:0 0 24px;max-width:760px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">当日の流れ（予定）です。時間は変わることがあります。参加する学生には、あらためて詳しい資料を配布します。</span><span class="lang-en">The day's flow (planned). Times may change. Detailed materials will be handed out to participating students.</span></p>
 
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">9:30</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">神前ふれあいセンターに到着（京都大学は8:15集合・8:30出発）</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">神前ふれあいセンターに到着（京都大学は8:15集合・8:30出発）</span><span class="lang-en">Arrive at Kouzaki Fureai Center (Kyoto Univ.: gather 8:15, depart 8:30)</span></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">9:40</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">守る会代表のごあいさつ／地域からの情報提供「神前集落の概要」</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">守る会代表のごあいさつ／地域からの情報提供「神前集落の概要」</span><span class="lang-en">Opening greeting by the preservation society / community briefing: "About Kouzaki village"</span></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">10:00–12:00</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">集落ウォーキング ― 全員で国際交流会館のあたりへ（守る会のみなさんの案内で）</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">集落ウォーキング ― 全員で国際交流会館のあたりへ（守る会のみなさんの案内で）</span><span class="lang-en">Village walk — everyone together, to the area around the International Exchange House (guided by the preservation society)</span></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">12:15</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">神前ふれあいセンターで昼食</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">神前ふれあいセンターで昼食</span><span class="lang-en">Lunch at Kouzaki Fureai Center</span></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">13:20</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">ワークショップ 第Ⅰ部 ― 住民のみなさんを交えて、見つけてきた魅力を整理</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">ワークショップ 第Ⅰ部 ― 住民のみなさんを交えて、地域で出ているアイデアと、この場所・人について深める</span><span class="lang-en">Workshop Part I — with residents, learn the ideas emerging in the community and get to know this place and its people</span></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">15:00</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">ワークショップ 第Ⅱ部 ― 学生だけで提案づくり</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">ワークショップ 第Ⅱ部 ― アイデアを実現する「人の関わり方・役割分担」を考える</span><span class="lang-en">Workshop Part II — design how people take part and share roles to make the ideas real</span></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#31402a;">16:20</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#31402a;"><strong style="font-weight:700;">成果報告会</strong>（各班 発表5分・質疑3分）― 住民のみなさんも、ぜひお越しください</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#31402a;"><span class="lang-ja"><strong style="font-weight:700;">成果報告会</strong>（各班 発表5分・質疑3分）― 住民のみなさんも、ぜひお越しください</span><span class="lang-en"><strong style="font-weight:700;">Final presentations</strong> (5 min each, 3 min Q&amp;A) — residents, please join us</span></div>
       </div>
       <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:18px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">17:20</div>
-        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">お礼の言葉とお土産の贈呈（学生から集落へ）／17:30 神前を出発</div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">お礼の言葉とお土産の贈呈（学生から集落へ）／17:30 神前を出発</span><span class="lang-en">Words of thanks and a souvenir (from students to the community) / 17:30 depart Kouzaki</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= panel: 班分け ================= -->
+  <div class="panel" id="panel-groups">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">班分け</span><span class="lang-en">Group Assignments</span></h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">GROUPS</span>
+      </div>
+      <p style="margin:0 0 40px;max-width:760px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">当日の班です。自分の名字を探してください。都合により変更する場合があります。</span><span class="lang-en">Your group for the day — find your family name below. Assignments may change.</span></p>
+
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
+        <div>
+          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班1</span><span class="lang-en">Group 1</span></div>
+          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">政策論</span><span class="lang-en">Policy course</span></div>
+        </div>
+        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">奥原、上西、大西、小川、南、宮田</span><span class="lang-en">Okuhara, Uenishi, Onishi, Ogawa, Minami, Miyata</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
+        <div>
+          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班2</span><span class="lang-en">Group 2</span></div>
+          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">政策論</span><span class="lang-en">Policy course</span></div>
+        </div>
+        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">竹林、折橋、佐竹、髙井、兵頭、大前</span><span class="lang-en">Takebayashi, Orihashi, Satake, Takai, Hyodo, Omae</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
+        <div>
+          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班3</span><span class="lang-en">Group 3</span></div>
+          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">政策論</span><span class="lang-en">Policy course</span></div>
+        </div>
+        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">曽我、土本、西尾、野口、桝田</span><span class="lang-en">Soga, Tsuchimoto, Nishio, Noguchi, Masuda</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
+        <div>
+          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班4</span><span class="lang-en">Group 4</span></div>
+          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">英語班</span><span class="lang-en">English group</span></div>
+        </div>
+        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">Wijaya, Gattermann, Bayu, Argo, Thandar, Sylvia</div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
+        <div>
+          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班5</span><span class="lang-en">Group 5</span></div>
+          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">研究室</span><span class="lang-en">Lab</span></div>
+        </div>
+        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">松島、末政、三宅、倉内</span><span class="lang-en">Matsushima, Suemasa, Miyake, Kurauchi</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= panel: ファシリテーター要点 ================= -->
+  <div class="panel" id="panel-facil">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">ファシリテーターのみなさんへ ― 進行の要点</span><span class="lang-en">For Facilitators — Key Points</span></h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">FACILITATION</span>
+      </div>
+      <p style="margin:0 0 40px;max-width:800px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">ファシリテーターは、答えを出す人ではありません。対話をなめらかにする<strong style="font-weight:700;color:#2b3624;">「潤滑油」</strong>であり、多様な意見をつないで新しい価値を生む<strong style="font-weight:700;color:#2b3624;">「触媒」</strong>です。まず、誰もが安心して話せる空気（心理的安全性）をつくることが出発点になります。</span><span class="lang-en">A facilitator is not the one who provides the answers. You are the <strong style="font-weight:700;color:#2b3624;">"lubricant"</strong> that keeps the dialogue flowing, and the <strong style="font-weight:700;color:#2b3624;">"catalyst"</strong> that connects diverse opinions into new value. The starting point is to create an atmosphere where everyone feels safe to speak (psychological safety).</span></p>
+
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 17px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">1　場をつくる</span><span class="lang-en">1　Set the stage</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">発言を否定しない。頷きや「なるほど、面白いですね」で受けとめる。静かな人には「○○さんはどう思いますか？」と声をかけ、発言の順番をやさしく整理する。</span><span class="lang-en">Don't reject any comment. Receive it with a nod or "I see, that's interesting." Invite quieter members with "What do you think, ___?" and gently manage the speaking order.</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
+        <div style="font:600 17px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">2　見える化する</span><span class="lang-en">2　Make it visible</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">意見は付箋に書いて、地図を貼った模造紙へ。前半は<strong style="font-weight:700;color:#2b3624;">発散</strong>（質より量・判断しない）、後半は<strong style="font-weight:700;color:#2b3624;">収束</strong>（似た意見をまとめ、共通点や大事な点を絞る）。</span><span class="lang-en">Write ideas on sticky notes and place them on the map. First <strong style="font-weight:700;color:#2b3624;">diverge</strong> (quantity over quality, no judging); then <strong style="font-weight:700;color:#2b3624;">converge</strong> (group similar ideas and narrow down to what matters).</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
+        <div style="font:600 17px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">3　進行を管理する</span><span class="lang-en">3　Manage the process</span></div>
+        <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">目的を何度も確認する。時間配分を声に出す（「発散はあと10分、そのあと15分で収束」）。話が逸れたら、目的に立ち返ってやさしく戻す。</span><span class="lang-en">Restate the goal often. Announce the timing out loud ("10 more minutes to diverge, then 15 to converge"). If the talk drifts, gently bring it back to the goal.</span></div>
       </div>
 
-      <div style="margin-top:40px;background:#2b3624;padding:40px 36px;">
-        <h3 style="margin:0 0 12px;font:600 24px/1.6 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.04em;">住民のみなさんへ ― 報告会にぜひ</h3>
-        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:720px;">夕方4時20分から、神前ふれあいセンターで学生たちの成果報告会があります。外から来た若い目に神前がどう映ったか——毎年、思いがけない発見があります。お茶を飲みにいらっしゃる感覚で、お気軽にお越しください。</p>
+      <div style="margin-top:40px;border:1px solid #c9cdb6;padding:28px 32px;max-width:820px;">
+        <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#a7ac90;margin-bottom:12px;"><span class="lang-ja">心がまえ</span><span class="lang-en">MINDSET</span></div>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">完璧でなくて大丈夫。ファシリテーションは、やるほど上手くなります。<strong style="font-weight:700;color:#2b3624;">「なぜ？」</strong>で考えを深め、<strong style="font-weight:700;color:#2b3624;">「なるほど」</strong>で受けとめ、<strong style="font-weight:700;color:#2b3624;">「面白い！」</strong>で楽しむ——その姿勢が場を温めます。</span><span class="lang-en">You don't have to be perfect. Facilitation gets better the more you do it. Deepen thinking with <strong style="font-weight:700;color:#2b3624;">"Why?"</strong>, receive with <strong style="font-weight:700;color:#2b3624;">"I see,"</strong> and enjoy with <strong style="font-weight:700;color:#2b3624;">"Interesting!"</strong> — that attitude warms the room.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= panel: 住民のみなさんへ ================= -->
+  <div class="panel" id="panel-residents">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">住民のみなさんへ ― 報告会にぜひ</span><span class="lang-en">For Residents — Please Join the Report Session</span></h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">FOR RESIDENTS</span>
+      </div>
+      <p style="margin:0 0 40px;max-width:800px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">夕方4時20分から、神前ふれあいセンターで学生たちの成果報告会があります。外から来た若い目に神前がどう映ったか——毎年、思いがけない発見があります。お茶を飲みにいらっしゃる感覚で、お気軽にお越しください。</span><span class="lang-en">From 4:20 p.m., the students hold their final report session at Kouzaki Fureai Center. How does Kouzaki look through young eyes from outside? Every year brings unexpected discoveries. Please drop by as casually as you would for a cup of tea.</span></p>
+
+      <div style="background:#2b3624;padding:40px 36px;max-width:820px;">
+        <h3 style="margin:0 0 12px;font:600 24px/1.6 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.04em;"><span class="lang-ja">成果報告会 ― 16:20から</span><span class="lang-en">Final Report Session — from 16:20</span></h3>
+        <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;max-width:720px;"><span class="lang-ja">各班が5分ずつ、地域で出ているアイデアを「どんな人がどう関わり、どんな役割で実現できるか」発表します。質疑もありますので、感じたことをそのままお話しください。場所は神前ふれあいセンターです。</span><span class="lang-en">Each group presents for five minutes on how the ideas emerging in the community could be made real — who takes part, and in what role. There's a Q&amp;A too, so please share whatever you feel. It's held at Kouzaki Fureai Center.</span></p>
       </div>
     </div>
   </div>
@@ -129,12 +338,48 @@ img { max-width: 100%; }
   <div style="background:#2b3624;color:#c3caae;">
     <div style="max-width:1200px;margin:0 auto;padding:40px 32px;">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font:400 13px/1.7 'Zen Kaku Gothic New',sans-serif;">
-        <div><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;">むらづくりワークショップ2026</strong>　<a href="workshops.html" style="color:#eceadd;">これまでの記録へ</a> ・ <a href="index.html" style="color:#eceadd;">神前トップへ</a></div>
+        <div><strong style="color:#eceadd;font-family:'Zen Old Mincho',serif;letter-spacing:.08em;font-weight:600;"><span class="lang-ja">むらづくりワークショップ2026</span><span class="lang-en">Village-Making Workshop 2026</span></strong>　<a href="workshops.html" style="color:#eceadd;"><span class="lang-ja">これまでの記録へ</span><span class="lang-en">Past records</span></a> ・ <a href="index.html" style="color:#eceadd;"><span class="lang-ja">神前トップへ</span><span class="lang-en">Kouzaki home</span></a></div>
         <div style="opacity:.6;">©2026 京都大学大学院地球環境学堂 持続的農村開発論研究室（鬼塚） ・ 神前ふるさとを守る会</div>
       </div>
     </div>
   </div>
 
 </div>
+
+<script>
+function showTab(id, btn){
+  var panels = document.querySelectorAll('.panel');
+  for (var i=0;i<panels.length;i++){ panels[i].classList.remove('active'); }
+  var tabs = document.querySelectorAll('.tab');
+  for (var j=0;j<tabs.length;j++){ tabs[j].classList.remove('active'); }
+  document.getElementById('panel-'+id).classList.add('active');
+  (btn || document.getElementById('tab-'+id)).classList.add('active');
+  var bar = document.querySelector('.tabbar');
+  if (bar){
+    var y = bar.getBoundingClientRect().top + window.pageYOffset - 66;
+    if (window.pageYOffset > y) { window.scrollTo({ top: y, behavior: 'smooth' }); }
+  }
+}
+function setLang(l){
+  document.documentElement.lang = l;
+  try { localStorage.setItem('kouzaki_lang', l); } catch(e){}
+  var btns = document.querySelectorAll('.langtoggle button');
+  for (var i=0;i<btns.length;i++){ btns[i].classList.toggle('on', btns[i].getAttribute('data-lang')===l); }
+}
+setLang(document.documentElement.lang === 'en' ? 'en' : 'ja');
+window.addEventListener('DOMContentLoaded', function(){
+  var qr = document.getElementById('site-qrcode');
+  if (!qr || typeof QRCode === 'undefined') return;
+  qr.innerHTML = '';
+  new QRCode(qr, {
+    text: new URL('index.html', window.location.href).href,
+    width: 174,
+    height: 174,
+    colorDark: '#24301f',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+});
+</script>
 </body>
 </html>
