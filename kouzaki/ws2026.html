@@ -36,8 +36,8 @@ html[lang="ja"] .lang-en { display: none; }
 
 /* ---- hero / site QR ---- */
 .workshop-hero { position: relative; overflow: hidden; background: #e7e6dc; }
-.workshop-hero::before { content: ''; position: absolute; z-index: 0; inset: -24px; background: url('photos/kokusai_koryu_kaikan_summer.jpg') center/cover no-repeat; filter: blur(20px) saturate(.72); opacity: .42; transform: scale(1.04); }
-.workshop-hero::after { content: ''; position: absolute; z-index: 0; inset: 0; background: linear-gradient(90deg,rgba(246,245,238,.90) 0%,rgba(246,245,238,.72) 48%,rgba(246,245,238,.28) 76%,rgba(246,245,238,.16) 100%), url('photos/kokusai_koryu_kaikan_summer.jpg') center/auto 100% no-repeat; }
+.workshop-hero::before { content: ''; position: absolute; z-index: 0; inset: 0; background: url('photos/kokusai_koryu_kaikan_summer.jpg') center 48%/cover no-repeat; filter: saturate(1.04) contrast(1.03); }
+.workshop-hero::after { content: ''; position: absolute; z-index: 0; inset: 0; background: linear-gradient(90deg,rgba(246,245,238,.80) 0%,rgba(246,245,238,.63) 42%,rgba(246,245,238,.18) 69%,rgba(246,245,238,.04) 100%); }
 .workshop-hero-content { position: relative; z-index: 1; max-width: 1200px; min-height: 680px; margin: 0 auto; padding: 88px 32px 72px; display: flex; align-items: center; }
 .hero-inner { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 64px; align-items: center; }
 .hero-kicker { color: #737a67 !important; }
@@ -68,7 +68,8 @@ html[lang="ja"] .lang-en { display: none; }
   .tabbar { top: 50px; }
   .tab { padding: 14px 15px; font-size: 13px; }
   .tabbar-inner { padding: 0 12px; }
-  .workshop-hero::after { background: linear-gradient(180deg,rgba(246,245,238,.06) 0%,rgba(246,245,238,.18) 28%,rgba(246,245,238,.88) 48%,rgba(246,245,238,.98) 70%), url('photos/kokusai_koryu_kaikan_summer.jpg') center top/100% auto no-repeat; }
+  .workshop-hero::before { background-position: center top; background-size: 100% auto; filter: saturate(1.04) contrast(1.03); }
+  .workshop-hero::after { background: linear-gradient(180deg,rgba(246,245,238,0) 0%,rgba(246,245,238,.08) 28%,rgba(246,245,238,.80) 48%,rgba(246,245,238,.98) 70%); }
   .workshop-hero-content { min-height: 0; padding: clamp(250px,75vw,520px) 20px 56px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .site-qr-card { padding: 16px; }
