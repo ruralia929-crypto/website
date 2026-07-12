@@ -8,14 +8,26 @@
   <meta name="description" content="神前で発行されてきた「中山間だより」「ロハスな便り」第1号から第99号を読めるデジタルアーカイブです。">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="site-menu.css">
-  <script src="site-menu.js" defer></script>
+  <link rel="stylesheet" href="site-menu.css?v=20260712-2">
+  <script src="site-menu.js?v=20260712-2" defer></script>
 </head>
 <body>
   <div class="archive-topbar">
     <div class="archive-topbar-inner">
       <a class="archive-brand" href="../index.html"><strong>神前</strong><span>ロハスな便り</span></a>
-      <div class="site-directory-slot" data-site-directory-slot></div>
+      <div class="site-directory-slot" data-site-directory-slot>
+        <details class="site-directory">
+          <summary><span class="site-directory-symbol" aria-hidden="true">☰</span>ページ一覧</summary>
+          <nav class="site-directory-panel" aria-label="神前サイトのページ一覧">
+            <div class="site-directory-heading"><span>神前ウェブガイド</span><small>5 PUBLIC PAGES</small></div>
+            <a class="site-directory-link" href="../index.html"><span class="site-directory-mark">神</span><span class="site-directory-label">神前を知る</span></a>
+            <a class="site-directory-link is-lohas" href="index.html" aria-current="page"><span class="site-directory-mark">便</span><span class="site-directory-label">ロハスな便り</span><span class="site-directory-current">現在</span></a>
+            <a class="site-directory-link" href="../report.html"><span class="site-directory-mark">声</span><span class="site-directory-label">住民報告</span></a>
+            <a class="site-directory-link" href="../workshops.html"><span class="site-directory-mark">記</span><span class="site-directory-label">ワークショップの記録</span></a>
+            <a class="site-directory-link" href="../ws2026.html"><span class="site-directory-mark">26</span><span class="site-directory-label">2026 ワークショップ</span></a>
+          </nav>
+        </details>
+      </div>
     </div>
   </div>
   <header class="site-header">
@@ -109,18 +121,6 @@
       </nav>
     </div>
   </dialog>
-
-  <details class="site-directory">
-    <summary><span class="site-directory-symbol" aria-hidden="true">☰</span>ページ一覧</summary>
-    <nav class="site-directory-panel" aria-label="神前サイトのページ一覧">
-      <div class="site-directory-heading"><span>神前ウェブガイド</span><small>5 PUBLIC PAGES</small></div>
-      <a class="site-directory-link" href="../index.html"><span class="site-directory-mark">神</span><span class="site-directory-label">神前を知る</span></a>
-      <a class="site-directory-link is-lohas" href="index.html" aria-current="page"><span class="site-directory-mark">便</span><span class="site-directory-label">ロハスな便り</span><span class="site-directory-current">現在</span></a>
-      <a class="site-directory-link" href="../report.html"><span class="site-directory-mark">声</span><span class="site-directory-label">住民報告</span></a>
-      <a class="site-directory-link" href="../workshops.html"><span class="site-directory-mark">記</span><span class="site-directory-label">ワークショップの記録</span></a>
-      <a class="site-directory-link" href="../ws2026.html"><span class="site-directory-mark">26</span><span class="site-directory-label">2026 ワークショップ</span></a>
-    </nav>
-  </details>
 
   <script src="issues.js"></script>
   <script src="app.js"></script>
