@@ -8,6 +8,8 @@
 <script>try{document.documentElement.lang=localStorage.getItem('kouzaki_lang')||'ja';}catch(e){}</script>
 <meta name="description" content="神前（こうざき）で毎年ひらかれている、京都大学の学生との村づくりワークショップ。2013年から続くあゆみと、学生たちの提案の記録です。">
 <link rel="icon" href="data:,">
+<link rel="stylesheet" href="site-menu.css">
+<script src="site-menu.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@400;500;700&family=Zen+Old+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
@@ -402,5 +404,16 @@ html[lang="ja"] .lang-en { display: none; }
 function setLang(l){ document.documentElement.lang=l; try{localStorage.setItem('kouzaki_lang',l);}catch(e){} var b=document.querySelectorAll('.langtoggle button'); for(var i=0;i<b.length;i++){ b[i].classList.toggle('on', b[i].getAttribute('data-lang')===l);} }
 setLang(document.documentElement.lang==='en'?'en':'ja');
 </script>
+<details class="site-directory">
+  <summary><span class="site-directory-symbol" aria-hidden="true">☰</span><span class="lang-ja">ページ一覧</span><span class="lang-en">All pages</span></summary>
+  <nav class="site-directory-panel" aria-label="神前サイトのページ一覧">
+    <div class="site-directory-heading"><span class="lang-ja">神前ウェブガイド</span><span class="lang-en">Kouzaki Web Guide</span><small>5 PUBLIC PAGES</small></div>
+    <a class="site-directory-link" href="index.html"><span class="site-directory-mark">神</span><span class="site-directory-label"><span class="lang-ja">神前を知る</span><span class="lang-en">About Kouzaki</span></span></a>
+    <a class="site-directory-link is-lohas" href="lohas/"><span class="site-directory-mark">便</span><span class="site-directory-label"><span class="lang-ja">ロハスな便り</span><span class="lang-en">Lohas Newsletter</span></span><span class="site-directory-badge">1–99号</span></a>
+    <a class="site-directory-link" href="report.html"><span class="site-directory-mark">声</span><span class="site-directory-label"><span class="lang-ja">住民報告</span><span class="lang-en">Residents' Report</span></span></a>
+    <a class="site-directory-link" href="workshops.html" aria-current="page"><span class="site-directory-mark">記</span><span class="site-directory-label"><span class="lang-ja">ワークショップの記録</span><span class="lang-en">Workshop Archive</span></span><span class="site-directory-current"><span class="lang-ja">現在</span><span class="lang-en">HERE</span></span></a>
+    <a class="site-directory-link" href="ws2026.html"><span class="site-directory-mark">26</span><span class="site-directory-label"><span class="lang-ja">2026 ワークショップ</span><span class="lang-en">2026 Workshop</span></span></a>
+  </nav>
+</details>
 </body>
 </html>

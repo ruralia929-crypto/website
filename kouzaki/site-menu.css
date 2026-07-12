@@ -1,0 +1,150 @@
+/* Shared directory for the five public Kouzaki pages. */
+.site-directory,
+.site-directory * {
+  box-sizing: border-box;
+}
+
+.site-directory {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 80;
+  color: #31402a;
+  font-family: "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Yu Gothic", sans-serif;
+}
+
+.site-directory > summary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 17px;
+  border: 1px solid rgba(246, 245, 238, .7);
+  border-radius: 999px;
+  color: #f6f5ee;
+  background: #31402a;
+  box-shadow: 0 8px 26px rgba(43, 54, 36, .24);
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  user-select: none;
+}
+
+.site-directory > summary::-webkit-details-marker { display: none; }
+.site-directory > summary::after {
+  content: "+";
+  margin-left: 2px;
+  color: #c9d0bd;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+}
+.site-directory[open] > summary::after { content: "−"; }
+.site-directory > summary:focus-visible { outline: 3px solid #d59a45; outline-offset: 3px; }
+.site-directory-symbol { font-size: 15px; line-height: 1; }
+
+.site-directory-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  width: min(360px, calc(100vw - 32px));
+  max-height: min(620px, calc(100vh - 92px));
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #d2d2c5;
+  border-radius: 14px;
+  background: rgba(250, 249, 243, .98);
+  box-shadow: 0 22px 54px rgba(43, 54, 36, .23);
+  backdrop-filter: blur(14px);
+}
+
+.site-directory-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 12px 14px;
+  border-bottom: 1px solid #deded2;
+  color: #7a8064;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .15em;
+}
+.site-directory-heading small { color: #9ca08d; font-size: 9px; letter-spacing: .11em; }
+
+.site-directory-link {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  min-height: 54px;
+  margin-top: 5px;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #3d4636;
+  text-decoration: none;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.site-directory-link:hover {
+  border-color: #c8cbb9;
+  background: #eeede4;
+  transform: translateX(-2px);
+}
+.site-directory-link:focus-visible { outline: 3px solid #d59a45; outline-offset: 1px; }
+.site-directory-link[aria-current="page"] {
+  border-color: #c6cab7;
+  background: #e9e9de;
+}
+.site-directory-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c9cdbb;
+  border-radius: 50%;
+  color: #6e765f;
+  font-family: "Zen Old Mincho", "Yu Mincho", serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+.site-directory-label { min-width: 0; font-size: 13px; font-weight: 600; letter-spacing: .04em; }
+.site-directory-current { color: #8b907c; font-size: 9px; font-weight: 600; letter-spacing: .12em; }
+
+.site-directory-link.is-lohas {
+  color: #f6f5ee;
+  background: #31402a;
+}
+.site-directory-link.is-lohas:hover { border-color: #31402a; background: #25351f; }
+.site-directory-link.is-lohas[aria-current="page"] { border-color: #88927a; background: #25351f; }
+.site-directory-link.is-lohas .site-directory-mark { border-color: #839077; color: #eef0e7; }
+.site-directory-link.is-lohas .site-directory-current { color: #c7cfbb; }
+.site-directory-badge {
+  padding: 4px 7px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 999px;
+  color: #dfe4d3;
+  font-size: 9px;
+  letter-spacing: .06em;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .site-directory {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+  .site-directory > summary { min-height: 45px; padding: 0 14px; }
+  .site-directory-panel { width: calc(100vw - 24px); }
+  .site-directory-heading small { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-directory-link { transition: none; }
+}
+
+@media print {
+  .site-directory { display: none !important; }
+}
