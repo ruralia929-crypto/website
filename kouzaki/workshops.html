@@ -50,24 +50,22 @@ html[lang="ja"] .lang-en { display: none; }
 <div style="background:#f6f5ee;color:#3a4030;font-family:'Zen Kaku Gothic New',sans-serif;min-height:100vh;">
 
   <!-- ================= nav ================= -->
-  <div style="position:sticky;top:0;z-index:20;background:rgba(246,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e0d4;">
-    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px 32px;">
-      <a href="index.html" style="display:flex;align-items:baseline;gap:14px;text-decoration:none;">
+  <div class="site-topbar" style="position:sticky;top:0;z-index:20;background:rgba(246,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e0d4;">
+    <div class="site-topbar-inner" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;">
+      <a class="site-topbar-brand" href="index.html" style="display:flex;align-items:baseline;gap:14px;text-decoration:none;">
         <span style="font:700 22px/1 'Zen Old Mincho',serif;color:#31402a;letter-spacing:.14em;">神前</span>
-        <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;"><span class="lang-ja">ワークショップの記録</span><span class="lang-en">Workshop Archive</span></span>
+        <span class="site-topbar-subtitle" style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;"><span class="lang-ja">ワークショップの記録</span><span class="lang-en">Workshop Archive</span></span>
       </a>
-      <div style="display:flex;align-items:center;gap:32px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
-        <a href="ws2026.html" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">2026年の予定</span><span class="lang-en">2026 Plan</span></a>
-        <a href="#rekidai" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">あゆみ</span><span class="lang-en">History</span></a>
-        <a href="#y2022" style="color:#5b6152;text-decoration:none;">2022</a>
-        <a href="#y2023" style="color:#5b6152;text-decoration:none;">2023</a>
-        <a href="#y2024" style="color:#5b6152;text-decoration:none;">2024</a>
-        <a href="#y2025" style="color:#5b6152;text-decoration:none;">2025</a>
-        <span style="width:1px;height:14px;background:#cfcfc0;"></span>
-        <a href="index.html" style="color:#31402a;text-decoration:none;font-weight:500;"><span class="lang-ja">神前について</span><span class="lang-en">About Kouzaki</span></a>
-        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;border-bottom:2px solid #31402a;padding-bottom:4px;"><span class="lang-ja">住民報告</span><span class="lang-en">Residents' Report</span></a>
+      <div class="site-topbar-actions">
+        <nav class="site-local-nav" aria-label="このページの内容">
+          <a href="#rekidai"><span class="lang-ja">あゆみ</span><span class="lang-en">History</span></a>
+          <a href="#y2022">2022</a>
+          <a href="#y2023">2023</a>
+          <a href="#y2024">2024</a>
+          <a href="#y2025">2025</a>
+        </nav>
         <span class="langtoggle" role="group" aria-label="language"><button type="button" data-lang="ja" onclick="setLang('ja')">日本語</button><button type="button" data-lang="en" onclick="setLang('en')">EN</button></span>
-        <a href="ws2026.html" style="background:#31402a;color:#f6f5ee;text-decoration:none;font-weight:600;padding:8px 15px;border-radius:3px;letter-spacing:.04em;white-space:nowrap;"><span class="lang-ja">2026ワークショップ →</span><span class="lang-en">2026 Workshop →</span></a>
+        <div class="site-directory-slot" data-site-directory-slot></div>
       </div>
     </div>
   </div>

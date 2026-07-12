@@ -1,24 +1,22 @@
 /* Public-site directory, kept local so the archive remains self-contained. */
 .site-directory, .site-directory * { box-sizing: border-box; }
 .site-directory {
-  position: fixed;
-  right: max(18px, env(safe-area-inset-right));
-  bottom: max(18px, env(safe-area-inset-bottom));
+  position: relative;
   z-index: 80;
   color: #31402a;
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
 }
 .site-directory > summary {
-  min-height: 48px;
+  min-height: 36px;
   display: flex;
   align-items: center;
   gap: 9px;
-  padding: 0 17px;
-  border: 1px solid rgba(246,245,238,.7);
+  padding: 0 13px;
+  border: 1px solid #9aa18a;
   border-radius: 999px;
-  color: #f6f5ee;
-  background: #31402a;
-  box-shadow: 0 8px 26px rgba(43,54,36,.24);
+  color: #31402a;
+  background: rgba(255,255,255,.34);
+  box-shadow: none;
   cursor: pointer;
   list-style: none;
   font-size: 12px;
@@ -27,14 +25,15 @@
   user-select: none;
 }
 .site-directory > summary::-webkit-details-marker { display: none; }
-.site-directory > summary::after { content: "+"; margin-left: 2px; color: #c9d0bd; font-size: 16px; }
-.site-directory[open] > summary::after { content: "−"; }
+.site-directory > summary::after { content: "⌄"; margin-left: 2px; color: #7e866f; font-size: 14px; }
+.site-directory[open] > summary { color: #f6f5ee; background: #31402a; border-color: #31402a; }
+.site-directory[open] > summary::after { content: "⌃"; color: #dbe1d2; }
 .site-directory > summary:focus-visible, .site-directory-link:focus-visible { outline: 3px solid #d59a45; outline-offset: 3px; }
 .site-directory-symbol { font-size: 15px; line-height: 1; }
 .site-directory-panel {
   position: absolute;
   right: 0;
-  bottom: calc(100% + 10px);
+  top: calc(100% + 10px);
   width: min(360px, calc(100vw - 32px));
   max-height: min(620px, calc(100vh - 92px));
   overflow-y: auto;
@@ -45,6 +44,33 @@
   box-shadow: 0 22px 54px rgba(43,54,36,.23);
   backdrop-filter: blur(14px);
 }
+.archive-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 70;
+  border-bottom: 1px solid #d8d8cb;
+  background: rgba(245,242,233,.94);
+  backdrop-filter: blur(10px);
+}
+.archive-topbar-inner {
+  width: min(1180px, calc(100% - 48px));
+  min-height: 66px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.archive-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  color: #31402a;
+  text-decoration: none;
+}
+.archive-brand strong { font-family: "Yu Mincho", serif; font-size: 20px; letter-spacing: .14em; }
+.archive-brand span { color: #858b78; font-size: 10px; font-weight: 600; letter-spacing: .16em; }
+.site-directory-slot { display: flex; align-items: center; }
 .site-directory-heading {
   display: flex;
   align-items: baseline;
@@ -100,8 +126,9 @@
   white-space: nowrap;
 }
 @media (max-width: 520px) {
-  .site-directory { right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
-  .site-directory > summary { min-height: 45px; padding: 0 14px; }
+  .archive-topbar-inner { width: calc(100% - 28px); min-height: 58px; }
+  .archive-brand span { display: none; }
+  .site-directory > summary { min-height: 34px; padding: 0 11px; }
   .site-directory-panel { width: calc(100vw - 24px); }
   .site-directory-heading small { display: none; }
 }

@@ -86,7 +86,7 @@ html[lang="ja"] .lang-en { display: none; }
   [style*="padding:22px 32px"] { padding: 14px 16px !important; }
   [style*="gap:20px;font:400 13px/1"] { gap: 12px !important; flex-wrap: wrap !important; justify-content: flex-end !important; row-gap: 10px !important; }
   [style*="padding:40px 36px"] { padding: 26px 22px !important; }
-  .tabbar { top: 50px; }
+  .tabbar { top: 58px; }
   .tab { padding: 14px 15px; font-size: 13px; }
   .tabbar-inner { padding: 0 12px; }
   .workshop-hero::before { background-position: center top; background-size: 100% auto; filter: saturate(1.04) contrast(1.03); }
@@ -109,21 +109,18 @@ html[lang="ja"] .lang-en { display: none; }
 <div style="background:#f6f5ee;color:#3a4030;font-family:'Zen Kaku Gothic New',sans-serif;min-height:100vh;">
 
   <!-- ================= nav ================= -->
-  <div style="position:sticky;top:0;z-index:20;background:rgba(246,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e0d4;">
-    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px 32px;">
-      <a href="index.html" style="display:flex;align-items:baseline;gap:14px;text-decoration:none;">
+  <div class="site-topbar" style="position:sticky;top:0;z-index:20;background:rgba(246,245,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e0d4;">
+    <div class="site-topbar-inner" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;">
+      <a class="site-topbar-brand" href="index.html" style="display:flex;align-items:baseline;gap:14px;text-decoration:none;">
         <span style="font:700 22px/1 'Zen Old Mincho',serif;color:#31402a;letter-spacing:.14em;">神前</span>
-        <span style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;">ワークショップ2026</span>
+        <span class="site-topbar-subtitle" style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.2em;">ワークショップ2026</span>
       </a>
-      <div style="display:flex;align-items:center;gap:20px;font:400 13px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.08em;">
-        <a href="workshops.html" style="color:#5b6152;text-decoration:none;"><span class="lang-ja">これまでの記録</span><span class="lang-en">Archive</span></a>
-        <span style="width:1px;height:14px;background:#cfcfc0;"></span>
-        <a href="index.html" style="color:#31402a;text-decoration:none;font-weight:500;"><span class="lang-ja">神前について</span><span class="lang-en">About</span></a>
-        <a href="report.html" style="color:#31402a;text-decoration:none;font-weight:500;"><span class="lang-ja">住民報告</span><span class="lang-en">Report</span></a>
+      <div class="site-topbar-actions">
         <span class="langtoggle" role="group" aria-label="language">
           <button type="button" data-lang="ja" onclick="setLang('ja')">日本語</button>
           <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
         </span>
+        <div class="site-directory-slot" data-site-directory-slot></div>
       </div>
     </div>
   </div>
