@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>むらづくりワークショップ2026 ― 神前 × 京都大学</title>
-<meta name="description" content="2026年7月12日（日）、京都大学の学生たちが神前（こうざき）を訪れ、村づくりワークショップを行います。持ち物・当日の流れ・ファシリテーターの要点のご案内です。">
+<meta name="description" content="2026年7月12日（日）、京都大学の学生たちが神前（こうざき）を訪れ、村づくりワークショップを行います。持ち物・当日の流れ・地域からの情報・ファシリテーターの要点のご案内です。">
 <script>try{document.documentElement.lang=localStorage.getItem('kouzaki_lang')||'ja';}catch(e){}</script>
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +33,25 @@ html[lang="ja"] .lang-en { display: none; }
 .tab.active { color: #2b3624; border-bottom-color: #2b3624; }
 .panel { display: none; }
 .panel.active { display: block; }
+
+/* ---- community briefing ---- */
+.brief-intro { max-width: 860px; margin: 0 0 40px; font: 400 16px/2.1 'Shippori Mincho B1', serif; color: #454b3d; }
+.brief-note { max-width: 860px; margin: 0 0 42px; padding: 18px 22px; border-left: 3px solid #9aa183; background: #efeee5; font: 400 13px/1.9 'Zen Kaku Gothic New', sans-serif; color: #686e5c; }
+.brief-facts { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin: 0 0 56px; }
+.brief-fact { min-height: 118px; padding: 22px 20px; border: 1px solid #d8d8ca; background: rgba(255,255,255,.28); }
+.brief-fact-value { margin-bottom: 8px; font: 600 22px/1.35 'Zen Old Mincho', serif; color: #2b3624; }
+.brief-fact-label { font: 400 12px/1.7 'Zen Kaku Gothic New', sans-serif; color: #7a8064; }
+.brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.brief-card { padding: 30px 30px 28px; border-top: 3px solid #7f886d; background: #eeede4; }
+.brief-card h3 { margin: 0 0 18px; font: 600 21px/1.5 'Zen Old Mincho', serif; color: #31402a; letter-spacing: .03em; }
+.brief-card ul { margin: 0; padding-left: 1.25em; }
+.brief-card li { margin: 0 0 10px; font: 400 14px/1.9 'Zen Kaku Gothic New', sans-serif; color: #555c4c; }
+.brief-card li:last-child { margin-bottom: 0; }
+.brief-focus { margin-top: 18px; padding: 34px 32px; background: #2b3624; color: #eceadd; }
+.brief-focus h3 { margin: 0 0 16px; font: 600 22px/1.5 'Zen Old Mincho', serif; color: #eceadd; }
+.brief-focus ul { margin: 0; padding-left: 1.25em; }
+.brief-focus li { margin: 0 0 10px; font: 400 14px/1.9 'Zen Kaku Gothic New', sans-serif; color: #c3caae; }
+.brief-focus li:last-child { margin-bottom: 0; }
 
 /* ---- hero / site QR ---- */
 .workshop-hero { position: relative; overflow: hidden; background: #e7e6dc; }
@@ -77,6 +96,10 @@ html[lang="ja"] .lang-en { display: none; }
   .site-qr { flex: 0 0 132px; width: 132px; height: 132px; margin: 0; padding: 8px; }
   .site-qr img, .site-qr canvas { width: 116px !important; height: 116px !important; }
   .site-qr-fallback { height: 116px; font-size: 11px; text-align: center; }
+  .brief-facts { grid-template-columns: 1fr 1fr; }
+  .brief-grid { grid-template-columns: 1fr; }
+  .brief-card { padding: 25px 22px 24px; }
+  .brief-focus { padding: 28px 22px; }
 }
 </style>
 </head>
@@ -155,6 +178,7 @@ html[lang="ja"] .lang-en { display: none; }
     <div class="tabbar-inner">
       <button class="tab active" id="tab-prep" onclick="showTab('prep',this)"><span class="lang-ja">持ち物・準備</span><span class="lang-en">What to Bring</span></button>
       <button class="tab" id="tab-schedule" onclick="showTab('schedule',this)"><span class="lang-ja">当日の流れ</span><span class="lang-en">Schedule</span></button>
+      <button class="tab" id="tab-briefing" onclick="showTab('briefing',this)"><span class="lang-ja">地域からの情報</span><span class="lang-en">Community Briefing</span></button>
       <button class="tab" id="tab-groups" onclick="showTab('groups',this)"><span class="lang-ja">班分け</span><span class="lang-en">Groups</span></button>
       <button class="tab" id="tab-facil" onclick="showTab('facil',this)"><span class="lang-ja">ファシリの要点</span><span class="lang-en">Facilitation</span></button>
       <button class="tab" id="tab-residents" onclick="showTab('residents',this)"><span class="lang-ja">住民のみなさんへ</span><span class="lang-en">For Residents</span></button>
@@ -240,6 +264,95 @@ html[lang="ja"] .lang-en { display: none; }
         <div style="font:600 15px/1.7 'Zen Old Mincho',serif;color:#7a8064;">17:20</div>
         <div style="font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">お礼の言葉とお土産の贈呈（学生から集落へ）／17:30 神前を出発</span><span class="lang-en">Words of thanks and a souvenir (from students to the community) / 17:30 depart Kouzaki</span></div>
       </div>
+    </div>
+  </div>
+
+  <!-- ================= panel: 地域からの情報 ================= -->
+  <div class="panel" id="panel-briefing">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;gap:24px;">
+        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">地域から得た、神前を考える手がかり</span><span class="lang-en">Local Insights for Thinking about Kouzaki</span></h2>
+        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;white-space:nowrap;">LOCAL VOICES</span>
+      </div>
+      <p class="brief-intro"><span class="lang-ja">2026年7月12日午前、地域のみなさんから伺った説明と、集落ウォーキングで見聞きした内容の要点です。午後のワークショップで、4つのテーマを具体的なプランへ育てるための材料として活用してください。</span><span class="lang-en">These notes summarize what local residents shared with us and what we observed during the village walk on the morning of July 12, 2026. Use them as material for turning the four workshop themes into concrete plans this afternoon.</span></p>
+      <div class="brief-note"><span class="lang-ja">このページは当日の聞き取りをもとにした要点整理です。概数、制度、施設の運営状況などは、提案を実施に移す段階であらためて確認してください。</span><span class="lang-en">This page is a summary of information heard on site. Approximate figures, regulations, and current facility operations should be checked again before any proposal moves toward implementation.</span></div>
+
+      <div class="brief-facts">
+        <div class="brief-fact"><div class="brief-fact-value"><span class="lang-ja">約145人</span><span class="lang-en">About 145</span></div><div class="brief-fact-label"><span class="lang-ja">神前地区の人口</span><span class="lang-en">Residents in Kouzaki</span></div></div>
+        <div class="brief-fact"><div class="brief-fact-value"><span class="lang-ja">約1時間</span><span class="lang-en">About 1 hour</span></div><div class="brief-fact-label"><span class="lang-ja">京都大学からバスで／大阪方面から車で</span><span class="lang-en">By bus from Kyoto University; by car from Osaka</span></div></div>
+        <div class="brief-fact"><div class="brief-fact-value"><span class="lang-ja">水田 約50ha</span><span class="lang-en">About 50 ha</span></div><div class="brief-fact-label"><span class="lang-ja">圃場整備済み（聞き取りによる概数）</span><span class="lang-en">Consolidated paddy fields (rough estimate)</span></div></div>
+        <div class="brief-fact"><div class="brief-fact-value"><span class="lang-ja">朝夕は涼しい</span><span class="lang-en">Cool mornings &amp; evenings</span></div><div class="brief-fact-label"><span class="lang-ja">山に囲まれた盆地の気候</span><span class="lang-en">A basin surrounded by mountains</span></div></div>
+      </div>
+
+      <div class="brief-grid">
+        <section class="brief-card">
+          <h3><span class="lang-ja">位置・環境と暮らし</span><span class="lang-en">Setting and Everyday Life</span></h3>
+          <ul>
+            <li><span class="lang-ja">京都縦貫道・千代川ICから約3km。公共交通はほとんどなく、暮らしには車が欠かせません。</span><span class="lang-en">The village is about 3 km from the Chiyokawa Interchange on the Kyoto Jukan Expressway. Public transport is extremely limited, making cars essential.</span></li>
+            <li><span class="lang-ja">昼間は暑くても、緑が多く朝夕は涼しい場所です。昼夜の寒暖差が大きく、冬は雪が積もります。</span><span class="lang-en">Days can be hot, but the greenery keeps mornings and evenings cooler. Temperatures vary considerably between day and night, and snow falls in winter.</span></li>
+            <li><span class="lang-ja">獣害は主にイノシシとシカ。家は土壁・瓦の在来型が多く残っています。</span><span class="lang-en">Wildlife damage mainly comes from boar and deer. Many traditional houses with earthen walls and tiled roofs remain.</span></li>
+          </ul>
+        </section>
+
+        <section class="brief-card">
+          <h3><span class="lang-ja">人口・仕事・住まい</span><span class="lang-en">People, Work, and Housing</span></h3>
+          <ul>
+            <li><span class="lang-ja">村の活動を支える中心層は70歳前後。50〜60代から人数が大きく減り、40歳前後の子世代は地区外に住む人が多い状況です。</span><span class="lang-en">Village activities are sustained mainly by people around age 70. Numbers fall sharply among those in their fifties and sixties, while many of the generation around age 40 live outside the village.</span></li>
+            <li><span class="lang-ja">小学生は10人未満の見込み。学校統合後、小学生はスクールバス、中学生は自転車で小中一貫校へ通います。</span><span class="lang-en">Fewer than ten elementary-age children are expected. After three schools merged, elementary pupils take a school bus and junior-high pupils cycle to the combined school.</span></li>
+            <li><span class="lang-ja">農業の多くは兼業で、京都市内や大阪圏へ通勤する人もいます。若い専業農家はごく少数です。</span><span class="lang-en">Most farming is part-time, and some residents commute to Kyoto or even the Osaka area. There are very few young full-time farmers.</span></li>
+            <li><span class="lang-ja">空き家は増えていますが、仏壇、貸し出しへの不安、税制上の事情などが重なり、活用への同意が得にくい面があります。</span><span class="lang-en">Vacant houses are increasing, but family altars, concern about renting property out, and tax considerations can make owners reluctant to put them to use.</span></li>
+          </ul>
+        </section>
+
+        <section class="brief-card">
+          <h3><span class="lang-ja">国際交流会館の現在</span><span class="lang-en">The International Exchange Hall Today</span></h3>
+          <ul>
+            <li><span class="lang-ja">旧オクラホマ州立大学京都校の計画に向けて建設され、現在は亀岡市の交流施設です。建物は市が所有し、土地は市と地元組織がほぼ半分ずつ所有しています。</span><span class="lang-en">Built for a planned Kyoto campus of Oklahoma State University, it is now a Kameoka City exchange facility. The city owns the building, while the land is divided roughly equally between the city and a local organization.</span></li>
+            <li><span class="lang-ja">1階には図書館、天然砥石の展示・体験、小規模なボルダリングがあります。2階レストランは現在休業中です。</span><span class="lang-en">The first floor has a library, a natural whetstone exhibit and hands-on area, and a small bouldering space. The second-floor restaurant is currently closed.</span></li>
+            <li><span class="lang-ja">奥の教室棟と庭では、バンガロー2棟とテントサイトを使ったキャンプ施設が運営されています。屋外にはグラウンドとテニスコートもあります。</span><span class="lang-en">The rear classroom wing and garden now operate as a campsite with two bungalows and several tent pitches. Outdoor facilities include a sports ground and tennis courts.</span></li>
+            <li><span class="lang-ja">地域からは、会館一帯を村づくりに活かし、グランピング、コテージ、テントサイトなどの宿泊機能へ広げる案も出ています。</span><span class="lang-en">Local ideas include making the wider site part of the village plan and expanding its accommodation options through glamping, cottages, and tent sites.</span></li>
+          </ul>
+        </section>
+
+        <section class="brief-card">
+          <h3><span class="lang-ja">農地・農業と山林</span><span class="lang-en">Farmland, Agriculture, and Forests</span></h3>
+          <ul>
+            <li><span class="lang-ja">耕作者が辞めると、山際だけでなく集落の真ん中でも田が放置されます。周辺農家も手いっぱいで、新たな引き受け手が見つかりにくい状況です。</span><span class="lang-en">When a farmer stops, fields can be abandoned even in the middle of the village, not only along the mountain edge. Nearby farmers are already at capacity, so replacements are hard to find.</span></li>
+            <li><span class="lang-ja">集落営農組織は担い手不足で事実上休止。草刈りは最低でも年2〜3回、丁寧に管理するなら5回ほど必要です。</span><span class="lang-en">The community farming organization is effectively inactive for lack of workers. Grass must be cut at least two or three times a year, or around five times for careful maintenance.</span></li>
+            <li><span class="lang-ja">育苗用グリーンハウスは未使用で、トマトやキュウリ栽培への転用案がありますが、まだ実現していません。</span><span class="lang-en">A seedling greenhouse is unused. Converting it for tomatoes or cucumbers has been discussed but not realized.</span></li>
+            <li><span class="lang-ja">砥石採掘は60〜70年前に終了。松林は松くい虫被害で失われ、現在は手入れされない山林が多くなっています。</span><span class="lang-en">Whetstone quarrying ended 60–70 years ago. Pine wilt destroyed the former pine forests, and much of the woodland is now unmanaged.</span></li>
+          </ul>
+        </section>
+
+        <section class="brief-card">
+          <h3><span class="lang-ja">神前ならではの資源</span><span class="lang-en">Resources Distinctive to Kouzaki</span></h3>
+          <ul>
+            <li><span class="lang-ja"><strong>神前米</strong>：新嘗祭の献穀田に選ばれた歴史があり、亀岡市内で一定のブランド力をもっています。</span><span class="lang-en"><strong>Kouzaki rice:</strong> Fields here were historically selected to provide sacred rice for the Niiname-sai harvest rite, giving the name recognition within Kameoka.</span></li>
+            <li><span class="lang-ja"><strong>天然砥石</strong>：京都方面から続く鉱脈の南端。採掘終了により希少性が高く、会館1階で展示・体験ができます。</span><span class="lang-en"><strong>Natural whetstones:</strong> Kouzaki lies at the southern end of a geological seam extending from Kyoto. With quarrying ended, the stones are rare; visitors can see and try them at the hall.</span></li>
+            <li><span class="lang-ja"><strong>農産物</strong>：賀茂ナス、丹波栗、かつて名産だったキュウリ。松林が戻れば丹波松茸の可能性も語られています。</span><span class="lang-en"><strong>Produce:</strong> Kamo eggplants, Tamba chestnuts, and cucumbers, once a local specialty. Restoring pine forest could also reopen the possibility of Tamba matsutake mushrooms.</span></li>
+            <li><span class="lang-ja"><strong>文化と体験</strong>：寺院の文化財や石塔、音楽活動、法輪寺での座禅など、組み合わせられる素材があります。</span><span class="lang-en"><strong>Culture and experience:</strong> Temple cultural properties, a stone pagoda, musical activities, and Zen meditation at Horin-ji offer elements that could be connected into experiences.</span></li>
+          </ul>
+        </section>
+
+        <section class="brief-card">
+          <h3><span class="lang-ja">すでに見えている可能性</span><span class="lang-en">Possibilities Already Emerging</span></h3>
+          <ul>
+            <li><span class="lang-ja">小規模でも希少価値のある産品を特徴化し、情報発信から来訪、さらに定住へつなげたいという期待があります。</span><span class="lang-en">There is hope that small-scale but rare products can be made distinctive, generating attention that leads first to visits and eventually to new residents.</span></li>
+            <li><span class="lang-ja">地区内の小さなカフェには、車で1時間以上かけて来るリピーターが多く、「中にいると気づかない魅力」を外の人が感じている手応えがあります。</span><span class="lang-en">A small local café attracts many repeat customers who drive over an hour, showing that outsiders recognize qualities residents may not notice themselves.</span></li>
+            <li><span class="lang-ja">丹波栗を使ったスイーツ店など、農産物と小さな商いを結ぶアイデアもあります。</span><span class="lang-en">Ideas already include linking produce to small businesses, such as a sweets shop using Tamba chestnuts.</span></li>
+            <li><span class="lang-ja">市からは「小さなスケールの希少価値を商品化・特徴化する」という方向性が助言されています。</span><span class="lang-en">City advisers have encouraged turning rare qualities at a small scale into clear, marketable features.</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="brief-focus">
+        <h3><span class="lang-ja">午後のワークで忘れたくない視点</span><span class="lang-en">Questions to Carry into the Afternoon Workshop</span></h3>
+        <ul>
+          <li><span class="lang-ja">農地だけなら少人数で管理できても、コミュニティを維持するには一定の人とにぎわいが必要です。農業・山仕事と、企業や事業による安定した仕事をどう組み合わせられるでしょうか。</span><span class="lang-en">Even if a few people could manage the farmland, sustaining a community requires more people and activity. How might farming and forest work be combined with stable employment from businesses or other enterprises?</span></li>
+          <li><span class="lang-ja">若い世代が戻るためには「職住近接」が重要だという声がありました。ここで暮らしながら働ける仕組みを、プランの中にどう描けるでしょうか。</span><span class="lang-en">Residents stressed that living close to work is essential if younger generations are to return. How can each plan make it possible to live and work here?</span></li>
+          <li><span class="lang-ja">地域のみなさんは、縁もゆかりもない外からの目で、遠慮なく思い切った提案をしてほしいと期待しています。</span><span class="lang-en">Residents hope students will use their outside perspective and offer bold ideas without holding back.</span></li>
+        </ul>
+      </section>
     </div>
   </div>
 
