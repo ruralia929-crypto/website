@@ -1,0 +1,283 @@
+:root {
+  --ink: #293124;
+  --muted: #6f7566;
+  --paper: #f5f2e9;
+  --paper-deep: #e8e4d8;
+  --green: #31402a;
+  --green-soft: #738068;
+  --red: #a34835;
+  --line: #d6d2c5;
+  --page-width: 900px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #d59a45; outline-offset: 3px; }
+
+.site-header {
+  min-height: 620px;
+  color: #f3f0e6;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(185,198,158,.18), transparent 27%),
+    linear-gradient(125deg, #202c1d 0%, #31402a 54%, #46543d 100%);
+  position: relative;
+  overflow: hidden;
+}
+.site-header::after {
+  content: "100";
+  position: absolute;
+  right: -36px;
+  bottom: -132px;
+  color: rgba(245,242,233,.055);
+  font: 700 420px/.8 Georgia, serif;
+  letter-spacing: -.09em;
+}
+.header-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 64px 0 72px;
+}
+.back-link {
+  display: block;
+  width: fit-content;
+  margin-bottom: 22px;
+  color: #dfe4d3;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+.back-link:hover { text-decoration: underline; }
+.prototype-label {
+  display: inline-block;
+  margin-bottom: 68px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: #dfe4d3;
+}
+.eyebrow, .section-number {
+  margin: 0 0 18px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .27em;
+}
+.eyebrow { color: #bdc7ad; }
+.site-header h1 {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(58px, 8vw, 104px);
+  line-height: .98;
+  letter-spacing: .11em;
+  font-weight: 600;
+}
+.site-header h1 span {
+  display: block;
+  margin-top: 20px;
+  font-size: .36em;
+  letter-spacing: .22em;
+  color: #d9decf;
+}
+.lead {
+  margin: 42px 0 0;
+  max-width: 540px;
+  color: #d3d9c9;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 17px;
+  line-height: 2.1;
+}
+.archive-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 60px;
+}
+.archive-stats div { display: flex; flex-direction: column; gap: 8px; }
+.archive-stats strong { color: #fff; font: 500 27px/1 Georgia, serif; }
+.archive-stats span { color: #aeb9a1; font-size: 11px; letter-spacing: .14em; }
+
+main { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+.archive-section { padding: 104px 0 116px; }
+.section-number { color: #929786; }
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 480px);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 54px;
+}
+.section-heading h2, .about-section h2 {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: .06em;
+}
+.section-heading > p, .about-grid p {
+  margin: 0;
+  color: #616859;
+  font-size: 14px;
+  line-height: 2;
+}
+.archive-controls {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(360px, 1.5fr);
+  gap: 32px;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.search-box, .filter-area { display: flex; flex-direction: column; gap: 10px; }
+.search-box > span, .filter-area > span { color: #7d8275; font-size: 11px; font-weight: 600; letter-spacing: .14em; }
+.search-box input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  color: var(--ink);
+  background: rgba(255,255,255,.55);
+  border: 1px solid #cbc8bb;
+  border-radius: 2px;
+}
+.tag-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-filter {
+  padding: 9px 13px;
+  color: #596050;
+  background: transparent;
+  border: 1px solid #c5c8b9;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.tag-filter:hover, .tag-filter.active { color: #f5f2e9; background: var(--green); border-color: var(--green); }
+.results-line { display: flex; justify-content: space-between; align-items: center; margin: 24px 0 26px; color: #777d6e; font-size: 12px; }
+.text-button { color: var(--green); background: none; border: 0; border-bottom: 1px solid currentColor; padding: 3px 0; cursor: pointer; }
+.issue-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; }
+.issue-card {
+  min-width: 0;
+  background: rgba(255,255,255,.48);
+  border: 1px solid #d4d1c5;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.issue-card:hover { transform: translateY(-5px); border-color: #9ca28e; box-shadow: 0 15px 30px rgba(41,49,36,.1); }
+.issue-open {
+  width: 100%;
+  padding: 0;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.cover-wrap { aspect-ratio: 1 / 1.414; overflow: hidden; background: #fff; border-bottom: 1px solid #d4d1c5; }
+.cover-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .25s ease; }
+.issue-card:hover .cover-wrap img { transform: scale(1.015); }
+.issue-copy { padding: 20px 18px 18px; }
+.issue-meta { display: flex; justify-content: space-between; gap: 8px; color: #8a8f80; font-size: 10px; letter-spacing: .08em; }
+.issue-copy h3 { margin: 14px 0 10px; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 18px; line-height: 1.55; font-weight: 600; }
+.issue-copy p { margin: 0; color: #666c5e; font-size: 12px; line-height: 1.75; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.card-tags span { padding: 5px 8px; color: #68705e; background: #e7e8dd; border-radius: 999px; font-size: 9px; }
+.empty-state { padding: 72px 24px; text-align: center; border: 1px solid var(--line); }
+.empty-state strong, .empty-state span { display: block; }
+.empty-state span { margin-top: 8px; color: var(--muted); font-size: 13px; }
+
+.about-section { padding: 90px 0 104px; border-top: 1px solid var(--line); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-grid p + p { margin-top: 20px; }
+.about-grid .note { padding-left: 18px; border-left: 3px solid #9fa78d; color: #7d8275; font-size: 12px; }
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px max(24px, calc((100% - 1180px) / 2));
+  color: #bdc5b3;
+  background: #293124;
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+body.reader-open { overflow: hidden; }
+.reader {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #d9d8d2;
+}
+.reader::backdrop { background: rgba(25,31,22,.65); }
+.reader-shell { min-height: 100%; }
+.reader-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 13px 24px;
+  color: #f3f0e6;
+  background: rgba(41,49,36,.96);
+  backdrop-filter: blur(12px);
+}
+.reader-close { justify-self: start; padding: 10px 13px; color: #f3f0e6; background: transparent; border: 1px solid rgba(255,255,255,.34); cursor: pointer; }
+.reader-heading { min-width: 0; text-align: center; }
+.reader-heading span { display: block; color: #acb6a2; font-size: 10px; letter-spacing: .1em; }
+.reader-heading h2 { margin: 4px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 17px; font-weight: 500; }
+.reader-actions { display: flex; align-items: center; gap: 8px; }
+.reader-actions button { width: 34px; height: 34px; color: #f3f0e6; background: transparent; border: 1px solid rgba(255,255,255,.28); cursor: pointer; }
+#zoom-label { min-width: 42px; color: #c6cdbd; text-align: center; font-size: 10px; }
+.reader-actions a { margin-left: 7px; color: #f3f0e6; font-size: 11px; text-decoration: none; border-bottom: 1px solid #929c88; }
+.reader-pages { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 42px 20px 56px; }
+.reader-page { width: min(var(--page-width), calc(100vw - 40px)); height: auto; display: block; background: #fff; box-shadow: 0 10px 30px rgba(31,37,28,.18); }
+.reader-nav { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 0 0 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.reader-nav button { min-height: 76px; padding: 14px 18px; color: var(--ink); background: rgba(255,255,255,.64); border: 1px solid #c2c2bb; cursor: pointer; text-align: left; }
+.reader-nav button:last-child { text-align: right; }
+.reader-nav button:disabled { opacity: .35; cursor: default; }
+.reader-nav span, .reader-nav strong { display: block; }
+.reader-nav span { color: #767c6e; font-size: 10px; letter-spacing: .08em; }
+.reader-nav strong { margin-top: 6px; font-size: 12px; font-weight: 600; }
+
+@media (max-width: 980px) {
+  .issue-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .site-header { min-height: 560px; }
+  .header-inner, main { width: min(100% - 36px, 1180px); }
+  .header-inner { padding: 36px 0 56px; }
+  .prototype-label { margin-bottom: 72px; }
+  .archive-stats { gap: 28px; }
+  .archive-stats strong { font-size: 21px; }
+  .section-heading, .archive-controls, .about-grid { grid-template-columns: 1fr; gap: 24px; }
+  .archive-section { padding: 70px 0 82px; }
+  .issue-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .issue-copy { padding: 15px 13px; }
+  .issue-copy h3 { font-size: 15px; }
+  .issue-copy p { display: none; }
+  .card-tags { display: none; }
+  footer { flex-direction: column; }
+  .reader-toolbar { grid-template-columns: auto 1fr; gap: 12px; padding: 10px 12px; }
+  .reader-heading { text-align: left; }
+  .reader-heading h2 { font-size: 14px; }
+  .reader-actions { grid-column: 1 / -1; justify-content: center; padding-top: 8px; border-top: 1px solid rgba(255,255,255,.13); }
+  .reader-pages { padding: 22px 10px 34px; gap: 12px; }
+  .reader-page { width: min(var(--page-width), calc(100vw - 20px)); }
+  .reader-nav { width: calc(100% - 20px); grid-template-columns: 1fr; }
+  .reader-nav button:last-child { text-align: left; }
+}

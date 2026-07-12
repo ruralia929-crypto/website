@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>神前 ロハスな便りアーカイブ</title>
+  <meta name="description" content="神前で発行されてきた「中山間だより」「ロハスな便り」第1号から第99号を読めるデジタルアーカイブです。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="back-link" href="../index.html">← 神前ホームへ</a>
+      <div class="prototype-label">DIGITAL ARCHIVE · 第1号—第99号</div>
+      <p class="eyebrow">KOUZAKI COMMUNITY ARCHIVE</p>
+      <h1>神前<br><span>ロハスな便り</span></h1>
+      <p class="lead">農の営み、四季の風景、村の出来事。<br>積み重ねてきた便りを、ゆっくり読み返す場所です。</p>
+      <div class="archive-stats" aria-label="アーカイブの収録内容">
+        <div><strong>99</strong><span>収録号</span></div>
+        <div><strong>201</strong><span>ページ</span></div>
+        <div><strong>2006–2019</strong><span>試作範囲</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="archive-section" aria-labelledby="archive-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-number">01 — ARCHIVE</p>
+          <h2 id="archive-title">便りを選ぶ</h2>
+        </div>
+        <p>表紙を選ぶと、2ページを縦に続けて読めます。本文中の言葉から検索することもできます。</p>
+      </div>
+
+      <div class="archive-controls">
+        <label class="search-box" for="archive-search">
+          <span>キーワード検索</span>
+          <input id="archive-search" type="search" placeholder="例：交流会館、蕎麦、神前米" autocomplete="off">
+        </label>
+        <div class="filter-area">
+          <span>テーマ</span>
+          <div id="tag-filters" class="tag-filters" role="group" aria-label="テーマで絞り込む"></div>
+        </div>
+      </div>
+
+      <div class="results-line">
+        <span id="result-count" aria-live="polite"></span>
+        <button id="clear-filters" class="text-button" type="button">絞り込みを解除</button>
+      </div>
+
+      <div id="issue-grid" class="issue-grid"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>該当する便りがありません</strong>
+        <span>別の言葉やテーマをお試しください。</span>
+      </div>
+      <noscript>この試作リーダーの閲覧にはJavaScriptが必要です。</noscript>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-title">
+      <p class="section-number">02 — ABOUT</p>
+      <div class="about-grid">
+        <h2 id="about-title">100号に近い、<br>むらの記憶</h2>
+        <div>
+          <p>「中山間だより」から「ロハスな便り」へ。農作業の記録だけでなく、祭り、食、交流会館、季節の風景、その時々に村で交わされた思いが残されています。</p>
+          <p class="note">第1号から第99号までを収録し、第91号の別紙も続けて読めるようにしています。表紙から号を選ぶほか、本文中の言葉でも検索できます。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>神前 ロハスな便りアーカイブ</span>
+    <span>2006—2019</span>
+  </footer>
+
+  <dialog id="reader" class="reader" aria-labelledby="reader-title">
+    <div class="reader-shell">
+      <header class="reader-toolbar">
+        <button id="reader-close" class="reader-close" type="button" aria-label="リーダーを閉じる">閉じる ×</button>
+        <div class="reader-heading">
+          <span id="reader-kicker"></span>
+          <h2 id="reader-title"></h2>
+          <span id="reader-meta"></span>
+        </div>
+        <div class="reader-actions">
+          <button id="zoom-out" type="button" aria-label="ページを縮小">−</button>
+          <span id="zoom-label">100%</span>
+          <button id="zoom-in" type="button" aria-label="ページを拡大">＋</button>
+          <a id="source-pdf" href="#" target="_blank" rel="noopener">原本PDF ↗</a>
+        </div>
+      </header>
+
+      <div id="reader-pages" class="reader-pages" aria-live="polite"></div>
+
+      <nav class="reader-nav" aria-label="前後の便り">
+        <button id="previous-issue" type="button"><span>← 前の号</span><strong></strong></button>
+        <button id="next-issue" type="button"><span>次の号 →</span><strong></strong></button>
+      </nav>
+    </div>
+  </dialog>
+
+  <script src="issues.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
