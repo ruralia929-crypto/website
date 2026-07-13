@@ -19,11 +19,13 @@ body { margin: 0; background: #f6f5ee; }
 html { scroll-behavior: smooth; }
 img { max-width: 100%; }
 @media (max-width: 860px) {
+  [style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns: 1fr 1fr !important; }
   [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
   [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
 }
 @media (max-width: 720px) {
   [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
   [style*="grid-template-columns:180px 1fr"] { grid-template-columns: 1fr !important; gap: 8px !important; }
   h1[style*=" 56px/1.6 "] { font-size: 32px !important; }
@@ -63,6 +65,7 @@ html[lang="ja"] .lang-en { display: none; }
           <a href="#y2023">2023</a>
           <a href="#y2024">2024</a>
           <a href="#y2025">2025</a>
+          <a href="#y2026">2026</a>
         </nav>
         <span class="langtoggle" role="group" aria-label="language"><button type="button" data-lang="ja" onclick="setLang('ja')">日本語</button><button type="button" data-lang="en" onclick="setLang('en')">EN</button></span>
         <div class="site-directory-slot" data-site-directory-slot></div>
@@ -82,7 +85,7 @@ html[lang="ja"] .lang-en { display: none; }
   <div style="border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
     <div style="max-width:1200px;margin:0 auto;padding:72px 32px;">
       <p style="margin:0 auto;max-width:780px;text-align:center;font:400 19px/2.4 'Shippori Mincho B1',serif;color:#3a4030;text-wrap:pretty;"><span class="lang-ja">京都大学の農学部では、村づくりを学ぶ授業の一環として、毎年ひと組の学生たちが神前を訪ねます。集落を歩いて隠れた魅力と課題を見つけ、一日かけて「こうすれば元気になるのでは」という提案をつくり、住民のみなさんに発表する——。地元の力添えがあってこそ続けてこられた、神前ならではの学びの場です。</span><span class="lang-en">In Kyoto University's Faculty of Agriculture, one group of students visits Kouzaki each year as part of a course on village-making. They walk the hamlet to find its hidden charms and the challenges it faces, spend a day shaping proposals for how the place might come alive again, and present them to the residents. It is a learning ground found nowhere else — one that has carried on only thanks to the help of the local community.</span></p>
-      <p style="margin:32px auto 0;max-width:780px;text-align:center;font:400 14px/1.8 'Zen Kaku Gothic New',sans-serif;"><a href="ws2026.html" style="display:inline-block;border:1px solid #31402a;color:#31402a;padding:14px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">今年のワークショップ ― 2026年7月12日（日）の予定を見る →</span><span class="lang-en">This year's workshop — see the plan for Sunday, 12 July 2026 →</span></a></p>
+      <p style="margin:32px auto 0;max-width:780px;text-align:center;font:400 14px/1.8 'Zen Kaku Gothic New',sans-serif;"><a href="#y2026" style="display:inline-block;border:1px solid #31402a;color:#31402a;padding:14px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">2026年のワークショップ成果を見る →</span><span class="lang-en">See the results of the 2026 workshop →</span></a></p>
     </div>
   </div>
 
@@ -377,12 +380,87 @@ html[lang="ja"] .lang-en { display: none; }
           <p style="margin:0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">毎年のワークショップを「点」で終わらせず、「線」でつなごう——。この年は、大学が“伴走者”となって継続的に関わる新しい形を提案しました。その具体策が、スマホでも紙でも誰でも答えられる匿名の意見収集です。</span><span class="lang-en">Rather than let each year's workshop end as a single "dot," why not join them into a "line"? This year the university put forward a new way to stay involved over time — as a companion walking alongside the village. The concrete step: an anonymous way of gathering opinions that anyone could answer, by phone or on paper.</span></p>
           <p style="margin:20px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">秋から冬にかけて、この仕組みで142軒すべてに声をかけ、83人から回答が寄せられました。集まった声と、4つのむらづくり案の受け止めは、住民のみなさんへの報告ページにまとめています。</span><span class="lang-en">From autumn into winter, this approach reached all 142 households, and 83 people wrote back. The voices gathered, and how the four village-making ideas were received, are brought together on the report page for the residents.</span></p>
 
-          <div style="margin-top:40px;background:#2b3624;padding:40px 36px;">
-            <h3 style="margin:0 0 12px;font:600 24px/1.6 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.04em;"><span class="lang-ja">みなさんの声から、これからの神前を考える</span><span class="lang-en">Thinking About Kouzaki's Future, from the Voices of Its People</span></h3>
-            <p style="margin:0 0 24px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">2025年、142軒すべてを回って集めた声と、4つのむらづくり案の受け止め。</span><span class="lang-en">In 2025, the voices gathered by calling on all 142 households, and how the four village-making ideas were received.</span></p>
-            <a href="report.html" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">住民報告ページを見る →</span><span class="lang-en">See the residents' report page →</span></a>
-          </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2026 ================= -->
+  <div id="y2026" style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:32px;">
+        <div>
+          <div style="font:600 64px/1 'Zen Old Mincho',serif;color:#2b3624;">2026</div>
+          <div style="margin-top:16px;font:400 12px/1.9 'Zen Kaku Gothic New',sans-serif;color:#94997f;letter-spacing:.08em;"><span class="lang-ja">7月12日（日）<br>学部生・院生・留学生 5班</span><span class="lang-en">Sun, 12 July<br>Undergraduate, graduate &amp; international students · 5 groups</span></div>
+        </div>
+        <div>
+          <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">地域のアイデアを、動かせるプランへ</span><span class="lang-en">Turning Local Ideas into Workable Plans</span></h2>
+          <div style="margin-top:20px;"><span style="display:inline-block;border:1px solid #c9cdb6;color:#4a5140;font:400 13px/1.6 'Zen Kaku Gothic New',sans-serif;padding:8px 18px;border-radius:999px;"><span class="lang-ja">テーマ：4つの構想を具体化し、実現を支える人・役割・つながりを考える</span><span class="lang-en">Theme: Make four visions concrete, then map the people, roles and relationships needed to realize them</span></span></div>
+          <p style="margin:24px 0 0;max-width:720px;font:400 16px/2.1 'Shippori Mincho B1',serif;color:#454b3d;"><span class="lang-ja">全員で国際交流会館（森のステーションかめおか）周辺を歩き、地域のみなさんから現状とこれからの構想を聞きました。午後は住民のみなさんと一緒に、対象・活動・場所・運営の仕組みを具体化。5つの班が、それぞれ異なる入口から神前の未来像を描きました。</span><span class="lang-en">Everyone walked the area around the International Exchange House (Mori-no-Station Kameoka) and heard from residents about the present situation and their hopes for what comes next. In the afternoon, students and residents worked together to shape audiences, activities, places and ways of running them. Five groups approached Kouzaki's future from five different starting points.</span></p>
+
+          <div style="margin-top:40px;">
+            <div style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;color:#94997f;margin-bottom:14px;"><span class="lang-ja">当日の様子</span><span class="lang-en">Scenes from the Day</span></div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+              <img src="photos/ws2026_workshop.jpg" alt="住民と学生が話し合うワークショップの様子（2026年）" title="住民と学生によるグループワーク" style="width:100%;height:210px;object-fit:cover;display:block;">
+              <img src="photos/ws2026_presentation.jpg" alt="留学生班による成果発表の様子（2026年）" title="成果報告会での発表" style="width:100%;height:210px;object-fit:cover;display:block;">
+              <img src="photos/ws2026_thanks.jpg" alt="ワークショップ終了後に地域から神前米を受け取る様子（2026年）" title="地域から神前米の贈呈" style="width:100%;height:210px;object-fit:cover;object-position:center 35%;display:block;">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:40px 0 0;">
+            <a href="pdfs/2026/workshop2026-group1.pdf" target="_blank" rel="noopener" title="1班の発表資料（PDF）"><img src="photos/slide2026_g1.jpg" alt="1班の発表スライド「神前地区復興プラン」" style="width:100%;height:150px;object-fit:contain;background:#fff;display:block;border:1px solid #e0e0d4;"></a>
+            <a href="pdfs/2026/workshop2026-group2.pdf" target="_blank" rel="noopener" title="2班の発表資料（PDF）"><img src="photos/slide2026_g2.jpg" alt="2班の発表スライド「神前での体験を通した観光客の増加・移住への提案」" style="width:100%;height:150px;object-fit:contain;background:#fff;display:block;border:1px solid #e0e0d4;"></a>
+            <a href="pdfs/2026/workshop2026-group3.pdf" target="_blank" rel="noopener" title="3班の発表資料（PDF）"><img src="photos/slide2026_g3.jpg" alt="3班の発表スライド「ログアウトして、神前へ。」" style="width:100%;height:150px;object-fit:contain;background:#fff;display:block;border:1px solid #e0e0d4;"></a>
+            <a href="pdfs/2026/workshop2026-group4.pdf" target="_blank" rel="noopener" title="4班の発表資料（PDF）"><img src="photos/slide2026_g4.jpg" alt="4班（英語班）の発表スライド" style="width:100%;height:150px;object-fit:contain;background:#fff;display:block;border:1px solid #e0e0d4;"></a>
+            <a href="pdfs/2026/workshop2026-group5.pdf" target="_blank" rel="noopener" title="5班の発表資料（PDF）"><img src="photos/slide2026_g5.jpg" alt="5班の発表スライド「みんなの学校 in 交流会館」" style="width:100%;height:150px;object-fit:contain;background:#fff;display:block;border:1px solid #e0e0d4;"></a>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">1班</span><span class="lang-en">Group 1</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">ドライブの寄り道から、地域のファンへ</span><span class="lang-en">From a Drive-By Stop to Lasting Fans</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">京都・大阪方面からの若者ドライブ客を想定し、霧や紅葉の景色、神前米・チョロギの食、交流会館での休憩をひとつの立ち寄り体験に。小さく始め、「来訪 → 購入 → 担い手」へつなぐ。</span><span class="lang-en">For young people driving from Kyoto and Osaka, combine mist and autumn scenery, food made with Kouzaki rice and chorogi, and a rest at the community hall into one reason to stop. Start small, then build a path from visits to purchases and eventually to new hands who help carry the community.</span></p>
+              <p style="margin:18px 0 0;"><a href="pdfs/2026/workshop2026-group1.pdf" target="_blank" rel="noopener" style="color:#31402a;font:500 13px/1.6 'Zen Kaku Gothic New',sans-serif;"><span class="lang-ja">発表資料を見る（PDF・5ページ）→</span><span class="lang-en">View presentation (PDF · 5 pages) →</span></a></p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">2班</span><span class="lang-en">Group 2</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">体験を入口に、観光と移住をつなぐ</span><span class="lang-en">Linking Tourism and Migration Through Experience</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">森のアスレチックやキャンプ、砥石、狩猟とジビエなど、自然と文化を活かした体験で若者・家族・外国人観光客を呼び込む。宿泊、企業誘致、雇用を重ね、移住につながる流れをつくる。</span><span class="lang-en">Use forest activities, camping, whetstones, hunting and game cuisine to draw young people, families and overseas visitors through experiences rooted in nature and culture. Add lodging, businesses and jobs to create a path toward settling in Kouzaki.</span></p>
+              <p style="margin:18px 0 0;"><a href="pdfs/2026/workshop2026-group2.pdf" target="_blank" rel="noopener" style="color:#31402a;font:500 13px/1.6 'Zen Kaku Gothic New',sans-serif;"><span class="lang-ja">発表資料を見る（PDF・15ページ）→</span><span class="lang-en">View presentation (PDF · 15 pages) →</span></a></p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">3班</span><span class="lang-en">Group 3</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">ログアウトして、神前へ。</span><span class="lang-en">Log Out and Come to Kouzaki</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">20〜40代の働く大人に向けた、1泊2日から1週間のデジタルデトックス滞在。農業、刃物研ぎ、座禅・写経、音楽などを通して地域と交流し、自分を見つめ直す時間をつくる。</span><span class="lang-en">A digital-detox stay of two days to one week for working adults in their twenties to forties. Farming, knife sharpening, zazen, sutra copying and music create time to reconnect with oneself while meeting the community.</span></p>
+              <p style="margin:18px 0 0;"><a href="pdfs/2026/workshop2026-group3.pdf" target="_blank" rel="noopener" style="color:#31402a;font:500 13px/1.6 'Zen Kaku Gothic New',sans-serif;"><span class="lang-ja">発表資料を見る（PDF・9ページ）→</span><span class="lang-en">View presentation (PDF · 9 pages) →</span></a></p>
+            </div>
+            <div style="border:1px solid #e0e0d4;border-left:3px solid #94997f;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">4班 ― 英語班</span><span class="lang-en">Group 4 — English Team</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">外から起業家を呼び、関係人口を担い手に</span><span class="lang-en">Bringing in Entrepreneurs as New Local Actors</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">人材不足、高齢化、活用しにくい空き家という課題に、地域外の起業家を「関係人口」として迎える構想で応える。提案と投資から、新しい仕事・人材・地域の担い手を生み出す。</span><span class="lang-en">Respond to shortages of people and skills, an aging population and hard-to-use vacant houses by welcoming outside entrepreneurs as members of the connected population. Their proposals and investment can create jobs, attract new people and grow new local actors.</span></p>
+              <p style="margin:18px 0 0;"><a href="pdfs/2026/workshop2026-group4.pdf" target="_blank" rel="noopener" style="color:#31402a;font:500 13px/1.6 'Zen Kaku Gothic New',sans-serif;"><span class="lang-ja">発表資料を見る（PDF・6ページ）→</span><span class="lang-en">View presentation (PDF · 6 pages) →</span></a></p>
+            </div>
+            <div style="border:1px solid #e0e0d4;padding:26px 28px;">
+              <div style="font:400 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.18em;color:#94997f;margin-bottom:12px;"><span class="lang-ja">5班</span><span class="lang-en">Group 5</span></div>
+              <h3 style="margin:0 0 10px;font:600 19px/1.6 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">交流会館を「みんなの学校」に</span><span class="lang-en">Turning the Community Hall into Everyone's School</span></h3>
+              <p style="margin:0;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">神前米、チョロギ、砥石を活かした料理・農業体験型スクールを交流会館で開く。子どもと家族、地域の教え手をつなぎ、世代を問わない関係人口を育てながら、交流会館を地域の象徴・経済の中心へ。</span><span class="lang-en">Create a cooking and farming school at the community hall, drawing on Kouzaki rice, chorogi and whetstones. Connect children and families with local teachers, grow relationships across generations, and make the hall a symbol — and eventually an economic center — of the community.</span></p>
+              <p style="margin:18px 0 0;"><a href="pdfs/2026/workshop2026-group5.pdf" target="_blank" rel="noopener" style="color:#31402a;font:500 13px/1.6 'Zen Kaku Gothic New',sans-serif;"><span class="lang-ja">発表資料を見る（PDF・6ページ）→</span><span class="lang-en">View presentation (PDF · 6 pages) →</span></a></p>
+            </div>
+          </div>
+
+          <p style="margin:32px 0 0;font:400 13px/1.9 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><a href="ws2026.html" style="color:#5b6152;"><span class="lang-ja">当日の案内・地域からの情報を見る →</span><span class="lang-en">See the day's program and local briefing →</span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= residents report ================= -->
+  <div style="border-top:1px solid #e0e0d4;">
+    <div style="max-width:1200px;margin:0 auto;padding:72px 32px;">
+      <div style="background:#2b3624;padding:40px 36px;">
+        <h3 style="margin:0 0 12px;font:600 24px/1.6 'Zen Old Mincho',serif;color:#eceadd;letter-spacing:.04em;"><span class="lang-ja">みなさんの声から、これからの神前を考える</span><span class="lang-en">Thinking About Kouzaki's Future, from the Voices of Its People</span></h3>
+        <p style="margin:0 0 24px;font:400 14px/2 'Zen Kaku Gothic New',sans-serif;color:#a9b096;"><span class="lang-ja">2025年、142軒すべてを回って集めた声と、4つのむらづくり案の受け止め。</span><span class="lang-en">In 2025, the voices gathered by calling on all 142 households, and how the four village-making ideas were received.</span></p>
+        <a href="report.html" style="display:inline-block;border:1px solid rgba(255,255,255,.35);color:#eceadd;font:500 14px/1 'Zen Kaku Gothic New',sans-serif;padding:16px 28px;letter-spacing:.06em;text-decoration:none;"><span class="lang-ja">住民報告ページを見る →</span><span class="lang-en">See the residents' report page →</span></a>
       </div>
     </div>
   </div>

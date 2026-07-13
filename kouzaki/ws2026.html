@@ -178,7 +178,6 @@ html[lang="ja"] .lang-en { display: none; }
       <button class="tab active" id="tab-prep" onclick="showTab('prep',this)"><span class="lang-ja">持ち物・準備</span><span class="lang-en">What to Bring</span></button>
       <button class="tab" id="tab-schedule" onclick="showTab('schedule',this)"><span class="lang-ja">当日の流れ</span><span class="lang-en">Schedule</span></button>
       <button class="tab" id="tab-briefing" onclick="showTab('briefing',this)"><span class="lang-ja">地域からの情報</span><span class="lang-en">Community Briefing</span></button>
-      <button class="tab" id="tab-groups" onclick="showTab('groups',this)"><span class="lang-ja">班分け</span><span class="lang-en">Groups</span></button>
       <button class="tab" id="tab-facil" onclick="showTab('facil',this)"><span class="lang-ja">ファシリの要点</span><span class="lang-en">Facilitation</span></button>
       <button class="tab" id="tab-residents" onclick="showTab('residents',this)"><span class="lang-ja">住民のみなさんへ</span><span class="lang-en">For Residents</span></button>
     </div>
@@ -352,53 +351,6 @@ html[lang="ja"] .lang-en { display: none; }
           <li><span class="lang-ja">地域のみなさんは、縁もゆかりもない外からの目で、遠慮なく思い切った提案をしてほしいと期待しています。</span><span class="lang-en">Residents hope students will use their outside perspective and offer bold ideas without holding back.</span></li>
         </ul>
       </section>
-    </div>
-  </div>
-
-  <!-- ================= panel: 班分け ================= -->
-  <div class="panel" id="panel-groups">
-    <div style="max-width:1200px;margin:0 auto;padding:88px 32px;">
-      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;">
-        <h2 style="margin:0;font:600 36px/1.4 'Zen Old Mincho',serif;color:#2b3624;letter-spacing:.04em;"><span class="lang-ja">班分け</span><span class="lang-en">Group Assignments</span></h2>
-        <span style="font:400 12px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.28em;color:#94997f;">GROUPS</span>
-      </div>
-      <p style="margin:0 0 40px;max-width:760px;font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#7a8064;"><span class="lang-ja">当日の班です。自分の名字を探してください。都合により変更する場合があります。</span><span class="lang-en">Your group for the day — find your family name below. Assignments may change.</span></p>
-
-      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
-        <div>
-          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班1</span><span class="lang-en">Group 1</span></div>
-          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">政策論</span><span class="lang-en">Policy course</span></div>
-        </div>
-        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">奥原、上西、大西、小川、南、宮田</span><span class="lang-en">Okuhara, Uenishi, Onishi, Ogawa, Minami, Miyata</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
-        <div>
-          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班2</span><span class="lang-en">Group 2</span></div>
-          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">政策論</span><span class="lang-en">Policy course</span></div>
-        </div>
-        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">竹林、折橋、佐竹、髙井、兵頭、大前</span><span class="lang-en">Takebayashi, Orihashi, Satake, Takai, Hyodo, Omae</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
-        <div>
-          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班3</span><span class="lang-en">Group 3</span></div>
-          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">政策論</span><span class="lang-en">Policy course</span></div>
-        </div>
-        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">曽我、土本、石倉、西尾、野口、桝田</span><span class="lang-en">Soga, Tsuchimoto, Ishikura, Nishio, Noguchi, Masuda</span></div>
-      </div>
-      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;">
-        <div>
-          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班4</span><span class="lang-en">Group 4</span></div>
-          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">英語班</span><span class="lang-en">English group</span></div>
-        </div>
-        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;">Wijaya, Gattermann, Bayu, Argo, Thandar, Sylvia</div>
-      </div>
-      <div style="display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid #e0e0d4;border-bottom:1px solid #e0e0d4;">
-        <div>
-          <div style="font:600 17px/1.5 'Zen Old Mincho',serif;color:#31402a;"><span class="lang-ja">班5</span><span class="lang-en">Group 5</span></div>
-          <div style="font:400 11px/1.4 'Zen Kaku Gothic New',sans-serif;color:#a7ac90;letter-spacing:.06em;margin-top:3px;"><span class="lang-ja">研究室</span><span class="lang-en">Lab</span></div>
-        </div>
-        <div style="font:400 15px/2 'Zen Kaku Gothic New',sans-serif;color:#5b6152;"><span class="lang-ja">松島、末政、三宅、倉内</span><span class="lang-en">Matsushima, Suemasa, Miyake, Kurauchi</span></div>
-      </div>
     </div>
   </div>
 
